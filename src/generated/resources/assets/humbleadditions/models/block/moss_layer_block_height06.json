@@ -1,0 +1,6 @@
+{
+  "parent": "humbleadditions:block/template/height06",
+  "textures": {
+    "texture": "minecraft:block/moss_block"
+  }
+}

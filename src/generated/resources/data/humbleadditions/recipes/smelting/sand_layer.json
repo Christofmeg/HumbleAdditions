@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.0125,
+  "ingredient": {
+    "item": "humbleadditions:sand_layer_block"
+  },
+  "result": "minecraft:glass_pane"
+}

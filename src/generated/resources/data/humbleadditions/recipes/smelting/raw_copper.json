@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 1800,
+  "experience": 6.3,
+  "group": "humbleadditions",
+  "ingredient": {
+    "item": "minecraft:raw_copper_block"
+  },
+  "result": "minecraft:copper_block"
+}

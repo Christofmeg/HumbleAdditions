@@ -1,0 +1,6 @@
+{
+  "parent": "humbleadditions:block/template/height14",
+  "textures": {
+    "texture": "minecraft:block/red_sand"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "G": {
+      "item": "humbleadditions:brown_stained_glowing_glass"
+    }
+  },
+  "pattern": [
+    "GGG",
+    "GGG"
+  ],
+  "result": {
+    "count": 48,
+    "item": "humbleadditions:brown_stained_glowing_glass_pane"
+  }
+}

@@ -1,0 +1,174 @@
+plugins {
+    id 'eclipse'
+    id 'maven-publish'
+    id 'net.minecraftforge.gradle' version '5.1.+'
+	id 'org.parchmentmc.librarian.forgegradle' version '1.+'
+}
+
+version = '1.19.2-0.0.1'
+group = 'com.christofmeg.${mod_name}'
+archivesBaseName = 'humbleadditions'
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
+minecraft {
+  //  mappings channel: 'official', version: '1.19.2'
+	mappings channel: 'parchment', version: '2022.08.14-1.19.2'
+
+    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+
+    runs {
+        client {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+			property 'forge.logging.console.level', 'debug'
+			property 'forge.enabledGameTestNamespaces', 'humbleadditions'
+
+            mods {
+                humbleadditions {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        server {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            property 'forge.enabledGameTestNamespaces', 'humbleadditions'
+
+            mods {
+                humbleadditions {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        gameTestServer {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            property 'forge.enabledGameTestNamespaces', 'humbleadditions'
+
+            mods {
+                humbleadditions {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        data {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+
+            
+            args '--mod', 'humbleadditions', '--all', 
+					'--existing', file('src/main/resources').toString(),
+                    '--existing', file('src/generated/resources').toString(),
+                    '--output', file('src/generated/resources/')
+
+            mods {
+                humbleadditions {
+                    source sourceSets.main
+                }
+            }
+        }
+    }
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/main/java', 'src/api/java']
+        }
+		resources {
+			srcDir 'src/generated/resources'
+		}
+    }
+}
+
+repositories {
+	maven {
+    // location of the maven that hosts JEI files
+		name = "Progwml6 maven"
+		url = "https://dvs1.progwml6.com/files/maven/"
+	}
+	maven {
+    // location of a maven mirror for JEI files, as a fallback
+		name = "ModMaven"
+		url = "https://modmaven.dev/"
+		content {
+            includeGroup 'appeng'
+        }
+	}
+	maven {
+	// location of jade maven
+        url "https://www.cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+}
+
+dependencies {
+	minecraft 'net.minecraftforge:forge:1.19.2-43.1.2'
+
+	// JEI
+    if (project.hasProperty('jei_version')) {
+		compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"))
+		compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}"))
+		runtimeOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}"))
+    }
+	// JADE
+	if (project.hasProperty('implement_jade')) {
+		// Visit https://www.curseforge.com/minecraft/mc-mods/jade/files/all
+		// to get the latest version
+		//									 mod-modid:fileid(is to be found in url)
+		implementation fg.deobf("curse.maven:jade-324717:${project.jade_version}")
+	}
+	// AE2
+	if (project.hasProperty('ae2_version')) {
+//		implementation fg.deobf("appeng:appliedenergistics2:${ae2_version}")
+		compileOnly fg.deobf("appeng:appliedenergistics2:${ae2_version}:api")
+		runtimeOnly fg.deobf("appeng:appliedenergistics2:${ae2_version}")
+	}
+}
+
+jar {
+    manifest {
+        attributes([
+                "Specification-Title"     : "humbleadditions",
+                "Specification-Vendor"    : "Christofmeg",
+                "Specification-Version"   : "1",
+                "Implementation-Title"    : project.name,
+                "Implementation-Version"  : project.jar.archiveVersion,
+                "Implementation-Vendor"   : "Christofmeg",
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        ])
+    }
+}
+
+processResources {
+	exclude '.cache'
+}
+
+jar.finalizedBy('reobfJar')
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifact jar
+        }
+    }
+    repositories {
+        maven {
+            url "file://${project.projectDir}/mcmodsrepo"
+        }
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}

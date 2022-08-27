@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "G": {
+      "tag": "forge:glass_panes/blue"
+    },
+    "I": {
+      "item": "minecraft:glow_ink_sac"
+    }
+  },
+  "pattern": [
+    "GGG",
+    "GIG",
+    "GGG"
+  ],
+  "result": {
+    "count": 8,
+    "item": "humbleadditions:blue_stained_glowing_glass_pane"
+  }
+}

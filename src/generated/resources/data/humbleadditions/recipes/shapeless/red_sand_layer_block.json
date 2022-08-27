@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:red_sand"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "item": "humbleadditions:red_sand_layer_block"
+  }
+}

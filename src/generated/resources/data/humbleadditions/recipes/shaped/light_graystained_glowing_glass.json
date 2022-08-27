@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "G": {
+      "tag": "forge:glass/light_gray"
+    },
+    "I": {
+      "item": "minecraft:glow_ink_sac"
+    }
+  },
+  "pattern": [
+    "GGG",
+    "GIG",
+    "GGG"
+  ],
+  "result": {
+    "count": 8,
+    "item": "humbleadditions:light_gray_stained_glowing_glass"
+  }
+}

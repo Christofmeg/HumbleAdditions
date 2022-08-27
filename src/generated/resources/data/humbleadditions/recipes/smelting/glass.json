@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": {
+    "tag": "forge:stained_glass"
+  },
+  "result": "minecraft:glass"
+}

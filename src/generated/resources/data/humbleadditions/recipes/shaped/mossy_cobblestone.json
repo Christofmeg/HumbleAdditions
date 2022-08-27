@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "C": {
+      "item": "humbleadditions:moss_layer_block"
+    },
+    "S": {
+      "tag": "forge:cobblestone"
+    }
+  },
+  "pattern": [
+    "CCC",
+    "CSC",
+    "CCC"
+  ],
+  "result": {
+    "item": "minecraft:mossy_cobblestone"
+  }
+}

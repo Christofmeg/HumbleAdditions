@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "humbleadditions:block/jack_o_soul_lantern",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "humbleadditions:block/jack_o_soul_lantern"
+    },
+    "facing=south": {
+      "model": "humbleadditions:block/jack_o_soul_lantern",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "humbleadditions:block/jack_o_soul_lantern",
+      "y": 270
+    }
+  }
+}

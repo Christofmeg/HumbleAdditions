@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "minecraft:iron_block"
+  },
+  "base": {
+    "item": "minecraft:leather_horse_armor"
+  },
+  "result": {
+    "item": "minecraft:iron_horse_armor"
+  }
+}
