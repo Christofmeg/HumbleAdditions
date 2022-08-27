@@ -70,6 +70,12 @@ public class HumbleAdditions {
 			//TODO Frogs that grow in size when eating things
 			//TODO ZOMBIES THAT GROWS ON EACH HIT
 			
+			/*TODO LIMESTONE 
+			 *  ADD WORLD GEN
+			 *  ADD STONECUTTING RECIPES
+			*/
+			
+			
 		});
     }
     

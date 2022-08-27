@@ -7,6 +7,8 @@ import com.christofmeg.humbleadditions.setup.ModConstants;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
@@ -48,6 +50,12 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 		this.copy(Tags.Blocks.GLASS_RED, Tags.Items.GLASS_RED);
 		this.copy(Tags.Blocks.GLASS_WHITE, Tags.Items.GLASS_WHITE);
 		this.copy(Tags.Blocks.GLASS_YELLOW, Tags.Items.GLASS_YELLOW);
+		
+		this.copy(BlockTags.WALLS, ItemTags.WALLS);
+		this.copy(BlockTags.STAIRS, ItemTags.STAIRS);
+		this.copy(BlockTags.SLABS, ItemTags.SLABS);
+		
+		this.copy(Tags.Blocks.STONE, Tags.Items.STONE);
 		
 		
 		

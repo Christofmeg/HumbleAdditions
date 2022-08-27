@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "humbleadditions:blocks/limestone_bricks",
+    "side": "humbleadditions:blocks/limestone_bricks",
+    "top": "humbleadditions:blocks/limestone_bricks"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 0.1,
+  "ingredient": [
+    {
+      "item": "minecraft:shield"
+    },
+    {
+      "item": "minecraft:iron_bars"
+    },
+    {
+      "item": "minecraft:rail"
+    },
+    {
+      "item": "minecraft:tripwire_hook"
+    },
+    {
+      "item": "minecraft:shears"
+    },
+    {
+      "item": "minecraft:damaged_anvil"
+    }
+  ],
+  "result": "minecraft:iron_nugget"
+}

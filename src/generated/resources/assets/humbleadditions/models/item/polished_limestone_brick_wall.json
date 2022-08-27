@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "humbleadditions:blocks/polished_limestone_bricks"
+  }
+}

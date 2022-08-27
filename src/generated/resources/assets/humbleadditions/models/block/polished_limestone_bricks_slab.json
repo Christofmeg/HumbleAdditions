@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "humbleadditions:blocks/polished_limestone_bricks",
+    "side": "humbleadditions:blocks/polished_limestone_bricks",
+    "top": "humbleadditions:blocks/polished_limestone_bricks"
+  }
+}

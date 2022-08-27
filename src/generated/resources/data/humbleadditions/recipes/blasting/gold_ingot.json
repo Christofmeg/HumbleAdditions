@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 0.1,
+  "ingredient": [
+    {
+      "item": "minecraft:light_weighted_pressure_plate"
+    },
+    {
+      "item": "minecraft:bell"
+    }
+  ],
+  "result": "minecraft:gold_ingot"
+}

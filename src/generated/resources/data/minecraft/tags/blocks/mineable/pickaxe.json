@@ -1,6 +1,23 @@
 {
   "values": [
     "humbleadditions:charcoal_block",
-    "humbleadditions:smooth_ice"
+    "humbleadditions:smooth_ice",
+    "humbleadditions:limestone",
+    "humbleadditions:polished_limestone_bricks",
+    "humbleadditions:chiseled_limestone",
+    "humbleadditions:polished_limestone",
+    "humbleadditions:limestone_bricks",
+    "humbleadditions:limestone_wall",
+    "humbleadditions:limestone_brick_wall",
+    "humbleadditions:polished_limestone_wall",
+    "humbleadditions:polished_limestone_brick_wall",
+    "humbleadditions:limestone_stairs",
+    "humbleadditions:limestone_bricks_stairs",
+    "humbleadditions:polished_limestone_stairs",
+    "humbleadditions:polished_limestone_bricks_stairs",
+    "humbleadditions:limestone_slab",
+    "humbleadditions:limestone_bricks_slab",
+    "humbleadditions:polished_limestone_slab",
+    "humbleadditions:polished_limestone_bricks_slab"
   ]
 }
