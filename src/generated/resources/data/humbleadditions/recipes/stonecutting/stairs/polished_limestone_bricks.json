@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "humbleadditions:polished_limestone_bricks"
+  },
+  "result": "humbleadditions:polished_limestone_bricks_stairs"
+}

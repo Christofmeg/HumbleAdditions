@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#minecraft:is_ocean",
+  "features": "humbleadditions:overworld_blocks_placed",
+  "step": "underground_decoration"
+}

@@ -21,6 +21,7 @@ import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.ShapelessRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.data.recipes.SingleItemRecipeBuilder;
 import net.minecraft.data.recipes.UpgradeRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
@@ -56,7 +57,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		this.addShapedRecipes(consumer);	
 		this.addBlastingRecipes(consumer);
 		this.addSmeltingRecipes(consumer);
-//		this.addStonecuttingRecipes(consumer);
+		this.addStonecuttingRecipes(consumer);
 		
 		this.addShapelessRecipes(consumer);
 		this.addSmithingRecipes(consumer);
@@ -906,6 +907,125 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			
 	}
 	
+	private void addStonecuttingRecipes(Consumer<FinishedRecipe> consumer) {
+		String folder = "stonecutting/";
+		String slabs = "slabs/";
+
+		stoneCuttingSlabs(Blocks.PURPUR_STAIRS, Blocks.PURPUR_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.QUARTZ_STAIRS, Blocks.QUARTZ_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.RED_SANDSTONE_STAIRS, Blocks.RED_SANDSTONE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.SANDSTONE_STAIRS, Blocks.SANDSTONE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.STONE_BRICK_STAIRS, Blocks.STONE_BRICK_SLAB, consumer);
+		
+		stoneCuttingSlabs(Blocks.CUT_COPPER_STAIRS, Blocks.CUT_COPPER_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.EXPOSED_CUT_COPPER_STAIRS, Blocks.EXPOSED_CUT_COPPER_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.WEATHERED_CUT_COPPER_STAIRS, Blocks.WEATHERED_CUT_COPPER_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.OXIDIZED_CUT_COPPER_STAIRS, Blocks.OXIDIZED_CUT_COPPER_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.WAXED_CUT_COPPER_STAIRS, Blocks.WAXED_CUT_COPPER_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.WAXED_EXPOSED_CUT_COPPER_STAIRS, Blocks.WAXED_EXPOSED_CUT_COPPER_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.WAXED_WEATHERED_CUT_COPPER_STAIRS, Blocks.WAXED_WEATHERED_CUT_COPPER_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.WAXED_OXIDIZED_CUT_COPPER_STAIRS, Blocks.WAXED_OXIDIZED_CUT_COPPER_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.OAK_STAIRS, Blocks.OAK_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.DARK_OAK_STAIRS, Blocks.DARK_OAK_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.BIRCH_STAIRS, Blocks.BIRCH_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.JUNGLE_STAIRS, Blocks.JUNGLE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.ACACIA_STAIRS, Blocks.ACACIA_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.SPRUCE_STAIRS, Blocks.SPRUCE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.CRIMSON_STAIRS, Blocks.CRIMSON_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.WARPED_STAIRS, Blocks.WARPED_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.MANGROVE_STAIRS, Blocks.MANGROVE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.MUD_BRICK_STAIRS, Blocks.MUD_BRICK_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.STONE_STAIRS, Blocks.STONE_SLAB, consumer);
+//TODO		stoneCuttingSlabs(Blocks.SMOOTH_STONE_STAIRS, Blocks.SMOOTH_STONE_SLAB, consumer);
+//TODO		stoneCuttingSlabs(Blocks.CUT_SANDSTONE_STAIRS, Blocks.CUT_SANDSTONE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.COBBLESTONE_STAIRS, Blocks.COBBLESTONE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.BRICK_STAIRS, Blocks.BRICK_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.NETHER_BRICK_STAIRS, Blocks.NETHER_BRICK_SLAB, consumer);
+//TODO		stoneCuttingSlabs(Blocks.CUT_RED_SANDSTONE_STAIRS, Blocks.CUT_RED_SANDSTONE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.PRISMARINE_STAIRS, Blocks.PRISMARINE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.PRISMARINE_BRICK_STAIRS, Blocks.PRISMARINE_BRICK_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.DARK_PRISMARINE_STAIRS, Blocks.DARK_PRISMARINE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.POLISHED_GRANITE_STAIRS, Blocks.POLISHED_GRANITE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.SMOOTH_RED_SANDSTONE_STAIRS, Blocks.SMOOTH_RED_SANDSTONE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.MOSSY_STONE_BRICK_STAIRS, Blocks.MOSSY_STONE_BRICK_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.POLISHED_DIORITE_STAIRS, Blocks.POLISHED_DIORITE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.MOSSY_COBBLESTONE_STAIRS, Blocks.MOSSY_COBBLESTONE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.END_STONE_BRICK_STAIRS, Blocks.END_STONE_BRICK_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.SMOOTH_SANDSTONE_STAIRS, Blocks.SMOOTH_SANDSTONE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.SMOOTH_QUARTZ_STAIRS, Blocks.SMOOTH_QUARTZ_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.GRANITE_STAIRS, Blocks.GRANITE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.ANDESITE_STAIRS, Blocks.ANDESITE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.RED_NETHER_BRICK_STAIRS, Blocks.RED_NETHER_BRICK_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.POLISHED_ANDESITE_STAIRS, Blocks.POLISHED_ANDESITE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.DIORITE_STAIRS, Blocks.DIORITE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.COBBLED_DEEPSLATE_STAIRS, Blocks.COBBLED_DEEPSLATE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.POLISHED_DEEPSLATE_STAIRS, Blocks.POLISHED_DEEPSLATE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.DEEPSLATE_BRICK_STAIRS, Blocks.DEEPSLATE_BRICK_SLAB, consumer);
+//TODO		stoneCuttingSlabs(Blocks.DEEPSLATE_TILE_STARIS, Blocks.DEEPSLATE_TILE_STARIS, consumer);
+		stoneCuttingSlabs(Blocks.BLACKSTONE_STAIRS, Blocks.BLACKSTONE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.POLISHED_BLACKSTONE_STAIRS, Blocks.POLISHED_BLACKSTONE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.POLISHED_BLACKSTONE_BRICK_STAIRS, Blocks.POLISHED_BLACKSTONE_BRICK_SLAB, consumer);
+		
+		stoneCuttingStairs(Blocks.OAK_PLANKS, Blocks.OAK_STAIRS, consumer);
+		stoneCuttingStairs(Blocks.SPRUCE_PLANKS, Blocks.SPRUCE_STAIRS, consumer);
+		stoneCuttingStairs(Blocks.BIRCH_PLANKS, Blocks.BIRCH_STAIRS, consumer);
+		stoneCuttingStairs(Blocks.JUNGLE_PLANKS, Blocks.JUNGLE_STAIRS, consumer);
+		stoneCuttingStairs(Blocks.CRIMSON_PLANKS, Blocks.CRIMSON_STAIRS, consumer);
+		stoneCuttingStairs(Blocks.WARPED_PLANKS, Blocks.WARPED_STAIRS, consumer);
+		stoneCuttingStairs(Blocks.ACACIA_PLANKS, Blocks.ACACIA_STAIRS, consumer);
+		stoneCuttingStairs(Blocks.DARK_OAK_PLANKS, Blocks.DARK_OAK_STAIRS, consumer);
+		stoneCuttingStairs(Blocks.MANGROVE_PLANKS, Blocks.MANGROVE_STAIRS, consumer);
+		
+		stoneCuttingFolderModId(BlockRegistry.LIMESTONE.get(), BlockRegistry.LIMESTONE_SLAB.get(), 2, consumer, "slabs/", ModConstants.MOD_ID);
+		stoneCuttingFolderModId(BlockRegistry.LIMESTONE_BRICKS.get(), BlockRegistry.LIMESTONE_BRICKS_SLAB.get(), 2, consumer, "slabs/", ModConstants.MOD_ID);
+		stoneCuttingFolderModId(BlockRegistry.POLISHED_LIMESTONE.get(), BlockRegistry.POLISHED_LIMESTONE_SLAB.get(), 2, consumer, "slabs/", ModConstants.MOD_ID);
+		stoneCuttingFolderModId(BlockRegistry.POLISHED_LIMESTONE_BRICKS.get(), BlockRegistry.POLISHED_LIMESTONE_BRICKS_SLAB.get(), 2, consumer, "slabs/", ModConstants.MOD_ID);
+		
+		stoneCuttingFolderModId(BlockRegistry.LIMESTONE.get(), BlockRegistry.LIMESTONE_STAIRS.get(), 1, consumer, "stairs/", ModConstants.MOD_ID);
+		stoneCuttingFolderModId(BlockRegistry.LIMESTONE_BRICKS.get(), BlockRegistry.LIMESTONE_BRICKS_STAIRS.get(), 1, consumer, "stairs/", ModConstants.MOD_ID);
+		stoneCuttingFolderModId(BlockRegistry.POLISHED_LIMESTONE.get(), BlockRegistry.POLISHED_LIMESTONE_STAIRS.get(), 1, consumer, "stairs/", ModConstants.MOD_ID);
+		stoneCuttingFolderModId(BlockRegistry.POLISHED_LIMESTONE_BRICKS.get(), BlockRegistry.POLISHED_LIMESTONE_BRICKS_STAIRS.get(), 1, consumer, "stairs/", ModConstants.MOD_ID);
+		
+		stoneCuttingFolderModId(BlockRegistry.LIMESTONE.get(), BlockRegistry.LIMESTONE_WALL.get(), 1, consumer, "walls/", ModConstants.MOD_ID);
+		stoneCuttingFolderModId(BlockRegistry.LIMESTONE_BRICKS.get(), BlockRegistry.LIMESTONE_BRICK_WALL.get(), 1, consumer, "walls/", ModConstants.MOD_ID);
+		stoneCuttingFolderModId(BlockRegistry.POLISHED_LIMESTONE.get(), BlockRegistry.POLISHED_LIMESTONE_WALL.get(), 1, consumer, "walls/", ModConstants.MOD_ID);
+		stoneCuttingFolderModId(BlockRegistry.POLISHED_LIMESTONE_BRICKS.get(), BlockRegistry.POLISHED_LIMESTONE_BRICK_WALL.get(), 1, consumer, "walls/", ModConstants.MOD_ID);
+		
+		stoneCuttingFolderModId(BlockRegistry.LIMESTONE_STAIRS.get(), BlockRegistry.LIMESTONE_SLAB.get(), 1, consumer, "walls/", ModConstants.MOD_ID);
+		stoneCuttingFolderModId(BlockRegistry.LIMESTONE_BRICKS_STAIRS.get(), BlockRegistry.LIMESTONE_BRICKS_SLAB.get(), 1, consumer, "walls/", ModConstants.MOD_ID);
+		stoneCuttingFolderModId(BlockRegistry.POLISHED_LIMESTONE_STAIRS.get(), BlockRegistry.POLISHED_LIMESTONE_SLAB.get(), 1, consumer, "walls/", ModConstants.MOD_ID);
+		stoneCuttingFolderModId(BlockRegistry.POLISHED_LIMESTONE_BRICKS_STAIRS.get(), BlockRegistry.POLISHED_LIMESTONE_BRICKS_SLAB.get(), 1, consumer, "walls/", ModConstants.MOD_ID);
+		
+		SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.OAK_PLANKS), Blocks.OAK_SLAB, 2).unlockedBy("has_oak_planks", has(Blocks.OAK_PLANKS)).save(consumer, modLoc(folder + slabs + "oak" + "_slab"));
+		SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.SPRUCE_PLANKS), Blocks.SPRUCE_SLAB, 2).unlockedBy("has_spruce_planks", has(Blocks.SPRUCE_PLANKS)).save(consumer, modLoc(folder + slabs + "spruce" + "_slab"));
+		SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.BIRCH_PLANKS), Blocks.BIRCH_SLAB, 2).unlockedBy("has_birch_planks", has(Blocks.BIRCH_PLANKS)).save(consumer, modLoc(folder + slabs + "birch" + "_slab"));
+		SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.JUNGLE_PLANKS), Blocks.JUNGLE_SLAB, 2).unlockedBy("has_jungle_planks", has(Blocks.JUNGLE_PLANKS)).save(consumer, modLoc(folder + slabs + "jungle" + "_slab"));
+		SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.CRIMSON_PLANKS), Blocks.CRIMSON_SLAB, 2).unlockedBy("has_crimson_planks", has(Blocks.CRIMSON_PLANKS)).save(consumer, modLoc(folder + slabs + "crimson" + "_slab"));
+		SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.WARPED_PLANKS), Blocks.WARPED_SLAB, 2).unlockedBy("has_warped_planks", has(Blocks.WARPED_PLANKS)).save(consumer, modLoc(folder + slabs + "warped" + "_slab"));
+		SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.ACACIA_PLANKS), Blocks.ACACIA_SLAB, 2).unlockedBy("has_acacia_planks", has(Blocks.ACACIA_PLANKS)).save(consumer, modLoc(folder + slabs + "acacia" + "_slab"));
+		SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.DARK_OAK_PLANKS), Blocks.DARK_OAK_SLAB, 2).unlockedBy("has_dark_oak_planks", has(Blocks.DARK_OAK_PLANKS)).save(consumer, modLoc(folder + slabs + "dark_oak" + "_slab"));
+		SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.MANGROVE_PLANKS), Blocks.MANGROVE_SLAB, 2).unlockedBy("has_mangrove_planks", has(Blocks.MANGROVE_PLANKS)).save(consumer, modLoc(folder + slabs + "mangrove" + "_slab"));
+		
+	
+	}
+	
+	private static void stoneCuttingFolderModId(Block pIngredientItem, Block pResultItem, int amount, Consumer<FinishedRecipe> consumer, String dir, String modId) {
+	      String folder = "stonecutting/";
+	      SingleItemRecipeBuilder.stonecutting(Ingredient.of(pIngredientItem), pResultItem, amount).unlockedBy("has_" + StringUtils.toLowerCase(pResultItem.defaultBlockState().getBlock().toString().replace("Block{" + modId + ":", "").replace("}", "")), has(pIngredientItem)).save(consumer, modLoc(folder + dir + StringUtils.toLowerCase(pIngredientItem.defaultBlockState().getBlock().toString().replace("Block{" + modId + ":", "").replace("}", ""))));
+	}
+	
+	private static void stoneCuttingSlabs(Block pIngredientItem, Block pResultItem, Consumer<FinishedRecipe> consumer) {
+	      String folder = "stonecutting/";
+	      String slabs = "slabs/";
+	      SingleItemRecipeBuilder.stonecutting(Ingredient.of(pIngredientItem), pResultItem).unlockedBy("has_" + StringUtils.toLowerCase(pResultItem.defaultBlockState().getBlock().toString().replace("Block{minecraft:", "").replace("}", "")), has(pIngredientItem)).save(consumer, modLoc(folder + slabs + StringUtils.toLowerCase(pIngredientItem.defaultBlockState().getBlock().toString().replace("Block{minecraft:", "").replace("}", ""))));
+	}
+	
+	private static void stoneCuttingStairs(Block pIngredientItem, Block pResultItem, Consumer<FinishedRecipe> consumer) {
+	      String folder = "stonecutting/";
+	      String stairs = "stairs/";
+	      SingleItemRecipeBuilder.stonecutting(Ingredient.of(pIngredientItem), pResultItem).unlockedBy("has_" + StringUtils.toLowerCase(pResultItem.defaultBlockState().getBlock().toString().replace("Block{minecraft:", "").replace("}", "")), has(pIngredientItem)).save(consumer, modLoc(folder + stairs + StringUtils.toLowerCase(pIngredientItem.defaultBlockState().getBlock().toString().replace("Block{minecraft:", "").replace("}", ""))));
+	}
+	
 	private static void stoneSmithing(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, Item pIngredientItem, Item pResultItem) {
 	      UpgradeRecipeBuilder.smithing(Ingredient.of(pIngredientItem), Ingredient.of(ItemTags.STONE_TOOL_MATERIALS), pResultItem).unlocks("has_cobblestone", has(ItemTags.STONE_TOOL_MATERIALS)).save(consumer, resourceLocation);
 	}
@@ -958,8 +1078,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 	private static final Map<BlockFamily.Variant, BiFunction<ItemLike, ItemLike, RecipeBuilder>> slabBuilders = ImmutableMap.<BlockFamily.Variant, BiFunction<ItemLike, ItemLike, RecipeBuilder>>builder()
 			.put(BlockFamily.Variant.SLAB, (block, slab) -> {
 				return fullBlockBuilder(block, Ingredient.of(slab));
-			}).build();
-				
+			})
+			.build();
+		
 	private static RecipeBuilder fullBlockBuilder(ItemLike slabs, Ingredient pMaterial) {
 	      return ShapedRecipeBuilder.shaped(slabs)
 	    		  .define('#', pMaterial)
@@ -967,6 +1088,20 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 	    		  .pattern("#");
 	}
 	
+	private static final Map<BlockFamily.Variant, BiFunction<Block, Block, RecipeBuilder>> slabBuilders2 = ImmutableMap.<BlockFamily.Variant, BiFunction<Block, Block, RecipeBuilder>>builder()
+			.put(BlockFamily.Variant.SLAB, (block, slab) -> {
+				return slabsFromFullBlockBuilder(block, slab);
+			})
+			.build();
+	
+	private static RecipeBuilder slabsFromFullBlockBuilder(Block slabs, Block pMaterial) {
+	      return stoneCuttingFolderModId(pMaterial, slabs, 2, "adjusted/", ModConstants.MOD_ID);
+	}
+	
+	private static RecipeBuilder stoneCuttingFolderModId(Block pMaterial, Block slabs, int i, String string, String modId) {
+		return SingleItemRecipeBuilder.stonecutting(Ingredient.of(pMaterial), slabs, i).unlockedBy("has_" + StringUtils.toLowerCase(slabs.defaultBlockState().getBlock().toString().replace("Block{" + modId + ":", "").replace("}", "")), has(pMaterial));
+	}
+
 	protected static void generateRecipes(Consumer<FinishedRecipe> consumer, BlockFamily pFamily) {
 		pFamily.getVariants().forEach((block, p_176530_) -> {
 	         BiFunction<ItemLike, ItemLike, RecipeBuilder> bifunction = shapeBuilders.get(block);
@@ -1008,12 +1143,40 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		            
 		         }
 
+	    });
+		/*
+		pFamily.getVariants()
+	      .forEach((block, result) -> {
+		         BiFunction<Block, Block, RecipeBuilder> bifunction = slabBuilders2.get(block);
+		         Block itemlike = getBaseBlock(pFamily, block);
+		         if (bifunction != null) {
+	        		 RecipeBuilder recipebuilder = bifunction.apply(itemlike, result);
+	        		 if(itemlike == Blocks.NETHER_BRICKS || itemlike == Blocks.COBBLED_DEEPSLATE || itemlike == Blocks.POLISHED_BLACKSTONE) {
+		        		 return;
+		        	 }
+	        		 else {
+			            pFamily.getRecipeGroupPrefix().ifPresent((p_176601_) -> {
+			               recipebuilder.group(p_176601_ + (block == BlockFamily.Variant.CUT ? "" : "_" + block.getName()));
+			            });
+			            recipebuilder.unlockedBy(pFamily.getRecipeUnlockedBy().orElseGet(() -> {
+			               return getHasName(itemlike);
+			            }), has(itemlike));
+			            recipebuilder.save(consumer, mcLoc(StringUtils.toLowerCase(result.getDescriptionId().replace(result.getName() + ":", "").replace("block.minecraft.", "") + "_from_stonecutting")));
+		        	 }
+		            
+		         }
+
 		      });
+		      */
 		
 	   }
 	
+	
 	private static ResourceLocation modLoc(String id) {
 	    return new ResourceLocation(ModConstants.MOD_ID, id);
+	}
+	private static ResourceLocation mcLoc(String id) {
+	    return new ResourceLocation("minecraft", id);
 	}
 	
 }

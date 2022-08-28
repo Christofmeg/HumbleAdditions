@@ -15,6 +15,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.AirBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.GlassBlock;
@@ -36,6 +37,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class BlockRegistry {
 
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ModConstants.MODID);
+	public static final DeferredRegister<Block> FAKE_BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ModConstants.MODID);
 	
 	public static final RegistryObject<Block> CHARCOAL_BLOCK = registerBlock("charcoal_block", 
 		() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_BLACK)
@@ -169,6 +171,8 @@ public class BlockRegistry {
 	public static final RegistryObject<SlabBlock> POLISHED_LIMESTONE_SLAB = registerBlock("polished_limestone" + "_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE)), props());
 	public static final RegistryObject<SlabBlock> POLISHED_LIMESTONE_BRICKS_SLAB = registerBlock("polished_limestone_bricks" + "_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE)), props());
 
+	public static final RegistryObject<AirBlock> AIR = registerAir("air", () -> new AirBlock(BlockBehaviour.Properties.of(Material.AIR).noCollission().noLootTable().air()));
+	
 	private static StainedGlassBlock stainedGlass(DyeColor color) {
 		return new StainedGlassBlock(color, BlockBehaviour.Properties.of(Material.GLASS, color).strength(0.3F).sound(SoundType.GLASS).noOcclusion().emissiveRendering((state, world, pos) -> true).lightLevel((b) -> 1)
 			.isValidSpawn(BlockRegistry::shouldAllowSpawn)
@@ -200,6 +204,11 @@ public class BlockRegistry {
 	private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> supplier, Item.Properties properties) {
         RegistryObject<T> block = BLOCKS.register(name, supplier);
         ItemRegistry.ITEMS.register(name, () -> new BlockItem(block.get(), properties));
+        return block;
+    }
+	
+	private static <T extends Block> RegistryObject<T> registerAir(String name, Supplier<T> supplier) {
+        RegistryObject<T> block = FAKE_BLOCKS.register(name, supplier);
         return block;
     }
     

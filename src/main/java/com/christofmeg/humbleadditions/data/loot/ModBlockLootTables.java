@@ -44,8 +44,6 @@ public class ModBlockLootTables extends net.minecraft.data.loot.BlockLoot {
     		dropWhenSilkTouch(block);
     	});
     	
-    	
-        
     	this.add(BlockRegistry.MOSS_LAYER_BLOCK.get(), (block) -> {
     		return LootTable.lootTable().withPool(LootPool.lootPool()
     			.when(ExplosionCondition.survivesExplosion())
@@ -106,7 +104,8 @@ public class ModBlockLootTables extends net.minecraft.data.loot.BlockLoot {
 
     @Override
     protected Iterable<Block> getKnownBlocks() {
-        return BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get).collect(Collectors.toList());
+        return BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)
+        	.collect(Collectors.toList());
     }
 
 }

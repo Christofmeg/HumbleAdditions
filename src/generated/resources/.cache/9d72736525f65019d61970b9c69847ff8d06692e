@@ -1,4 +1,5 @@
-// 1.19.2	2022-08-27T13:07:16.3803279	humbleadditions - BlockModel & BlockState
+// 1.19.2	2022-08-28T22:09:45.9753319	humbleadditions - BlockModel & BlockState
+3dff9e1ec59415779195d2abfa9f07bc17b428a1 assets/humbleadditions/blockstates/air.json
 b92030120bf00607d17f431e88254d80cbbcda7c assets/humbleadditions/blockstates/black_stained_glowing_glass.json
 70a62f525d66a2051ce597f8f75a5f0e9d1fd544 assets/humbleadditions/blockstates/black_stained_glowing_glass_pane.json
 4f393160a97b01709b50698febc6904f1e87fddf assets/humbleadditions/blockstates/blue_stained_glowing_glass.json
@@ -231,3 +232,4 @@ b3bde5fa5ee81eb7f072e7b6c3adc067eed1c88b assets/humbleadditions/models/block/yel
 56cc4fb79443f884607a8f8e29d7eb5da96da8d6 assets/humbleadditions/models/block/yellow_stained_glowing_glass_pane_post.json
 e951394818f69cb6f306671b1680b10ebaad8184 assets/humbleadditions/models/block/yellow_stained_glowing_glass_pane_side.json
 794963cd5f727c97f82b19c5d60ec08261c8b5db assets/humbleadditions/models/block/yellow_stained_glowing_glass_pane_side_alt.json
+2d1ade82820569936fd3021a877283474ced09d0 assets/minecraft/models/block/air.json

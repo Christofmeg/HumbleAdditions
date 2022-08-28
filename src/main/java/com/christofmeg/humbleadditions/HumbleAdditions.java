@@ -1,6 +1,8 @@
 package com.christofmeg.humbleadditions;
 
 import com.christofmeg.humbleadditions.common.ModDispenseItemBehavior;
+import com.christofmeg.humbleadditions.common.world.feature.ModConfiguredFeatures;
+import com.christofmeg.humbleadditions.common.world.feature.ModPlacedFeatures;
 import com.christofmeg.humbleadditions.registry.BlockRegistry;
 import com.christofmeg.humbleadditions.registry.EntityRegistry;
 import com.christofmeg.humbleadditions.registry.ItemRegistry;
@@ -27,9 +29,12 @@ public class HumbleAdditions {
         Config.init();
         
         BlockRegistry.BLOCKS.register(bus);
+        BlockRegistry.FAKE_BLOCKS.register(bus);
         ItemRegistry.ITEMS.register(bus);
         EntityRegistry.ENTITY_TYPES.register(bus);
         VanillaItemRegistry.ITEMS.register(bus);
+        ModConfiguredFeatures.CONFIGURED_FEATURES.register(bus);
+        ModPlacedFeatures.PLACED_FEATURES.register(bus);
         
         
     }
@@ -69,11 +74,8 @@ public class HumbleAdditions {
 			//TODO Custom snow men ENTITY heads with jack o lanterns
 			//TODO Frogs that grow in size when eating things
 			//TODO ZOMBIES THAT GROWS ON EACH HIT
-			
-			/*TODO LIMESTONE 
-			 *  ADD WORLD GEN
-			 *  ADD STONECUTTING RECIPES
-			*/
+			//TODO ADD MORE WALLS; STAIRS; SLABS
+			//TODO FIX STONECUTTING STAIRS RECIPES
 			
 			
 		});

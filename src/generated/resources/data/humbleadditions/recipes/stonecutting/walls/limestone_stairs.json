@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "humbleadditions:limestone_stairs"
+  },
+  "result": "humbleadditions:limestone_slab"
+}

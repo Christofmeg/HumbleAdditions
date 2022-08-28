@@ -40,7 +40,7 @@ public class ModBlockStateProvider<T> extends BlockStateProvider {
 	@Override
 	protected void registerStatesAndModels() {
 		
-
+		simpleBlock(BlockRegistry.AIR.get(), models().withExistingParent("minecraft:air", "minecraft:air"));
 		
 		simpleBlock(BlockRegistry.CHARCOAL_BLOCK.get(), models().cubeAll("charcoal_block", modLoc("blocks/charcoal_block")));
 		simpleBlock(BlockRegistry.SMOOTH_ICE.get(), models().cubeAll("smooth_ice", modLoc("blocks/smooth_ice")));
