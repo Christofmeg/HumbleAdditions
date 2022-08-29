@@ -37,15 +37,20 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 				BlockRegistry.SAND_LAYER_BLOCK.get(),
 				BlockRegistry.RED_SAND_LAYER_BLOCK.get(),
 				BlockRegistry.GRAVEL_LAYER_BLOCK.get(),
-				BlockRegistry.LIMESTONE.get()
+				BlockRegistry.LIMESTONE.get(),
+				BlockRegistry.STONE_WALL.get()
 				);
 	
+		this.tag(BlockTags.SNAPS_GOAT_HORN).add(BlockRegistry.STONE_WALL.get());
 		this.tag(BlockTags.BASE_STONE_OVERWORLD).add(BlockRegistry.LIMESTONE.get());
-		this.tag(BlockTags.NETHER_CARVER_REPLACEABLES).add(BlockRegistry.LIMESTONE.get());
-		this.tag(BlockTags.SCULK_REPLACEABLE_WORLD_GEN).add(BlockRegistry.LIMESTONE.get());
-		this.tag(BlockTags.OVERWORLD_CARVER_REPLACEABLES).add(BlockRegistry.LIMESTONE.get());
-		this.tag(BlockTags.STONE_ORE_REPLACEABLES).add(BlockRegistry.LIMESTONE.get());
-		this.tag(BlockTags.DRIPSTONE_REPLACEABLE).add(BlockRegistry.LIMESTONE.get());
+		this.tag(BlockTags.NETHER_CARVER_REPLACEABLES).add(BlockRegistry.LIMESTONE.get(), BlockRegistry.STONE_WALL.get());
+		this.tag(BlockTags.SCULK_REPLACEABLE_WORLD_GEN).add(BlockRegistry.LIMESTONE.get(), BlockRegistry.STONE_WALL.get());
+		this.tag(BlockTags.OVERWORLD_CARVER_REPLACEABLES).add(BlockRegistry.LIMESTONE.get(), BlockRegistry.STONE_WALL.get());
+		this.tag(BlockTags.STONE_ORE_REPLACEABLES).add(BlockRegistry.LIMESTONE.get(),
+			BlockRegistry.STONE_WALL.get());
+		this.tag(BlockTags.DRIPSTONE_REPLACEABLE).add(
+			BlockRegistry.LIMESTONE.get(),
+			BlockRegistry.STONE_WALL.get());
 		
 		this.tag(TagRegistry.Blocks.STORAGE_BLOCKS_CHARCOAL).add(
 			BlockRegistry.CHARCOAL_BLOCK.get()
@@ -86,7 +91,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 		
 		this.tag(BlockTags.MOSS_REPLACEABLE).add(
 				BlockRegistry.MOSS_LAYER_BLOCK.get(),
-				BlockRegistry.LIMESTONE.get()
+				BlockRegistry.LIMESTONE.get(),
+				BlockRegistry.STONE_WALL.get()
 				);
 		
 		this.tag(BlockTags.SCULK_REPLACEABLE).add(
@@ -94,7 +100,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 				BlockRegistry.SAND_LAYER_BLOCK.get(),
 				BlockRegistry.RED_SAND_LAYER_BLOCK.get(),
 				BlockRegistry.GRAVEL_LAYER_BLOCK.get(),
-				BlockRegistry.LIMESTONE.get()
+				BlockRegistry.LIMESTONE.get(),
+				BlockRegistry.STONE_WALL.get()
 				);
 		
 		this.tag(BlockTags.MINEABLE_WITH_HOE).add(BlockRegistry.MOSS_LAYER_BLOCK.get());
@@ -104,7 +111,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 		this.tag(BlockTags.LUSH_GROUND_REPLACEABLE).add(
 				BlockRegistry.SAND_LAYER_BLOCK.get(),
 				BlockRegistry.GRAVEL_LAYER_BLOCK.get(),
-				BlockRegistry.LIMESTONE.get()
+				BlockRegistry.LIMESTONE.get(),
+				BlockRegistry.STONE_WALL.get()
 				);
 		
 		BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)
@@ -178,6 +186,12 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 			this.tag(BlockTags.WALLS).add(block);
 		});
 		
+			BlockRegistry.VANILLA_TEXTURED_BLOCKS.getEntries().stream().map(RegistryObject::get)
+			.filter(block -> (block instanceof WallBlock))
+			.forEach(block -> {
+				this.tag(BlockTags.WALLS).add(block);
+			});
+		
 		BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)
 		.filter(block -> (block instanceof StairBlock))
 		.forEach(block -> {
@@ -195,6 +209,12 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 		.forEach(block -> {
 			this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
 		});
+		
+			BlockRegistry.VANILLA_TEXTURED_BLOCKS.getEntries().stream().map(RegistryObject::get)
+			.filter(block -> (block instanceof WallBlock || block instanceof StairBlock || block instanceof SlabBlock))
+			.forEach(block -> {
+				this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
+			});
 		
 		
 		

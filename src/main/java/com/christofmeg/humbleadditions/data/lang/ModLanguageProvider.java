@@ -51,6 +51,14 @@ public class ModLanguageProvider extends LanguageProvider {
 						.replace("_", " ")
 						));
 			});
+				
+				BlockRegistry.VANILLA_TEXTURED_BLOCKS.getEntries().stream().map(RegistryObject::get)
+				.filter(block -> (block instanceof WallBlock || block instanceof StairBlock || block instanceof SlabBlock))
+				.forEach(block -> {
+					addBlock( () -> block, 
+						StringUtils.capitaliseAllWords(block.defaultBlockState().getBlock().toString()
+							.replace("Block{humbleadditions:", "").replace("}", "").replace("_", " ")));
+				});
 			
 			BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)
 			.filter(block -> (block instanceof AbstractGlassBlock || block instanceof IronBarsBlock))

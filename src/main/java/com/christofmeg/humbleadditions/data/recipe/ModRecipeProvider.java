@@ -65,6 +65,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		this.addSmithingRecipes(consumer);
 		this.addSlabRecipes(consumer);
 		this.addStairsRecipes(consumer);
+		this.addWallsRecipes(consumer);
 	}
 	
 	private void addSmithingRecipes(Consumer<FinishedRecipe> consumer) {
@@ -237,6 +238,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		stairBuilder(BlockRegistry.POLISHED_LIMESTONE_STAIRS.get(), Ingredient.of(BlockRegistry.POLISHED_LIMESTONE.get())).unlockedBy("has_limestone", has(BlockRegistry.LIMESTONE_STAIRS.get())).save(consumer, modLoc(folder + "polished_limestone/stairs"));
 		stairBuilder(BlockRegistry.POLISHED_LIMESTONE_BRICKS_STAIRS.get(), Ingredient.of(BlockRegistry.POLISHED_LIMESTONE_BRICKS.get())).unlockedBy("has_limestone", has(BlockRegistry.LIMESTONE_STAIRS.get())).save(consumer, modLoc(folder + "polished_limestone_bricks/stairs"));
 		
+		stairBuilder(BlockRegistry.CUT_RED_SANDSTONE_STAIRS.get(), Ingredient.of(Blocks.CUT_RED_SANDSTONE)).unlockedBy("has_red_sandstone", has(Blocks.RED_SANDSTONE)).save(consumer, modLoc(folder + "stairs/cut_red_sandstone"));
+		stairBuilder(BlockRegistry.CUT_SANDSTONE_STAIRS.get(), Ingredient.of(Blocks.CUT_SANDSTONE)).unlockedBy("has_sandstone", has(Blocks.SANDSTONE)).save(consumer, modLoc(folder + "stairs/cut_sandstone"));
+		stairBuilder(BlockRegistry.SMOOTH_STONE_STAIRS.get(), Ingredient.of(Blocks.SMOOTH_STONE)).unlockedBy("has_smooth_stone", has(Blocks.SMOOTH_STONE)).save(consumer, modLoc(folder + "stairs/smooth_stone"));
+		
 		ShapedRecipeBuilder.shaped(Items.ACACIA_STAIRS, 24)
 		.define('W', ItemTags.ACACIA_LOGS)
 		.pattern("W  ")
@@ -308,6 +313,31 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		.pattern("WWW")
 		.unlockedBy("has_mangrove_logs", has(ItemTags.MANGROVE_LOGS))
 		.save(consumer, modLoc(folder + "mangrove/stairs"));
+	}
+	
+	private void addWallsRecipes(Consumer<FinishedRecipe> consumer) {
+
+		wallBuilder(BlockRegistry.LIMESTONE_WALL.get(), Ingredient.of(BlockRegistry.LIMESTONE.get())).unlockedBy("has_stone_bricks", has(BlockRegistry.LIMESTONE.get())).save(consumer, modLoc("shaped/" + "walls/" + BlockRegistry.LIMESTONE_WALL.get().defaultBlockState().getBlock().toString().replace("Block{humbleadditions:", "").replace("}", "")));
+		wallBuilder(BlockRegistry.LIMESTONE_BRICK_WALL.get(), Ingredient.of(BlockRegistry.LIMESTONE_BRICKS.get())).unlockedBy("has_stone_bricks", has(BlockRegistry.LIMESTONE_BRICKS.get())).save(consumer, modLoc("shaped/" + "walls/" + BlockRegistry.LIMESTONE_BRICK_WALL.get().defaultBlockState().getBlock().toString().replace("Block{humbleadditions:", "").replace("}", "")));
+		wallBuilder(BlockRegistry.POLISHED_LIMESTONE_WALL.get(), Ingredient.of(BlockRegistry.POLISHED_LIMESTONE.get())).unlockedBy("has_stone_bricks", has(BlockRegistry.POLISHED_LIMESTONE.get())).save(consumer, modLoc("shaped/" + "walls/" + BlockRegistry.POLISHED_LIMESTONE_WALL.get().defaultBlockState().getBlock().toString().replace("Block{humbleadditions:", "").replace("}", "")));
+		wallBuilder(BlockRegistry.POLISHED_LIMESTONE_BRICK_WALL.get(), Ingredient.of(BlockRegistry.POLISHED_LIMESTONE_BRICKS.get())).unlockedBy("has_stone_bricks", has(BlockRegistry.POLISHED_LIMESTONE_BRICKS.get())).save(consumer, modLoc("shaped/" + "walls/" + BlockRegistry.POLISHED_LIMESTONE_BRICK_WALL.get().defaultBlockState().getBlock().toString().replace("Block{humbleadditions:", "").replace("}", "")));
+		wallBuilder(BlockRegistry.CUT_RED_SANDSTONE_WALL.get(), Ingredient.of(Blocks.CUT_RED_SANDSTONE)).unlockedBy("has_stone_bricks", has(Blocks.CUT_RED_SANDSTONE)).save(consumer, modLoc("shaped/" + "walls/" + BlockRegistry.CUT_RED_SANDSTONE_WALL.get().defaultBlockState().getBlock().toString().replace("Block{humbleadditions:", "").replace("}", "")));
+		wallBuilder(BlockRegistry.CUT_SANDSTONE_WALL.get(), Ingredient.of(Blocks.CUT_SANDSTONE)).unlockedBy("has_stone_bricks", has(Blocks.CUT_SANDSTONE)).save(consumer, modLoc("shaped/" + "walls/" + BlockRegistry.CUT_SANDSTONE_WALL.get().defaultBlockState().getBlock().toString().replace("Block{humbleadditions:", "").replace("}", "")));
+		wallBuilder(BlockRegistry.DARK_PRISMARINE_WALL.get(), Ingredient.of(Blocks.DARK_PRISMARINE)).unlockedBy("has_stone_bricks", has(Blocks.DARK_PRISMARINE)).save(consumer, modLoc("shaped/" + "walls/" + BlockRegistry.DARK_PRISMARINE_WALL.get().defaultBlockState().getBlock().toString().replace("Block{humbleadditions:", "").replace("}", "")));
+		wallBuilder(BlockRegistry.POLISHED_ANDESITE_WALL.get(), Ingredient.of(Blocks.POLISHED_ANDESITE)).unlockedBy("has_stone_bricks", has(Blocks.POLISHED_ANDESITE)).save(consumer, modLoc("shaped/" + "walls/" + BlockRegistry.POLISHED_ANDESITE_WALL.get().defaultBlockState().getBlock().toString().replace("Block{humbleadditions:", "").replace("}", "")));
+		wallBuilder(BlockRegistry.POLISHED_DIORITE_WALL.get(), Ingredient.of(Blocks.POLISHED_DIORITE)).unlockedBy("has_stone_bricks", has(Blocks.POLISHED_DIORITE)).save(consumer, modLoc("shaped/" + "walls/" + BlockRegistry.POLISHED_DIORITE_WALL.get().defaultBlockState().getBlock().toString().replace("Block{humbleadditions:", "").replace("}", "")));
+		wallBuilder(BlockRegistry.POLISHED_GRANITE_WALL.get(), Ingredient.of(Blocks.POLISHED_GRANITE)).unlockedBy("has_stone_bricks", has(Blocks.POLISHED_GRANITE)).save(consumer, modLoc("shaped/" + "walls/" + BlockRegistry.POLISHED_GRANITE_WALL.get().defaultBlockState().getBlock().toString().replace("Block{humbleadditions:", "").replace("}", "")));
+		wallBuilder(BlockRegistry.POLISHED_BLACKSTONE_WALL.get(), Ingredient.of(Blocks.POLISHED_BLACKSTONE)).unlockedBy("has_stone_bricks", has(Blocks.POLISHED_BLACKSTONE)).save(consumer, modLoc("shaped/" + "walls/" + BlockRegistry.POLISHED_BLACKSTONE_WALL.get().defaultBlockState().getBlock().toString().replace("Block{humbleadditions:", "").replace("}", "")));
+		wallBuilder(BlockRegistry.PRISMARINE_BRICK_WALL.get(), Ingredient.of(Blocks.PRISMARINE_BRICKS)).unlockedBy("has_stone_bricks", has(Blocks.PRISMARINE_BRICKS)).save(consumer, modLoc("shaped/" + "walls/" + BlockRegistry.PRISMARINE_BRICK_WALL.get().defaultBlockState().getBlock().toString().replace("Block{humbleadditions:", "").replace("}", "")));
+		wallBuilder(BlockRegistry.PURPUR_WALL.get(), Ingredient.of(Blocks.PURPUR_BLOCK)).unlockedBy("has_stone_bricks", has(Blocks.PURPUR_BLOCK)).save(consumer, modLoc("shaped/" + "walls/" + BlockRegistry.PURPUR_WALL.get().defaultBlockState().getBlock().toString().replace("Block{humbleadditions:", "").replace("}", "")));
+		wallBuilder(BlockRegistry.QUARTZ_WALL.get(), Ingredient.of(Blocks.QUARTZ_BLOCK)).unlockedBy("has_stone_bricks", has(Blocks.QUARTZ_BLOCK)).save(consumer, modLoc("shaped/" + "walls/" + BlockRegistry.QUARTZ_WALL.get().defaultBlockState().getBlock().toString().replace("Block{humbleadditions:", "").replace("}", "")));
+		wallBuilder(BlockRegistry.SMOOTH_QUARTZ_WALL.get(), Ingredient.of(Blocks.SMOOTH_QUARTZ)).unlockedBy("has_stone_bricks", has(Blocks.SMOOTH_QUARTZ)).save(consumer, modLoc("shaped/" + "walls/" + BlockRegistry.SMOOTH_QUARTZ_WALL.get().defaultBlockState().getBlock().toString().replace("Block{humbleadditions:", "").replace("}", "")));
+		wallBuilder(BlockRegistry.SMOOTH_RED_SANDSTONE_WALL.get(), Ingredient.of(Blocks.SMOOTH_RED_SANDSTONE)).unlockedBy("has_stone_bricks", has(Blocks.SMOOTH_RED_SANDSTONE)).save(consumer, modLoc("shaped/" + "walls/" + BlockRegistry.SMOOTH_RED_SANDSTONE_WALL.get().defaultBlockState().getBlock().toString().replace("Block{humbleadditions:", "").replace("}", "")));
+		wallBuilder(BlockRegistry.SMOOTH_SANDSTONE_WALL.get(), Ingredient.of(Blocks.SMOOTH_SANDSTONE)).unlockedBy("has_stone_bricks", has(Blocks.SMOOTH_SANDSTONE)).save(consumer, modLoc("shaped/" + "walls/" + BlockRegistry.SMOOTH_SANDSTONE_WALL.get().defaultBlockState().getBlock().toString().replace("Block{humbleadditions:", "").replace("}", "")));
+		wallBuilder(BlockRegistry.SMOOTH_STONE_WALL.get(), Ingredient.of(Blocks.SMOOTH_STONE)).unlockedBy("has_stone_bricks", has(Blocks.SMOOTH_STONE)).save(consumer, modLoc("shaped/" + "walls/" + BlockRegistry.SMOOTH_STONE_WALL.get().defaultBlockState().getBlock().toString().replace("Block{humbleadditions:", "").replace("}", "")));
+		wallBuilder(BlockRegistry.STONE_WALL.get(), Ingredient.of(Blocks.STONE)).unlockedBy("has_stone_bricks", has(Blocks.STONE)).save(consumer, modLoc("shaped/" + "walls/" + BlockRegistry.STONE_WALL.get().defaultBlockState().getBlock().toString().replace("Block{humbleadditions:", "").replace("}", "")));
+		
+		
 	}
 	
 	private void addShapedRecipes(Consumer<FinishedRecipe> consumer) {
@@ -522,7 +552,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.save(consumer, modLoc(folder + "polished_limestone_bricks_wall"));
 	
 	}
-
+	
 	private void addShapelessRecipes(Consumer<FinishedRecipe> consumer) {
 		
 		String folder = "shapeless/";
@@ -625,6 +655,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 	
 	private void addBlastingRecipes(Consumer<FinishedRecipe> consumer) {
 		String folder = "blasting/";
+		
+		SimpleCookingRecipeBuilder.blasting(
+			Ingredient.of(BlockRegistry.SMOOTH_STONE_STAIRS.get()), Items.STONE_STAIRS, 0.1F, 100)
+			.group(ModConstants.MOD_ID)
+			.unlockedBy("has_stone_stairs", has(Items.STONE_STAIRS))
+			.save(consumer, modLoc(folder + "smooth_stone_stairs"));
 		
 		SimpleCookingRecipeBuilder.blasting(
 			Ingredient.of(Items.COBBLESTONE_STAIRS), Items.STONE_STAIRS, 0.1F, 100)
@@ -771,6 +807,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		String folder = "smelting/";
 		
 		SimpleCookingRecipeBuilder.smelting(
+			Ingredient.of(BlockRegistry.SMOOTH_STONE_STAIRS.get()), Items.STONE_STAIRS, 0.1F, 200)
+			.group(ModConstants.MOD_ID)
+			.unlockedBy("has_stone_stairs", has(Items.STONE_STAIRS))
+			.save(consumer, modLoc(folder + "smooth_stone_stairs"));
+		
+		SimpleCookingRecipeBuilder.smelting(
 			Ingredient.of(Items.COBBLESTONE_STAIRS), Items.STONE_STAIRS, 0.1F, 200)
 			.group(ModConstants.MOD_ID)
 			.unlockedBy("has_cobblestone_stairs", has(Items.COBBLESTONE_STAIRS))
@@ -912,61 +954,71 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 	private void addStonecuttingRecipes(Consumer<FinishedRecipe> consumer) {
 		String folder = "stonecutting/";
 		String slabs = "slabs/";
+		String stairs = "stairs/";
+		String walls = "walls/";
 
+		stoneCuttingSlabs(Blocks.ACACIA_STAIRS, Blocks.ACACIA_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.ANDESITE_STAIRS, Blocks.ANDESITE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.BIRCH_STAIRS, Blocks.BIRCH_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.BLACKSTONE_STAIRS, Blocks.BLACKSTONE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.BRICK_STAIRS, Blocks.BRICK_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.COBBLED_DEEPSLATE_STAIRS, Blocks.COBBLED_DEEPSLATE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.COBBLESTONE_STAIRS, Blocks.COBBLESTONE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.CRIMSON_STAIRS, Blocks.CRIMSON_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.CUT_COPPER_STAIRS, Blocks.CUT_COPPER_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.DARK_OAK_STAIRS, Blocks.DARK_OAK_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.DARK_PRISMARINE_STAIRS, Blocks.DARK_PRISMARINE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.DEEPSLATE_BRICK_STAIRS, Blocks.DEEPSLATE_BRICK_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.DEEPSLATE_TILE_STAIRS, Blocks.DEEPSLATE_TILE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.DIORITE_STAIRS, Blocks.DIORITE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.END_STONE_BRICK_STAIRS, Blocks.END_STONE_BRICK_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.EXPOSED_CUT_COPPER_STAIRS, Blocks.EXPOSED_CUT_COPPER_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.GRANITE_STAIRS, Blocks.GRANITE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.JUNGLE_STAIRS, Blocks.JUNGLE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.MANGROVE_STAIRS, Blocks.MANGROVE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.MOSSY_COBBLESTONE_STAIRS, Blocks.MOSSY_COBBLESTONE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.MOSSY_STONE_BRICK_STAIRS, Blocks.MOSSY_STONE_BRICK_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.MUD_BRICK_STAIRS, Blocks.MUD_BRICK_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.NETHER_BRICK_STAIRS, Blocks.NETHER_BRICK_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.OAK_STAIRS, Blocks.OAK_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.OXIDIZED_CUT_COPPER_STAIRS, Blocks.OXIDIZED_CUT_COPPER_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.POLISHED_ANDESITE_STAIRS, Blocks.POLISHED_ANDESITE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.POLISHED_BLACKSTONE_BRICK_STAIRS, Blocks.POLISHED_BLACKSTONE_BRICK_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.POLISHED_BLACKSTONE_STAIRS, Blocks.POLISHED_BLACKSTONE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.POLISHED_DEEPSLATE_STAIRS, Blocks.POLISHED_DEEPSLATE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.POLISHED_DIORITE_STAIRS, Blocks.POLISHED_DIORITE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.POLISHED_GRANITE_STAIRS, Blocks.POLISHED_GRANITE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.PRISMARINE_BRICK_STAIRS, Blocks.PRISMARINE_BRICK_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.PRISMARINE_STAIRS, Blocks.PRISMARINE_SLAB, consumer);
 		stoneCuttingSlabs(Blocks.PURPUR_STAIRS, Blocks.PURPUR_SLAB, consumer);
 		stoneCuttingSlabs(Blocks.QUARTZ_STAIRS, Blocks.QUARTZ_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.RED_NETHER_BRICK_STAIRS, Blocks.RED_NETHER_BRICK_SLAB, consumer);
 		stoneCuttingSlabs(Blocks.RED_SANDSTONE_STAIRS, Blocks.RED_SANDSTONE_SLAB, consumer);
 		stoneCuttingSlabs(Blocks.SANDSTONE_STAIRS, Blocks.SANDSTONE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.SMOOTH_QUARTZ_STAIRS, Blocks.SMOOTH_QUARTZ_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.SMOOTH_RED_SANDSTONE_STAIRS, Blocks.SMOOTH_RED_SANDSTONE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.SMOOTH_SANDSTONE_STAIRS, Blocks.SMOOTH_SANDSTONE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.SPRUCE_STAIRS, Blocks.SPRUCE_SLAB, consumer);
 		stoneCuttingSlabs(Blocks.STONE_BRICK_STAIRS, Blocks.STONE_BRICK_SLAB, consumer);
-		
-		stoneCuttingSlabs(Blocks.CUT_COPPER_STAIRS, Blocks.CUT_COPPER_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.EXPOSED_CUT_COPPER_STAIRS, Blocks.EXPOSED_CUT_COPPER_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.WEATHERED_CUT_COPPER_STAIRS, Blocks.WEATHERED_CUT_COPPER_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.OXIDIZED_CUT_COPPER_STAIRS, Blocks.OXIDIZED_CUT_COPPER_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.STONE_STAIRS, Blocks.STONE_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.WARPED_STAIRS, Blocks.WARPED_SLAB, consumer);
 		stoneCuttingSlabs(Blocks.WAXED_CUT_COPPER_STAIRS, Blocks.WAXED_CUT_COPPER_SLAB, consumer);
 		stoneCuttingSlabs(Blocks.WAXED_EXPOSED_CUT_COPPER_STAIRS, Blocks.WAXED_EXPOSED_CUT_COPPER_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.WAXED_WEATHERED_CUT_COPPER_STAIRS, Blocks.WAXED_WEATHERED_CUT_COPPER_SLAB, consumer);
 		stoneCuttingSlabs(Blocks.WAXED_OXIDIZED_CUT_COPPER_STAIRS, Blocks.WAXED_OXIDIZED_CUT_COPPER_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.OAK_STAIRS, Blocks.OAK_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.DARK_OAK_STAIRS, Blocks.DARK_OAK_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.BIRCH_STAIRS, Blocks.BIRCH_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.JUNGLE_STAIRS, Blocks.JUNGLE_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.ACACIA_STAIRS, Blocks.ACACIA_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.SPRUCE_STAIRS, Blocks.SPRUCE_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.CRIMSON_STAIRS, Blocks.CRIMSON_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.WARPED_STAIRS, Blocks.WARPED_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.MANGROVE_STAIRS, Blocks.MANGROVE_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.MUD_BRICK_STAIRS, Blocks.MUD_BRICK_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.STONE_STAIRS, Blocks.STONE_SLAB, consumer);
-//TODO		stoneCuttingSlabs(Blocks.SMOOTH_STONE_STAIRS, Blocks.SMOOTH_STONE_SLAB, consumer);
-//TODO		stoneCuttingSlabs(Blocks.CUT_SANDSTONE_STAIRS, Blocks.CUT_SANDSTONE_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.COBBLESTONE_STAIRS, Blocks.COBBLESTONE_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.BRICK_STAIRS, Blocks.BRICK_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.NETHER_BRICK_STAIRS, Blocks.NETHER_BRICK_SLAB, consumer);
-//TODO		stoneCuttingSlabs(Blocks.CUT_RED_SANDSTONE_STAIRS, Blocks.CUT_RED_SANDSTONE_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.PRISMARINE_STAIRS, Blocks.PRISMARINE_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.PRISMARINE_BRICK_STAIRS, Blocks.PRISMARINE_BRICK_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.DARK_PRISMARINE_STAIRS, Blocks.DARK_PRISMARINE_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.POLISHED_GRANITE_STAIRS, Blocks.POLISHED_GRANITE_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.SMOOTH_RED_SANDSTONE_STAIRS, Blocks.SMOOTH_RED_SANDSTONE_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.MOSSY_STONE_BRICK_STAIRS, Blocks.MOSSY_STONE_BRICK_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.POLISHED_DIORITE_STAIRS, Blocks.POLISHED_DIORITE_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.MOSSY_COBBLESTONE_STAIRS, Blocks.MOSSY_COBBLESTONE_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.END_STONE_BRICK_STAIRS, Blocks.END_STONE_BRICK_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.SMOOTH_SANDSTONE_STAIRS, Blocks.SMOOTH_SANDSTONE_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.SMOOTH_QUARTZ_STAIRS, Blocks.SMOOTH_QUARTZ_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.GRANITE_STAIRS, Blocks.GRANITE_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.ANDESITE_STAIRS, Blocks.ANDESITE_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.RED_NETHER_BRICK_STAIRS, Blocks.RED_NETHER_BRICK_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.POLISHED_ANDESITE_STAIRS, Blocks.POLISHED_ANDESITE_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.DIORITE_STAIRS, Blocks.DIORITE_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.COBBLED_DEEPSLATE_STAIRS, Blocks.COBBLED_DEEPSLATE_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.POLISHED_DEEPSLATE_STAIRS, Blocks.POLISHED_DEEPSLATE_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.DEEPSLATE_BRICK_STAIRS, Blocks.DEEPSLATE_BRICK_SLAB, consumer);
-//TODO		stoneCuttingSlabs(Blocks.DEEPSLATE_TILE_STARIS, Blocks.DEEPSLATE_TILE_STARIS, consumer);
-		stoneCuttingSlabs(Blocks.BLACKSTONE_STAIRS, Blocks.BLACKSTONE_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.POLISHED_BLACKSTONE_STAIRS, Blocks.POLISHED_BLACKSTONE_SLAB, consumer);
-		stoneCuttingSlabs(Blocks.POLISHED_BLACKSTONE_BRICK_STAIRS, Blocks.POLISHED_BLACKSTONE_BRICK_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.WAXED_WEATHERED_CUT_COPPER_STAIRS, Blocks.WAXED_WEATHERED_CUT_COPPER_SLAB, consumer);
+		stoneCuttingSlabs(Blocks.WEATHERED_CUT_COPPER_STAIRS, Blocks.WEATHERED_CUT_COPPER_SLAB, consumer);
+
+		stoneCuttingFolderModId(BlockRegistry.LIMESTONE.get(), BlockRegistry.LIMESTONE_SLAB.get(), 2, consumer, slabs, ModConstants.MOD_ID);
+		stoneCuttingFolderModId(BlockRegistry.LIMESTONE_BRICKS.get(), BlockRegistry.LIMESTONE_BRICKS_SLAB.get(), 2, consumer, slabs, ModConstants.MOD_ID);
+		stoneCuttingFolderModId(BlockRegistry.POLISHED_LIMESTONE.get(), BlockRegistry.POLISHED_LIMESTONE_SLAB.get(), 2, consumer, slabs, ModConstants.MOD_ID);
+		stoneCuttingFolderModId(BlockRegistry.POLISHED_LIMESTONE_BRICKS.get(), BlockRegistry.POLISHED_LIMESTONE_BRICKS_SLAB.get(), 2, consumer, slabs, ModConstants.MOD_ID);
+		stoneCuttingFolderModId(BlockRegistry.CUT_RED_SANDSTONE_STAIRS.get(), Blocks.CUT_RED_SANDSTONE_SLAB, 1, consumer, slabs, ModConstants.MOD_ID);
+		stoneCuttingFolderModId(BlockRegistry.CUT_SANDSTONE_STAIRS.get(), Blocks.CUT_SANDSTONE_SLAB, 1, consumer, slabs, ModConstants.MOD_ID);
+		stoneCuttingFolderModId(BlockRegistry.SMOOTH_STONE_STAIRS.get(), Blocks.SMOOTH_STONE_SLAB, 1, consumer, slabs, ModConstants.MOD_ID);
+		stoneCuttingFolderModId(BlockRegistry.LIMESTONE_STAIRS.get(), BlockRegistry.LIMESTONE_SLAB.get(), 1, consumer, slabs, ModConstants.MOD_ID);
+		stoneCuttingFolderModId(BlockRegistry.LIMESTONE_BRICKS_STAIRS.get(), BlockRegistry.LIMESTONE_BRICKS_SLAB.get(), 1, consumer, slabs, ModConstants.MOD_ID);
+		stoneCuttingFolderModId(BlockRegistry.POLISHED_LIMESTONE_STAIRS.get(), BlockRegistry.POLISHED_LIMESTONE_SLAB.get(), 1, consumer, slabs, ModConstants.MOD_ID);
+		stoneCuttingFolderModId(BlockRegistry.POLISHED_LIMESTONE_BRICKS_STAIRS.get(), BlockRegistry.POLISHED_LIMESTONE_BRICKS_SLAB.get(), 1, consumer, slabs, ModConstants.MOD_ID);
 		
 		stoneCuttingStairs(Blocks.OAK_PLANKS, Blocks.OAK_STAIRS, consumer);
 		stoneCuttingStairs(Blocks.SPRUCE_PLANKS, Blocks.SPRUCE_STAIRS, consumer);
@@ -978,25 +1030,33 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		stoneCuttingStairs(Blocks.DARK_OAK_PLANKS, Blocks.DARK_OAK_STAIRS, consumer);
 		stoneCuttingStairs(Blocks.MANGROVE_PLANKS, Blocks.MANGROVE_STAIRS, consumer);
 		
-		stoneCuttingFolderModId(BlockRegistry.LIMESTONE.get(), BlockRegistry.LIMESTONE_SLAB.get(), 2, consumer, "slabs/", ModConstants.MOD_ID);
-		stoneCuttingFolderModId(BlockRegistry.LIMESTONE_BRICKS.get(), BlockRegistry.LIMESTONE_BRICKS_SLAB.get(), 2, consumer, "slabs/", ModConstants.MOD_ID);
-		stoneCuttingFolderModId(BlockRegistry.POLISHED_LIMESTONE.get(), BlockRegistry.POLISHED_LIMESTONE_SLAB.get(), 2, consumer, "slabs/", ModConstants.MOD_ID);
-		stoneCuttingFolderModId(BlockRegistry.POLISHED_LIMESTONE_BRICKS.get(), BlockRegistry.POLISHED_LIMESTONE_BRICKS_SLAB.get(), 2, consumer, "slabs/", ModConstants.MOD_ID);
+		stoneCuttingFolderModId(BlockRegistry.LIMESTONE.get(), BlockRegistry.LIMESTONE_STAIRS.get(), 1, consumer, stairs, ModConstants.MOD_ID);
+		stoneCuttingFolderModId(BlockRegistry.LIMESTONE_BRICKS.get(), BlockRegistry.LIMESTONE_BRICKS_STAIRS.get(), 1, consumer, stairs, ModConstants.MOD_ID);
+		stoneCuttingFolderModId(BlockRegistry.POLISHED_LIMESTONE.get(), BlockRegistry.POLISHED_LIMESTONE_STAIRS.get(), 1, consumer, stairs, ModConstants.MOD_ID);
+		stoneCuttingFolderModId(BlockRegistry.POLISHED_LIMESTONE_BRICKS.get(), BlockRegistry.POLISHED_LIMESTONE_BRICKS_STAIRS.get(), 1, consumer, stairs, ModConstants.MOD_ID);
+		stoneCuttingFolderModId(Blocks.CUT_RED_SANDSTONE, BlockRegistry.CUT_RED_SANDSTONE_STAIRS.get(), 1, consumer, stairs, "minecraft");
+		stoneCuttingFolderModId(Blocks.CUT_SANDSTONE, BlockRegistry.CUT_SANDSTONE_STAIRS.get(), 1, consumer, stairs, "minecraft");
+		stoneCuttingFolderModId(Blocks.SMOOTH_STONE, BlockRegistry.SMOOTH_STONE_STAIRS.get(), 1, consumer, stairs, "minecraft");
 		
-		stoneCuttingFolderModId(BlockRegistry.LIMESTONE.get(), BlockRegistry.LIMESTONE_STAIRS.get(), 1, consumer, "stairs/", ModConstants.MOD_ID);
-		stoneCuttingFolderModId(BlockRegistry.LIMESTONE_BRICKS.get(), BlockRegistry.LIMESTONE_BRICKS_STAIRS.get(), 1, consumer, "stairs/", ModConstants.MOD_ID);
-		stoneCuttingFolderModId(BlockRegistry.POLISHED_LIMESTONE.get(), BlockRegistry.POLISHED_LIMESTONE_STAIRS.get(), 1, consumer, "stairs/", ModConstants.MOD_ID);
-		stoneCuttingFolderModId(BlockRegistry.POLISHED_LIMESTONE_BRICKS.get(), BlockRegistry.POLISHED_LIMESTONE_BRICKS_STAIRS.get(), 1, consumer, "stairs/", ModConstants.MOD_ID);
-		
-		stoneCuttingFolderModId(BlockRegistry.LIMESTONE.get(), BlockRegistry.LIMESTONE_WALL.get(), 1, consumer, "walls/", ModConstants.MOD_ID);
-		stoneCuttingFolderModId(BlockRegistry.LIMESTONE_BRICKS.get(), BlockRegistry.LIMESTONE_BRICK_WALL.get(), 1, consumer, "walls/", ModConstants.MOD_ID);
-		stoneCuttingFolderModId(BlockRegistry.POLISHED_LIMESTONE.get(), BlockRegistry.POLISHED_LIMESTONE_WALL.get(), 1, consumer, "walls/", ModConstants.MOD_ID);
-		stoneCuttingFolderModId(BlockRegistry.POLISHED_LIMESTONE_BRICKS.get(), BlockRegistry.POLISHED_LIMESTONE_BRICK_WALL.get(), 1, consumer, "walls/", ModConstants.MOD_ID);
-		
-		stoneCuttingFolderModId(BlockRegistry.LIMESTONE_STAIRS.get(), BlockRegistry.LIMESTONE_SLAB.get(), 1, consumer, "walls/", ModConstants.MOD_ID);
-		stoneCuttingFolderModId(BlockRegistry.LIMESTONE_BRICKS_STAIRS.get(), BlockRegistry.LIMESTONE_BRICKS_SLAB.get(), 1, consumer, "walls/", ModConstants.MOD_ID);
-		stoneCuttingFolderModId(BlockRegistry.POLISHED_LIMESTONE_STAIRS.get(), BlockRegistry.POLISHED_LIMESTONE_SLAB.get(), 1, consumer, "walls/", ModConstants.MOD_ID);
-		stoneCuttingFolderModId(BlockRegistry.POLISHED_LIMESTONE_BRICKS_STAIRS.get(), BlockRegistry.POLISHED_LIMESTONE_BRICKS_SLAB.get(), 1, consumer, "walls/", ModConstants.MOD_ID);
+		stoneCuttingFolderModId(BlockRegistry.LIMESTONE.get(), BlockRegistry.LIMESTONE_WALL.get(), 1, consumer, walls, ModConstants.MOD_ID);
+		stoneCuttingFolderModId(BlockRegistry.LIMESTONE_BRICKS.get(), BlockRegistry.LIMESTONE_BRICK_WALL.get(), 1, consumer, walls, ModConstants.MOD_ID);
+		stoneCuttingFolderModId(BlockRegistry.POLISHED_LIMESTONE.get(), BlockRegistry.POLISHED_LIMESTONE_WALL.get(), 1, consumer, walls, ModConstants.MOD_ID);
+		stoneCuttingFolderModId(BlockRegistry.POLISHED_LIMESTONE_BRICKS.get(), BlockRegistry.POLISHED_LIMESTONE_BRICK_WALL.get(), 1, consumer, walls, ModConstants.MOD_ID);
+		stoneCuttingFolderModId(Blocks.CUT_RED_SANDSTONE, BlockRegistry.CUT_RED_SANDSTONE_WALL.get(), 1, consumer, walls, "minecraft");
+		stoneCuttingFolderModId(Blocks.CUT_SANDSTONE, BlockRegistry.CUT_SANDSTONE_WALL.get(), 1, consumer, walls, "minecraft");
+		stoneCuttingFolderModId(Blocks.DARK_PRISMARINE, BlockRegistry.DARK_PRISMARINE_WALL.get(), 1, consumer, walls, "minecraft");
+		stoneCuttingFolderModId(Blocks.POLISHED_ANDESITE, BlockRegistry.POLISHED_ANDESITE_WALL.get(), 1, consumer, walls, "minecraft");
+		stoneCuttingFolderModId(Blocks.POLISHED_DIORITE, BlockRegistry.POLISHED_DIORITE_WALL.get(), 1, consumer, walls, "minecraft");
+		stoneCuttingFolderModId(Blocks.POLISHED_GRANITE, BlockRegistry.POLISHED_GRANITE_WALL.get(), 1, consumer, walls, "minecraft");
+		stoneCuttingFolderModId(Blocks.POLISHED_BLACKSTONE, BlockRegistry.POLISHED_BLACKSTONE_WALL.get(), 1, consumer, walls, "minecraft");
+		stoneCuttingFolderModId(Blocks.PRISMARINE_BRICKS, BlockRegistry.PRISMARINE_BRICK_WALL.get(), 1, consumer, walls, "minecraft");
+		stoneCuttingFolderModId(Blocks.PURPUR_BLOCK, BlockRegistry.PURPUR_WALL.get(), 1, consumer, walls, "minecraft");
+		stoneCuttingFolderModId(Blocks.QUARTZ_BLOCK, BlockRegistry.QUARTZ_WALL.get(), 1, consumer, walls, "minecraft");
+		stoneCuttingFolderModId(Blocks.SMOOTH_QUARTZ, BlockRegistry.SMOOTH_QUARTZ_WALL.get(), 1, consumer, walls, "minecraft");
+		stoneCuttingFolderModId(Blocks.SMOOTH_RED_SANDSTONE, BlockRegistry.SMOOTH_RED_SANDSTONE_WALL.get(), 1, consumer, walls, "minecraft");
+		stoneCuttingFolderModId(Blocks.SMOOTH_SANDSTONE, BlockRegistry.SMOOTH_SANDSTONE_WALL.get(), 1, consumer, walls, "minecraft");
+		stoneCuttingFolderModId(Blocks.SMOOTH_STONE, BlockRegistry.SMOOTH_STONE_WALL.get(), 1, consumer, walls, "minecraft");
+		stoneCuttingFolderModId(Blocks.STONE, BlockRegistry.STONE_WALL.get(), 1, consumer, walls, "minecraft");
 		
 		stoneCuttingFolderModId(BlockRegistry.POLISHED_LIMESTONE.get(), BlockRegistry.CHISELED_LIMESTONE.get(), 1, consumer, "blocks/", ModConstants.MOD_ID);
 		stoneCuttingFolderModId(Blocks.PACKED_MUD, Blocks.MUD_BRICKS, 1, consumer, "blocks/", "minecraft");
@@ -1016,65 +1076,67 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		removeStoneCutting(consumer, "cut_sandstone_slab" + "_from_" + "sandstone" + "_stonecutting");
 		removeStoneCutting(consumer, "deepslate_brick_slab" + "_from_" + "cobbled_deepslate" + "_stonecutting");
 		removeStoneCutting(consumer, "deepslate_brick_slab" + "_from_" + "polished_deepslate" + "_stonecutting");
-		removeStoneCutting(consumer, "deepslate_brick_wall" + "_from_" + "cobbled_deepslate" + "_stonecutting");
-		removeStoneCutting(consumer, "deepslate_brick_wall" + "_from_" + "polished_deepslate" + "_stonecutting");
 		removeStoneCutting(consumer, "deepslate_tile_slab" + "_from_" + "cobbled_deepslate" + "_stonecutting");
 		removeStoneCutting(consumer, "deepslate_tile_slab" + "_from_" + "deepslate_bricks" + "_stonecutting");
 		removeStoneCutting(consumer, "deepslate_tile_slab" + "_from_" + "polished_deepslate" + "_stonecutting");
-		removeStoneCutting(consumer, "deepslate_tile_wall" + "_from_" + "cobbled_deepslate" + "_stonecutting");
-		removeStoneCutting(consumer, "deepslate_tile_wall" + "_from_" + "deepslate_bricks" + "_stonecutting");
-		removeStoneCutting(consumer, "deepslate_tile_wall" + "_from_" + "polished_deepslate" + "_stonecutting");
 		removeStoneCutting(consumer, "end_stone_brick_slab" + "_from_" + "end_stone" + "_stonecutting");
-		removeStoneCutting(consumer, "end_stone_brick_wall" + "_from_" + "end_stone" + "_stonecutting");
 		removeStoneCutting(consumer, "exposed_cut_copper_slab" + "_from_" + "exposed_copper" + "_stonecutting");
 		removeStoneCutting(consumer, "oxidized_cut_copper_slab" + "_from_" + "oxidized_copper" + "_stonecutting");
 		removeStoneCutting(consumer, "polished_andesite_slab" + "_from_" + "andesite" + "_stonecutting");
 		removeStoneCutting(consumer, "polished_blackstone_brick_slab" + "_from_" + "blackstone" + "_stonecutting");
 		removeStoneCutting(consumer, "polished_blackstone_brick_slab" + "_from_" + "polished_blackstone" + "_stonecutting");
-		removeStoneCutting(consumer, "polished_blackstone_brick_wall" + "_from_" + "blackstone" + "_stonecutting");
-		removeStoneCutting(consumer, "polished_blackstone_brick_wall" + "_from_" + "polished_blackstone" + "_stonecutting");
 		removeStoneCutting(consumer, "polished_blackstone_slab" + "_from_" + "blackstone" + "_stonecutting");
-		removeStoneCutting(consumer, "polished_blackstone_wall" + "_from_" + "blackstone" + "_stonecutting");
 		removeStoneCutting(consumer, "polished_deepslate_slab" + "_from_" + "cobbled_deepslate" + "_stonecutting");
-		removeStoneCutting(consumer, "polished_deepslate_wall" + "_from_" + "cobbled_deepslate" + "_stonecutting");
 		removeStoneCutting(consumer, "polished_diorite_slab" + "_from_" + "diorite" + "_stonecutting");
 		removeStoneCutting(consumer, "polished_granite_slab" + "_from_" + "granite" + "_stonecutting");
 		removeStoneCutting(consumer, "stone_brick_slab" + "_from_" + "stone" + "_stonecutting");
-		removeStoneCutting(consumer, "stone_brick_walls" + "_from_" + "stone" + "_stonecutting");
 		removeStoneCutting(consumer, "waxed_cut_copper_slab" + "_from_" + "waxed_copper_block" + "_stonecutting");
 		removeStoneCutting(consumer, "waxed_exposed_cut_copper_slab" + "_from_" + "waxed_exposed_copper" + "_stonecutting");
 		removeStoneCutting(consumer, "waxed_oxidized_cut_copper_slab" + "_from_" + "waxed_oxidized_copper" + "_stonecutting");
 		removeStoneCutting(consumer, "waxed_weathered_cut_copper_slab" + "_from_" + "waxed_weathered_copper" + "_stonecutting");
 		removeStoneCutting(consumer, "weathered_cut_copper_slab" + "_from_" + "weathered_copper" + "_stonecutting");
 		
+		removeStoneCutting(consumer, "deepslate_brick_wall" + "_from_" + "cobbled_deepslate" + "_stonecutting");
+		removeStoneCutting(consumer, "deepslate_brick_wall" + "_from_" + "polished_deepslate" + "_stonecutting");
+		removeStoneCutting(consumer, "deepslate_tile_wall" + "_from_" + "cobbled_deepslate" + "_stonecutting");
+		removeStoneCutting(consumer, "deepslate_tile_wall" + "_from_" + "deepslate_bricks" + "_stonecutting");
+		removeStoneCutting(consumer, "deepslate_tile_wall" + "_from_" + "polished_deepslate" + "_stonecutting");
+		removeStoneCutting(consumer, "end_stone_brick_wall" + "_from_" + "end_stone" + "_stonecutting");
+		removeStoneCutting(consumer, "polished_blackstone_brick_wall" + "_from_" + "blackstone" + "_stonecutting");
+		removeStoneCutting(consumer, "polished_blackstone_brick_wall" + "_from_" + "polished_blackstone" + "_stonecutting");
+		removeStoneCutting(consumer, "polished_deepslate_wall" + "_from_" + "cobbled_deepslate" + "_stonecutting");
+		removeStoneCutting(consumer, "polished_blackstone_wall" + "_from_" + "blackstone" + "_stonecutting");
+		removeStoneCutting(consumer, "stone_brick_walls" + "_from_" + "stone" + "_stonecutting");
+		
 		removeStoneCutting(consumer, "cut_copper_stairs" + "_from_" + "copper_block" + "_stonecutting");
-		removeStoneCutting(consumer, "exposed_cut_copper_stairs" + "_from_" + "exposed_copper" + "_stonecutting");
-		removeStoneCutting(consumer, "oxidized_cut_copper_stairs" + "_from_" + "oxidized_copper" + "_stonecutting");
-		removeStoneCutting(consumer, "waxed_cut_copper_stairs" + "_from_" + "waxed_copper_block" + "_stonecutting");
-		removeStoneCutting(consumer, "waxed_exposed_cut_copper_stairs" + "_from_" + "waxed_exposed_copper" + "_stonecutting");
-		removeStoneCutting(consumer, "waxed_oxidized_cut_copper_stairs" + "_from_" + "waxed_oxidized_copper" + "_stonecutting");
-		removeStoneCutting(consumer, "waxed_weathered_cut_copper_stairs" + "_from_" + "waxed_weathered_copper" + "_stonecutting");
-		removeStoneCutting(consumer, "weathered_cut_copper_stairs" + "_from_" + "weathered_copper" + "_stonecutting");
-		removeStoneCutting(consumer, "stone_brick_stairs" + "_from_" + "stone" + "_stonecutting");
-		removeStoneCutting(consumer, "polished_granite_stairs" + "_from_" + "granite" + "_stonecutting");
-		removeStoneCutting(consumer, "polished_diorite_stairs" + "_from_" + "diorite" + "_stonecutting");
-		removeStoneCutting(consumer, "end_stone_brick_stairs" + "_from_" + "end_stone" + "_stonecutting");
-		removeStoneCutting(consumer, "polished_andesite_stairs" + "_from_" + "andesite" + "_stonecutting");
-		removeStoneCutting(consumer, "polished_deepslate_stairs" + "_from_" + "cobbled_deepslate" + "_stonecutting");
 		removeStoneCutting(consumer, "deepslate_brick_stairs" + "_from_" + "cobbled_deepslate" + "_stonecutting");
 		removeStoneCutting(consumer, "deepslate_brick_stairs" + "_from_" + "polished_deepslate" + "_stonecutting");
 		removeStoneCutting(consumer, "deepslate_tile_stairs" + "_from_" + "cobbled_deepslate" + "_stonecutting");
 		removeStoneCutting(consumer, "deepslate_tile_stairs" + "_from_" + "deepslate_bricks" + "_stonecutting");
 		removeStoneCutting(consumer, "deepslate_tile_stairs" + "_from_" + "polished_deepslate" + "_stonecutting");
-		removeStoneCutting(consumer, "polished_blackstone_stairs" + "_from_" + "blackstone" + "_stonecutting");
+		removeStoneCutting(consumer, "end_stone_brick_stairs" + "_from_" + "end_stone" + "_stonecutting");
+		removeStoneCutting(consumer, "exposed_cut_copper_stairs" + "_from_" + "exposed_copper" + "_stonecutting");
+		removeStoneCutting(consumer, "oxidized_cut_copper_stairs" + "_from_" + "oxidized_copper" + "_stonecutting");
+		removeStoneCutting(consumer, "polished_andesite_stairs" + "_from_" + "andesite" + "_stonecutting");
 		removeStoneCutting(consumer, "polished_blackstone_brick_stairs" + "_from_" + "blackstone" + "_stonecutting");
 		removeStoneCutting(consumer, "polished_blackstone_brick_stairs" + "_from_" + "polished_blackstone" + "_stonecutting");
+		removeStoneCutting(consumer, "polished_blackstone_stairs" + "_from_" + "blackstone" + "_stonecutting");
+		removeStoneCutting(consumer, "polished_deepslate_stairs" + "_from_" + "cobbled_deepslate" + "_stonecutting");
+		removeStoneCutting(consumer, "polished_diorite_stairs" + "_from_" + "diorite" + "_stonecutting");
+		removeStoneCutting(consumer, "polished_granite_stairs" + "_from_" + "granite" + "_stonecutting");
+		removeStoneCutting(consumer, "stone_brick_stairs" + "_from_" + "stone" + "_stonecutting");
+		removeStoneCutting(consumer, "waxed_cut_copper_stairs" + "_from_" + "waxed_copper_block" + "_stonecutting");
+		removeStoneCutting(consumer, "waxed_exposed_cut_copper_stairs" + "_from_" + "waxed_exposed_copper" + "_stonecutting");
+		removeStoneCutting(consumer, "waxed_oxidized_cut_copper_stairs" + "_from_" + "waxed_oxidized_copper" + "_stonecutting");
+		removeStoneCutting(consumer, "waxed_weathered_cut_copper_stairs" + "_from_" + "waxed_weathered_copper" + "_stonecutting");
+		removeStoneCutting(consumer, "weathered_cut_copper_stairs" + "_from_" + "weathered_copper" + "_stonecutting");
 		
-		removeStoneCutting(consumer, "chiseled_stone_bricks_stone" + "_from_" + "stonecutting");
 		removeStoneCutting(consumer, "chiseled_polished_blackstone" + "_from_" + "blackstone" + "_stonecutting");
+		removeStoneCutting(consumer, "chiseled_stone_bricks_stone" + "_from_" + "stonecutting");
 		removeStoneCutting(consumer, "deepslate_brick" + "_from_" + "cobbled_deepslate" + "_stonecutting");
 		removeStoneCutting(consumer, "deepslate_brick" + "_from_" + "polished_deepslate" + "_stonecutting");
 		removeStoneCutting(consumer, "polished_blackstone_bricks" + "_from_" + "polished_blackstone" + "_stonecutting");
+		
 	}
 	
 	private static void removeStoneCutting(Consumer<FinishedRecipe> consumer, String string) {
@@ -1138,9 +1200,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.save(consumer, resourceLocation);
 	}
 	
+	
 	protected static RecipeBuilder stairBuilder(ItemLike p_176711_, Ingredient p_176712_) {
-	      return ShapedRecipeBuilder.shaped(p_176711_, 6).define('#', p_176712_).pattern("#  ").pattern("## ").pattern("###");
-	   }
+		return ShapedRecipeBuilder.shaped(p_176711_, 6).define('#', p_176712_).pattern("#  ").pattern("## ").pattern("###");
+	}
 	
 	private static final Map<BlockFamily.Variant, BiFunction<ItemLike, ItemLike, RecipeBuilder>> shapeBuilders = ImmutableMap.<BlockFamily.Variant, BiFunction<ItemLike, ItemLike, RecipeBuilder>>builder()
 			.put(BlockFamily.Variant.STAIRS, (block, stairs) -> {
@@ -1159,20 +1222,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 	    		  .pattern("#")
 	    		  .pattern("#");
 	}
-	
-	private static final Map<BlockFamily.Variant, BiFunction<Block, Block, RecipeBuilder>> slabBuilders2 = ImmutableMap.<BlockFamily.Variant, BiFunction<Block, Block, RecipeBuilder>>builder()
-			.put(BlockFamily.Variant.SLAB, (block, slab) -> {
-				return slabsFromFullBlockBuilder(block, slab);
-			})
-			.build();
-	
-	private static RecipeBuilder slabsFromFullBlockBuilder(Block slabs, Block pMaterial) {
-	      return stoneCuttingFolderModId(pMaterial, slabs, 2, "adjusted/", ModConstants.MOD_ID);
-	}
-	
-	private static RecipeBuilder stoneCuttingFolderModId(Block pMaterial, Block slabs, int i, String string, String modId) {
-		return SingleItemRecipeBuilder.stonecutting(Ingredient.of(pMaterial), slabs, i).unlockedBy("has_" + StringUtils.toLowerCase(slabs.defaultBlockState().getBlock().toString().replace("Block{" + modId + ":", "").replace("}", "")), has(pMaterial));
-	}
 
 	protected static void generateRecipes(Consumer<FinishedRecipe> consumer, BlockFamily pFamily) {
 		pFamily.getVariants().forEach((block, p_176530_) -> {
@@ -1188,11 +1237,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 	            }), has(itemlike));
 	            recipebuilder.save(consumer);
 	         }
-
 	         if (block == BlockFamily.Variant.CRACKED) {
 	            smeltingResultFromBase(consumer, p_176530_, itemlike);
 	         }
-
 	      });
 		pFamily.getVariants()
 	      .forEach((block, result) -> {
@@ -1212,37 +1259,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			            }), has(itemlike));
 			            recipebuilder.save(consumer, modLoc("shaped/full_blocks/" + StringUtils.toLowerCase(result.getDescriptionId().replace(result.getName() + ":", "").replace("block.minecraft.", ""))));
 		        	 }
-		            
 		         }
-
 	    });
-		/*
-		pFamily.getVariants()
-	      .forEach((block, result) -> {
-		         BiFunction<Block, Block, RecipeBuilder> bifunction = slabBuilders2.get(block);
-		         Block itemlike = getBaseBlock(pFamily, block);
-		         if (bifunction != null) {
-	        		 RecipeBuilder recipebuilder = bifunction.apply(itemlike, result);
-	        		 if(itemlike == Blocks.NETHER_BRICKS || itemlike == Blocks.COBBLED_DEEPSLATE || itemlike == Blocks.POLISHED_BLACKSTONE) {
-		        		 return;
-		        	 }
-	        		 else {
-			            pFamily.getRecipeGroupPrefix().ifPresent((p_176601_) -> {
-			               recipebuilder.group(p_176601_ + (block == BlockFamily.Variant.CUT ? "" : "_" + block.getName()));
-			            });
-			            recipebuilder.unlockedBy(pFamily.getRecipeUnlockedBy().orElseGet(() -> {
-			               return getHasName(itemlike);
-			            }), has(itemlike));
-			            recipebuilder.save(consumer, mcLoc(StringUtils.toLowerCase(result.getDescriptionId().replace(result.getName() + ":", "").replace("block.minecraft.", "") + "_from_stonecutting")));
-		        	 }
-		            
-		         }
-
-		      });
-		      */
 		
 	   }
-	
 	
 	private static ResourceLocation modLoc(String id) {
 	    return new ResourceLocation(ModConstants.MOD_ID, id);
@@ -1252,5 +1272,3 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 	}
 	
 }
-
-

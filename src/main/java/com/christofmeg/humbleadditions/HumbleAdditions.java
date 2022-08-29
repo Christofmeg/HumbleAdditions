@@ -29,13 +29,12 @@ public class HumbleAdditions {
         Config.init();
         
         BlockRegistry.BLOCKS.register(bus);
-        BlockRegistry.FAKE_BLOCKS.register(bus);
+        BlockRegistry.VANILLA_TEXTURED_BLOCKS.register(bus);
         ItemRegistry.ITEMS.register(bus);
         EntityRegistry.ENTITY_TYPES.register(bus);
         VanillaItemRegistry.ITEMS.register(bus);
         ModConfiguredFeatures.CONFIGURED_FEATURES.register(bus);
         ModPlacedFeatures.PLACED_FEATURES.register(bus);
-        
         
     }
 
@@ -47,18 +46,13 @@ public class HumbleAdditions {
 			ComposterBlock.COMPOSTABLES.put(Items.POISONOUS_POTATO, 0.65F);
 			ComposterBlock.COMPOSTABLES.put(BlockRegistry.MOSS_LAYER_BLOCK.get().asItem(), 0.08125F);
 			
-			
 			ModDispenseItemBehavior.init();
 			
-			
-			
 			//TODO FIX FALLING FULL BLOCKS STACKING
-			
 			
 			//TODO FALLING LAYERS item drops correct amount when broken by falling on other blocks
 			
 			//TODO FALLING LAYERS remove itemdrops when block fell on self FallableLayerBlock$onBrokenAfterFall
-			
 			
 			//TODO fix falling layers not stacking when gamerule doEntityDrops is set to false
 			
@@ -66,15 +60,11 @@ public class HumbleAdditions {
 			
 			//Look at shovel right click and falling or breaking when layer on layer OR merging
 			
-			
 			//https://www.curseforge.com/minecraft/mc-mods/aquatic-torches
-			
-			
-			
+
 			//TODO Custom snow men ENTITY heads with jack o lanterns
 			//TODO Frogs that grow in size when eating things
 			//TODO ZOMBIES THAT GROWS ON EACH HIT
-			//TODO ADD MORE WALLS; STAIRS; SLABS
 			
 			
 		});

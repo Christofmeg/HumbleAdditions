@@ -18,6 +18,24 @@
     "humbleadditions:limestone_slab",
     "humbleadditions:limestone_bricks_slab",
     "humbleadditions:polished_limestone_slab",
-    "humbleadditions:polished_limestone_bricks_slab"
+    "humbleadditions:polished_limestone_bricks_slab",
+    "humbleadditions:cut_red_sandstone_stairs",
+    "humbleadditions:cut_sandstone_stairs",
+    "humbleadditions:smooth_stone_stairs",
+    "humbleadditions:cut_red_sandstone_wall",
+    "humbleadditions:cut_sandstone_wall",
+    "humbleadditions:dark_prismarine_wall",
+    "humbleadditions:polished_andesite_wall",
+    "humbleadditions:polished_diorite_wall",
+    "humbleadditions:polished_granite_wall",
+    "humbleadditions:polished_blackstone_wall",
+    "humbleadditions:prismarine_brick_wall",
+    "humbleadditions:purpur_block_wall",
+    "humbleadditions:quartz_wall",
+    "humbleadditions:smooth_quartz_wall",
+    "humbleadditions:smooth_red_sandstone_wall",
+    "humbleadditions:smooth_sandstone_wall",
+    "humbleadditions:smooth_stone_wall",
+    "humbleadditions:stone_wall"
   ]
 }

@@ -15,7 +15,6 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.DyeColor;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.AirBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.GlassBlock;
@@ -37,7 +36,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class BlockRegistry {
 
 	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ModConstants.MODID);
-	public static final DeferredRegister<Block> FAKE_BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ModConstants.MODID);
+	public static final DeferredRegister<Block> VANILLA_TEXTURED_BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, ModConstants.MODID);
 	
 	public static final RegistryObject<Block> CHARCOAL_BLOCK = registerBlock("charcoal_block", 
 		() -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.COLOR_BLACK)
@@ -170,8 +169,26 @@ public class BlockRegistry {
 	public static final RegistryObject<SlabBlock> LIMESTONE_BRICKS_SLAB = registerBlock("limestone_bricks" + "_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE)), props());
 	public static final RegistryObject<SlabBlock> POLISHED_LIMESTONE_SLAB = registerBlock("polished_limestone" + "_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE)), props());
 	public static final RegistryObject<SlabBlock> POLISHED_LIMESTONE_BRICKS_SLAB = registerBlock("polished_limestone_bricks" + "_slab", () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE)), props());
-
-	public static final RegistryObject<AirBlock> AIR = registerAir("air", () -> new AirBlock(BlockBehaviour.Properties.of(Material.AIR).noCollission().noLootTable().air()));
+	
+	public static final RegistryObject<StairBlock> CUT_RED_SANDSTONE_STAIRS = registerBlock("cut_red_sandstone" + "_stairs", () -> new StairBlock(() -> Blocks.CUT_RED_SANDSTONE.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.CUT_RED_SANDSTONE)), props());
+	public static final RegistryObject<StairBlock> CUT_SANDSTONE_STAIRS = registerBlock("cut_sandstone" + "_stairs", () -> new StairBlock(() -> Blocks.CUT_SANDSTONE.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.CUT_SANDSTONE)), props());
+	public static final RegistryObject<StairBlock> SMOOTH_STONE_STAIRS = registerBlock("smooth_stone" + "_stairs", () -> new StairBlock(() -> Blocks.SMOOTH_STONE.defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.SMOOTH_STONE)), props());
+	
+	public static final RegistryObject<WallBlock> CUT_RED_SANDSTONE_WALL = registerVanillaTexturedBlock("cut_red_sandstone" + "_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.CUT_RED_SANDSTONE)), props());
+	public static final RegistryObject<WallBlock> CUT_SANDSTONE_WALL = registerVanillaTexturedBlock("cut_sandstone" + "_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.CUT_SANDSTONE)), props());
+	public static final RegistryObject<WallBlock> DARK_PRISMARINE_WALL = registerVanillaTexturedBlock("dark_prismarine" + "_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.DARK_PRISMARINE)), props());
+	public static final RegistryObject<WallBlock> POLISHED_ANDESITE_WALL = registerVanillaTexturedBlock("polished_andesite" + "_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.POLISHED_ANDESITE)), props());
+	public static final RegistryObject<WallBlock> POLISHED_DIORITE_WALL = registerVanillaTexturedBlock("polished_diorite" + "_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.POLISHED_DIORITE)), props());
+	public static final RegistryObject<WallBlock> POLISHED_GRANITE_WALL = registerVanillaTexturedBlock("polished_granite" + "_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.POLISHED_GRANITE)), props());
+	public static final RegistryObject<WallBlock> POLISHED_BLACKSTONE_WALL = registerVanillaTexturedBlock("polished_blackstone" + "_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.POLISHED_BLACKSTONE)), props());
+	public static final RegistryObject<WallBlock> PRISMARINE_BRICK_WALL = registerVanillaTexturedBlock("prismarine_brick" + "_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.PRISMARINE_BRICKS)), props());
+	public static final RegistryObject<WallBlock> PURPUR_WALL = registerVanillaTexturedBlock("purpur_block" + "_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.PURPUR_BLOCK)), props());
+	public static final RegistryObject<WallBlock> QUARTZ_WALL = registerVanillaTexturedBlock("quartz" + "_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.QUARTZ_BLOCK)), props());
+	public static final RegistryObject<WallBlock> SMOOTH_QUARTZ_WALL = registerVanillaTexturedBlock("smooth_quartz" + "_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_QUARTZ)), props());
+	public static final RegistryObject<WallBlock> SMOOTH_RED_SANDSTONE_WALL = registerVanillaTexturedBlock("smooth_red_sandstone" + "_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_RED_SANDSTONE)), props());
+	public static final RegistryObject<WallBlock> SMOOTH_SANDSTONE_WALL = registerVanillaTexturedBlock("smooth_sandstone" + "_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_SANDSTONE)), props());
+	public static final RegistryObject<WallBlock> SMOOTH_STONE_WALL = registerVanillaTexturedBlock("smooth_stone" + "_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_STONE)), props());
+	public static final RegistryObject<WallBlock> STONE_WALL = registerVanillaTexturedBlock("stone" + "_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE)), props());
 	
 	private static StainedGlassBlock stainedGlass(DyeColor color) {
 		return new StainedGlassBlock(color, BlockBehaviour.Properties.of(Material.GLASS, color).strength(0.3F).sound(SoundType.GLASS).noOcclusion().emissiveRendering((state, world, pos) -> true).lightLevel((b) -> 1)
@@ -207,11 +224,12 @@ public class BlockRegistry {
         return block;
     }
 	
-	private static <T extends Block> RegistryObject<T> registerAir(String name, Supplier<T> supplier) {
-        RegistryObject<T> block = FAKE_BLOCKS.register(name, supplier);
+	private static <T extends Block> RegistryObject<T> registerVanillaTexturedBlock(String name, Supplier<T> supplier, Item.Properties properties) {
+        RegistryObject<T> block = VANILLA_TEXTURED_BLOCKS.register(name, supplier);
+        ItemRegistry.ITEMS.register(name, () -> new BlockItem(block.get(), properties));
         return block;
     }
-    
+	
 	@SuppressWarnings("unused")
 	private static <T extends Block> RegistryObject<T> registerBlockItem(String name, Supplier<T> supplier, Item.Properties properties) {
         RegistryObject<T> block = BLOCKS.register(name, supplier);

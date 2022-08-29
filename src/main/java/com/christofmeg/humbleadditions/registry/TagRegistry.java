@@ -60,6 +60,7 @@ public class TagRegistry {
 		private static final TagKey<Biome> vanillaTag(final String path) {
 			return TagRegistry.Biomes.create((new ResourceLocation("minecraft", path).toString()));
 		}
+		@SuppressWarnings("unused")
 		private static final TagKey<Biome> modTag(final String path) {
 			return TagRegistry.Biomes.create((new ResourceLocation(ModConstants.MOD_ID, path).toString()));
 		}
@@ -70,7 +71,7 @@ public class TagRegistry {
 		
 		
 		
-		public static final TagKey<Biome> RED_HUSK_BIOMES = modTag("red_husk_biomes");
+//		public static final TagKey<Biome> RED_HUSK_BIOMES = modTag("red_husk_biomes");
 		
 		
 	}

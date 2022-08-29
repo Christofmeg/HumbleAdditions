@@ -1,4 +1,4 @@
-// 1.19.2	2022-08-27T13:07:16.3863322	Humble Additions - Block Tags
+// 1.19.2	2022-08-29T23:41:52.6502941	Humble Additions - Block Tags
 08f8227dac1a298bffae9ce94eeb111d90a98647 data/forge/tags/blocks/glass.json
 6910383c33b1cbd3f50c4008f5fe27603e247cdb data/forge/tags/blocks/glass/black.json
 61ba7606013817693d33e113eb0100d33f61fa00 data/forge/tags/blocks/glass/blue.json
@@ -41,23 +41,24 @@ e98e09e747d64b477c384d959bca0554277aeaa4 data/forge/tags/blocks/glass_panes/whit
 b504ea6e0f4db48a3e65662f555df69be858f4c9 data/forge/tags/blocks/stone.json
 748fb8e619d047998125e1ef1ad8254c3922ce67 data/forge/tags/blocks/storage_blocks/charcoal.json
 2af4b12c206342c00ca99b0d5b811016638696fe data/minecraft/tags/blocks/azalea_grows_on.json
-9268cbe7a645c2e3fabd04960dd8882da237d19d data/minecraft/tags/blocks/azalea_root_replaceable.json
+c6c5572c8b5148e45a082d96064eed7d2a189a26 data/minecraft/tags/blocks/azalea_root_replaceable.json
 0b8a18b9ed8786ac2a48979445d17d8777159dcf data/minecraft/tags/blocks/base_stone_overworld.json
 90d93b65b5d39f281656c80dec557d68c3be2174 data/minecraft/tags/blocks/big_dripleaf_placeable.json
-294a651115cc05bdb349ccca1fa6a7d876104d4d data/minecraft/tags/blocks/dripstone_replaceable_blocks.json
+a92279162ecb0b0ea38c53e2c25036c9920b6f8a data/minecraft/tags/blocks/dripstone_replaceable_blocks.json
 1889e8a9d9518120da35280b13b263c910faa584 data/minecraft/tags/blocks/impermeable.json
-23a4ec4f73a2a8e577b9c0961bf551e7e751ff5c data/minecraft/tags/blocks/lush_ground_replaceable.json
+dcdaaacae87f88a10272ec651d9291fab149beeb data/minecraft/tags/blocks/lush_ground_replaceable.json
 90d93b65b5d39f281656c80dec557d68c3be2174 data/minecraft/tags/blocks/mangrove_logs_can_grow_through.json
 90d93b65b5d39f281656c80dec557d68c3be2174 data/minecraft/tags/blocks/mangrove_roots_can_grow_through.json
 90d93b65b5d39f281656c80dec557d68c3be2174 data/minecraft/tags/blocks/mineable/hoe.json
-5c7abd5a44034a960193b762570fb25876ae1728 data/minecraft/tags/blocks/mineable/pickaxe.json
+e0a06806a7fca21a58f4f0a331285db9292100e1 data/minecraft/tags/blocks/mineable/pickaxe.json
 2c38f4c0e8de16bfa74c81e04933847ee67ddc25 data/minecraft/tags/blocks/mineable/shovel.json
-34ad30ab0c8a9dd518fe360a536223bfd289dcc5 data/minecraft/tags/blocks/moss_replaceable.json
-0b8a18b9ed8786ac2a48979445d17d8777159dcf data/minecraft/tags/blocks/nether_carver_replaceables.json
-0b8a18b9ed8786ac2a48979445d17d8777159dcf data/minecraft/tags/blocks/overworld_carver_replaceables.json
-9268cbe7a645c2e3fabd04960dd8882da237d19d data/minecraft/tags/blocks/sculk_replaceable.json
-0b8a18b9ed8786ac2a48979445d17d8777159dcf data/minecraft/tags/blocks/sculk_replaceable_world_gen.json
+e9f2d0e6fdc8936b8aff288ceb5935dde96216e1 data/minecraft/tags/blocks/moss_replaceable.json
+915bb40dc81342a2d267ad923ad558e9b08a0222 data/minecraft/tags/blocks/nether_carver_replaceables.json
+915bb40dc81342a2d267ad923ad558e9b08a0222 data/minecraft/tags/blocks/overworld_carver_replaceables.json
+c6c5572c8b5148e45a082d96064eed7d2a189a26 data/minecraft/tags/blocks/sculk_replaceable.json
+915bb40dc81342a2d267ad923ad558e9b08a0222 data/minecraft/tags/blocks/sculk_replaceable_world_gen.json
 6ef79a06314a2958e9f3d9b3472fa76c07442625 data/minecraft/tags/blocks/slabs.json
-fbc4bf99cb9e70eabc0942ef45f4d1c321fc5bec data/minecraft/tags/blocks/stairs.json
-0b8a18b9ed8786ac2a48979445d17d8777159dcf data/minecraft/tags/blocks/stone_ore_replaceables.json
-5260936b2b59f4a43c6326cc904c143a506db202 data/minecraft/tags/blocks/walls.json
+9ea5220a904e8bf42f2e49c56f6796e708293cd0 data/minecraft/tags/blocks/snaps_goat_horn.json
+ceae1001a92c25cd3d40d68d9bcceed3a5b723d4 data/minecraft/tags/blocks/stairs.json
+915bb40dc81342a2d267ad923ad558e9b08a0222 data/minecraft/tags/blocks/stone_ore_replaceables.json
+5e3d5785b69a0bca120a27347b82e4b20ce1b5cd data/minecraft/tags/blocks/walls.json

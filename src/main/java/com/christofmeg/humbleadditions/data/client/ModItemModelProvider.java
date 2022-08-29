@@ -37,6 +37,9 @@ public class ModItemModelProvider extends ItemModelProvider {
 		withExistingParent("charcoal_block", modLoc("block/charcoal_block"));
 		withExistingParent("smooth_ice", modLoc("block/smooth_ice"));
 		withExistingParent("jack_o_soul_lantern", modLoc("block/jack_o_soul_lantern"));
+		withExistingParent("cut_red_sandstone_stairs", mcLoc("block/cut_red_sandstone"));
+		withExistingParent("cut_sandstone_stairs", mcLoc("block/cut_sandstone"));
+		withExistingParent("smooth_stone_stairs", mcLoc("block/smooth_stone"));
 		
 		withExistingParent("limestone", modLoc("block/limestone"));
 		withExistingParent("limestone_bricks", modLoc("block/limestone_bricks"));
@@ -56,6 +59,16 @@ public class ModItemModelProvider extends ItemModelProvider {
 		.forEach(block -> {
 			wallInventory(block.defaultBlockState().getBlock().toString().replace("Block{humbleadditions:", "").replace("}", ""), modLoc("blocks/" + block.defaultBlockState().getBlock().toString().replace("Block{humbleadditions:", "").replace("}", "").replace("_wall", "").replace("brick", "bricks")));
 		});
+		
+			BlockRegistry.VANILLA_TEXTURED_BLOCKS.getEntries().stream().map(RegistryObject::get)
+			.filter(block -> (block instanceof WallBlock))
+			.forEach(block -> {
+				wallInventory(block.defaultBlockState().getBlock().toString().replace("Block{humbleadditions:", "").replace("}", ""), 
+					mcLoc("block/" + block.defaultBlockState().getBlock().toString().replace("Block{humbleadditions:", "").replace("}", "")
+						.replace("brick", "bricks").replace("smooth_quartz_wall", "quartz_block_side").replace("quartz_wall", "quartz_block_top")
+						.replace("smooth_red_sandstone", "red_sandstone_top").replace("smooth_sandstone", "sandstone_top").replace("_wall", "")
+					));
+			});
 		
 		BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)
 		.filter(block -> (block instanceof IronBarsBlock))

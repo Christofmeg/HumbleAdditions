@@ -15,6 +15,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.AbstractGlassBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.IronBarsBlock;
+import net.minecraft.world.level.block.WallBlock;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -40,8 +41,6 @@ public class ModBlockStateProvider<T> extends BlockStateProvider {
 	@Override
 	protected void registerStatesAndModels() {
 		
-		simpleBlock(BlockRegistry.AIR.get(), models().withExistingParent("minecraft:air", "minecraft:air"));
-		
 		simpleBlock(BlockRegistry.CHARCOAL_BLOCK.get(), models().cubeAll("charcoal_block", modLoc("blocks/charcoal_block")));
 		simpleBlock(BlockRegistry.SMOOTH_ICE.get(), models().cubeAll("smooth_ice", modLoc("blocks/smooth_ice")));
 		horizontalBlock(BlockRegistry.JACK_O_SOUL_LANTERN.get(), mcLoc("block/pumpkin_side"), modLoc("blocks/jack_o_soul_lantern"), mcLoc("block/pumpkin_top"));
@@ -56,16 +55,33 @@ public class ModBlockStateProvider<T> extends BlockStateProvider {
 		wallBlock(BlockRegistry.LIMESTONE_BRICK_WALL.get(), modLoc("blocks/limestone_bricks"));
 		wallBlock(BlockRegistry.POLISHED_LIMESTONE_WALL.get(), modLoc("blocks/polished_limestone"));
 		wallBlock(BlockRegistry.POLISHED_LIMESTONE_BRICK_WALL.get(), modLoc("blocks/polished_limestone_bricks"));
+		wallBlock(BlockRegistry.QUARTZ_WALL.get(), mcLoc("block/quartz_block_top"));
+		wallBlock(BlockRegistry.SMOOTH_QUARTZ_WALL.get(), mcLoc("block/quartz_block_side"));
+		wallBlock(BlockRegistry.SMOOTH_RED_SANDSTONE_WALL.get(), mcLoc("block/red_sandstone_top"));
+		wallBlock(BlockRegistry.SMOOTH_SANDSTONE_WALL.get(), mcLoc("block/sandstone_top"));
 		
 		stairsBlock(BlockRegistry.LIMESTONE_STAIRS.get(), modLoc("blocks/limestone"));
 		stairsBlock(BlockRegistry.LIMESTONE_BRICKS_STAIRS.get(), modLoc("blocks/limestone_bricks"));
 		stairsBlock(BlockRegistry.POLISHED_LIMESTONE_STAIRS.get(), modLoc("blocks/polished_limestone"));
 		stairsBlock(BlockRegistry.POLISHED_LIMESTONE_BRICKS_STAIRS.get(), modLoc("blocks/polished_limestone_bricks"));
-		
+		stairsBlock(BlockRegistry.CUT_RED_SANDSTONE_STAIRS.get(), mcLoc("block/cut_red_sandstone"));
+		stairsBlock(BlockRegistry.CUT_SANDSTONE_STAIRS.get(), mcLoc("block/cut_sandstone"));
+		stairsBlock(BlockRegistry.SMOOTH_STONE_STAIRS.get(), mcLoc("block/smooth_stone"));
+
 		slabBlock(BlockRegistry.LIMESTONE_SLAB.get(), modLoc("block/limestone"), modLoc("blocks/limestone"));
 		slabBlock(BlockRegistry.LIMESTONE_BRICKS_SLAB.get(), modLoc("block/limestone_bricks"), modLoc("blocks/limestone_bricks"));
 		slabBlock(BlockRegistry.POLISHED_LIMESTONE_SLAB.get(), modLoc("block/polished_limestone"), modLoc("blocks/polished_limestone"));
 		slabBlock(BlockRegistry.POLISHED_LIMESTONE_BRICKS_SLAB.get(), modLoc("block/polished_limestone_bricks"), modLoc("blocks/polished_limestone_bricks"));
+		
+		BlockRegistry.VANILLA_TEXTURED_BLOCKS.getEntries().stream().map(RegistryObject::get)
+		.filter(block -> (block instanceof WallBlock))
+		.filter(block -> (!(block == BlockRegistry.QUARTZ_WALL.get() || block == BlockRegistry.SMOOTH_QUARTZ_WALL.get() ||
+			block == BlockRegistry.SMOOTH_RED_SANDSTONE_WALL.get() || block == BlockRegistry.SMOOTH_SANDSTONE_WALL.get())))
+		.forEach(block -> {
+			wallBlock((WallBlock) block, mcLoc("block/" + block.defaultBlockState().getBlock().toString().replace("Block{humbleadditions:", "").replace("}", "")
+				.replace("brick", "bricks").replace("_wall", "")
+				));
+		});
 		
 		layerBlocks(BlockRegistry.MOSS_LAYER_BLOCK.get(), mcLoc("block/moss_block"));
 		layerBlocks(BlockRegistry.SAND_LAYER_BLOCK.get(), mcLoc("block/sand"));
