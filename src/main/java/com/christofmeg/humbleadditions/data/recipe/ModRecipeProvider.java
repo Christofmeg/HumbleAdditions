@@ -33,7 +33,9 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.Tags;
+import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import net.minecraftforge.common.crafting.conditions.ItemExistsCondition;
 import net.minecraftforge.fml.loading.StringUtils;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
@@ -996,6 +998,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		stoneCuttingFolderModId(BlockRegistry.POLISHED_LIMESTONE_STAIRS.get(), BlockRegistry.POLISHED_LIMESTONE_SLAB.get(), 1, consumer, "walls/", ModConstants.MOD_ID);
 		stoneCuttingFolderModId(BlockRegistry.POLISHED_LIMESTONE_BRICKS_STAIRS.get(), BlockRegistry.POLISHED_LIMESTONE_BRICKS_SLAB.get(), 1, consumer, "walls/", ModConstants.MOD_ID);
 		
+		stoneCuttingFolderModId(BlockRegistry.POLISHED_LIMESTONE.get(), BlockRegistry.CHISELED_LIMESTONE.get(), 1, consumer, "blocks/", ModConstants.MOD_ID);
+		stoneCuttingFolderModId(Blocks.PACKED_MUD, Blocks.MUD_BRICKS, 1, consumer, "blocks/", "minecraft");
+		
 		SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.OAK_PLANKS), Blocks.OAK_SLAB, 2).unlockedBy("has_oak_planks", has(Blocks.OAK_PLANKS)).save(consumer, modLoc(folder + slabs + "oak" + "_slab"));
 		SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.SPRUCE_PLANKS), Blocks.SPRUCE_SLAB, 2).unlockedBy("has_spruce_planks", has(Blocks.SPRUCE_PLANKS)).save(consumer, modLoc(folder + slabs + "spruce" + "_slab"));
 		SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.BIRCH_PLANKS), Blocks.BIRCH_SLAB, 2).unlockedBy("has_birch_planks", has(Blocks.BIRCH_PLANKS)).save(consumer, modLoc(folder + slabs + "birch" + "_slab"));
@@ -1006,7 +1011,74 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.DARK_OAK_PLANKS), Blocks.DARK_OAK_SLAB, 2).unlockedBy("has_dark_oak_planks", has(Blocks.DARK_OAK_PLANKS)).save(consumer, modLoc(folder + slabs + "dark_oak" + "_slab"));
 		SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.MANGROVE_PLANKS), Blocks.MANGROVE_SLAB, 2).unlockedBy("has_mangrove_planks", has(Blocks.MANGROVE_PLANKS)).save(consumer, modLoc(folder + slabs + "mangrove" + "_slab"));
 		
+		removeStoneCutting(consumer, "cut_copper_slab" + "_from_" + "copper_block" + "_stonecutting");
+		removeStoneCutting(consumer, "cut_red_sandstone_slab" + "_from_" + "red_sandstone" + "_stonecutting");
+		removeStoneCutting(consumer, "cut_sandstone_slab" + "_from_" + "sandstone" + "_stonecutting");
+		removeStoneCutting(consumer, "deepslate_brick_slab" + "_from_" + "cobbled_deepslate" + "_stonecutting");
+		removeStoneCutting(consumer, "deepslate_brick_slab" + "_from_" + "polished_deepslate" + "_stonecutting");
+		removeStoneCutting(consumer, "deepslate_brick_wall" + "_from_" + "cobbled_deepslate" + "_stonecutting");
+		removeStoneCutting(consumer, "deepslate_brick_wall" + "_from_" + "polished_deepslate" + "_stonecutting");
+		removeStoneCutting(consumer, "deepslate_tile_slab" + "_from_" + "cobbled_deepslate" + "_stonecutting");
+		removeStoneCutting(consumer, "deepslate_tile_slab" + "_from_" + "deepslate_bricks" + "_stonecutting");
+		removeStoneCutting(consumer, "deepslate_tile_slab" + "_from_" + "polished_deepslate" + "_stonecutting");
+		removeStoneCutting(consumer, "deepslate_tile_wall" + "_from_" + "cobbled_deepslate" + "_stonecutting");
+		removeStoneCutting(consumer, "deepslate_tile_wall" + "_from_" + "deepslate_bricks" + "_stonecutting");
+		removeStoneCutting(consumer, "deepslate_tile_wall" + "_from_" + "polished_deepslate" + "_stonecutting");
+		removeStoneCutting(consumer, "end_stone_brick_slab" + "_from_" + "end_stone" + "_stonecutting");
+		removeStoneCutting(consumer, "end_stone_brick_wall" + "_from_" + "end_stone" + "_stonecutting");
+		removeStoneCutting(consumer, "exposed_cut_copper_slab" + "_from_" + "exposed_copper" + "_stonecutting");
+		removeStoneCutting(consumer, "oxidized_cut_copper_slab" + "_from_" + "oxidized_copper" + "_stonecutting");
+		removeStoneCutting(consumer, "polished_andesite_slab" + "_from_" + "andesite" + "_stonecutting");
+		removeStoneCutting(consumer, "polished_blackstone_brick_slab" + "_from_" + "blackstone" + "_stonecutting");
+		removeStoneCutting(consumer, "polished_blackstone_brick_slab" + "_from_" + "polished_blackstone" + "_stonecutting");
+		removeStoneCutting(consumer, "polished_blackstone_brick_wall" + "_from_" + "blackstone" + "_stonecutting");
+		removeStoneCutting(consumer, "polished_blackstone_brick_wall" + "_from_" + "polished_blackstone" + "_stonecutting");
+		removeStoneCutting(consumer, "polished_blackstone_slab" + "_from_" + "blackstone" + "_stonecutting");
+		removeStoneCutting(consumer, "polished_blackstone_wall" + "_from_" + "blackstone" + "_stonecutting");
+		removeStoneCutting(consumer, "polished_deepslate_slab" + "_from_" + "cobbled_deepslate" + "_stonecutting");
+		removeStoneCutting(consumer, "polished_deepslate_wall" + "_from_" + "cobbled_deepslate" + "_stonecutting");
+		removeStoneCutting(consumer, "polished_diorite_slab" + "_from_" + "diorite" + "_stonecutting");
+		removeStoneCutting(consumer, "polished_granite_slab" + "_from_" + "granite" + "_stonecutting");
+		removeStoneCutting(consumer, "stone_brick_slab" + "_from_" + "stone" + "_stonecutting");
+		removeStoneCutting(consumer, "stone_brick_walls" + "_from_" + "stone" + "_stonecutting");
+		removeStoneCutting(consumer, "waxed_cut_copper_slab" + "_from_" + "waxed_copper_block" + "_stonecutting");
+		removeStoneCutting(consumer, "waxed_exposed_cut_copper_slab" + "_from_" + "waxed_exposed_copper" + "_stonecutting");
+		removeStoneCutting(consumer, "waxed_oxidized_cut_copper_slab" + "_from_" + "waxed_oxidized_copper" + "_stonecutting");
+		removeStoneCutting(consumer, "waxed_weathered_cut_copper_slab" + "_from_" + "waxed_weathered_copper" + "_stonecutting");
+		removeStoneCutting(consumer, "weathered_cut_copper_slab" + "_from_" + "weathered_copper" + "_stonecutting");
+		
+		removeStoneCutting(consumer, "cut_copper_stairs" + "_from_" + "copper_block" + "_stonecutting");
+		removeStoneCutting(consumer, "exposed_cut_copper_stairs" + "_from_" + "exposed_copper" + "_stonecutting");
+		removeStoneCutting(consumer, "oxidized_cut_copper_stairs" + "_from_" + "oxidized_copper" + "_stonecutting");
+		removeStoneCutting(consumer, "waxed_cut_copper_stairs" + "_from_" + "waxed_copper_block" + "_stonecutting");
+		removeStoneCutting(consumer, "waxed_exposed_cut_copper_stairs" + "_from_" + "waxed_exposed_copper" + "_stonecutting");
+		removeStoneCutting(consumer, "waxed_oxidized_cut_copper_stairs" + "_from_" + "waxed_oxidized_copper" + "_stonecutting");
+		removeStoneCutting(consumer, "waxed_weathered_cut_copper_stairs" + "_from_" + "waxed_weathered_copper" + "_stonecutting");
+		removeStoneCutting(consumer, "weathered_cut_copper_stairs" + "_from_" + "weathered_copper" + "_stonecutting");
+		removeStoneCutting(consumer, "stone_brick_stairs" + "_from_" + "stone" + "_stonecutting");
+		removeStoneCutting(consumer, "polished_granite_stairs" + "_from_" + "granite" + "_stonecutting");
+		removeStoneCutting(consumer, "polished_diorite_stairs" + "_from_" + "diorite" + "_stonecutting");
+		removeStoneCutting(consumer, "end_stone_brick_stairs" + "_from_" + "end_stone" + "_stonecutting");
+		removeStoneCutting(consumer, "polished_andesite_stairs" + "_from_" + "andesite" + "_stonecutting");
+		removeStoneCutting(consumer, "polished_deepslate_stairs" + "_from_" + "cobbled_deepslate" + "_stonecutting");
+		removeStoneCutting(consumer, "deepslate_brick_stairs" + "_from_" + "cobbled_deepslate" + "_stonecutting");
+		removeStoneCutting(consumer, "deepslate_brick_stairs" + "_from_" + "polished_deepslate" + "_stonecutting");
+		removeStoneCutting(consumer, "deepslate_tile_stairs" + "_from_" + "cobbled_deepslate" + "_stonecutting");
+		removeStoneCutting(consumer, "deepslate_tile_stairs" + "_from_" + "deepslate_bricks" + "_stonecutting");
+		removeStoneCutting(consumer, "deepslate_tile_stairs" + "_from_" + "polished_deepslate" + "_stonecutting");
+		removeStoneCutting(consumer, "polished_blackstone_stairs" + "_from_" + "blackstone" + "_stonecutting");
+		removeStoneCutting(consumer, "polished_blackstone_brick_stairs" + "_from_" + "blackstone" + "_stonecutting");
+		removeStoneCutting(consumer, "polished_blackstone_brick_stairs" + "_from_" + "polished_blackstone" + "_stonecutting");
+		
+		removeStoneCutting(consumer, "chiseled_stone_bricks_stone" + "_from_" + "stonecutting");
+		removeStoneCutting(consumer, "chiseled_polished_blackstone" + "_from_" + "blackstone" + "_stonecutting");
+		removeStoneCutting(consumer, "deepslate_brick" + "_from_" + "cobbled_deepslate" + "_stonecutting");
+		removeStoneCutting(consumer, "deepslate_brick" + "_from_" + "polished_deepslate" + "_stonecutting");
+		removeStoneCutting(consumer, "polished_blackstone_bricks" + "_from_" + "polished_blackstone" + "_stonecutting");
+	}
 	
+	private static void removeStoneCutting(Consumer<FinishedRecipe> consumer, String string) {
+		ConditionalRecipe.builder().addCondition(new ItemExistsCondition(ModConstants.MOD_ID + ":air")).addRecipe(SingleItemRecipeBuilder.stonecutting(Ingredient.of(Blocks.STONE), Blocks.STONE).unlockedBy("has_stone", has(Blocks.STONE))::save).build(consumer, mcLoc(string));
 	}
 	
 	private static void stoneCuttingFolderModId(Block pIngredientItem, Block pResultItem, int amount, Consumer<FinishedRecipe> consumer, String dir, String modId) {

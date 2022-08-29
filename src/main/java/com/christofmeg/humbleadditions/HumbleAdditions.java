@@ -75,7 +75,6 @@ public class HumbleAdditions {
 			//TODO Frogs that grow in size when eating things
 			//TODO ZOMBIES THAT GROWS ON EACH HIT
 			//TODO ADD MORE WALLS; STAIRS; SLABS
-			//TODO FIX STONECUTTING STAIRS RECIPES
 			
 			
 		});

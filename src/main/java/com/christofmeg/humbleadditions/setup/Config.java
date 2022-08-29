@@ -64,7 +64,6 @@ public class Config {
 						"default: chance = 1")
 					.defineInRange("chance", 1, 0, 100);
 		builder.pop();
-					
     	
     	
     	
