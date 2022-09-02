@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "M": {
+      "item": "minecraft:mud"
+    },
+    "W": {
+      "tag": "forge:crops/wheat"
+    }
+  },
+  "pattern": [
+    "MMM",
+    "MWM",
+    "MMM"
+  ],
+  "result": {
+    "count": 8,
+    "item": "minecraft:packed_mud"
+  }
+}

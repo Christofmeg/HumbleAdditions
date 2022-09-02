@@ -6,6 +6,7 @@ import com.christofmeg.humbleadditions.common.world.feature.ModPlacedFeatures;
 import com.christofmeg.humbleadditions.registry.BlockRegistry;
 import com.christofmeg.humbleadditions.registry.EntityRegistry;
 import com.christofmeg.humbleadditions.registry.ItemRegistry;
+import com.christofmeg.humbleadditions.registry.PaintingVariantRegistry;
 import com.christofmeg.humbleadditions.registry.VanillaItemRegistry;
 import com.christofmeg.humbleadditions.setup.Config;
 import com.christofmeg.humbleadditions.setup.ModConstants;
@@ -35,6 +36,7 @@ public class HumbleAdditions {
         VanillaItemRegistry.ITEMS.register(bus);
         ModConfiguredFeatures.CONFIGURED_FEATURES.register(bus);
         ModPlacedFeatures.PLACED_FEATURES.register(bus);
+        PaintingVariantRegistry.PAINTING_VARIANTS.register(bus);
         
     }
 

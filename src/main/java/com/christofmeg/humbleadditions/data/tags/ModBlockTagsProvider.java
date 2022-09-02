@@ -216,8 +216,6 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 				this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
 			});
 		
-		
-		
 	}
 
 

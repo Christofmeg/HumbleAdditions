@@ -190,12 +190,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		.pattern("WWW")
 		.unlockedBy("has_warped_stems", has(ItemTags.WARPED_STEMS))
 		.save(consumer, modLoc(folder + "warped/slab"));
-		
+
 		ShapedRecipeBuilder.shaped(Items.CRIMSON_SLAB, 24)
 		.define('W', ItemTags.CRIMSON_STEMS)
 		.pattern("WWW")
 		.unlockedBy("has_crimson_stems", has(ItemTags.CRIMSON_STEMS))
 		.save(consumer, modLoc(folder + "crimson/slab"));
+		
+		ShapedRecipeBuilder.shaped(Items.MANGROVE_SLAB, 24)
+		.define('W', ItemTags.WARPED_STEMS)
+		.pattern("WWW")
+		.unlockedBy("has_mangrove_logs", has(ItemTags.MANGROVE_LOGS))
+		.save(consumer, modLoc(folder + "mangrove/slab"));
 		
 		ShapedRecipeBuilder.shaped(BlockRegistry.LIMESTONE_SLAB.get(), 6)
 		.define('W', BlockRegistry.LIMESTONE.get())
@@ -560,6 +566,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.pattern("III")
 			.unlockedBy("has_candle", has(ItemTags.CANDLES))
 			.save(consumer, modLoc(folder + "lantern"));
+			
+		//PACKED MUD
+			ShapedRecipeBuilder.shaped(Items.PACKED_MUD, 8)
+			.define('M', Items.MUD)
+			.define('W', Tags.Items.CROPS_WHEAT)
+			.pattern("MMM")
+			.pattern("MWM")
+			.pattern("MMM")
+			.unlockedBy("has_mud", has(Items.MUD))
+			.save(consumer, modLoc(folder + "packed_mud"));
 			
 	}
 	
