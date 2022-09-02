@@ -1,4 +1,4 @@
-// 1.19.2	2022-08-30T00:29:08.6623949	Humble Additions - Recipes
+// 1.19.2	2022-09-02T16:50:51.916319	Humble Additions - Recipes
 037ef466cba91f4cd64a4ac5b1248b67e0e1fcec data/humbleadditions/advancements/recipes/building_blocks/blasting/copper_block.json
 2c8e29e4773d565f71b187f563190e5d7a9a5070 data/humbleadditions/advancements/recipes/building_blocks/blasting/glass.json
 6d58d6209171d929cbee06f5beebaeb8099eb84a data/humbleadditions/advancements/recipes/building_blocks/blasting/iron_block.json
@@ -177,6 +177,7 @@ fe35538d3932de2b543a954f0ceeee0e25b1e93b data/humbleadditions/advancements/recip
 46802e1585e73b9ddae25e2f9cbba9bba7223e5c data/humbleadditions/advancements/recipes/combat/smithing/iron/leggings.json
 1e66ab3455073ac1b77cb51c226d2cdb09a65b76 data/humbleadditions/advancements/recipes/combat/smithing/iron/sword.json
 9ebd0e7e2d11bf43a4293c6111ab0ae77b03a905 data/humbleadditions/advancements/recipes/combat/smithing/stone/sword.json
+759329df5b400c5dd51daf61d9025482f3d82842 data/humbleadditions/advancements/recipes/decorations/shaped/lantern.json
 7a451f217626f190bdc22f6ab9146f1a9e4779b5 data/humbleadditions/advancements/recipes/decorations/shaped/moss_block.json
 dcf1c893d698d0e15309fa713c36e96d1fc3f9fa data/humbleadditions/advancements/recipes/decorations/shapeless/acacia_chest_boat.json
 bfaae1f6ef8a56e6971aec1704bea56af23b5d94 data/humbleadditions/advancements/recipes/decorations/shapeless/birch_chest_boat.json
@@ -463,6 +464,7 @@ ba20e38770d11ada225cb1a147ae05cb2a6d388a data/humbleadditions/recipes/shaped/gra
 c78b3bafb3e7cb60040e9bcfd90204d78dc602c5 data/humbleadditions/recipes/shaped/green_stained_glowing_glass_pane_from_block.json
 c4da197d4ed97be952fd1fa205f5e381710cc09f data/humbleadditions/recipes/shaped/jack_o_soul_lantern.json
 41674972e7dc9a80a7e6c30f5fe14d10d6252168 data/humbleadditions/recipes/shaped/jungle/stairs.json
+9a40b7bdd92f213c918212c558dc28f102759716 data/humbleadditions/recipes/shaped/lantern.json
 75d40ef94635fdb76d5cd5ddfca06cfaf0722e9d data/humbleadditions/recipes/shaped/light_blue_stained_glowing_glass.json
 a21d789f87cfb76329e35edcc9b0808eb9ad7f03 data/humbleadditions/recipes/shaped/light_blue_stained_glowing_glass_pane.json
 d7b54ed80e483eea4d19d6f093a1fe018034b408 data/humbleadditions/recipes/shaped/light_blue_stained_glowing_glass_pane_from_block.json

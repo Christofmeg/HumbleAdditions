@@ -551,6 +551,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.unlockedBy("has_limestone", has(BlockRegistry.LIMESTONE.get()))
 			.save(consumer, modLoc(folder + "polished_limestone_bricks_wall"));
 	
+		//LANTERN RECIPES
+			ShapedRecipeBuilder.shaped(Items.LANTERN)
+			.define('I', Tags.Items.NUGGETS_IRON)
+			.define('C', ItemTags.CANDLES)
+			.pattern("III")
+			.pattern("ICI")
+			.pattern("III")
+			.unlockedBy("has_candle", has(ItemTags.CANDLES))
+			.save(consumer, modLoc(folder + "lantern"));
+			
 	}
 	
 	private void addShapelessRecipes(Consumer<FinishedRecipe> consumer) {
