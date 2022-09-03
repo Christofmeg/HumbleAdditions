@@ -46,7 +46,9 @@ public class ModItemModelProvider extends ItemModelProvider {
 		withExistingParent("polished_limestone", modLoc("block/polished_limestone"));
 		withExistingParent("polished_limestone_bricks", modLoc("block/polished_limestone_bricks"));
 		withExistingParent("chiseled_limestone", modLoc("block/chiseled_limestone"));
-
+		
+		simpleItem(modLoc("quick_sand_bucket"));
+		
 		BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)
 		.filter(block -> (block instanceof StairBlock || block instanceof SlabBlock))
 		.forEach(block -> {

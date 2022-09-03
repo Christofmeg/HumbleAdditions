@@ -28,9 +28,6 @@ public class TagRegistry {
 		
 		public static final TagKey<Block> STORAGE_BLOCKS_CHARCOAL = forgeTag("storage_blocks/charcoal");
 
-		
-		
-		
 	}
 	
 	public static final class Items {
@@ -75,5 +72,31 @@ public class TagRegistry {
 		
 		
 	}
+	
+	public static final class EntityTypes {
+		@SuppressWarnings("unused")
+		private static final TagKey<net.minecraft.world.entity.EntityType<?>> vanillaTag(final String path) {
+			return TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("minecraft", path));
+		}
+		private static final TagKey<net.minecraft.world.entity.EntityType<?>> modTag(final String path) {
+			return TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation(ModConstants.MOD_ID, path));
+		}
+		@SuppressWarnings("unused")
+		private static final TagKey<net.minecraft.world.entity.EntityType<?>> forgeTag(final String path) {
+			return TagKey.create(Registry.ENTITY_TYPE_REGISTRY, new ResourceLocation("forge", path));
+		}
+		
+		public static final TagKey<net.minecraft.world.entity.EntityType<?>> QUICK_SAND_WALKABLE_MOBS = modTag("quick_sand_walkable_mobs");
+		
+	}	
+		
+
+		
+		
+		
+		
+		
+	
+	
 
 }

@@ -44,6 +44,7 @@ public class ModBlockStateProvider<T> extends BlockStateProvider {
 		simpleBlock(BlockRegistry.CHARCOAL_BLOCK.get(), models().cubeAll("charcoal_block", modLoc("blocks/charcoal_block")));
 		simpleBlock(BlockRegistry.SMOOTH_ICE.get(), models().cubeAll("smooth_ice", modLoc("blocks/smooth_ice")));
 		horizontalBlock(BlockRegistry.JACK_O_SOUL_LANTERN.get(), mcLoc("block/pumpkin_side"), modLoc("blocks/jack_o_soul_lantern"), mcLoc("block/pumpkin_top"));
+		simpleBlock(BlockRegistry.QUICK_SAND.get(), models().singleTexture("quick_sand", modLoc("block/abstract_quick_sand"), modLoc("blocks/quick_sand")));
 		
 		simpleBlock(BlockRegistry.LIMESTONE.get(), models().cubeAll("limestone", modLoc("blocks/limestone")));
 		simpleBlock(BlockRegistry.LIMESTONE_BRICKS.get(), models().cubeAll("limestone_bricks", modLoc("blocks/limestone_bricks")));
@@ -111,10 +112,7 @@ public class ModBlockStateProvider<T> extends BlockStateProvider {
 		});
 		*/
 		
-				
 	}
-	
-
 	
 	public void layerBlocks(Block block, ResourceLocation textureFromBlock) {
 		
@@ -148,6 +146,5 @@ public class ModBlockStateProvider<T> extends BlockStateProvider {
 		
 	}
 
-	
 	
 }

@@ -1,4 +1,4 @@
-// 1.19.2	2022-08-29T23:01:28.3636394	humbleadditions - ItemModel
+// 1.19.2	2022-09-03T06:46:07.8042497	humbleadditions - ItemModel
 bfba0016c96fe50e2a754320700c101864bc78ff assets/humbleadditions/models/item/black_stained_glowing_glass.json
 ad332cca2f2a70f1c55f6335b349813ddc4e9b13 assets/humbleadditions/models/item/black_stained_glowing_glass_pane.json
 8d2afcf9e8f387715e081d18ccfac72a87d5b8ef assets/humbleadditions/models/item/blue_stained_glowing_glass.json
@@ -62,6 +62,7 @@ bd4999f0323af99351b67be243d70858bc115f32 assets/humbleadditions/models/item/pris
 f82544bca1e6055d79819ae06024f85fa63fbd98 assets/humbleadditions/models/item/purple_stained_glowing_glass_pane.json
 e2ea261d292b0b04ad2058640d65a701e1007adb assets/humbleadditions/models/item/purpur_block_wall.json
 942b5c59548d4cb672749142cea7d55ae3a1a54f assets/humbleadditions/models/item/quartz_wall.json
+79cdcdca49a5393676604055aac18322766d759b assets/humbleadditions/models/item/quick_sand_bucket.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets/humbleadditions/models/item/red_husk_spawn_egg.json
 445f5acb36c523f90ad5c6814c334fa703a6b03d assets/humbleadditions/models/item/red_sand_layer_block.json
 8558f52bfc2b71f2f924acb169c02ab4224a822e assets/humbleadditions/models/item/red_stained_glowing_glass.json

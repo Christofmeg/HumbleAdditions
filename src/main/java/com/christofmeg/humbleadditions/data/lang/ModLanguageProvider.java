@@ -83,9 +83,6 @@ public class ModLanguageProvider extends LanguageProvider {
 						));
 			});
 			
-
-			
-		
 			add("itemGroup." + ModConstants.MOD_ID, ModConstants.MOD_NAME);
 			
 			addEntityType(EntityRegistry.RED_HUSK, "Red Husk");
@@ -95,6 +92,8 @@ public class ModLanguageProvider extends LanguageProvider {
 			addItem(ItemRegistry.NETHERITE_HORSE_ARMOR, "Netherite Horse Armor");
 			
 			addItem(ItemRegistry.RED_HUSK_SPAWN_EGG, "Red Husk Spawn Egg");
+			
+			addItem(ItemRegistry.QUICK_SAND_BUCKET, "Quick Sand Bucket");
 
 
 			

@@ -1,4 +1,4 @@
-// 1.19.2	2022-08-29T23:41:52.6502941	Humble Additions - Block Tags
+// 1.19.2	2022-09-03T07:48:06.5623485	Humble Additions - Block Tags
 08f8227dac1a298bffae9ce94eeb111d90a98647 data/forge/tags/blocks/glass.json
 6910383c33b1cbd3f50c4008f5fe27603e247cdb data/forge/tags/blocks/glass/black.json
 61ba7606013817693d33e113eb0100d33f61fa00 data/forge/tags/blocks/glass/blue.json
@@ -51,7 +51,7 @@ dcdaaacae87f88a10272ec651d9291fab149beeb data/minecraft/tags/blocks/lush_ground_
 90d93b65b5d39f281656c80dec557d68c3be2174 data/minecraft/tags/blocks/mangrove_roots_can_grow_through.json
 90d93b65b5d39f281656c80dec557d68c3be2174 data/minecraft/tags/blocks/mineable/hoe.json
 e0a06806a7fca21a58f4f0a331285db9292100e1 data/minecraft/tags/blocks/mineable/pickaxe.json
-2c38f4c0e8de16bfa74c81e04933847ee67ddc25 data/minecraft/tags/blocks/mineable/shovel.json
+71b33dab4a63d2b8ddf0580ffab06466f682647a data/minecraft/tags/blocks/mineable/shovel.json
 e9f2d0e6fdc8936b8aff288ceb5935dde96216e1 data/minecraft/tags/blocks/moss_replaceable.json
 915bb40dc81342a2d267ad923ad558e9b08a0222 data/minecraft/tags/blocks/nether_carver_replaceables.json
 915bb40dc81342a2d267ad923ad558e9b08a0222 data/minecraft/tags/blocks/overworld_carver_replaceables.json

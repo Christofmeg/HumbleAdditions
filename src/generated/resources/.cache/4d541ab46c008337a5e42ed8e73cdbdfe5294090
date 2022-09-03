@@ -1,4 +1,4 @@
-// 1.19.2	2022-08-29T21:09:27.0770708	Humble Additions - LootTables
+// 1.19.2	2022-09-03T07:43:29.6450302	Humble Additions - LootTables
 82080a5cd4946ce0808cea82ebff84fb96759874 data/humbleadditions/loot_tables/blocks/black_stained_glowing_glass.json
 58c6d1c876ffaae1086f0e29901e655b68e09c5c data/humbleadditions/loot_tables/blocks/black_stained_glowing_glass_pane.json
 f785f3f2a0cd0d1bf47a0eed5c2e0a8b752b6e06 data/humbleadditions/loot_tables/blocks/blue_stained_glowing_glass.json
@@ -50,6 +50,7 @@ afa04ea59392c336125559bb844546c55e399321 data/humbleadditions/loot_tables/blocks
 25b12d643326ce10c6d981aea884796ec6b57bcd data/humbleadditions/loot_tables/blocks/polished_limestone_wall.json
 212c434a3bca64d857c3bff600abe02cb5db4c9f data/humbleadditions/loot_tables/blocks/purple_stained_glowing_glass.json
 1e4696eb696555156448d3be56b52734aa0dc660 data/humbleadditions/loot_tables/blocks/purple_stained_glowing_glass_pane.json
+1d4929d7d6176f60e5ea991a577527ed251ef375 data/humbleadditions/loot_tables/blocks/quick_sand.json
 fea7e8220492dfbff76df969f05361ccc77c08b3 data/humbleadditions/loot_tables/blocks/red_sand_layer_block.json
 b9ac409f66d9aa95fc9b7bde54082b2d1896d12f data/humbleadditions/loot_tables/blocks/red_stained_glowing_glass.json
 d3e7d63b5d01956a1de7ede3e1c24adb5a5fba15 data/humbleadditions/loot_tables/blocks/red_stained_glowing_glass_pane.json

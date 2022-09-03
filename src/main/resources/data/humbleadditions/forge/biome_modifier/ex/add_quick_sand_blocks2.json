@@ -1,0 +1,6 @@
+{
+	"type": "forge:add_features",
+	"biomes": "#minecraft:is_ocean",
+	"features": "humbleadditions:quick_sand_blocks_placed",
+	"step": "vegetal_decoration"
+}

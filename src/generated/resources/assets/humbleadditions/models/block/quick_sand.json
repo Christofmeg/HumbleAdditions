@@ -1,0 +1,6 @@
+{
+  "parent": "humbleadditions:block/abstract_quick_sand",
+  "textures": {
+    "texture": "humbleadditions:blocks/quick_sand"
+  }
+}

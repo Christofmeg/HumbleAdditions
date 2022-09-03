@@ -8,6 +8,7 @@ import com.christofmeg.humbleadditions.data.loot.ModLootTableProvider;
 import com.christofmeg.humbleadditions.data.recipe.ModRecipeProvider;
 import com.christofmeg.humbleadditions.data.tags.ModBiomeTagsProvider;
 import com.christofmeg.humbleadditions.data.tags.ModBlockTagsProvider;
+import com.christofmeg.humbleadditions.data.tags.ModEntityTypeTagsProvider;
 import com.christofmeg.humbleadditions.data.tags.ModItemTagsProvider;
 import com.christofmeg.humbleadditions.data.tags.ModPaintingVariantTagsProvider;
 import com.christofmeg.humbleadditions.data.world.ModBiomeModifierProvider;
@@ -44,6 +45,7 @@ public class ModDataGenerators {
 			gen.addProvider(true, ModBiomeModifierProvider.create(gen, existingFileHelper));
 			gen.addProvider(true, new ModBiomeTagsProvider(gen, existingFileHelper));
 			gen.addProvider(true, new ModPaintingVariantTagsProvider(gen, existingFileHelper));
+			gen.addProvider(true, new ModEntityTypeTagsProvider(gen, existingFileHelper));
         }
 		for(String locale : LOCALE_CODES) {
 			gen.addProvider(true, new ModLanguageProvider(gen, locale));

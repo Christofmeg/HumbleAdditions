@@ -556,7 +556,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.pattern("CCC")
 			.unlockedBy("has_limestone", has(BlockRegistry.LIMESTONE.get()))
 			.save(consumer, modLoc(folder + "polished_limestone_bricks_wall"));
-	
 		//LANTERN RECIPES
 			ShapedRecipeBuilder.shaped(Items.LANTERN)
 			.define('I', Tags.Items.NUGGETS_IRON)
@@ -566,7 +565,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.pattern("III")
 			.unlockedBy("has_candle", has(ItemTags.CANDLES))
 			.save(consumer, modLoc(folder + "lantern"));
-			
 		//PACKED MUD
 			ShapedRecipeBuilder.shaped(Items.PACKED_MUD, 8)
 			.define('M', Items.MUD)
@@ -576,6 +574,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.pattern("MMM")
 			.unlockedBy("has_mud", has(Items.MUD))
 			.save(consumer, modLoc(folder + "packed_mud"));
+		//QUICK SAND BUCKET
+			ShapedRecipeBuilder.shaped(ItemRegistry.QUICK_SAND_BUCKET.get())
+			.define('S', Tags.Items.SAND_COLORLESS)
+			.define('B', Items.BUCKET)
+			.pattern("S")
+			.pattern("B")
+			.unlockedBy("has_bucket", has(Items.BUCKET))
+			.save(consumer, modLoc(folder + "quick_sand_bucket"));	
+			
 			
 	}
 	

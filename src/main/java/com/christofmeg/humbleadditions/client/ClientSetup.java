@@ -16,6 +16,7 @@ public class ClientSetup {
     public static void registerEntityRenders(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(EntityRegistry.RED_HUSK.get(), RedHuskRenderer::new);
     }
-	
+
+
 	
 }

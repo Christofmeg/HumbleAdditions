@@ -3,6 +3,7 @@ package com.christofmeg.humbleadditions.data.loot;
 import java.util.stream.Collectors;
 
 import com.christofmeg.humbleadditions.common.blocks.AbstractLayerBlock;
+import com.christofmeg.humbleadditions.common.blocks.QuickSandBlock;
 import com.christofmeg.humbleadditions.registry.BlockRegistry;
 
 import net.minecraft.advancements.critereon.EnchantmentPredicate;
@@ -33,10 +34,12 @@ public class ModBlockLootTables extends net.minecraft.data.loot.BlockLoot {
     @Override
     protected void addTables() {
     	BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)
-    	.filter(block -> (!(block instanceof AbstractLayerBlock || block instanceof AbstractGlassBlock)))
+    	.filter(block -> (!(block instanceof AbstractLayerBlock || block instanceof AbstractGlassBlock || block instanceof QuickSandBlock)))
     	.forEach(block -> {
     		dropSelf(block);
     	});
+    	
+    	this.add(BlockRegistry.QUICK_SAND.get(), noDrop());
     	
     	BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)
     	.filter(block -> (block instanceof AbstractGlassBlock))

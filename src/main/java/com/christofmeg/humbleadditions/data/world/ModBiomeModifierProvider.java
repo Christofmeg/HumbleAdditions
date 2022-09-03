@@ -26,7 +26,7 @@ public class ModBiomeModifierProvider {
 		Registry<Biome> biomeRegistry = access.registryOrThrow(Registry.BIOME_REGISTRY);
 		HashMap<ResourceLocation, BiomeModifier> modifiers = new HashMap<>();
 		
-//		addModifier(modifiers, "add_monster/red_husk", new AddSpawnsBiomeModifier(tag(biomeRegistry, TagRegistry.Biomes.RED_HUSK_BIOMES), List.of(new MobSpawnSettings.SpawnerData(EntityRegistry.RED_HUSK.get(), 80, 4, 4))));
+//		addModifier(modifiers, "add_monster/red_husk", new SAddSpawnsBiomeModifier(tag(biomeRegistry, TagRegistry.Biomes.RED_HUSK_BIOMES), List.of(new MobSpawnSettings.SpawnerData(EntityRegistry.RED_HUSK.get(), 80, 4, 4))));
 		
 		return JsonCodecProvider.forDatapackRegistry(gen, existingFileHelper, ModConstants.MOD_ID, RegistryOps.create(JsonOps.INSTANCE, access), 
 			ForgeRegistries.Keys.BIOME_MODIFIERS, modifiers);

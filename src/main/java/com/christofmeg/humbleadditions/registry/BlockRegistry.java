@@ -5,6 +5,7 @@ import java.util.function.Supplier;
 import com.christofmeg.humbleadditions.common.blocks.AbstractLayerBlock;
 import com.christofmeg.humbleadditions.common.blocks.CustomCarvedPumpkinBlock;
 import com.christofmeg.humbleadditions.common.blocks.MossLayerBlock;
+import com.christofmeg.humbleadditions.common.blocks.QuickSandBlock;
 import com.christofmeg.humbleadditions.common.blocks.SandLayerBlock;
 import com.christofmeg.humbleadditions.common.blocks.SmoothIceBlock;
 import com.christofmeg.humbleadditions.setup.ModConstants;
@@ -190,6 +191,10 @@ public class BlockRegistry {
 	public static final RegistryObject<WallBlock> SMOOTH_STONE_WALL = registerVanillaTexturedBlock("smooth_stone" + "_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.SMOOTH_STONE)), props());
 	public static final RegistryObject<WallBlock> STONE_WALL = registerVanillaTexturedBlock("stone" + "_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE)), props());
 	
+	public static final RegistryObject<QuickSandBlock> QUICK_SAND = registerBlockItem("quick_sand", () -> new QuickSandBlock(14406560, BlockBehaviour.Properties.of(BlockRegistry.QUICK_SAND_MATERIAL).strength(0.25F).sound(SoundType.SAND).dynamicShape()), new Item.Properties());
+	  
+	public static final Material QUICK_SAND_MATERIAL = (new Material.Builder(MaterialColor.SAND)).build();//.nonSolid()
+	
 	private static StainedGlassBlock stainedGlass(DyeColor color) {
 		return new StainedGlassBlock(color, BlockBehaviour.Properties.of(Material.GLASS, color).strength(0.3F).sound(SoundType.GLASS).noOcclusion().emissiveRendering((state, world, pos) -> true).lightLevel((b) -> 1)
 			.isValidSpawn(BlockRegistry::shouldAllowSpawn)
@@ -230,7 +235,6 @@ public class BlockRegistry {
         return block;
     }
 	
-	@SuppressWarnings("unused")
 	private static <T extends Block> RegistryObject<T> registerBlockItem(String name, Supplier<T> supplier, Item.Properties properties) {
         RegistryObject<T> block = BLOCKS.register(name, supplier);
         return block;

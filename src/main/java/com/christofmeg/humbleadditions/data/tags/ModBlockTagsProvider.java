@@ -77,7 +77,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 		this.tag(BlockTags.MINEABLE_WITH_SHOVEL).add(
 			BlockRegistry.SAND_LAYER_BLOCK.get(), 
 			BlockRegistry.RED_SAND_LAYER_BLOCK.get(),
-			BlockRegistry.GRAVEL_LAYER_BLOCK.get()
+			BlockRegistry.GRAVEL_LAYER_BLOCK.get(),
+			BlockRegistry.QUICK_SAND.get()
 			);
 		
 		this.tag(BlockTags.MANGROVE_LOGS_CAN_GROW_THROUGH).add(BlockRegistry.MOSS_LAYER_BLOCK.get());

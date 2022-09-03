@@ -25,14 +25,15 @@ public class ModConfiguredFeatures {
 //		OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, BlockRegistry.LIMESTONE.get().defaultBlockState())
 		OreConfiguration.target(new BlockMatchTest(Blocks.STONE), BlockRegistry.LIMESTONE.get().defaultBlockState()),
 		OreConfiguration.target(new BlockMatchTest(Blocks.DEEPSLATE), BlockRegistry.LIMESTONE.get().defaultBlockState()),
-		OreConfiguration.target(new BlockMatchTest(Blocks.TUFF), BlockRegistry.LIMESTONE.get().defaultBlockState())
-			
+		OreConfiguration.target(new BlockMatchTest(Blocks.TUFF), BlockRegistry.LIMESTONE.get().defaultBlockState())	
 		));
+		public static final RegistryObject<ConfiguredFeature<?, ?>> OVERWORLD_BLOCK_FEATURE = CONFIGURED_FEATURES.register("overworld_blocks", () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_FEATURES.get(), 32)));
 	
-	public static final RegistryObject<ConfiguredFeature<?, ?>> OVERWORLD_BLOCK_FEATURE = CONFIGURED_FEATURES.register("overworld_blocks",
-																									//VEIN SIZE
-            () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(OVERWORLD_FEATURES.get(), 32)));
-	
+	public static final Supplier<List<OreConfiguration.TargetBlockState>> QUICK_SAND_FEATURES = Suppliers.memoize(() -> List.of(
+		OreConfiguration.target(new BlockMatchTest(Blocks.SAND), BlockRegistry.QUICK_SAND.get().defaultBlockState())
+		));
+		public static final RegistryObject<ConfiguredFeature<?, ?>> QUICK_SAND_BLOCK_FEATURE = CONFIGURED_FEATURES.register("quick_sand_blocks", () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(QUICK_SAND_FEATURES.get(), 16)));
+		
 			
 			
 }

@@ -26,6 +26,16 @@ public class ModPlacedFeatures {
         	commonOrePlacement(8, // VeinsPerChunk
         		HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(0), VerticalAnchor.aboveBottom(64)))));
 	
+	public static final RegistryObject<PlacedFeature> QUICK_SAND_BLOCK_PLACED = PLACED_FEATURES.register("quick_sand_blocks_placed",
+	        () -> new PlacedFeature(ModConfiguredFeatures.QUICK_SAND_BLOCK_FEATURE.getHolder().get(),
+	        	commonOrePlacement(2, // VeinsPerChunk
+	        		HeightRangePlacement.triangle(VerticalAnchor.absolute(62), VerticalAnchor.absolute(64)))));
+
+	
+	
+	
+	
+	
 	public static List<PlacementModifier> orePlacement(PlacementModifier placementModifier1, PlacementModifier placementModifier2) {
         return List.of(placementModifier1, InSquarePlacement.spread(), placementModifier2, BiomeFilter.biome());
     }
