@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:raw_materials/gold"
+    },
+    {
+      "tag": "forge:raw_materials/gold"
+    },
+    {
+      "tag": "forge:raw_materials/gold"
+    },
+    {
+      "tag": "forge:raw_materials/copper"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "humbleadditions:raw_rose_gold"
+  }
+}

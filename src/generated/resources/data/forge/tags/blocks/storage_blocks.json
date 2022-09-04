@@ -1,0 +1,10 @@
+{
+  "values": [
+    "#forge:storage_blocks/charcoal",
+    "#forge:storage_blocks/rose_gold",
+    "#forge:storage_blocks/raw_endorium",
+    "#forge:storage_blocks/endorium",
+    "#forge:storage_blocks/endorite",
+    "#forge:storage_blocks/raw_rose_gold"
+  ]
+}

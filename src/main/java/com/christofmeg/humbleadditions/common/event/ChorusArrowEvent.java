@@ -18,13 +18,12 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
 @EventBusSubscriber(modid = ModConstants.MOD_ID, bus = EventBusSubscriber.Bus.FORGE)
 public class ChorusArrowEvent {
 	
-	@SubscribeEvent
+//TODO	@SubscribeEvent
 	public static void teleportEntityHitEvent(LivingHurtEvent event) {
 		Entity entity = event.getEntity();
 		Level level = entity.getLevel();

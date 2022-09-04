@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "minecraft:netherite_block"
+  },
+  "base": {
+    "item": "humbleadditions:diamond_shears"
+  },
+  "result": {
+    "item": "humbleadditions:netherite_shears"
+  }
+}

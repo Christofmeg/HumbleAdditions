@@ -34,6 +34,7 @@ public class ModLootTableProvider extends LootTableProvider  {
     protected List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>> getTables() {
         return ImmutableList.of(
         	Pair.of(ModBlockLootTables::new, LootContextParamSets.BLOCK),
+        	Pair.of(ModBlockLotTablesVanillaTexturedBlocks::new, LootContextParamSets.BLOCK),
       //    Pair.of(ModChestLootTables::new, LootContextParamSets.CHEST),
         	Pair.of(ModEntityLootTables::new, LootContextParamSets.ENTITY)
                

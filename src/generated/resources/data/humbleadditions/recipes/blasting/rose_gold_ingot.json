@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "cookingtime": 100,
+  "experience": 0.825,
+  "group": "humbleadditions",
+  "ingredient": {
+    "item": "humbleadditions:raw_rose_gold"
+  },
+  "result": "humbleadditions:rose_gold_ingot"
+}

@@ -32,6 +32,8 @@ public class HumbleAdditions {
         BlockRegistry.BLOCKS.register(bus);
         BlockRegistry.VANILLA_TEXTURED_BLOCKS.register(bus);
         ItemRegistry.ITEMS.register(bus);
+        ItemRegistry.ITEMS_AUTO_REGISTER.register(bus);
+        ItemRegistry.BLOCK_ITEMS_AUTO_REGISTER.register(bus);
         EntityRegistry.ENTITY_TYPES.register(bus);
         VanillaItemRegistry.ITEMS.register(bus);
         ModConfiguredFeatures.CONFIGURED_FEATURES.register(bus);

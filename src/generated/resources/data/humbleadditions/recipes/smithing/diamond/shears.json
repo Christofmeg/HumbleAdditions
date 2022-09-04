@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "minecraft:diamond_block"
+  },
+  "base": {
+    "item": "minecraft:shears"
+  },
+  "result": {
+    "item": "humbleadditions:diamond_shears"
+  }
+}

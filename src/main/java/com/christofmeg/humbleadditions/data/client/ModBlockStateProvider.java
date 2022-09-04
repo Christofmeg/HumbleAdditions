@@ -46,6 +46,13 @@ public class ModBlockStateProvider<T> extends BlockStateProvider {
 		horizontalBlock(BlockRegistry.JACK_O_SOUL_LANTERN.get(), mcLoc("block/pumpkin_side"), modLoc("blocks/jack_o_soul_lantern"), mcLoc("block/pumpkin_top"));
 		simpleBlock(BlockRegistry.QUICK_SAND.get(), models().singleTexture("quick_sand", modLoc("block/abstract_quick_sand"), modLoc("blocks/quick_sand")));
 		
+		simpleBlock(BlockRegistry.ENDORIUM_ORE.get(), models().cubeAll("endorium_ore", modLoc("blocks/endorium_ore")));
+		simpleBlock(BlockRegistry.RAW_ENDORIUM_BLOCK.get(), models().cubeAll("raw_endorium_block", modLoc("blocks/raw_endorium_block")));
+		simpleBlock(BlockRegistry.ROSE_GOLD_BLOCK.get(), models().cubeAll("rose_gold_block", modLoc("blocks/rose_gold_block")));
+		simpleBlock(BlockRegistry.ENDORIUM_BLOCK.get(), models().cubeAll("endorium_block", modLoc("blocks/endorium_block")));
+		simpleBlock(BlockRegistry.ENDORITE_BLOCK.get(), models().cubeAll("endorite_block", modLoc("blocks/endorite_block")));
+		simpleBlock(BlockRegistry.RAW_ROSE_GOLD_BLOCK.get(), models().cubeAll("raw_rose_gold_block", modLoc("blocks/raw_rose_gold_block")));
+		
 		simpleBlock(BlockRegistry.LIMESTONE.get(), models().cubeAll("limestone", modLoc("blocks/limestone")));
 		simpleBlock(BlockRegistry.LIMESTONE_BRICKS.get(), models().cubeAll("limestone_bricks", modLoc("blocks/limestone_bricks")));
 		simpleBlock(BlockRegistry.POLISHED_LIMESTONE.get(), models().cubeAll("polished_limestone", modLoc("blocks/polished_limestone")));

@@ -8,6 +8,7 @@ import org.jetbrains.annotations.NotNull;
 
 import com.christofmeg.humbleadditions.registry.BlockRegistry;
 import com.christofmeg.humbleadditions.registry.ItemRegistry;
+import com.christofmeg.humbleadditions.registry.TagRegistry;
 import com.christofmeg.humbleadditions.setup.ModConstants;
 import com.google.common.collect.ImmutableMap;
 
@@ -70,11 +71,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 	
 	private void addSmithingRecipes(Consumer<FinishedRecipe> consumer) {
 		String folder = "smithing/";
+
+		String golden = "golden/";
+		String rose_gold = "rose_gold/";
+		String copper = "copper/";
 		String stone = "stone/";
 		String iron = "iron/";
-		String gold = "gold/";
 		String diamond = "diamond/";
 		String netherite = "netherite/";
+		String endorium = "endorium/";
+		String endorite = "endorite/";
+		
 		String chain = "chain/";
 		String horse = "horse_armor/";
 		
@@ -84,11 +91,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		stoneSmithing(consumer, modLoc(folder + stone + "shovel"), Items.WOODEN_SHOVEL, Items.STONE_SHOVEL);
 		stoneSmithing(consumer, modLoc(folder + stone + "sword"), Items.WOODEN_SWORD, Items.STONE_SWORD);
 		
-		goldSmithing(consumer, modLoc(folder + gold + "axe"), Items.STONE_AXE, Items.GOLDEN_AXE);
-		goldSmithing(consumer, modLoc(folder + gold + "hoe"), Items.STONE_HOE, Items.GOLDEN_HOE);
-		goldSmithing(consumer, modLoc(folder + gold + "pickaxe"), Items.STONE_PICKAXE, Items.GOLDEN_PICKAXE);
-		goldSmithing(consumer, modLoc(folder + gold + "shovel"), Items.STONE_SHOVEL, Items.GOLDEN_SHOVEL);
-		goldSmithing(consumer, modLoc(folder + gold + "sword"), Items.STONE_SWORD, Items.GOLDEN_SWORD);
+		goldenSmithing(consumer, modLoc(folder + golden + "axe"), Items.STONE_AXE, Items.GOLDEN_AXE);
+		goldenSmithing(consumer, modLoc(folder + golden + "hoe"), Items.STONE_HOE, Items.GOLDEN_HOE);
+		goldenSmithing(consumer, modLoc(folder + golden + "pickaxe"), Items.STONE_PICKAXE, Items.GOLDEN_PICKAXE);
+		goldenSmithing(consumer, modLoc(folder + golden + "shovel"), Items.STONE_SHOVEL, Items.GOLDEN_SHOVEL);
+		goldenSmithing(consumer, modLoc(folder + golden + "sword"), Items.STONE_SWORD, Items.GOLDEN_SWORD);
 		
 		ironSmithing(consumer, modLoc(folder + iron + "axe"), Items.GOLDEN_AXE, Items.IRON_AXE);
 		ironSmithing(consumer, modLoc(folder + iron + "hoe"), Items.GOLDEN_HOE, Items.IRON_HOE);
@@ -107,10 +114,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		ironSmithing(consumer, modLoc(folder + chain + "leggings"), Items.LEATHER_LEGGINGS, Items.CHAINMAIL_LEGGINGS);
 		ironSmithing(consumer, modLoc(folder + chain + "boots"), Items.LEATHER_BOOTS, Items.CHAINMAIL_BOOTS);
 		
-		goldSmithing(consumer, modLoc(folder + gold + "helmet"), Items.CHAINMAIL_HELMET, Items.GOLDEN_HELMET);
-		goldSmithing(consumer, modLoc(folder + gold + "chestplate"), Items.CHAINMAIL_CHESTPLATE, Items.GOLDEN_CHESTPLATE);
-		goldSmithing(consumer, modLoc(folder + gold + "leggings"), Items.CHAINMAIL_LEGGINGS, Items.GOLDEN_LEGGINGS);
-		goldSmithing(consumer, modLoc(folder + gold + "boots"), Items.CHAINMAIL_BOOTS, Items.GOLDEN_BOOTS);
+		goldenSmithing(consumer, modLoc(folder + golden + "helmet"), Items.CHAINMAIL_HELMET, Items.GOLDEN_HELMET);
+		goldenSmithing(consumer, modLoc(folder + golden + "chestplate"), Items.CHAINMAIL_CHESTPLATE, Items.GOLDEN_CHESTPLATE);
+		goldenSmithing(consumer, modLoc(folder + golden + "leggings"), Items.CHAINMAIL_LEGGINGS, Items.GOLDEN_LEGGINGS);
+		goldenSmithing(consumer, modLoc(folder + golden + "boots"), Items.CHAINMAIL_BOOTS, Items.GOLDEN_BOOTS);
 		
 		ironSmithing(consumer, modLoc(folder + iron + "helmet"), Items.GOLDEN_HELMET, Items.IRON_HELMET);
 		ironSmithing(consumer, modLoc(folder + iron + "chestplate"), Items.GOLDEN_CHESTPLATE, Items.IRON_CHESTPLATE);
@@ -123,9 +130,32 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		diamondSmithing(consumer, modLoc(folder + diamond + "boots"), Items.IRON_BOOTS, Items.DIAMOND_BOOTS);
 		
 		ironSmithing(consumer, modLoc(folder + horse + iron), Items.LEATHER_HORSE_ARMOR, Items.IRON_HORSE_ARMOR);
-		goldSmithing(consumer, modLoc(folder + horse + gold), Items.IRON_HORSE_ARMOR, Items.GOLDEN_HORSE_ARMOR);
+		goldenSmithing(consumer, modLoc(folder + horse + golden), Items.IRON_HORSE_ARMOR, Items.GOLDEN_HORSE_ARMOR);
 		diamondSmithing(consumer, modLoc(folder + horse + diamond), Items.GOLDEN_HORSE_ARMOR, Items.DIAMOND_HORSE_ARMOR);
 		netheriteSmithing(consumer, modLoc(folder + horse + netherite), Items.DIAMOND_HORSE_ARMOR, ItemRegistry.NETHERITE_HORSE_ARMOR.get());
+		
+		endoriumSmithing(consumer, modLoc(folder + endorium + "axe"), Items.DIAMOND_AXE, ItemRegistry.ENDORIUM_AXE.get());
+		endoriumSmithing(consumer, modLoc(folder + endorium + "hoe"), Items.DIAMOND_HOE, ItemRegistry.ENDORIUM_HOE.get());
+		endoriumSmithing(consumer, modLoc(folder + endorium + "pickaxe"), Items.DIAMOND_PICKAXE, ItemRegistry.ENDORIUM_PICKAXE.get());
+		endoriumSmithing(consumer, modLoc(folder + endorium + "shovel"), Items.DIAMOND_SHOVEL, ItemRegistry.ENDORIUM_SHOVEL.get());
+		endoriumSmithing(consumer, modLoc(folder + endorium + "sword"), Items.DIAMOND_SWORD, ItemRegistry.ENDORIUM_SWORD.get());
+		
+		goldenSmithing(consumer, modLoc(folder + golden + "shears"), ItemRegistry.WOODEN_SHEARS.get(), ItemRegistry.GOLDEN_SHEARS.get());
+		roseGoldSmithing(consumer, modLoc(folder + rose_gold + "shears"), ItemRegistry.GOLDEN_SHEARS.get(), ItemRegistry.ROSE_GOLD_SHEARS.get());
+		stoneSmithing(consumer, modLoc(folder + stone + "shears"), ItemRegistry.ROSE_GOLD_SHEARS.get(), ItemRegistry.STONE_SHEARS.get());
+		copperSmithing(consumer, modLoc(folder + copper + "shears"), ItemRegistry.STONE_SHEARS.get(), ItemRegistry.COPPER_SHEARS.get());
+		ironSmithing(consumer, modLoc(folder + iron + "shears"), ItemRegistry.COPPER_SHEARS.get(), Items.SHEARS);
+		diamondSmithing(consumer, modLoc(folder + diamond + "shears"), Items.SHEARS, ItemRegistry.DIAMOND_SHEARS.get());
+		netheriteSmithing(consumer, modLoc(folder + netherite + "shears"), ItemRegistry.DIAMOND_SHEARS.get(), ItemRegistry.NETHERITE_SHEARS.get());
+		endoriumSmithing(consumer, modLoc(folder + endorium + "shears"), ItemRegistry.DIAMOND_SHEARS.get(), ItemRegistry.ENDORIUM_SHEARS.get());
+		endoriteSmithing(consumer, modLoc(folder + endorite + "shears_al1"), ItemRegistry.NETHERITE_SHEARS.get(), ItemRegistry.ENDORITE_SHEARS.get());
+		endoriteSmithing(consumer, modLoc(folder + endorite + "shears_alt2"), ItemRegistry.ENDORIUM_SHEARS.get(), ItemRegistry.ENDORITE_SHEARS.get());
+		
+		roseGoldSmithing(consumer, modLoc(folder + rose_gold + "sword"), Items.GOLDEN_SWORD, ItemRegistry.ROSE_GOLD_SWORD.get());
+		roseGoldSmithing(consumer, modLoc(folder + rose_gold + "pickaxe"), Items.GOLDEN_PICKAXE, ItemRegistry.ROSE_GOLD_PICKAXE.get());
+		roseGoldSmithing(consumer, modLoc(folder + rose_gold + "shovel"), Items.GOLDEN_SHOVEL, ItemRegistry.ROSE_GOLD_SHOVEL.get());
+		roseGoldSmithing(consumer, modLoc(folder + rose_gold + "axe"), Items.GOLDEN_AXE, ItemRegistry.ROSE_GOLD_AXE.get());
+		roseGoldSmithing(consumer, modLoc(folder + rose_gold + "hoe"), Items.GOLDEN_HOE, ItemRegistry.ROSE_GOLD_HOE.get());
 		
 	}
 	
@@ -342,7 +372,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		wallBuilder(BlockRegistry.SMOOTH_SANDSTONE_WALL.get(), Ingredient.of(Blocks.SMOOTH_SANDSTONE)).unlockedBy("has_stone_bricks", has(Blocks.SMOOTH_SANDSTONE)).save(consumer, modLoc("shaped/" + "walls/" + BlockRegistry.SMOOTH_SANDSTONE_WALL.get().defaultBlockState().getBlock().toString().replace("Block{humbleadditions:", "").replace("}", "")));
 		wallBuilder(BlockRegistry.SMOOTH_STONE_WALL.get(), Ingredient.of(Blocks.SMOOTH_STONE)).unlockedBy("has_stone_bricks", has(Blocks.SMOOTH_STONE)).save(consumer, modLoc("shaped/" + "walls/" + BlockRegistry.SMOOTH_STONE_WALL.get().defaultBlockState().getBlock().toString().replace("Block{humbleadditions:", "").replace("}", "")));
 		wallBuilder(BlockRegistry.STONE_WALL.get(), Ingredient.of(Blocks.STONE)).unlockedBy("has_stone_bricks", has(Blocks.STONE)).save(consumer, modLoc("shaped/" + "walls/" + BlockRegistry.STONE_WALL.get().defaultBlockState().getBlock().toString().replace("Block{humbleadditions:", "").replace("}", "")));
-		
 		
 	}
 	
@@ -577,13 +606,68 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		//QUICK SAND BUCKET
 			ShapedRecipeBuilder.shaped(ItemRegistry.QUICK_SAND_BUCKET.get())
 			.define('S', Tags.Items.SAND_COLORLESS)
-			.define('B', Items.BUCKET)
+			.define('B', Items.WATER_BUCKET)
 			.pattern("S")
 			.pattern("B")
 			.unlockedBy("has_bucket", has(Items.BUCKET))
-			.save(consumer, modLoc(folder + "quick_sand_bucket"));	
+			.save(consumer, modLoc(folder + "quick_sand_bucket"));
+		//RAW ENDORIUM BLOCK
+			ShapedRecipeBuilder.shaped(BlockRegistry.RAW_ENDORIUM_BLOCK.get())
+			.define('E', ItemRegistry.RAW_ENDORIUM.get())
+			.pattern("EEE")
+			.pattern("EEE")
+			.pattern("EEE")
+			.unlockedBy("has_endorium", has(ItemRegistry.RAW_ENDORIUM.get()))
+			.save(consumer, modLoc(folder + "raw_endorium_block"));
+		//ENDORIUM BLOCK
+			ShapedRecipeBuilder.shaped(BlockRegistry.ENDORIUM_BLOCK.get())
+			.define('E', ItemRegistry.ENDORIUM_INGOT.get())
+			.pattern("EEE")
+			.pattern("EEE")
+			.pattern("EEE")
+			.unlockedBy("has_endorium", has(ItemRegistry.RAW_ENDORIUM.get()))
+			.save(consumer, modLoc(folder + "endorium_block"));
+		//ROSE GOLD BLOCK
+			ShapedRecipeBuilder.shaped(BlockRegistry.ROSE_GOLD_BLOCK.get())
+			.define('E', ItemRegistry.ROSE_GOLD_INGOT.get())
+			.pattern("EEE")
+			.pattern("EEE")
+			.pattern("EEE")
+			.unlockedBy("has_endorium", has(ItemRegistry.RAW_ENDORIUM.get()))
+			.save(consumer, modLoc(folder + "rose_gold_block"));
+		//ENDORITE BLOCK
+			ShapedRecipeBuilder.shaped(BlockRegistry.ENDORITE_BLOCK.get())
+			.define('E', ItemRegistry.ENDORITE_INGOT.get())
+			.pattern("EEE")
+			.pattern("EEE")
+			.pattern("EEE")
+			.unlockedBy("has_endorium", has(ItemRegistry.RAW_ENDORIUM.get()))
+			.save(consumer, modLoc(folder + "endorite_block"));
+		//RAW ROSE GOLD BLOCK
+			ShapedRecipeBuilder.shaped(BlockRegistry.RAW_ROSE_GOLD_BLOCK.get())
+			.define('E', ItemRegistry.RAW_ROSE_GOLD.get())
+			.pattern("EEE")
+			.pattern("EEE")
+			.pattern("EEE")
+			.unlockedBy("has_endorium", has(ItemRegistry.RAW_ENDORIUM.get()))
+			.save(consumer, modLoc(folder + "raw_rose_gold_block"));
 			
+		//SHEARS
+			shearsRecipe(consumer, modLoc(folder + "wooden" + "_shears"), ItemTags.PLANKS, ItemRegistry.WOODEN_SHEARS.get());
+			shearsRecipe(consumer, modLoc(folder + "stone" + "_shears"), Tags.Items.COBBLESTONE, ItemRegistry.STONE_SHEARS.get());
+			shearsRecipe(consumer, modLoc(folder + "golden" + "_shears"), Tags.Items.INGOTS_GOLD, ItemRegistry.GOLDEN_SHEARS.get());
+			shearsRecipe(consumer, modLoc(folder + "copper" + "_shears"), Tags.Items.INGOTS_COPPER, ItemRegistry.COPPER_SHEARS.get());
+			shearsRecipe(consumer, modLoc(folder + "rose_gold" + "_shears"), TagRegistry.Items.ROSE_GOLD_INGOT, ItemRegistry.ROSE_GOLD_SHEARS.get());
+			shearsRecipe(consumer, modLoc(folder + "diamond" + "_shears"), Tags.Items.STORAGE_BLOCKS_DIAMOND, ItemRegistry.DIAMOND_SHEARS.get());
+			shearsRecipe(consumer, modLoc(folder + "netherite" + "_shears"), Tags.Items.STORAGE_BLOCKS_NETHERITE, ItemRegistry.NETHERITE_SHEARS.get());
+			shearsRecipe(consumer, modLoc(folder + "endorium" + "_shears"), TagRegistry.Items.STORAGE_BLOCKS_ENDORIUM, ItemRegistry.ENDORIUM_SHEARS.get());
+			shearsRecipe(consumer, modLoc(folder + "endorite" + "_shears"), TagRegistry.Items.STORAGE_BLOCKS_ENDORITE, ItemRegistry.ENDORITE_SHEARS.get());
 			
+			swordRecipe(consumer, modLoc(folder + "rose_gold" + "_" + "sword"), TagRegistry.Items.ROSE_GOLD_INGOT, ItemRegistry.ROSE_GOLD_SWORD.get());
+			axeRecipe(consumer, folder + "rose_gold" + "_" + "axe", TagRegistry.Items.ROSE_GOLD_INGOT, ItemRegistry.ROSE_GOLD_AXE.get());
+			pickaxeRecipe(consumer, modLoc(folder + "rose_gold" + "_" + "pickaxe"), TagRegistry.Items.ROSE_GOLD_INGOT, ItemRegistry.ROSE_GOLD_PICKAXE.get());
+			shovelRecipe(consumer, modLoc(folder + "rose_gold" + "_" + "shovel"), TagRegistry.Items.ROSE_GOLD_INGOT, ItemRegistry.ROSE_GOLD_SHOVEL.get());
+			hoeRecipe(consumer, folder + "rose_gold" + "_" + "hoe", TagRegistry.Items.ROSE_GOLD_INGOT, ItemRegistry.ROSE_GOLD_HOE.get());
 	}
 	
 	private void addShapelessRecipes(Consumer<FinishedRecipe> consumer) {
@@ -678,16 +762,98 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.requires(Items.HOPPER_MINECART)
 			.unlockedBy("has_minecart", has(Items.MINECART))
 			.save(consumer, modLoc(folder + "hopper" + "_minecart"));
+			
+		//RAW ENDORIUM
+			ShapelessRecipeBuilder.shapeless(ItemRegistry.RAW_ENDORIUM.get(), 9)
+			.requires(BlockRegistry.RAW_ENDORIUM_BLOCK.get())
+			.unlockedBy("has_endorium", has(ItemRegistry.RAW_ENDORIUM.get()))
+			.save(consumer, modLoc(folder + "raw_endorium"));
+		//ENDORIUM INGOT
+			ShapelessRecipeBuilder.shapeless(ItemRegistry.ENDORIUM_INGOT.get(), 9)
+			.requires(BlockRegistry.ENDORIUM_BLOCK.get())
+			.unlockedBy("has_endorium", has(ItemRegistry.RAW_ENDORIUM.get()))
+			.save(consumer, modLoc(folder + "endorium_ingot"));
+		//ROSE GOLD INGOT
+			ShapelessRecipeBuilder.shapeless(ItemRegistry.ROSE_GOLD_INGOT.get(), 9)
+			.requires(BlockRegistry.ROSE_GOLD_BLOCK.get())
+			.unlockedBy("has_endorium", has(ItemRegistry.RAW_ENDORIUM.get()))
+			.save(consumer, modLoc(folder + "rose_gold_ingot_from_block"));
+		//RAW ROSE GOLD
+			ShapelessRecipeBuilder.shapeless(ItemRegistry.RAW_ROSE_GOLD.get(), 9)
+			.requires(BlockRegistry.RAW_ROSE_GOLD_BLOCK.get())
+			.unlockedBy("has_endorium", has(ItemRegistry.RAW_ENDORIUM.get()))
+			.save(consumer, modLoc(folder + "raw_rose_gold_from_block"));
+		//ENDORITE INGOT
+			ShapelessRecipeBuilder.shapeless(ItemRegistry.ENDORITE_BLOCK.get(), 9)
+			.requires(BlockRegistry.ENDORITE_BLOCK.get())
+			.unlockedBy("has_endorium", has(ItemRegistry.RAW_ENDORIUM.get()))
+			.save(consumer, modLoc(folder + "endorite_ingot_from_block"));
+		//ROSE GOLD INGOT
+			ShapelessRecipeBuilder.shapeless(ItemRegistry.RAW_ROSE_GOLD.get(), 4)
+			.requires(Tags.Items.RAW_MATERIALS_GOLD)
+			.requires(Tags.Items.RAW_MATERIALS_GOLD)
+			.requires(Tags.Items.RAW_MATERIALS_GOLD)
+			.requires(Tags.Items.RAW_MATERIALS_COPPER)
+			.unlockedBy("has_endorium", has(ItemRegistry.RAW_ENDORIUM.get()))
+			.save(consumer, modLoc(folder + "raw_rose_gold"));
+		//ROSE GOLD INGOT
+			ShapelessRecipeBuilder.shapeless(BlockRegistry.RAW_ROSE_GOLD_BLOCK.get(), 4)
+			.requires(Tags.Items.STORAGE_BLOCKS_RAW_GOLD)
+			.requires(Tags.Items.STORAGE_BLOCKS_RAW_GOLD)
+			.requires(Tags.Items.STORAGE_BLOCKS_RAW_GOLD)
+			.requires(Tags.Items.STORAGE_BLOCKS_RAW_COPPER)
+			.unlockedBy("has_endorium", has(ItemRegistry.RAW_ENDORIUM.get()))
+			.save(consumer, modLoc(folder + "raw_rose_gold_block"));
+		//ENDORITE INGOT
+			ShapelessRecipeBuilder.shapeless(ItemRegistry.ENDORITE_INGOT.get(), 4)
+			.requires(TagRegistry.Items.ENDORIUM_INGOT)
+			.requires(TagRegistry.Items.ENDORIUM_INGOT)
+			.requires(TagRegistry.Items.ENDORIUM_INGOT)
+			.requires(TagRegistry.Items.ENDORIUM_INGOT)
+			.requires(Tags.Items.NETHER_STARS)
+			.requires(Tags.Items.INGOTS_NETHERITE)
+			.requires(Tags.Items.INGOTS_NETHERITE)
+			.requires(Tags.Items.INGOTS_NETHERITE)
+			.requires(Tags.Items.INGOTS_NETHERITE)
+			.unlockedBy("has_endorium", has(ItemRegistry.RAW_ENDORIUM.get()))
+			.save(consumer, modLoc(folder + "endorite_ingot"));
 
-			
-			
-			
-			
-			
 	}
 	
 	private void addBlastingRecipes(Consumer<FinishedRecipe> consumer) {
 		String folder = "blasting/";
+	
+	//ENDORIUM INGOT FROM ORE
+		SimpleCookingRecipeBuilder.blasting(
+			Ingredient.of(BlockRegistry.ENDORIUM_ORE.get()), ItemRegistry.ENDORITE_INGOT.get(), 2.0F, 900)
+			.group(ModConstants.MOD_ID)
+			.unlockedBy("has_endorium", has(ItemRegistry.RAW_ENDORIUM.get()))
+			.save(consumer, modLoc(folder + "endorium_ingot_from_ore"));
+	//ROSE GOLD BLOCK
+		SimpleCookingRecipeBuilder.blasting(
+			Ingredient.of(BlockRegistry.RAW_ROSE_GOLD_BLOCK.get()), BlockRegistry.ROSE_GOLD_BLOCK.get(), 7.425F, 900)
+			.group(ModConstants.MOD_ID)
+			.unlockedBy("has_endorium", has(ItemRegistry.RAW_ENDORIUM.get()))
+			.save(consumer, modLoc(folder + "raw_rose_gold_block"));	
+	//ROSE GOLD INGOT
+		SimpleCookingRecipeBuilder.blasting(
+			Ingredient.of(ItemRegistry.RAW_ROSE_GOLD.get()), ItemRegistry.ROSE_GOLD_INGOT.get(), 0.825F, 100)
+			.group(ModConstants.MOD_ID)
+			.unlockedBy("has_endorium", has(ItemRegistry.RAW_ENDORIUM.get()))
+			.save(consumer, modLoc(folder + "rose_gold_ingot"));
+	//ENDORIUM INGOT
+		SimpleCookingRecipeBuilder.blasting(
+			Ingredient.of(ItemRegistry.RAW_ENDORIUM_BLOCK.get()), BlockRegistry.ENDORIUM_BLOCK.get(), 18F, 900)
+			.group(ModConstants.MOD_ID)
+			.unlockedBy("has_endorium", has(ItemRegistry.RAW_ENDORIUM.get()))
+			.save(consumer, modLoc(folder + "endorium_block"));	
+		
+	//ENDORIUM INGOT
+		SimpleCookingRecipeBuilder.blasting(
+			Ingredient.of(ItemRegistry.RAW_ENDORIUM.get()), ItemRegistry.ENDORIUM_INGOT.get(), 2.0F, 100)
+			.group(ModConstants.MOD_ID)
+			.unlockedBy("has_endorium", has(ItemRegistry.RAW_ENDORIUM.get()))
+			.save(consumer, modLoc(folder + "endorium_ingot"));
 		
 		SimpleCookingRecipeBuilder.blasting(
 			Ingredient.of(BlockRegistry.SMOOTH_STONE_STAIRS.get()), Items.STONE_STAIRS, 0.1F, 100)
@@ -838,6 +1004,37 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 	
 	private void addSmeltingRecipes(Consumer<FinishedRecipe> consumer) {
 		String folder = "smelting/";
+	
+	//ENDORIUM INGOT FROM ORE
+		SimpleCookingRecipeBuilder.smelting(
+			Ingredient.of(BlockRegistry.ENDORIUM_ORE.get()), ItemRegistry.ENDORITE_INGOT.get(), 2.0F, 1800)
+			.group(ModConstants.MOD_ID)
+			.unlockedBy("has_endorium", has(ItemRegistry.RAW_ENDORIUM.get()))
+			.save(consumer, modLoc(folder + "endorium_ingot_from_ore"));
+	//ROSE GOLD BLOCK
+		SimpleCookingRecipeBuilder.smelting(
+			Ingredient.of(BlockRegistry.RAW_ROSE_GOLD_BLOCK.get()), BlockRegistry.ROSE_GOLD_BLOCK.get(), 7.425F, 1800)
+			.group(ModConstants.MOD_ID)
+			.unlockedBy("has_endorium", has(ItemRegistry.RAW_ENDORIUM.get()))
+			.save(consumer, modLoc(folder + "raw_rose_gold_block"));	
+	//ROSE GOLD INGOT
+		SimpleCookingRecipeBuilder.smelting(
+			Ingredient.of(ItemRegistry.RAW_ROSE_GOLD.get()), ItemRegistry.ROSE_GOLD_INGOT.get(), 0.825F, 200)
+			.group(ModConstants.MOD_ID)
+			.unlockedBy("has_endorium", has(ItemRegistry.RAW_ENDORIUM.get()))
+			.save(consumer, modLoc(folder + "rose_gold_ingot"));	
+	//ENDORIUM BLOCK
+		SimpleCookingRecipeBuilder.smelting(
+			Ingredient.of(ItemRegistry.RAW_ENDORIUM_BLOCK.get()), BlockRegistry.ENDORIUM_BLOCK.get(), 18F, 1800)
+			.group(ModConstants.MOD_ID)
+			.unlockedBy("has_endorium", has(ItemRegistry.RAW_ENDORIUM.get()))
+			.save(consumer, modLoc(folder + "endorium_block"));	
+	//ENDORIUM INGOT
+		SimpleCookingRecipeBuilder.smelting(
+			Ingredient.of(ItemRegistry.RAW_ENDORIUM.get()), ItemRegistry.ENDORIUM_INGOT.get(), 2.0F, 200)
+			.group(ModConstants.MOD_ID)
+			.unlockedBy("has_endorium", has(ItemRegistry.RAW_ENDORIUM.get()))
+			.save(consumer, modLoc(folder + "endorium_ingot"));
 		
 		SimpleCookingRecipeBuilder.smelting(
 			Ingredient.of(BlockRegistry.SMOOTH_STONE_STAIRS.get()), Items.STONE_STAIRS, 0.1F, 200)
@@ -1193,12 +1390,19 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 	      SingleItemRecipeBuilder.stonecutting(Ingredient.of(pIngredientItem), pResultItem).unlockedBy("has_" + StringUtils.toLowerCase(pResultItem.defaultBlockState().getBlock().toString().replace("Block{minecraft:", "").replace("}", "")), has(pIngredientItem)).save(consumer, modLoc(folder + stairs + StringUtils.toLowerCase(pIngredientItem.defaultBlockState().getBlock().toString().replace("Block{minecraft:", "").replace("}", ""))));
 	}
 	
+	private static void goldenSmithing(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, Item pIngredientItem, Item pResultItem) {
+	      UpgradeRecipeBuilder.smithing(Ingredient.of(pIngredientItem), Ingredient.of(Items.GOLD_BLOCK), pResultItem).unlocks("has_gold_block", has(Items.GOLD_BLOCK)).save(consumer, resourceLocation);
+	}
+	
 	private static void stoneSmithing(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, Item pIngredientItem, Item pResultItem) {
 	      UpgradeRecipeBuilder.smithing(Ingredient.of(pIngredientItem), Ingredient.of(ItemTags.STONE_TOOL_MATERIALS), pResultItem).unlocks("has_cobblestone", has(ItemTags.STONE_TOOL_MATERIALS)).save(consumer, resourceLocation);
 	}
 	
-	private static void goldSmithing(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, Item pIngredientItem, Item pResultItem) {
-	      UpgradeRecipeBuilder.smithing(Ingredient.of(pIngredientItem), Ingredient.of(Items.GOLD_BLOCK), pResultItem).unlocks("has_gold_block", has(Items.GOLD_BLOCK)).save(consumer, resourceLocation);
+	private static void copperSmithing(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, Item pIngredientItem, Item pResultItem) {
+	      UpgradeRecipeBuilder.smithing(Ingredient.of(pIngredientItem), Ingredient.of(Items.COPPER_BLOCK), pResultItem).unlocks("has_copper", has(Items.COPPER_BLOCK)).save(consumer, resourceLocation);	}
+	
+	private static void roseGoldSmithing(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, Item pIngredientItem, Item pResultItem) {
+	      UpgradeRecipeBuilder.smithing(Ingredient.of(pIngredientItem), Ingredient.of(BlockRegistry.ROSE_GOLD_BLOCK.get()), pResultItem).unlocks("has_rose_gold", has(BlockRegistry.ROSE_GOLD_BLOCK.get())).save(consumer, resourceLocation);
 	}
 	
 	private static void ironSmithing(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, Item pIngredientItem, Item pResultItem) {
@@ -1213,6 +1417,35 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 	      UpgradeRecipeBuilder.smithing(Ingredient.of(pIngredientItem), Ingredient.of(Items.NETHERITE_BLOCK), pResultItem).unlocks("has_netherite_block", has(Items.NETHERITE_BLOCK)).save(consumer, resourceLocation);
 	}
 	
+	private static void endoriumSmithing(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, Item pIngredientItem, Item pResultItem) {
+	      UpgradeRecipeBuilder.smithing(Ingredient.of(pIngredientItem), Ingredient.of(BlockRegistry.ENDORIUM_BLOCK.get()), pResultItem).unlocks("has_raw_endorium", has(ItemRegistry.RAW_ENDORIUM.get())).save(consumer, resourceLocation);
+	}
+	
+	private static void endoriteSmithing(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, Item pIngredientItem, Item pResultItem) {
+	      UpgradeRecipeBuilder.smithing(Ingredient.of(pIngredientItem), Ingredient.of(BlockRegistry.ENDORITE_BLOCK.get()), pResultItem).unlocks("has_raw_endorium", has(ItemRegistry.RAW_ENDORIUM.get())).save(consumer, resourceLocation);
+	}
+	
+	private static void shearsRecipe(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, TagKey<Item> itemFromTag, @NotNull Item item) {
+	      ShapedRecipeBuilder.shaped(item).define('I', itemFromTag).pattern(" I").pattern("I ").unlockedBy("has_item", has(itemFromTag)).save(consumer, resourceLocation);
+	}
+	private static void swordRecipe(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, TagKey<Item> itemFromTag, @NotNull Item item) {
+	      ShapedRecipeBuilder.shaped(item).define('I', itemFromTag).define('S', Tags.Items.RODS_WOODEN).pattern("I").pattern("I").pattern("S").unlockedBy("has_item", has(itemFromTag)).save(consumer, resourceLocation);
+	}
+	private static void axeRecipe(Consumer<FinishedRecipe> consumer, String resourceLocation, TagKey<Item> itemFromTag, @NotNull Item item) {
+	      ShapedRecipeBuilder.shaped(item).define('I', itemFromTag).define('S', Tags.Items.RODS_WOODEN).pattern("II").pattern("IS").pattern(" S").unlockedBy("has_item", has(itemFromTag)).save(consumer, modLoc(resourceLocation));
+	      ShapedRecipeBuilder.shaped(item).define('I', itemFromTag).define('S', Tags.Items.RODS_WOODEN).pattern("II").pattern("SI").pattern("S ").unlockedBy("has_item", has(itemFromTag)).save(consumer, modLoc(resourceLocation + "_alt"));
+	}
+	private static void pickaxeRecipe(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, TagKey<Item> itemFromTag, @NotNull Item item) {
+	      ShapedRecipeBuilder.shaped(item).define('I', itemFromTag).define('S', Tags.Items.RODS_WOODEN).pattern("III").pattern(" S ").pattern(" S ").unlockedBy("has_item", has(itemFromTag)).save(consumer, resourceLocation);
+	}
+	private static void shovelRecipe(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, TagKey<Item> itemFromTag, @NotNull Item item) {
+	      ShapedRecipeBuilder.shaped(item).define('I', itemFromTag).define('S', Tags.Items.RODS_WOODEN).pattern("I").pattern("S").pattern("S").unlockedBy("has_item", has(itemFromTag)).save(consumer, resourceLocation);
+	}
+	private static void hoeRecipe(Consumer<FinishedRecipe> consumer, String resourceLocation, TagKey<Item> itemFromTag, @NotNull Item item) {
+	      ShapedRecipeBuilder.shaped(item).define('I', itemFromTag).define('S', Tags.Items.RODS_WOODEN).pattern("II").pattern(" S").pattern(" S").unlockedBy("has_item", has(itemFromTag)).save(consumer, modLoc(resourceLocation));
+	      ShapedRecipeBuilder.shaped(item).define('I', itemFromTag).define('S', Tags.Items.RODS_WOODEN).pattern("II").pattern("S ").pattern("S ").unlockedBy("has_item", has(itemFromTag)).save(consumer, modLoc(resourceLocation + "_alt"));
+	}
+		
 	private static void createGlowingBlocks(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, TagKey<Item> glassFromTag, @NotNull Block block) {
 	      ShapedRecipeBuilder.shaped(block, 8)
 			.define('G', glassFromTag)

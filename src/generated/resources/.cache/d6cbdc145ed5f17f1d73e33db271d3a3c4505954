@@ -1,4 +1,4 @@
-// 1.19.2	2022-08-27T09:31:45.2421474	Humble Additions - Item Tags
+// 1.19.2	2022-09-04T20:03:24.4882881	Humble Additions - Item Tags
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/glass.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/glass/black.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/glass/blue.json
@@ -19,9 +19,30 @@
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/glass/white.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/glass/yellow.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/glass_panes.json
+8196465ba097a7defa968c7a2ddeb911a257f5c9 data/forge/tags/items/ingots.json
+5fb85270fcb56be448c96ec692cb442289756a6e data/forge/tags/items/ingots/endorite.json
+c659533f2a821c8d680c4aa39cf204f9cd82aba9 data/forge/tags/items/ingots/endorium.json
+1b9c3e0c9e86ca13ceb05add9fca280e4c513672 data/forge/tags/items/ingots/rose_gold.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/ores/endorium.json
+dad9cac0346b688539c1251f1c9e872dd50633c9 data/forge/tags/items/raw_materials.json
+7d9120fa011a9c330f8c840e72c20a0a21b71138 data/forge/tags/items/raw_materials/endorium.json
+c7b2ea5e617d227daf0e37d8f943604409fb682a data/forge/tags/items/raw_materials/rose_gold.json
+6962c4f1126281a9e7ac7a756f656a9e269376d9 data/forge/tags/items/shears.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/stained_glass.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/stained_glass_panes.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/stone.json
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/storage_blocks.json
+748fb8e619d047998125e1ef1ad8254c3922ce67 data/forge/tags/items/storage_blocks/charcoal.json
+8d4ff0762f7966ee47d4c792cc4d45bba1c85343 data/forge/tags/items/storage_blocks/endorite.json
+e464cd183b1eea01ded5dcef8b6cf13fe319465a data/forge/tags/items/storage_blocks/endorium.json
+1b441b0cd94acd9dc9113440cb483ecc291964ae data/forge/tags/items/storage_blocks/raw_endorium.json
+01b1d8838e397dbe11eb4dc3bd9e8980411bdbef data/forge/tags/items/storage_blocks/raw_rose_gold.json
+a726f0e422b1fa9336f09c78563b8924c5047200 data/forge/tags/items/storage_blocks/rose_gold.json
+79df57f744be32d363e38663112138076b54ebba data/forge/tags/items/tools/axes.json
+c0e6ddf2ca194d54fd1dd144755566c07f09f1e2 data/forge/tags/items/tools/hoes.json
+d33a57124df173333275141a44d56b7a050f79c9 data/forge/tags/items/tools/pickaxes.json
+2071b35c2501662eac427b18f4bd8107ddf36b52 data/forge/tags/items/tools/shovels.json
+b43b19f0f68eb2487323a0f6f12f8a1c3bf97c88 data/forge/tags/items/tools/swords.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/items/slabs.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/items/stairs.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/minecraft/tags/items/walls.json

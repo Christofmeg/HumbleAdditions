@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:ingots/endorium"
+    },
+    {
+      "tag": "forge:ingots/endorium"
+    },
+    {
+      "tag": "forge:ingots/endorium"
+    },
+    {
+      "tag": "forge:ingots/endorium"
+    },
+    {
+      "tag": "forge:nether_stars"
+    },
+    {
+      "tag": "forge:ingots/netherite"
+    },
+    {
+      "tag": "forge:ingots/netherite"
+    },
+    {
+      "tag": "forge:ingots/netherite"
+    },
+    {
+      "tag": "forge:ingots/netherite"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "humbleadditions:endorite_ingot"
+  }
+}

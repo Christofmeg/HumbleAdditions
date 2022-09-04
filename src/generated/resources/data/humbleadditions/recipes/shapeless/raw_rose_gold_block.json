@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:storage_blocks/raw_gold"
+    },
+    {
+      "tag": "forge:storage_blocks/raw_gold"
+    },
+    {
+      "tag": "forge:storage_blocks/raw_gold"
+    },
+    {
+      "tag": "forge:storage_blocks/raw_copper"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "item": "humbleadditions:raw_rose_gold_block"
+  }
+}

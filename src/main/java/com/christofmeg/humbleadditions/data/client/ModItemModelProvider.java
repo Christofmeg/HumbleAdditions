@@ -15,6 +15,7 @@ import net.minecraft.world.level.block.WallBlock;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -47,7 +48,12 @@ public class ModItemModelProvider extends ItemModelProvider {
 		withExistingParent("polished_limestone_bricks", modLoc("block/polished_limestone_bricks"));
 		withExistingParent("chiseled_limestone", modLoc("block/chiseled_limestone"));
 		
-		simpleItem(modLoc("quick_sand_bucket"));
+		withExistingParent("endorium_ore", modLoc("block/endorium_ore"));
+		withExistingParent("raw_endorium_block", modLoc("block/raw_endorium_block"));
+		withExistingParent("rose_gold_block", modLoc("block/rose_gold_block"));
+		withExistingParent("endorium_block", modLoc("block/endorium_block"));
+		withExistingParent("endorite_block", modLoc("block/endorite_block"));
+		withExistingParent("raw_rose_gold_block", modLoc("block/raw_rose_gold_block"));
 		
 		BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)
 		.filter(block -> (block instanceof StairBlock || block instanceof SlabBlock))
@@ -95,8 +101,18 @@ public class ModItemModelProvider extends ItemModelProvider {
 
 		withExistingParent("red_husk_spawn_egg", mcLoc("item/template_spawn_egg"));
 		
-		simpleItem(ItemRegistry.MILK_BOTTLE.getId());
-		simpleItem(ItemRegistry.NETHERITE_HORSE_ARMOR.getId());
+		ItemRegistry.ITEMS_AUTO_REGISTER.getEntries().stream().map(RegistryObject::get)
+		.filter(item -> (!(item instanceof ForgeSpawnEggItem || item.toString().contains("sword") || item.toString().contains("axe") || item.toString().contains("hoe") || item.toString().contains("shovel"))))
+		.forEach(item -> {
+			simpleItem(new ResourceLocation(ModConstants.MOD_ID + ":" + item));
+		});
+		
+		ItemRegistry.ITEMS_AUTO_REGISTER.getEntries().stream().map(RegistryObject::get)
+		.filter(item -> (!(item instanceof ForgeSpawnEggItem)) || item.toString().contains("sword") || item.toString().contains("axe") || item.toString().contains("hoe") || item.toString().contains("shovel"))
+		.forEach(item -> {
+			simpleHandHeldItem(new ResourceLocation(ModConstants.MOD_ID + ":" + item));
+		});
+		
 		
 	}
 	
@@ -114,5 +130,12 @@ public class ModItemModelProvider extends ItemModelProvider {
                 .parent(new ModelFile.UncheckedModelFile("item/generated"))
                 .texture("layer0", new ResourceLocation(item.getNamespace(), ITEM_FOLDER + "s/" + item.getPath()));
     }
+	public ItemModelBuilder simpleHandHeldItem(ResourceLocation item)
+    {
+        return getBuilder(item.toString())
+                .parent(new ModelFile.UncheckedModelFile("item/handheld"))
+                .texture("layer0", new ResourceLocation(item.getNamespace(), ITEM_FOLDER + "s/" + item.getPath()));
+    }
+	
 	
 }

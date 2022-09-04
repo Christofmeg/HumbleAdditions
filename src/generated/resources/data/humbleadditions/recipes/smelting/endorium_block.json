@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 1800,
+  "experience": 18.0,
+  "group": "humbleadditions",
+  "ingredient": {
+    "item": "humbleadditions:raw_endorium_block"
+  },
+  "result": "humbleadditions:endorium_block"
+}

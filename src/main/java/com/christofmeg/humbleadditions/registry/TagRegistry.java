@@ -26,7 +26,14 @@ public class TagRegistry {
 			return BlockTags.create(new ResourceLocation(ModConstants.MOD_ID, path));
 		}
 		
+		public static final TagKey<Block> ORES_ENDORIUM = forgeTag("ores/endorium");
+		
 		public static final TagKey<Block> STORAGE_BLOCKS_CHARCOAL = forgeTag("storage_blocks/charcoal");
+		public static final TagKey<Block> STORAGE_BLOCKS_ROSE_GOLD = forgeTag("storage_blocks/rose_gold");
+		public static final TagKey<Block> STORAGE_BLOCKS_RAW_ENDORIUM = forgeTag("storage_blocks/raw_endorium");
+		public static final TagKey<Block> STORAGE_BLOCKS_ENDORIUM = forgeTag("storage_blocks/endorium");
+		public static final TagKey<Block> STORAGE_BLOCKS_ENDORITE = forgeTag("storage_blocks/endorite");
+		public static final TagKey<Block> STORAGE_BLOCKS_RAW_ROSE_GOLD = forgeTag("storage_blocks/raw_rose_gold");
 
 	}
 	
@@ -43,7 +50,20 @@ public class TagRegistry {
 			return ItemTags.create(new ResourceLocation("forge", path));
 		}
 		
+		public static final TagKey<Item> ORES_ENDORIUM = forgeTag("ores/endorium");
+		
 		public static final TagKey<Item> STORAGE_BLOCKS_CHARCOAL = forgeTag("storage_blocks/charcoal");
+		public static final TagKey<Item> STORAGE_BLOCKS_ROSE_GOLD = forgeTag("storage_blocks/rose_gold");
+		public static final TagKey<Item> STORAGE_BLOCKS_RAW_ENDORIUM = forgeTag("storage_blocks/raw_endorium");
+		public static final TagKey<Item> STORAGE_BLOCKS_ENDORIUM = forgeTag("storage_blocks/endorium");
+		public static final TagKey<Item> STORAGE_BLOCKS_ENDORITE = forgeTag("storage_blocks/endorite");
+		public static final TagKey<Item> STORAGE_BLOCKS_RAW_ROSE_GOLD = forgeTag("storage_blocks/raw_rose_gold");
+		
+		public static final TagKey<Item> ROSE_GOLD_INGOT = forgeTag("ingots/rose_gold");
+		public static final TagKey<Item> RAW_ENDORIUM = forgeTag("raw_materials/endorium");
+		public static final TagKey<Item> ENDORIUM_INGOT = forgeTag("ingots/endorium");
+		public static final TagKey<Item> ENDORITE_INGOT = forgeTag("ingots/endorite");
+		public static final TagKey<Item> RAW_ROSE_GOLD = forgeTag("raw_materials/rose_gold");
 		
 		
 	}

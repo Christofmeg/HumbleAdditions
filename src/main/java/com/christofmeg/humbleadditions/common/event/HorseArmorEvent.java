@@ -16,7 +16,6 @@ public class HorseArmorEvent {
 	@SubscribeEvent
 	public static void horseHasArmorEquipped(final LivingKnockBackEvent event) {
 		Entity entity = event.getEntity();
-		
 		if(entity instanceof Horse) {
 			if(((Horse) entity).isWearingArmor()) {
 				if(((Horse) entity).getArmor().getItem() == ItemRegistry.NETHERITE_HORSE_ARMOR.get()) {
@@ -26,10 +25,4 @@ public class HorseArmorEvent {
 			}
 		}
 	}
-	
-	
-	
-	
 }
-
-

@@ -1,6 +1,7 @@
 package com.christofmeg.humbleadditions.data.tags;
 
 import com.christofmeg.humbleadditions.registry.BlockRegistry;
+import com.christofmeg.humbleadditions.registry.ItemRegistry;
 import com.christofmeg.humbleadditions.registry.TagRegistry;
 import com.christofmeg.humbleadditions.setup.ModConstants;
 
@@ -52,9 +53,21 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 			BlockRegistry.LIMESTONE.get(),
 			BlockRegistry.STONE_WALL.get());
 		
-		this.tag(TagRegistry.Blocks.STORAGE_BLOCKS_CHARCOAL).add(
-			BlockRegistry.CHARCOAL_BLOCK.get()
-			);
+		this.tag(TagRegistry.Blocks.ORES_ENDORIUM).add(BlockRegistry.ENDORIUM_ORE.get());
+		this.tag(Tags.Blocks.ORES).add(BlockRegistry.ENDORIUM_ORE.get());
+		
+		this.tag(TagRegistry.Blocks.STORAGE_BLOCKS_CHARCOAL).add(BlockRegistry.CHARCOAL_BLOCK.get());
+		this.tag(TagRegistry.Blocks.STORAGE_BLOCKS_ROSE_GOLD).add(BlockRegistry.ROSE_GOLD_BLOCK.get());
+		this.tag(TagRegistry.Blocks.STORAGE_BLOCKS_RAW_ENDORIUM).add(BlockRegistry.RAW_ENDORIUM_BLOCK.get());
+		this.tag(TagRegistry.Blocks.STORAGE_BLOCKS_ENDORIUM).add(BlockRegistry.ENDORIUM_BLOCK.get());
+		this.tag(TagRegistry.Blocks.STORAGE_BLOCKS_ENDORITE).add(BlockRegistry.ENDORITE_BLOCK.get());
+		this.tag(TagRegistry.Blocks.STORAGE_BLOCKS_RAW_ROSE_GOLD).add(BlockRegistry.RAW_ROSE_GOLD_BLOCK.get());
+		this.tag(Tags.Blocks.STORAGE_BLOCKS).addTag(TagRegistry.Blocks.STORAGE_BLOCKS_CHARCOAL);
+		this.tag(Tags.Blocks.STORAGE_BLOCKS).addTag(TagRegistry.Blocks.STORAGE_BLOCKS_ROSE_GOLD);
+		this.tag(Tags.Blocks.STORAGE_BLOCKS).addTag(TagRegistry.Blocks.STORAGE_BLOCKS_RAW_ENDORIUM);
+		this.tag(Tags.Blocks.STORAGE_BLOCKS).addTag(TagRegistry.Blocks.STORAGE_BLOCKS_ENDORIUM);
+		this.tag(Tags.Blocks.STORAGE_BLOCKS).addTag(TagRegistry.Blocks.STORAGE_BLOCKS_ENDORITE);
+		this.tag(Tags.Blocks.STORAGE_BLOCKS).addTag(TagRegistry.Blocks.STORAGE_BLOCKS_RAW_ROSE_GOLD);
 		
 		this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
 			BlockRegistry.CHARCOAL_BLOCK.get(), 
@@ -63,7 +76,13 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 			BlockRegistry.POLISHED_LIMESTONE_BRICKS.get(),
 			BlockRegistry.CHISELED_LIMESTONE.get(),
 			BlockRegistry.POLISHED_LIMESTONE.get(),
-			BlockRegistry.LIMESTONE_BRICKS.get()
+			BlockRegistry.LIMESTONE_BRICKS.get(),
+			BlockRegistry.ENDORIUM_ORE.get(),
+			BlockRegistry.ROSE_GOLD_BLOCK.get(),
+			BlockRegistry.RAW_ENDORIUM_BLOCK.get(),
+			BlockRegistry.ENDORIUM_BLOCK.get(),
+			BlockRegistry.ENDORITE_BLOCK.get(),
+			BlockRegistry.RAW_ROSE_GOLD_BLOCK.get()
 			);
 		
 		this.tag(Tags.Blocks.STONE).add(
@@ -180,6 +199,26 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 		this.tag(Tags.Blocks.GLASS_PANES_RED).add(BlockRegistry.RED_STAINED_GLOWING_GLASS_PANE.get());
 		this.tag(Tags.Blocks.GLASS_PANES_WHITE).add(BlockRegistry.WHITE_STAINED_GLOWING_GLASS_PANE.get());
 		this.tag(Tags.Blocks.GLASS_PANES_YELLOW).add(BlockRegistry.YELLOW_STAINED_GLOWING_GLASS_PANE.get());
+		
+		this.tag(BlockTags.BEACON_BASE_BLOCKS).add(
+			BlockRegistry.ENDORIUM_BLOCK.get(),
+			BlockRegistry.ROSE_GOLD_BLOCK.get(),
+			BlockRegistry.ENDORITE_BLOCK.get()
+			);
+		
+		this.tag(ItemRegistry.ToolTiers.ENDORIUM.getTag()).add(
+				BlockRegistry.RAW_ENDORIUM_BLOCK.get(),
+				BlockRegistry.ENDORIUM_BLOCK.get()
+				);
+		this.tag(ItemRegistry.ToolTiers.ENDORITE.getTag()).add(
+				BlockRegistry.ENDORITE_BLOCK.get()
+				);
+		
+		this.tag(Tags.Blocks.NEEDS_NETHERITE_TOOL).add(BlockRegistry.ENDORIUM_ORE.get());
+		this.tag(BlockTags.NEEDS_IRON_TOOL).add(
+				BlockRegistry.ROSE_GOLD_BLOCK.get(),
+				BlockRegistry.RAW_ROSE_GOLD_BLOCK.get()
+				);
 		
 		BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)
 		.filter(block -> (block instanceof WallBlock))

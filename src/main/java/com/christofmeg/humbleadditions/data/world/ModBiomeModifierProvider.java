@@ -19,7 +19,7 @@ import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class ModBiomeModifierProvider {
-
+	
 	@SuppressWarnings("unused")
 	public static JsonCodecProvider<BiomeModifier> create(DataGenerator gen, ExistingFileHelper existingFileHelper) {
 		RegistryAccess access = RegistryAccess.builtinCopy();

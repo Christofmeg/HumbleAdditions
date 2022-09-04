@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "minecraft:gold_block"
+  },
+  "base": {
+    "item": "humbleadditions:wooden_shears"
+  },
+  "result": {
+    "item": "humbleadditions:golden_shears"
+  }
+}

@@ -1,4 +1,4 @@
-// 1.19.2	2022-09-03T07:48:06.5623485	Humble Additions - Block Tags
+// 1.19.2	2022-09-04T18:02:30.8906204	Humble Additions - Block Tags
 08f8227dac1a298bffae9ce94eeb111d90a98647 data/forge/tags/blocks/glass.json
 6910383c33b1cbd3f50c4008f5fe27603e247cdb data/forge/tags/blocks/glass/black.json
 61ba7606013817693d33e113eb0100d33f61fa00 data/forge/tags/blocks/glass/blue.json
@@ -36,13 +36,25 @@ d8c8d48d97ffbfc189b288102440e3049ee042ae data/forge/tags/blocks/glass_panes/gree
 360491e307379566820ac956ff1e258f04af72e8 data/forge/tags/blocks/glass_panes/red.json
 e98e09e747d64b477c384d959bca0554277aeaa4 data/forge/tags/blocks/glass_panes/white.json
 242527aab1396b63100a00e718dd6c4e345ba40f data/forge/tags/blocks/glass_panes/yellow.json
+8d4ff0762f7966ee47d4c792cc4d45bba1c85343 data/forge/tags/blocks/needs_endorite_tool.json
+f6bb2e63d12ee994e2f1bf1eef63bc4767ba66bb data/forge/tags/blocks/needs_endorium_tool.json
+96ae4ea3b1a0ccc8151a24cf9675840ea33824be data/forge/tags/blocks/needs_netherite_tool.json
+96ae4ea3b1a0ccc8151a24cf9675840ea33824be data/forge/tags/blocks/ores.json
+96ae4ea3b1a0ccc8151a24cf9675840ea33824be data/forge/tags/blocks/ores/endorium.json
 536595ae382b203c5c74e240e362d7763f1b8ff4 data/forge/tags/blocks/stained_glass.json
 0f4c6be60ac983dca11eb5359c819cd5f95a7c77 data/forge/tags/blocks/stained_glass_panes.json
 b504ea6e0f4db48a3e65662f555df69be858f4c9 data/forge/tags/blocks/stone.json
+d1963667da7d05d7799e6b8521aecc0dbcb88a74 data/forge/tags/blocks/storage_blocks.json
 748fb8e619d047998125e1ef1ad8254c3922ce67 data/forge/tags/blocks/storage_blocks/charcoal.json
+8d4ff0762f7966ee47d4c792cc4d45bba1c85343 data/forge/tags/blocks/storage_blocks/endorite.json
+e464cd183b1eea01ded5dcef8b6cf13fe319465a data/forge/tags/blocks/storage_blocks/endorium.json
+1b441b0cd94acd9dc9113440cb483ecc291964ae data/forge/tags/blocks/storage_blocks/raw_endorium.json
+01b1d8838e397dbe11eb4dc3bd9e8980411bdbef data/forge/tags/blocks/storage_blocks/raw_rose_gold.json
+a726f0e422b1fa9336f09c78563b8924c5047200 data/forge/tags/blocks/storage_blocks/rose_gold.json
 2af4b12c206342c00ca99b0d5b811016638696fe data/minecraft/tags/blocks/azalea_grows_on.json
 c6c5572c8b5148e45a082d96064eed7d2a189a26 data/minecraft/tags/blocks/azalea_root_replaceable.json
 0b8a18b9ed8786ac2a48979445d17d8777159dcf data/minecraft/tags/blocks/base_stone_overworld.json
+733a677ba6b359d6deee79b4dc05a18ebd2b615a data/minecraft/tags/blocks/beacon_base_blocks.json
 90d93b65b5d39f281656c80dec557d68c3be2174 data/minecraft/tags/blocks/big_dripleaf_placeable.json
 a92279162ecb0b0ea38c53e2c25036c9920b6f8a data/minecraft/tags/blocks/dripstone_replaceable_blocks.json
 1889e8a9d9518120da35280b13b263c910faa584 data/minecraft/tags/blocks/impermeable.json
@@ -50,9 +62,10 @@ dcdaaacae87f88a10272ec651d9291fab149beeb data/minecraft/tags/blocks/lush_ground_
 90d93b65b5d39f281656c80dec557d68c3be2174 data/minecraft/tags/blocks/mangrove_logs_can_grow_through.json
 90d93b65b5d39f281656c80dec557d68c3be2174 data/minecraft/tags/blocks/mangrove_roots_can_grow_through.json
 90d93b65b5d39f281656c80dec557d68c3be2174 data/minecraft/tags/blocks/mineable/hoe.json
-e0a06806a7fca21a58f4f0a331285db9292100e1 data/minecraft/tags/blocks/mineable/pickaxe.json
+4bf9a4800a81fe1ae26c70bb4385490e61d02ab3 data/minecraft/tags/blocks/mineable/pickaxe.json
 71b33dab4a63d2b8ddf0580ffab06466f682647a data/minecraft/tags/blocks/mineable/shovel.json
 e9f2d0e6fdc8936b8aff288ceb5935dde96216e1 data/minecraft/tags/blocks/moss_replaceable.json
+d060abfec86b1f2fa425c4c70f38455705c3c860 data/minecraft/tags/blocks/needs_iron_tool.json
 915bb40dc81342a2d267ad923ad558e9b08a0222 data/minecraft/tags/blocks/nether_carver_replaceables.json
 915bb40dc81342a2d267ad923ad558e9b08a0222 data/minecraft/tags/blocks/overworld_carver_replaceables.json
 c6c5572c8b5148e45a082d96064eed7d2a189a26 data/minecraft/tags/blocks/sculk_replaceable.json

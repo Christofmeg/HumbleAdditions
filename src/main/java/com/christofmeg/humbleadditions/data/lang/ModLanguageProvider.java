@@ -32,6 +32,8 @@ public class ModLanguageProvider extends LanguageProvider {
 		switch(locale) {
 		case "en_us":			
 			addBlock(BlockRegistry.CHARCOAL_BLOCK, "Charcoal Block");
+			addBlock(BlockRegistry.ROSE_GOLD_BLOCK, "Rose Gold Block");
+			addBlock(BlockRegistry.RAW_ROSE_GOLD_BLOCK, "Raw Rose Gold Block");
 			addBlock(BlockRegistry.SMOOTH_ICE, "Smooth Ice");
 			addBlock(BlockRegistry.JACK_O_SOUL_LANTERN, "Jack o'Soul Lantern");
 			
@@ -87,14 +89,25 @@ public class ModLanguageProvider extends LanguageProvider {
 			
 			addEntityType(EntityRegistry.RED_HUSK, "Red Husk");
 			
-			addItem(ItemRegistry.MILK_BOTTLE, "Bottle o' Milk");
+			ItemRegistry.ITEMS_AUTO_REGISTER.getEntries().stream().map(RegistryObject::get)
+			.forEach(item -> {
+				addItem( () -> item, StringUtils.capitaliseAllWords(item.getDefaultInstance().getItem().toString()
+					.replace("Item{humbleadditions:", "")
+					.replace("}", "")
+					.replace("milk_bottle","Bottle o' Milk")
+					.replace("_", " ")
+					));
+			});
 			
-			addItem(ItemRegistry.NETHERITE_HORSE_ARMOR, "Netherite Horse Armor");
+			ItemRegistry.BLOCK_ITEMS_AUTO_REGISTER.getEntries().stream().map(RegistryObject::get)
+			.forEach(item -> {
+				addItem( () -> item, StringUtils.capitaliseAllWords(item.getDefaultInstance().getItem().toString()
+					.replace("Item{humbleadditions:", "")
+					.replace("}", "")
+					.replace("_", " ")
+					));
+			});
 			
-			addItem(ItemRegistry.RED_HUSK_SPAWN_EGG, "Red Husk Spawn Egg");
-			
-			addItem(ItemRegistry.QUICK_SAND_BUCKET, "Quick Sand Bucket");
-
 
 			
 			break;

@@ -45,6 +45,14 @@ public class BlockRegistry {
 			.requiresCorrectToolForDrops()
 			), props());
 	
+	public static final RegistryObject<Block> ROSE_GOLD_BLOCK = registerBlock("rose_gold_block", 
+		() -> new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_PINK)
+			.sound(SoundType.COPPER).strength(5.0F, 6.0F).requiresCorrectToolForDrops()), props());
+	
+	public static final RegistryObject<Block> RAW_ROSE_GOLD_BLOCK = registerBlock("raw_rose_gold_block", 
+			() -> new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_PINK)
+				.sound(SoundType.COPPER).strength(5.0F, 6.0F).requiresCorrectToolForDrops()), props());
+	
 	public static final RegistryObject<Block> JACK_O_SOUL_LANTERN = registerBlock("jack_o_soul_lantern",
         () -> new CustomCarvedPumpkinBlock(BlockBehaviour.Properties.of(Material.VEGETABLE, MaterialColor.COLOR_ORANGE).friction(0.5f).strength(1f, 5f).strength(1.0F).sound(SoundType.WOOD)
             .lightLevel((p_50870_) -> {return 15;})
@@ -192,8 +200,20 @@ public class BlockRegistry {
 	public static final RegistryObject<WallBlock> STONE_WALL = registerVanillaTexturedBlock("stone" + "_wall", () -> new WallBlock(BlockBehaviour.Properties.copy(Blocks.STONE)), props());
 	
 	public static final RegistryObject<QuickSandBlock> QUICK_SAND = registerBlockItem("quick_sand", () -> new QuickSandBlock(14406560, BlockBehaviour.Properties.of(BlockRegistry.QUICK_SAND_MATERIAL).strength(0.25F).sound(SoundType.SAND).dynamicShape()), new Item.Properties());
-	  
-	public static final Material QUICK_SAND_MATERIAL = (new Material.Builder(MaterialColor.SAND)).build();//.nonSolid()
+	
+	public static final RegistryObject<Block> ENDORIUM_ORE = registerBlockItem("endorium_ore", () -> new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_PURPLE)
+		.lightLevel((b) -> 1).requiresCorrectToolForDrops().strength(30.0F, 1200.0F).sound(SoundType.METAL)), new Item.Properties());
+	
+	public static final RegistryObject<Block> RAW_ENDORIUM_BLOCK = registerBlockItem("raw_endorium_block", 
+			() -> new Block(BlockBehaviour.Properties.copy(BlockRegistry.ENDORIUM_ORE.get())), props());
+	
+	public static final RegistryObject<Block> ENDORIUM_BLOCK = registerBlockItem("endorium_block", 
+			() -> new Block(BlockBehaviour.Properties.copy(BlockRegistry.RAW_ENDORIUM_BLOCK.get()).strength(37.5F, 1500.0F)), props());
+	
+	public static final RegistryObject<Block> ENDORITE_BLOCK = registerBlockItem("endorite_block", 
+			() -> new Block(BlockBehaviour.Properties.copy(BlockRegistry.ENDORIUM_BLOCK.get()).strength(57.375F, 2300.0F)), props());
+	
+	public static final Material QUICK_SAND_MATERIAL = (new Material.Builder(MaterialColor.SAND)).build();
 	
 	private static StainedGlassBlock stainedGlass(DyeColor color) {
 		return new StainedGlassBlock(color, BlockBehaviour.Properties.of(Material.GLASS, color).strength(0.3F).sound(SoundType.GLASS).noOcclusion().emissiveRendering((state, world, pos) -> true).lightLevel((b) -> 1)

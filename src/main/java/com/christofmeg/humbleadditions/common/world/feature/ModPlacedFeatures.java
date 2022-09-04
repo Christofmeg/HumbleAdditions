@@ -30,6 +30,11 @@ public class ModPlacedFeatures {
 	        () -> new PlacedFeature(ModConfiguredFeatures.QUICK_SAND_BLOCK_FEATURE.getHolder().get(),
 	        	commonOrePlacement(2, // VeinsPerChunk
 	        		HeightRangePlacement.triangle(VerticalAnchor.absolute(62), VerticalAnchor.absolute(64)))));
+	
+	public static final RegistryObject<PlacedFeature> END_BLOCK_PLACED = PLACED_FEATURES.register("end_blocks_placed",
+	        () -> new PlacedFeature(ModConfiguredFeatures.END_BLOCK_FEATURE.getHolder().get(),
+	        	rareOrePlacement(1, // VeinsPerChunk
+	        		HeightRangePlacement.triangle(VerticalAnchor.absolute(0), VerticalAnchor.absolute(128)))));
 
 	
 	

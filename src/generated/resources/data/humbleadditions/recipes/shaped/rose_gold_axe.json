@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "I": {
+      "tag": "forge:ingots/rose_gold"
+    },
+    "S": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "pattern": [
+    "II",
+    "IS",
+    " S"
+  ],
+  "result": {
+    "item": "humbleadditions:rose_gold_axe"
+  }
+}

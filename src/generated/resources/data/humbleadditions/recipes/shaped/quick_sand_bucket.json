@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "minecraft:water_bucket"
+    },
+    "S": {
+      "tag": "forge:sand/colorless"
+    }
+  },
+  "pattern": [
+    "S",
+    "B"
+  ],
+  "result": {
+    "item": "humbleadditions:quick_sand_bucket"
+  }
+}

@@ -23,6 +23,7 @@ public class FuelBurnTimeEvent {
 		if(event.getItemStack().getItem() == block.get().asItem()) {
 			event.setBurnTime(burnTime);
 		}
+
 	}
 	
 }

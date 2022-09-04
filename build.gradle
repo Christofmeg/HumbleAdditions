@@ -3,6 +3,7 @@ plugins {
     id 'maven-publish'
     id 'net.minecraftforge.gradle' version '5.1.+'
 	id 'org.parchmentmc.librarian.forgegradle' version '1.+'
+//	id 'org.spongepowered.mixin' version '0.7.+'
 }
 
 version = '1.19.2-0.0.1'
@@ -99,9 +100,6 @@ repositories {
     // location of a maven mirror for JEI files, as a fallback
 		name = "ModMaven"
 		url = "https://modmaven.dev/"
-		content {
-            includeGroup 'appeng'
-        }
 	}
 	maven {
 	// location of jade maven
@@ -110,10 +108,19 @@ repositories {
             includeGroup "curse.maven"
         }
     }
+	maven {
+        url "https://cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
+    }
+	
 }
 
 dependencies {
 	minecraft 'net.minecraftforge:forge:1.19.2-43.1.2'
+
+//	annotationProcessor "org.spongepowered:mixin:0.8.5:processor"
 
 	// JEI
     if (project.hasProperty('jei_version')) {
@@ -134,6 +141,11 @@ dependencies {
 		compileOnly fg.deobf("appeng:appliedenergistics2:${ae2_version}:api")
 		runtimeOnly fg.deobf("appeng:appliedenergistics2:${ae2_version}")
 	}
+	
+	compileOnly fg.deobf("curse.maven:theoneprobe-245211:3871444")
+    runtimeOnly fg.deobf("curse.maven:theoneprobe-245211:3871444")
+//	implementation fg.deobf("curse.maven:mmmmmmmmmmmm-225738:3913301")
+	
 }
 
 jar {

@@ -17,18 +17,26 @@ import net.minecraft.world.level.Level;
 
 public class ModHorseArmorItem extends HorseArmorItem{
 	
-	int knockback;
+	private final int protection;
 	
 	public ModHorseArmorItem(int pProtection, int knockBackResistance, String string, Properties pProperties) {
 		super(pProtection, new ResourceLocation(ModConstants.MOD_ID, "textures/entities/horse/armor/horse_armor_" + string + ".png"), pProperties);
-		knockback = knockBackResistance;
+		protection = pProtection;
 	}
 	
 	@Override
-	public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+	public void appendHoverText(ItemStack stack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
 		pTooltipComponents.add(Component.literal("When on Horse:").withStyle(ChatFormatting.GRAY));
 		pTooltipComponents.add(Component.literal("+" + Config.NETHERITE_HORSE_ARMOR_KNOCKBACK_RESISTANCE.get() + " Knockback Resistance").withStyle(ChatFormatting.BLUE));
-		super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
+		pTooltipComponents.add(Component.literal("+" + this.getProtection() + " Protection").withStyle(ChatFormatting.BLUE));
+		super.appendHoverText(stack, pLevel, pTooltipComponents, pIsAdvanced);
 	}
+	
+	@Override
+	public int getProtection() {
+		return this.protection;
+	}
+	
+	
 
 }

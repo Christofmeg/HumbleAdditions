@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 import com.christofmeg.humbleadditions.common.blocks.AbstractLayerBlock;
 import com.christofmeg.humbleadditions.common.blocks.QuickSandBlock;
 import com.christofmeg.humbleadditions.registry.BlockRegistry;
+import com.christofmeg.humbleadditions.registry.ItemRegistry;
 
 import net.minecraft.advancements.critereon.EnchantmentPredicate;
 import net.minecraft.advancements.critereon.ItemPredicate;
@@ -103,6 +104,10 @@ public class ModBlockLootTables extends net.minecraft.data.loot.BlockLoot {
     			));
     	});
     	
+    	this.add(BlockRegistry.ENDORIUM_ORE.get(), (p_124327_) -> {
+            return createOreDrop(p_124327_, ItemRegistry.RAW_ENDORIUM.get());
+         });
+    	
     }
 
     @Override
@@ -110,5 +115,5 @@ public class ModBlockLootTables extends net.minecraft.data.loot.BlockLoot {
         return BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)
         	.collect(Collectors.toList());
     }
-
+    
 }
