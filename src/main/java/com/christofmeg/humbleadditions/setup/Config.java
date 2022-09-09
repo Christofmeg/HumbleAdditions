@@ -13,6 +13,7 @@ public class Config {
     public static ConfigValue<Float> SMOOTH_ICE_FRICTION;
     public static ConfigValue<Integer> MILK_BOTTLE_CURE_CHANCE;
     public static ConfigValue<Integer> NETHERITE_HORSE_ARMOR_KNOCKBACK_RESISTANCE;
+    public static ConfigValue<Integer> NETHERITE_HORSE_ARMOR_TOUGHNESS;
     
     public static ConfigValue<Integer> CHARGED_CREEPER_SPAWN_CHANCE;
     
@@ -36,6 +37,8 @@ public class Config {
     					"How much friction Smooth Ice should have",
     					"default: friction = 1.0204082")
 	    			.define("friction", (float) (1 / 0.98));
+		builder.pop();
+		
     	builder.comment("Item settings")
     		.push("milk_bottle");
 		    	MILK_BOTTLE_CURE_CHANCE = builder
@@ -44,8 +47,9 @@ public class Config {
 						"default: chance = 33")
 					.defineInRange("chance", 33, 0, 100);
 		builder.pop();
-			builder
-			.push("netherite_horse_armor");
+		
+		builder.push("netherite_horse_armor");
+			builder.push("knockback resistance");
 			NETHERITE_HORSE_ARMOR_KNOCKBACK_RESISTANCE = builder
 	    		.comment("-----------------------------------------------------",
     				"How much knockback resistance Netherite Horse Armor should have",
@@ -53,8 +57,15 @@ public class Config {
     				"Note: Only use whole numbers",
     				"default: knockback resistance = 9")
 				.defineInRange("knockback resistance", 9, 1, 10);
+			builder.pop();
+			builder.push("armor toughness");
+			NETHERITE_HORSE_ARMOR_TOUGHNESS = builder
+	    		.comment("-----------------------------------------------------",
+    				"How much armor toughness Netherite Horse Armor should have",
+    				"default: armor toughness = 27")
+				.define("armor toughness", 27);
+			builder.pop();
 		builder.pop();
-		
 		
 		builder.comment("Entity settings")
 			.push("charged_creeper_spawn_chance");

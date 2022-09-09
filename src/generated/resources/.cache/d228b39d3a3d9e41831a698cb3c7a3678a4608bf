@@ -1,4 +1,4 @@
-// 1.19.2	2022-09-04T20:05:48.3431811	Humble Additions - Recipes
+// 1.19.2	2022-09-09T21:12:26.4227925	Humble Additions - Recipes
 037ef466cba91f4cd64a4ac5b1248b67e0e1fcec data/humbleadditions/advancements/recipes/building_blocks/blasting/copper_block.json
 2c8e29e4773d565f71b187f563190e5d7a9a5070 data/humbleadditions/advancements/recipes/building_blocks/blasting/glass.json
 6d58d6209171d929cbee06f5beebaeb8099eb84a data/humbleadditions/advancements/recipes/building_blocks/blasting/iron_block.json
@@ -424,7 +424,7 @@ ab4ca261d05c628ef85c40dae93a2c6b5b78e034 data/humbleadditions/recipes/blasting/c
 180729f4a9064a3b7131ec67ce9a9ab3b1389bb2 data/humbleadditions/recipes/blasting/copper_ingot.json
 0f9423a0cdaad785034065b7b196a3959cf8add2 data/humbleadditions/recipes/blasting/endorium_block.json
 088eb39743495c9984edd139de04d27058ddcc87 data/humbleadditions/recipes/blasting/endorium_ingot.json
-1bac9b723720263df497fd5429682c8063b6d9ff data/humbleadditions/recipes/blasting/endorium_ingot_from_ore.json
+cf68451655d082803d3204604377a31c2d8806e3 data/humbleadditions/recipes/blasting/endorium_ingot_from_ore.json
 0a99458724754fcf921e2f4b261366ed77b83ceb data/humbleadditions/recipes/blasting/glass.json
 c6e08a6f0fef375f29b033f9ba1465d01cefac81 data/humbleadditions/recipes/blasting/gold_ingot.json
 eb207fe63f61a3869f4eea414b796f2bbcc4d7b7 data/humbleadditions/recipes/blasting/iron_block.json
@@ -658,7 +658,7 @@ f5a580e1a7655fe761353802ee206427f80fb063 data/humbleadditions/recipes/shapeless/
 e48ff1f0e44248ddd5e7c27715698999a3860183 data/humbleadditions/recipes/smelting/copper_ingot.json
 4ce3cf277edb9d9572c29e389b153dcdabb6b5a1 data/humbleadditions/recipes/smelting/endorium_block.json
 cebe5504176ffd7dca08c3103e0789744eaeb12a data/humbleadditions/recipes/smelting/endorium_ingot.json
-008345c13431c3230b4c8d540083be7b140e8a72 data/humbleadditions/recipes/smelting/endorium_ingot_from_ore.json
+cc122c155dbefc5121b55fda65fdb93e3c488990 data/humbleadditions/recipes/smelting/endorium_ingot_from_ore.json
 84c182f0976a211b4bdf1c31bcfdd3142afe225d data/humbleadditions/recipes/smelting/glass.json
 e328d7479d8615c099a455942327f500c79b826c data/humbleadditions/recipes/smelting/gold_ingot.json
 3ae0e07e64a00f5e9a2ed76b8dec853df833ee02 data/humbleadditions/recipes/smelting/iron_block.json

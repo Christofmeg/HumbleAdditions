@@ -25,10 +25,9 @@ public class TooltipEvent {
 		ItemStack stack = event.getItemStack();
 		Item item = stack.getItem();
 		List<Component> pTooltipComponents = event.getToolTip();
-		
 		if(item instanceof HorseArmorItem && !(item instanceof ModHorseArmorItem)) {
 			pTooltipComponents.add(Component.literal("When on Horse:").withStyle(ChatFormatting.GRAY));
-			pTooltipComponents.add(Component.literal("+" + ((HorseArmorItem) item).getProtection() + " Protection").withStyle(ChatFormatting.BLUE));
+			pTooltipComponents.add(Component.literal("+" + ((HorseArmorItem) item).getProtection() + " Armor").withStyle(ChatFormatting.BLUE));
 		}
 		if(item instanceof PickaxeItem) {
 			if(Screen.hasShiftDown()) {

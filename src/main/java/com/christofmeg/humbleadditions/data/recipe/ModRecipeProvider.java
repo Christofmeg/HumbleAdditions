@@ -825,7 +825,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 	
 	//ENDORIUM INGOT FROM ORE
 		SimpleCookingRecipeBuilder.blasting(
-			Ingredient.of(BlockRegistry.ENDORIUM_ORE.get()), ItemRegistry.ENDORITE_INGOT.get(), 2.0F, 900)
+			Ingredient.of(BlockRegistry.ENDORIUM_ORE.get()), ItemRegistry.ENDORIUM_INGOT.get(), 2.0F, 900)
 			.group(ModConstants.MOD_ID)
 			.unlockedBy("has_endorium", has(ItemRegistry.RAW_ENDORIUM.get()))
 			.save(consumer, modLoc(folder + "endorium_ingot_from_ore"));
@@ -1007,7 +1007,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 	
 	//ENDORIUM INGOT FROM ORE
 		SimpleCookingRecipeBuilder.smelting(
-			Ingredient.of(BlockRegistry.ENDORIUM_ORE.get()), ItemRegistry.ENDORITE_INGOT.get(), 2.0F, 1800)
+			Ingredient.of(BlockRegistry.ENDORIUM_ORE.get()), ItemRegistry.ENDORIUM_INGOT.get(), 2.0F, 1800)
 			.group(ModConstants.MOD_ID)
 			.unlockedBy("has_endorium", has(ItemRegistry.RAW_ENDORIUM.get()))
 			.save(consumer, modLoc(folder + "endorium_ingot_from_ore"));
