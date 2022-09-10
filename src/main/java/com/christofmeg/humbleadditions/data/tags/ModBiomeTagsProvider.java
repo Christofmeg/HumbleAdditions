@@ -1,5 +1,7 @@
 package com.christofmeg.humbleadditions.data.tags;
 
+import org.jetbrains.annotations.Nullable;
+
 import com.christofmeg.humbleadditions.setup.ModConstants;
 
 import net.minecraft.data.DataGenerator;
@@ -8,7 +10,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 
 public class ModBiomeTagsProvider extends BiomeTagsProvider  {
 	
-	public ModBiomeTagsProvider(DataGenerator pGenerator, ExistingFileHelper existingFileHelper) {
+	public ModBiomeTagsProvider(DataGenerator pGenerator, @Nullable ExistingFileHelper existingFileHelper) {
 		super(pGenerator, ModConstants.MOD_ID, existingFileHelper);
 	}
 	
@@ -24,7 +26,9 @@ public class ModBiomeTagsProvider extends BiomeTagsProvider  {
 			net.minecraft.world.level.biome.Biomes.BADLANDS,
 			Biomes.ERODED_BADLANDS,
 			Biomes.WOODED_BADLANDS
-			);
+			);			
 */
+		
 	}
+	
 }

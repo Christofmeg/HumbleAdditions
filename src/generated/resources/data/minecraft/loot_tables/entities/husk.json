@@ -48,9 +48,6 @@
             {
               "conditions": [
                 {
-                  "condition": "minecraft:killed_by_player"
-                },
-                {
                   "condition": "minecraft:entity_properties",
                   "entity": "this",
                   "predicate": {
@@ -96,9 +93,6 @@
             },
             {
               "conditions": [
-                {
-                  "condition": "minecraft:killed_by_player"
-                },
                 {
                   "condition": "minecraft:entity_properties",
                   "entity": "this",

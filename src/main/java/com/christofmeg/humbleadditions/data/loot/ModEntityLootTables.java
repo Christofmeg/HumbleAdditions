@@ -23,6 +23,7 @@ import net.minecraft.world.level.storage.loot.predicates.DamageSourceCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemEntityPropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemKilledByPlayerCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceWithLootingCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
@@ -60,7 +61,6 @@ public class ModEntityLootTables extends net.minecraft.data.loot.EntityLoot {
 					.add(LootItem.lootTableItem(Items.SAND)
 						.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
 						.apply(SmeltItemFunction.smelted()
-							.when(LootItemKilledByPlayerCondition.killedByPlayer())
 							.when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS, ENTITY_ON_FIRE)))))
 						.apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F)))
 			.withPool(LootPool.lootPool()
@@ -69,7 +69,6 @@ public class ModEntityLootTables extends net.minecraft.data.loot.EntityLoot {
 						.add(LootItem.lootTableItem(BlockRegistry.SAND_LAYER_BLOCK.get())
 							.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 8.0F)))
 							.apply(SmeltItemFunction.smelted()
-								.when(LootItemKilledByPlayerCondition.killedByPlayer())
 								.when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS, ENTITY_ON_FIRE)))))
 							.apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F)))
 		);
@@ -79,7 +78,7 @@ public class ModEntityLootTables extends net.minecraft.data.loot.EntityLoot {
 				.setRolls(ConstantValue.exactly(1.0F))
 					.add(LootItem.lootTableItem(Items.ROTTEN_FLESH)
 						.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F)))
-						.apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F)))))
+						.apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 5.0F)))))
 			.withPool(LootPool.lootPool()
 				.setRolls(ConstantValue.exactly(1.0F))
 				.add(LootItem.lootTableItem(Items.IRON_INGOT))
@@ -95,7 +94,6 @@ public class ModEntityLootTables extends net.minecraft.data.loot.EntityLoot {
 					.add(LootItem.lootTableItem(Items.RED_SAND)
 						.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F)))
 						.apply(SmeltItemFunction.smelted()
-							.when(LootItemKilledByPlayerCondition.killedByPlayer())
 							.when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS, ENTITY_ON_FIRE)))))
 						.apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F)))
 			.withPool(LootPool.lootPool()
@@ -104,37 +102,87 @@ public class ModEntityLootTables extends net.minecraft.data.loot.EntityLoot {
 					.add(LootItem.lootTableItem(BlockRegistry.RED_SAND_LAYER_BLOCK.get())
 						.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 8.0F)))
 						.apply(SmeltItemFunction.smelted()
-							.when(LootItemKilledByPlayerCondition.killedByPlayer())
 							.when(LootItemEntityPropertyCondition.hasProperties(LootContext.EntityTarget.THIS, ENTITY_ON_FIRE)))))
 						.apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F)))
 		);
 		
 		this.add(EntityType.ENDER_DRAGON, LootTable.lootTable()
-				.withPool(LootPool.lootPool()
-					.setRolls(ConstantValue.exactly(0.02F))
-					.add(LootItem.lootTableItem(Items.DRAGON_HEAD))
-					.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F))
-						.when(LootItemKilledByPlayerCondition.killedByPlayer())))
-					.apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.0F, 1.0F)))
+			.withPool(LootPool.lootPool()
+				.setRolls(ConstantValue.exactly(1.0F))
+				.add(LootItem.lootTableItem(Items.DRAGON_HEAD)
+					.when(LootItemRandomChanceCondition.randomChance(0.01F))
+					.apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))
+						.when(LootItemKilledByPlayerCondition.killedByPlayer())
+						)
+					.apply(SetItemCountFunction.setCount(ConstantValue.exactly(1.0F))
+						.when(this.killedByWolf())
+						)
+					.apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.1F, 0.3F)))
+				)
+			)
 		);
 		
 		this.add(EntityType.ZOMBIE_VILLAGER, LootTable.lootTable()
-				.withPool(LootPool.lootPool()
-					.setRolls(ConstantValue.exactly(0.3F))
-					.add(LootItem.lootTableItem(Items.EMERALD))
+			.withPool(LootPool.lootPool()
+				.setRolls(ConstantValue.exactly(1.0F))
+				.add(LootItem.lootTableItem(Items.EMERALD)
+					.when(LootItemRandomChanceCondition.randomChance(0.30F))
 					.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F))
 						.when(LootItemKilledByPlayerCondition.killedByPlayer()))
 					.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 2.0F))
-						.when(this.killedByWolf())))
-					.apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.025F, 1.0F)))
+						.when(this.killedByWolf()))
+					.apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.1F, 0.3F)))
+					)
+				)
 		);
 		
+		this.add(EntityType.STRAY, LootTable.lootTable()
+			.withPool(LootPool.lootPool()
+					.setRolls(ConstantValue.exactly(1.0F))
+				.add(LootItem.lootTableItem(Items.ICE)
+					.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F))
+						.when(LootItemKilledByPlayerCondition.killedByPlayer()))
+					.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F))
+						.when(this.killedByWolf()))
+					.apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.1F, 0.3F)))
+					.when(LootItemRandomChanceCondition.randomChance(0.40F))
+					.setWeight(8)
+					)
+				.add(LootItem.lootTableItem(Items.PACKED_ICE)
+					.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F))
+						.when(LootItemKilledByPlayerCondition.killedByPlayer()))
+					.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F))
+						.when(this.killedByWolf()))
+					.apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.1F, 0.3F)))
+					.when(LootItemRandomChanceCondition.randomChance(0.20F))
+					.setWeight(4)
+					)
+				.add(LootItem.lootTableItem(Items.BLUE_ICE)
+					.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F))
+						.when(LootItemKilledByPlayerCondition.killedByPlayer()))
+					.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F))
+						.when(this.killedByWolf()))
+					.apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.1F, 0.3F)))
+					.when(LootItemRandomChanceCondition.randomChance(0.10F))
+					.setWeight(2)
+					)
+				.add(LootItem.lootTableItem(BlockRegistry.SMOOTH_ICE.get())
+					.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F))
+						.when(LootItemKilledByPlayerCondition.killedByPlayer()))
+					.apply(SetItemCountFunction.setCount(UniformGenerator.between(0.0F, 1.0F))
+						.when(this.killedByWolf()))
+					.apply(LootingEnchantFunction.lootingMultiplier(UniformGenerator.between(0.1F, 0.3F)))
+					.when(LootItemRandomChanceCondition.randomChance(0.05F))
+					.setWeight(1)
+					)
+				)
+		);
 		
     }
 	
 	private LootItemCondition.Builder killedByWolf() {
-	      return DamageSourceCondition.hasDamageSource(DamageSourcePredicate.Builder.damageType().source(EntityPredicate.Builder.entity().of(EntityType.WOLF)));
-	   }
+		return DamageSourceCondition.hasDamageSource(DamageSourcePredicate.Builder.damageType().source(EntityPredicate.Builder.entity().of(EntityType.WOLF)));
+	}
 	
 	
 }

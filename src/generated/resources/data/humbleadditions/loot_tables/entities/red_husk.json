@@ -37,7 +37,7 @@
             {
               "count": {
                 "type": "minecraft:uniform",
-                "max": 1.0,
+                "max": 5.0,
                 "min": 0.0
               },
               "function": "minecraft:looting_enchant"
@@ -121,9 +121,6 @@
             {
               "conditions": [
                 {
-                  "condition": "minecraft:killed_by_player"
-                },
-                {
                   "condition": "minecraft:entity_properties",
                   "entity": "this",
                   "predicate": {
@@ -169,9 +166,6 @@
             },
             {
               "conditions": [
-                {
-                  "condition": "minecraft:killed_by_player"
-                },
                 {
                   "condition": "minecraft:entity_properties",
                   "entity": "this",

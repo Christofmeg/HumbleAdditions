@@ -1,0 +1,226 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "chance": 0.4,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "conditions": [
+                {
+                  "condition": "minecraft:killed_by_player"
+                }
+              ],
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 1.0,
+                "min": 0.0
+              },
+              "function": "minecraft:set_count"
+            },
+            {
+              "add": false,
+              "conditions": [
+                {
+                  "condition": "minecraft:damage_source_properties",
+                  "predicate": {
+                    "source_entity": {
+                      "type": "minecraft:wolf"
+                    }
+                  }
+                }
+              ],
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 1.0,
+                "min": 0.0
+              },
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 0.3,
+                "min": 0.1
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "minecraft:ice",
+          "weight": 8
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "chance": 0.2,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "conditions": [
+                {
+                  "condition": "minecraft:killed_by_player"
+                }
+              ],
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 1.0,
+                "min": 0.0
+              },
+              "function": "minecraft:set_count"
+            },
+            {
+              "add": false,
+              "conditions": [
+                {
+                  "condition": "minecraft:damage_source_properties",
+                  "predicate": {
+                    "source_entity": {
+                      "type": "minecraft:wolf"
+                    }
+                  }
+                }
+              ],
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 1.0,
+                "min": 0.0
+              },
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 0.3,
+                "min": 0.1
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "minecraft:packed_ice",
+          "weight": 4
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "chance": 0.1,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "conditions": [
+                {
+                  "condition": "minecraft:killed_by_player"
+                }
+              ],
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 1.0,
+                "min": 0.0
+              },
+              "function": "minecraft:set_count"
+            },
+            {
+              "add": false,
+              "conditions": [
+                {
+                  "condition": "minecraft:damage_source_properties",
+                  "predicate": {
+                    "source_entity": {
+                      "type": "minecraft:wolf"
+                    }
+                  }
+                }
+              ],
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 1.0,
+                "min": 0.0
+              },
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 0.3,
+                "min": 0.1
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "minecraft:blue_ice",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "chance": 0.05,
+              "condition": "minecraft:random_chance"
+            }
+          ],
+          "functions": [
+            {
+              "add": false,
+              "conditions": [
+                {
+                  "condition": "minecraft:killed_by_player"
+                }
+              ],
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 1.0,
+                "min": 0.0
+              },
+              "function": "minecraft:set_count"
+            },
+            {
+              "add": false,
+              "conditions": [
+                {
+                  "condition": "minecraft:damage_source_properties",
+                  "predicate": {
+                    "source_entity": {
+                      "type": "minecraft:wolf"
+                    }
+                  }
+                }
+              ],
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 1.0,
+                "min": 0.0
+              },
+              "function": "minecraft:set_count"
+            },
+            {
+              "count": {
+                "type": "minecraft:uniform",
+                "max": 0.3,
+                "min": 0.1
+              },
+              "function": "minecraft:looting_enchant"
+            }
+          ],
+          "name": "humbleadditions:smooth_ice"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

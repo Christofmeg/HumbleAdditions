@@ -29,7 +29,7 @@ public class ModHorseArmorItem extends HorseArmorItem{
 		pTooltipComponents.add(Component.literal("When on Horse:").withStyle(ChatFormatting.GRAY));
 		pTooltipComponents.add(Component.literal("+" + this.getProtection() + " Armor").withStyle(ChatFormatting.BLUE));
 		pTooltipComponents.add(Component.literal("+" + Config.NETHERITE_HORSE_ARMOR_TOUGHNESS.get() + " Armor Toughness").withStyle(ChatFormatting.BLUE));
-		pTooltipComponents.add(Component.literal("+" + Config.NETHERITE_HORSE_ARMOR_KNOCKBACK_RESISTANCE.get() + " Knockback Resistance").withStyle(ChatFormatting.BLUE));
+		pTooltipComponents.add(Component.literal("+" + Config.HORSE_ARMOR_KNOCKBACK_RESISTANCE.get() + " Knockback Resistance").withStyle(ChatFormatting.BLUE));
 		super.appendHoverText(stack, pLevel, pTooltipComponents, pIsAdvanced);
 	}
 	

@@ -12,7 +12,7 @@ public class Config {
 	
     public static ConfigValue<Float> SMOOTH_ICE_FRICTION;
     public static ConfigValue<Integer> MILK_BOTTLE_CURE_CHANCE;
-    public static ConfigValue<Integer> NETHERITE_HORSE_ARMOR_KNOCKBACK_RESISTANCE;
+    public static ConfigValue<Integer> HORSE_ARMOR_KNOCKBACK_RESISTANCE;
     public static ConfigValue<Integer> NETHERITE_HORSE_ARMOR_TOUGHNESS;
     
     public static ConfigValue<Integer> CHARGED_CREEPER_SPAWN_CHANCE;
@@ -50,9 +50,9 @@ public class Config {
 		
 		builder.push("netherite_horse_armor");
 			builder.push("knockback resistance");
-			NETHERITE_HORSE_ARMOR_KNOCKBACK_RESISTANCE = builder
+			HORSE_ARMOR_KNOCKBACK_RESISTANCE = builder
 	    		.comment("-----------------------------------------------------",
-    				"How much knockback resistance Netherite Horse Armor should have",
+    				"How much knockback resistance Netherite & Endorite Horse Armor should have",
     				"9 knockback resistance = 90 % resistance to knockback",
     				"Note: Only use whole numbers",
     				"default: knockback resistance = 9")

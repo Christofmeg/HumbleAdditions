@@ -1,5 +1,6 @@
 package com.christofmeg.humbleadditions.data;
 
+import com.christofmeg.humbleadditions.common.world.feature.ModPlacedFeatures;
 import com.christofmeg.humbleadditions.data.client.ModBlockStateProvider;
 import com.christofmeg.humbleadditions.data.client.ModItemModelProvider;
 import com.christofmeg.humbleadditions.data.lang.ModLanguageProvider;
@@ -13,9 +14,13 @@ import com.christofmeg.humbleadditions.data.tags.ModItemTagsProvider;
 import com.christofmeg.humbleadditions.data.tags.ModPaintingVariantTagsProvider;
 import com.christofmeg.humbleadditions.data.world.ModBiomeModifierProvider;
 import com.christofmeg.humbleadditions.setup.ModConstants;
+import com.google.gson.JsonElement;
+import com.mojang.serialization.JsonOps;
 
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
+import net.minecraft.resources.RegistryOps;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -31,6 +36,7 @@ public class ModDataGenerators {
     public static void gatherData(GatherDataEvent event) {
     	ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
     	DataGenerator gen = event.getGenerator();
+    	
 		if (event.includeClient())
 		{
 			gen.addProvider(true, new ModBlockStateProvider(gen, existingFileHelper, null, null));
@@ -51,8 +57,11 @@ public class ModDataGenerators {
 			gen.addProvider(true, new ModLanguageProvider(gen, locale));
 			gen.addProvider(true, new VanillaLanguageProvider(gen, locale));
 		}
+		
+		RegistryAccess registryAccess = RegistryAccess.builtinCopy();
+    	RegistryOps<JsonElement> registryOps = RegistryOps.create(JsonOps.INSTANCE, registryAccess);
+    	ModPlacedFeatures.biome_modifierDatagen(event, gen, existingFileHelper, registryOps);
 	    
     }
-    
-   
+
 }

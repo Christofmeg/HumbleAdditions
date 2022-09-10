@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.AbstractGlassBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.RegistryObject;
 
-public class ModBlockLotTablesVanillaTexturedBlocks extends net.minecraft.data.loot.BlockLoot {
+public class ModBlockLootTablesVanillaTexturedBlocks extends net.minecraft.data.loot.BlockLoot {
 	
     @Override
     protected void addTables() {

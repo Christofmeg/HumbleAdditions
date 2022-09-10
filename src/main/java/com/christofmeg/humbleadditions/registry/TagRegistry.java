@@ -10,6 +10,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class TagRegistry {
 	
@@ -70,7 +71,7 @@ public class TagRegistry {
 	
 	public static final class Biomes {
 		private static TagKey<Biome> create(String p_207631_) {
-		      return TagKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(p_207631_));
+		      return TagKey.create(ForgeRegistries.BIOMES.getRegistryKey(), new ResourceLocation(p_207631_));
 		}
 		
 		@SuppressWarnings("unused")
@@ -85,8 +86,6 @@ public class TagRegistry {
 		private static final TagKey<Biome> forgeTag(final String path) {
 			return TagRegistry.Biomes.create((new ResourceLocation("forge", path).toString()));
 		}
-		
-		
 		
 //		public static final TagKey<Biome> RED_HUSK_BIOMES = modTag("red_husk_biomes");
 		

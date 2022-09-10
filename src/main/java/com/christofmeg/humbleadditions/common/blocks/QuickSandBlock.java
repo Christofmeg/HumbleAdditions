@@ -85,7 +85,7 @@ public class QuickSandBlock extends SandBlock implements BucketPickup {
 				if(entity.tickCount >= 40) {
 					if(((LivingEntity) entity).hasEffect(MobEffects.MOVEMENT_SPEED)) {
 						float speed = ((LivingEntity) entity).getEffect(MobEffects.MOVEMENT_SPEED).getAmplifier();
-						((LivingEntity) entity).hurt(DamageSource.DROWN, 0.1f + (speed / 10));
+						((LivingEntity) entity).hurt(DamageSource.DROWN, 0.1f + (speed / 25));
 					} else {
 						((LivingEntity) entity).hurt(DamageSource.DROWN, 0.1f);
 					}

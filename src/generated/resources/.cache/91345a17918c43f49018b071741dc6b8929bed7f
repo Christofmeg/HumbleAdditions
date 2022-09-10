@@ -1,4 +1,4 @@
-// 1.19.2	2022-09-04T18:59:23.2903894	humbleadditions - ItemModel
+// 1.19.2	2022-09-10T10:51:33.4136897	humbleadditions - ItemModel
 bfba0016c96fe50e2a754320700c101864bc78ff assets/humbleadditions/models/item/black_stained_glowing_glass.json
 ad332cca2f2a70f1c55f6335b349813ddc4e9b13 assets/humbleadditions/models/item/black_stained_glowing_glass_pane.json
 8d2afcf9e8f387715e081d18ccfac72a87d5b8ef assets/humbleadditions/models/item/blue_stained_glowing_glass.json
@@ -17,11 +17,13 @@ f920d626d3908837b009078d592b53adee336b05 assets/humbleadditions/models/item/cyan
 094a4bc94b6b12eb2030d55a5e4320f547d17eb4 assets/humbleadditions/models/item/dark_prismarine_wall.json
 acf8e30d1b4a3ee5067db87343f57acec4d6a994 assets/humbleadditions/models/item/diamond_shears.json
 f36b7c4ce7110b0c85b500989042b68d2bbee7b2 assets/humbleadditions/models/item/endorite_block.json
+f9b947a1703a613ef002a35f23ed5516e48b051d assets/humbleadditions/models/item/endorite_horse_armor.json
 735d66b07e98b2d2a032c46f6fe01c2342b90ac3 assets/humbleadditions/models/item/endorite_ingot.json
 7fe88c62d62b417d14a9b3448fab37599c69fbd6 assets/humbleadditions/models/item/endorite_shears.json
 fde75eafccd4dc178b4f3765040a3e9ceb450e0b assets/humbleadditions/models/item/endorium_axe.json
 f606d5c49638c506bf4b8db680dc628fa972683a assets/humbleadditions/models/item/endorium_block.json
 71dee52e84f3c7afbf458eb9192d423d8fa9a30b assets/humbleadditions/models/item/endorium_hoe.json
+70f58b65766acf86eeb921cfed58154b0ad1fd89 assets/humbleadditions/models/item/endorium_horse_armor.json
 70028e304ecca0015cebdb568637485717d3c89b assets/humbleadditions/models/item/endorium_ingot.json
 7cfcdbf2f7f55d58e5812006801bcdb5735c9300 assets/humbleadditions/models/item/endorium_ore.json
 4779cc0d5326fab9a1507ec9182b274895e1f140 assets/humbleadditions/models/item/endorium_pickaxe.json

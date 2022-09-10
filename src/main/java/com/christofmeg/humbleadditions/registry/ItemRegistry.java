@@ -17,6 +17,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.HoeItem;
+import net.minecraft.world.item.HorseArmorItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -47,6 +48,16 @@ public class ItemRegistry {
 			//Config.NETHERITE_HORSE_ARMOR_KNOCKBACK_RESISTANCE.get(), 
 			9, 
 			"netherite", (props()).stacksTo(1).fireResistant()));
+	
+	public static final RegistryObject<Item> ENDORIUM_HORSE_ARMOR = ITEMS_AUTO_REGISTER.register("endorium_horse_armor", 
+		() -> new HorseArmorItem(15,
+			new ResourceLocation(ModConstants.MOD_ID + ":textures/entities/horse/armor/horse_armor_endorium.png"), (props()).stacksTo(1).fireResistant()));
+	
+	public static final RegistryObject<Item> ENDORITE_HORSE_ARMOR = ITEMS_AUTO_REGISTER.register("endorite_horse_armor", 
+		() -> new ModHorseArmorItem(20, 
+			//Config.NETHERITE_HORSE_ARMOR_KNOCKBACK_RESISTANCE.get(), 
+			9, 
+			"endorite", (props()).stacksTo(1).fireResistant()));
 	
 	public static final RegistryObject<ForgeSpawnEggItem> RED_HUSK_SPAWN_EGG = ITEMS_AUTO_REGISTER.register("red_husk_spawn_egg", () -> new ForgeSpawnEggItem(EntityRegistry.RED_HUSK, 7958625, 11098145, props()));
     
