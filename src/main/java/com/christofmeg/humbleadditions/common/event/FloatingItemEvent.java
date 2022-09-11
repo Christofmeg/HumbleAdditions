@@ -37,6 +37,7 @@ public class FloatingItemEvent {
 					else {
 						entity.setDeltaMovement(entity.getDeltaMovement().x / 8, 0, entity.getDeltaMovement().z / 8);
 					}
+					entity.setInvulnerable(true);
 				}
 			}
 		}
@@ -53,8 +54,6 @@ public class FloatingItemEvent {
 			}
 		}
 	}
-	
-	//TODO CANCEL ITEMS FROM DESPAWNING
 
 }
 

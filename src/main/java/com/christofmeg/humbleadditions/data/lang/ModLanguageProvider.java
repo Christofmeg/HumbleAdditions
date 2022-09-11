@@ -8,6 +8,8 @@ import com.christofmeg.humbleadditions.common.blocks.AbstractLayerBlock;
 import com.christofmeg.humbleadditions.registry.BlockRegistry;
 import com.christofmeg.humbleadditions.registry.EntityRegistry;
 import com.christofmeg.humbleadditions.registry.ItemRegistry;
+import com.christofmeg.humbleadditions.registry.PotionRegistry;
+import com.christofmeg.humbleadditions.registry.PotionRegistry.PotionEffectRegistry;
 import com.christofmeg.humbleadditions.setup.ModConstants;
 
 import net.minecraft.data.DataGenerator;
@@ -36,6 +38,8 @@ public class ModLanguageProvider extends LanguageProvider {
 			addBlock(BlockRegistry.RAW_ROSE_GOLD_BLOCK, "Raw Rose Gold Block");
 			addBlock(BlockRegistry.SMOOTH_ICE, "Smooth Ice");
 			addBlock(BlockRegistry.JACK_O_SOUL_LANTERN, "Jack o'Soul Lantern");
+			addBlock(BlockRegistry.PACKED_SNOW, "Packed Snow");
+			addBlock(BlockRegistry.SNOW_BRICKS, "Snow Bricks");
 			
 			addBlock(BlockRegistry.LIMESTONE, "Limestone");
 			addBlock(BlockRegistry.POLISHED_LIMESTONE_BRICKS, "Polished Limestone Bricks");
@@ -87,7 +91,10 @@ public class ModLanguageProvider extends LanguageProvider {
 			
 			add("itemGroup." + ModConstants.MOD_ID, ModConstants.MOD_NAME);
 			
+			
+			
 			addEntityType(EntityRegistry.RED_HUSK, "Red Husk");
+			
 			
 			ItemRegistry.ITEMS_AUTO_REGISTER.getEntries().stream().map(RegistryObject::get)
 			.forEach(item -> {
@@ -108,7 +115,11 @@ public class ModLanguageProvider extends LanguageProvider {
 					));
 			});
 			
-
+			add("item.minecraft.potion.effect." + PotionRegistry.CHORUS.getId().toString().replace(":", "_"), "Potion of Chorus Teleport");
+			add("item.minecraft.lingering_potion.effect." + PotionRegistry.CHORUS.getId().toString().replace(":", "_"), "Lingering Potion of Chorus Teleport");
+			add("item.minecraft.splash_potion.effect." + PotionRegistry.CHORUS.getId().toString().replace(":", "_"), "Splash Potion of Chorus Teleport");
+			add("item.minecraft.tipped_arrow.effect." + ModConstants.MOD_ID + "_" + "chorus", "Arrow of Chorus Teleport");
+			addEffect(()-> PotionEffectRegistry.CHORUS.get(), "Chorus Teleport");
 			
 			break;
 		default:
@@ -118,7 +129,6 @@ public class ModLanguageProvider extends LanguageProvider {
 	
 	public void addBlockByRegistry(Supplier<? extends Block> key, String name) {
         add(key.get(), name);
-    }
-	
+    }	
 	
 }

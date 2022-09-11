@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "humbleadditions:smithing/endorite/shears_al1"
+        "recipe": "humbleadditions:smithing/horse_armor/endorite_from_netherite"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "humbleadditions:smithing/endorite/shears_al1"
+      "humbleadditions:smithing/horse_armor/endorite_from_netherite"
     ]
   }
 }

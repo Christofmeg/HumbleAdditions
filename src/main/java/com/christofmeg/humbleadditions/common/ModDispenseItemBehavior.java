@@ -49,6 +49,8 @@ public class ModDispenseItemBehavior {
 	      };
 		
 		DispenserBlock.registerBehavior(ItemRegistry.NETHERITE_HORSE_ARMOR.get(), defaultdispenseitembehavior1);
+		DispenserBlock.registerBehavior(ItemRegistry.ENDORIUM_HORSE_ARMOR.get(), defaultdispenseitembehavior1);
+		DispenserBlock.registerBehavior(ItemRegistry.ENDORITE_HORSE_ARMOR.get(), defaultdispenseitembehavior1);
 		
 		DefaultDispenseItemBehavior goatHornPlaySoundBehavoir = new OptionalDispenseItemBehavior() {
 			protected ItemStack execute(BlockSource blockSource, ItemStack stack) {

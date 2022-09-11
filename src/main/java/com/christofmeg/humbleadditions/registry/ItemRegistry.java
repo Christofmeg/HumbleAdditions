@@ -107,7 +107,7 @@ public class ItemRegistry {
     public static final RegistryObject<ShearsItem> NETHERITE_SHEARS = ITEMS_AUTO_REGISTER.register("netherite" + "_shears", () -> new ShearsItem(props().durability(netherite).fireResistant()));
     public static final RegistryObject<ShearsItem> ENDORIUM_SHEARS = ITEMS_AUTO_REGISTER.register("endorium" + "_shears", () -> new ShearsItem(props().durability(endorium).fireResistant()));
     public static final RegistryObject<ShearsItem> ENDORITE_SHEARS = ITEMS_AUTO_REGISTER.register("endorite" + "_shears", () -> new ShearsItem(props().durability(endorite).fireResistant()));
-	
+    
 	private static Item.Properties props() {
         return new Item.Properties().tab(ItemRegistry.TAB);
     }

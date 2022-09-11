@@ -41,6 +41,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 		withExistingParent("cut_red_sandstone_stairs", mcLoc("block/cut_red_sandstone"));
 		withExistingParent("cut_sandstone_stairs", mcLoc("block/cut_sandstone"));
 		withExistingParent("smooth_stone_stairs", mcLoc("block/smooth_stone"));
+		withExistingParent("packed_snow", modLoc("block/packed_snow"));
+		withExistingParent("snow_bricks", modLoc("block/snow_bricks"));
 		
 		withExistingParent("limestone", modLoc("block/limestone"));
 		withExistingParent("limestone_bricks", modLoc("block/limestone_bricks"));

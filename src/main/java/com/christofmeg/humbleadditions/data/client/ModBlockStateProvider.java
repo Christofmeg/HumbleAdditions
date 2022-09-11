@@ -45,6 +45,8 @@ public class ModBlockStateProvider<T> extends BlockStateProvider {
 		simpleBlock(BlockRegistry.SMOOTH_ICE.get(), models().cubeAll("smooth_ice", modLoc("blocks/smooth_ice")));
 		horizontalBlock(BlockRegistry.JACK_O_SOUL_LANTERN.get(), mcLoc("block/pumpkin_side"), modLoc("blocks/jack_o_soul_lantern"), mcLoc("block/pumpkin_top"));
 		simpleBlock(BlockRegistry.QUICK_SAND.get(), models().singleTexture("quick_sand", modLoc("block/abstract_quick_sand"), modLoc("blocks/quick_sand")));
+		simpleBlock(BlockRegistry.PACKED_SNOW.get(), models().cubeAll("packed_snow", modLoc("blocks/packed_snow")));
+		simpleBlock(BlockRegistry.SNOW_BRICKS.get(), models().cubeAll("snow_bricks", modLoc("blocks/snow_bricks")));
 		
 		simpleBlock(BlockRegistry.ENDORIUM_ORE.get(), models().cubeAll("endorium_ore", modLoc("blocks/endorium_ore")));
 		simpleBlock(BlockRegistry.RAW_ENDORIUM_BLOCK.get(), models().cubeAll("raw_endorium_block", modLoc("blocks/raw_endorium_block")));

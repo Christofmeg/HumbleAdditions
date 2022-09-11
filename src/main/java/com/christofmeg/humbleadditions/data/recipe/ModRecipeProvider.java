@@ -133,6 +133,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		goldenSmithing(consumer, modLoc(folder + horse + golden), Items.IRON_HORSE_ARMOR, Items.GOLDEN_HORSE_ARMOR);
 		diamondSmithing(consumer, modLoc(folder + horse + diamond), Items.GOLDEN_HORSE_ARMOR, Items.DIAMOND_HORSE_ARMOR);
 		netheriteSmithing(consumer, modLoc(folder + horse + netherite), Items.DIAMOND_HORSE_ARMOR, ItemRegistry.NETHERITE_HORSE_ARMOR.get());
+		endoriumSmithing(consumer, modLoc(folder + horse + "endorium"), Items.DIAMOND_HORSE_ARMOR, ItemRegistry.ENDORIUM_HORSE_ARMOR.get());
+		endoriteSmithing(consumer, modLoc(folder + horse + "endorite_from_netherite"), ItemRegistry.ENDORIUM_HORSE_ARMOR.get(), ItemRegistry.ENDORITE_HORSE_ARMOR.get());
+		endoriteSmithing(consumer, modLoc(folder + horse + "endorite_from_endorium"), ItemRegistry.NETHERITE_HORSE_ARMOR.get(), ItemRegistry.ENDORITE_HORSE_ARMOR.get());
 		
 		endoriumSmithing(consumer, modLoc(folder + endorium + "axe"), Items.DIAMOND_AXE, ItemRegistry.ENDORIUM_AXE.get());
 		endoriumSmithing(consumer, modLoc(folder + endorium + "hoe"), Items.DIAMOND_HOE, ItemRegistry.ENDORIUM_HOE.get());
@@ -148,8 +151,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		diamondSmithing(consumer, modLoc(folder + diamond + "shears"), Items.SHEARS, ItemRegistry.DIAMOND_SHEARS.get());
 		netheriteSmithing(consumer, modLoc(folder + netherite + "shears"), ItemRegistry.DIAMOND_SHEARS.get(), ItemRegistry.NETHERITE_SHEARS.get());
 		endoriumSmithing(consumer, modLoc(folder + endorium + "shears"), ItemRegistry.DIAMOND_SHEARS.get(), ItemRegistry.ENDORIUM_SHEARS.get());
-		endoriteSmithing(consumer, modLoc(folder + endorite + "shears_al1"), ItemRegistry.NETHERITE_SHEARS.get(), ItemRegistry.ENDORITE_SHEARS.get());
-		endoriteSmithing(consumer, modLoc(folder + endorite + "shears_alt2"), ItemRegistry.ENDORIUM_SHEARS.get(), ItemRegistry.ENDORITE_SHEARS.get());
+		endoriteSmithing(consumer, modLoc(folder + endorite + "shears_from_netherite"), ItemRegistry.NETHERITE_SHEARS.get(), ItemRegistry.ENDORITE_SHEARS.get());
+		endoriteSmithing(consumer, modLoc(folder + endorite + "shears_from_endorium"), ItemRegistry.ENDORIUM_SHEARS.get(), ItemRegistry.ENDORITE_SHEARS.get());
 		
 		roseGoldSmithing(consumer, modLoc(folder + rose_gold + "sword"), Items.GOLDEN_SWORD, ItemRegistry.ROSE_GOLD_SWORD.get());
 		roseGoldSmithing(consumer, modLoc(folder + rose_gold + "pickaxe"), Items.GOLDEN_PICKAXE, ItemRegistry.ROSE_GOLD_PICKAXE.get());
@@ -379,6 +382,21 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		
 		String folder = "shaped/";
 	
+		//PACKED SNOW
+			ShapedRecipeBuilder.shaped(BlockRegistry.PACKED_SNOW.get())
+			.define('C', Items.SNOW_BLOCK)
+			.pattern("CC")
+			.pattern("CC")
+			.unlockedBy("has_snow", has(Items.SNOW_BLOCK))
+			.save(consumer, modLoc(folder + "packed_snow"));
+		//SNOW BRICKS
+			ShapedRecipeBuilder.shaped(BlockRegistry.SNOW_BRICKS.get())
+			.define('C', BlockRegistry.PACKED_SNOW.get())
+			.pattern("CC")
+			.pattern("CC")
+			.unlockedBy("has_snow", has(Items.SNOW_BLOCK))
+			.save(consumer, modLoc(folder + "snow_bricks"));
+		
 		//ICE REWORK
 			ShapedRecipeBuilder.shaped(Items.PACKED_ICE)
 			.define('C', Items.ICE)
@@ -673,7 +691,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 	private void addShapelessRecipes(Consumer<FinishedRecipe> consumer) {
 		
 		String folder = "shapeless/";
-
+		
 		//CHARCOAL FROM BLOCK
 			ShapelessRecipeBuilder.shapeless(Items.CHARCOAL, 9)
 			.requires(BlockRegistry.CHARCOAL_BLOCK.get())
@@ -1391,7 +1409,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 	}
 	
 	private static void goldenSmithing(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, Item pIngredientItem, Item pResultItem) {
-	      UpgradeRecipeBuilder.smithing(Ingredient.of(pIngredientItem), Ingredient.of(Items.GOLD_BLOCK), pResultItem).unlocks("has_gold_block", has(Items.GOLD_BLOCK)).save(consumer, resourceLocation);
+	      UpgradeRecipeBuilder.smithing(Ingredient.of(pIngredientItem), Ingredient.of(Items.GOLD_INGOT), pResultItem).unlocks("has_gold_ingot", has(Items.GOLD_INGOT)).save(consumer, resourceLocation);
 	}
 	
 	private static void stoneSmithing(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, Item pIngredientItem, Item pResultItem) {
@@ -1399,14 +1417,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 	}
 	
 	private static void copperSmithing(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, Item pIngredientItem, Item pResultItem) {
-	      UpgradeRecipeBuilder.smithing(Ingredient.of(pIngredientItem), Ingredient.of(Items.COPPER_BLOCK), pResultItem).unlocks("has_copper", has(Items.COPPER_BLOCK)).save(consumer, resourceLocation);	}
+	      UpgradeRecipeBuilder.smithing(Ingredient.of(pIngredientItem), Ingredient.of(Items.COPPER_INGOT), pResultItem).unlocks("has_copper", has(Items.COPPER_INGOT)).save(consumer, resourceLocation);	}
 	
 	private static void roseGoldSmithing(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, Item pIngredientItem, Item pResultItem) {
-	      UpgradeRecipeBuilder.smithing(Ingredient.of(pIngredientItem), Ingredient.of(BlockRegistry.ROSE_GOLD_BLOCK.get()), pResultItem).unlocks("has_rose_gold", has(BlockRegistry.ROSE_GOLD_BLOCK.get())).save(consumer, resourceLocation);
+	      UpgradeRecipeBuilder.smithing(Ingredient.of(pIngredientItem), Ingredient.of(ItemRegistry.ROSE_GOLD_INGOT.get()), pResultItem).unlocks("has_rose_gold", has(BlockRegistry.ROSE_GOLD_BLOCK.get())).save(consumer, resourceLocation);
 	}
 	
 	private static void ironSmithing(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, Item pIngredientItem, Item pResultItem) {
-	      UpgradeRecipeBuilder.smithing(Ingredient.of(pIngredientItem), Ingredient.of(Items.IRON_BLOCK), pResultItem).unlocks("has_iron_block", has(Items.IRON_BLOCK)).save(consumer, resourceLocation);
+	      UpgradeRecipeBuilder.smithing(Ingredient.of(pIngredientItem), Ingredient.of(Items.IRON_INGOT), pResultItem).unlocks("has_iron", has(Items.IRON_INGOT)).save(consumer, resourceLocation);
 	}
 	
 	private static void diamondSmithing(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, Item pIngredientItem, Item pResultItem) {

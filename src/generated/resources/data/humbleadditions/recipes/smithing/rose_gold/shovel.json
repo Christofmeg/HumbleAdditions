@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing",
   "addition": {
-    "item": "humbleadditions:rose_gold_block"
+    "item": "humbleadditions:rose_gold_ingot"
   },
   "base": {
     "item": "minecraft:golden_shovel"

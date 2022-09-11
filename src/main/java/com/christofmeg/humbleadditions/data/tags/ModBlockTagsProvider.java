@@ -82,7 +82,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 			BlockRegistry.RAW_ENDORIUM_BLOCK.get(),
 			BlockRegistry.ENDORIUM_BLOCK.get(),
 			BlockRegistry.ENDORITE_BLOCK.get(),
-			BlockRegistry.RAW_ROSE_GOLD_BLOCK.get()
+			BlockRegistry.RAW_ROSE_GOLD_BLOCK.get(),
+			BlockRegistry.SNOW_BRICKS.get()
 			);
 		
 		this.tag(Tags.Blocks.STONE).add(
@@ -97,7 +98,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 			BlockRegistry.SAND_LAYER_BLOCK.get(), 
 			BlockRegistry.RED_SAND_LAYER_BLOCK.get(),
 			BlockRegistry.GRAVEL_LAYER_BLOCK.get(),
-			BlockRegistry.QUICK_SAND.get()
+			BlockRegistry.QUICK_SAND.get(),
+			BlockRegistry.PACKED_SNOW.get()
 			);
 		
 		this.tag(BlockTags.MANGROVE_LOGS_CAN_GROW_THROUGH).add(BlockRegistry.MOSS_LAYER_BLOCK.get());

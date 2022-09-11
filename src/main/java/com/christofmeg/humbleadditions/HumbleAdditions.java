@@ -7,6 +7,8 @@ import com.christofmeg.humbleadditions.registry.BlockRegistry;
 import com.christofmeg.humbleadditions.registry.EntityRegistry;
 import com.christofmeg.humbleadditions.registry.ItemRegistry;
 import com.christofmeg.humbleadditions.registry.PaintingVariantRegistry;
+import com.christofmeg.humbleadditions.registry.PotionRegistry;
+import com.christofmeg.humbleadditions.registry.PotionRegistry.PotionEffectRegistry;
 import com.christofmeg.humbleadditions.registry.VanillaItemRegistry;
 import com.christofmeg.humbleadditions.setup.Config;
 import com.christofmeg.humbleadditions.setup.ModConstants;
@@ -39,7 +41,9 @@ public class HumbleAdditions {
         ModConfiguredFeatures.CONFIGURED_FEATURES.register(bus);
         ModPlacedFeatures.PLACED_FEATURES.register(bus);
         PaintingVariantRegistry.PAINTING_VARIANTS.register(bus);
-        
+        PotionRegistry.POTIONS.register(bus); 
+        PotionEffectRegistry.MOB_EFFECTS.register(bus);
+ 
     }
 
     @SubscribeEvent
@@ -51,6 +55,7 @@ public class HumbleAdditions {
 			ComposterBlock.COMPOSTABLES.put(BlockRegistry.MOSS_LAYER_BLOCK.get().asItem(), 0.08125F);
 			
 			ModDispenseItemBehavior.init();
+			PotionRegistry.setup();
 			
 			//TODO FIX FALLING FULL BLOCKS STACKING
 			

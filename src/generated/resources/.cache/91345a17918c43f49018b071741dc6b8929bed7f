@@ -1,4 +1,4 @@
-// 1.19.2	2022-09-10T10:51:33.4136897	humbleadditions - ItemModel
+// 1.19.2	2022-09-11T19:05:17.1477891	humbleadditions - ItemModel
 bfba0016c96fe50e2a754320700c101864bc78ff assets/humbleadditions/models/item/black_stained_glowing_glass.json
 ad332cca2f2a70f1c55f6335b349813ddc4e9b13 assets/humbleadditions/models/item/black_stained_glowing_glass_pane.json
 8d2afcf9e8f387715e081d18ccfac72a87d5b8ef assets/humbleadditions/models/item/blue_stained_glowing_glass.json
@@ -61,6 +61,7 @@ f0c481ae00aacf58c11b59a48619b1e4798c8315 assets/humbleadditions/models/item/neth
 660952a28d9992b841501f7d63a0c873c21aec95 assets/humbleadditions/models/item/netherite_shears.json
 3fd987b7bb1833a6b73704cfb4637992b1708b3d assets/humbleadditions/models/item/orange_stained_glowing_glass.json
 ad2b4a39ee242877e96b1659ac87b345965e6408 assets/humbleadditions/models/item/orange_stained_glowing_glass_pane.json
+32adb03556085bc9eec11f8d423e79de608ba614 assets/humbleadditions/models/item/packed_snow.json
 4995d6d75b2ef2e2bbbdafd6b6bb9af01181ee20 assets/humbleadditions/models/item/pink_stained_glowing_glass.json
 07577a1a1455d9fae1c54f159962f5b157ce6ced assets/humbleadditions/models/item/pink_stained_glowing_glass_pane.json
 4f4f37e4572aa07b6de6bd970974a2aee41df9a0 assets/humbleadditions/models/item/polished_andesite_wall.json
@@ -104,6 +105,7 @@ f592a2f748ec898e55dcb9753f8c42e3975643aa assets/humbleadditions/models/item/smoo
 df81d9ec8462d16cf11d6964e56d98cc12c35310 assets/humbleadditions/models/item/smooth_sandstone_wall.json
 f613e39610300b0b7659cf4e457f6750d3c34356 assets/humbleadditions/models/item/smooth_stone_stairs.json
 f4bda3b2f9cef8d218e651a7fb1b592df49c8266 assets/humbleadditions/models/item/smooth_stone_wall.json
+3ef61168e7ce7bcdcea0d795bfbb84dc9ac6c738 assets/humbleadditions/models/item/snow_bricks.json
 f8cbedac11521654b97551f77d4dd8b552c45b6e assets/humbleadditions/models/item/stone_shears.json
 cce1a5a2e52394840b1c742018f6f1b67868b6f0 assets/humbleadditions/models/item/stone_wall.json
 3a12f9edb6ee75990ce8f27697f8b6d0c21a5ac1 assets/humbleadditions/models/item/white_stained_glowing_glass.json

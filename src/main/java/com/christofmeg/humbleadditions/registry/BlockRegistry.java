@@ -102,7 +102,6 @@ public class BlockRegistry {
 			   })
 			), props());
 	
-//TODO make glowing SAND, SANDSTONE BRICKS, SMOOTH SANDSTONE, SMELTING GLOWING SAND TO GLASS, CHISELED SANDSTONE, STAIRS, WALLS, SLABS	
 /*	
  *
 	public static final RegistryObject<Block> GLOWING_SAND_BLOCK = registerBlock("glowing_sand_block", () -> new SandBlock(14406560,  BlockBehaviour.Properties.copy(Blocks.SAND)
@@ -205,13 +204,18 @@ public class BlockRegistry {
 		.lightLevel((b) -> 1).requiresCorrectToolForDrops().strength(30.0F, 1200.0F).sound(SoundType.METAL)), new Item.Properties());
 	
 	public static final RegistryObject<Block> RAW_ENDORIUM_BLOCK = registerBlockItem("raw_endorium_block", 
-			() -> new Block(BlockBehaviour.Properties.copy(BlockRegistry.ENDORIUM_ORE.get())), props());
+		() -> new Block(BlockBehaviour.Properties.copy(BlockRegistry.ENDORIUM_ORE.get())), props());
 	
 	public static final RegistryObject<Block> ENDORIUM_BLOCK = registerBlockItem("endorium_block", 
-			() -> new Block(BlockBehaviour.Properties.copy(BlockRegistry.RAW_ENDORIUM_BLOCK.get()).strength(37.5F, 1500.0F)), props());
+		() -> new Block(BlockBehaviour.Properties.copy(BlockRegistry.RAW_ENDORIUM_BLOCK.get()).strength(37.5F, 1500.0F)), props());
 	
 	public static final RegistryObject<Block> ENDORITE_BLOCK = registerBlockItem("endorite_block", 
-			() -> new Block(BlockBehaviour.Properties.copy(BlockRegistry.ENDORIUM_BLOCK.get()).strength(57.375F, 2300.0F)), props());
+		() -> new Block(BlockBehaviour.Properties.copy(BlockRegistry.ENDORIUM_BLOCK.get()).strength(57.375F, 2300.0F)), props());
+	
+	public static final RegistryObject<Block> PACKED_SNOW = registerBlock("packed_snow", () -> new Block(BlockBehaviour.Properties.copy(Blocks.SNOW_BLOCK)), props());
+	public static final RegistryObject<Block> SNOW_BRICKS = registerBlock("snow_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.SNOW_BLOCK)), props());
+	
+	
 	
 	public static final Material QUICK_SAND_MATERIAL = (new Material.Builder(MaterialColor.SAND)).build();
 	
