@@ -57,23 +57,26 @@ public class HumbleAdditions {
 			ModDispenseItemBehavior.init();
 			PotionRegistry.setup();
 			
-			//TODO FIX FALLING FULL BLOCKS STACKING
+			// FIX FALLING FULL BLOCKS STACKING
 			
-			//TODO FALLING LAYERS item drops correct amount when broken by falling on other blocks
+			// FALLING LAYERS item drops correct amount when broken by falling on other blocks
 			
-			//TODO FALLING LAYERS remove itemdrops when block fell on self FallableLayerBlock$onBrokenAfterFall
+			// FALLING LAYERS remove itemdrops when block fell on self FallableLayerBlock$onBrokenAfterFall
 			
-			//TODO fix falling layers not stacking when gamerule doEntityDrops is set to false
+			// fix falling layers not stacking when gamerule doEntityDrops is set to false
 			
-			//Layerblocks waterloggable
+			// Layerblocks waterloggable
 			
-			//Look at shovel right click and falling or breaking when layer on layer OR merging
+			// Look at shovel right click and falling or breaking when layer on layer OR merging
 			
-			//https://www.curseforge.com/minecraft/mc-mods/aquatic-torches
 
-			//TODO Custom snow men ENTITY heads with jack o lanterns
-			//TODO Frogs that grow in size when eating things
-			//TODO ZOMBIES THAT GROWS ON EACH HIT
+			/* IDEAS
+			 * Custom snow men ENTITY heads with jack o lanterns
+			 * Frogs that grow in size when eating things
+			 * ZOMBIES THAT GROWS ON EACH HIT
+			 */
+			
+			
 			
 			
 		});
