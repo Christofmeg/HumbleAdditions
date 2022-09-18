@@ -31,31 +31,33 @@ public class BedBlockEvent {
 			if(level.isNight()) {
 				if(entity instanceof ServerPlayer) {
 					if(blockHit instanceof BedBlock) {
-						if(entity.isPassenger()) {
-							entity.stopRiding();
-						}
-						Direction direction = state.getBedDirection(level, pos);
-						if(state.getValue(BedBlock.PART) == BedPart.FOOT) {
-							if(direction == Direction.NORTH) {
-								entity.teleportTo(pos.getX(), pos.getY(), pos.getZ() - 1);
+						if(!state.getValue(BedBlock.OCCUPIED)) {
+							if(entity.isPassenger()) {
+								entity.stopRiding();
 							}
-							if(direction == Direction.SOUTH) {
-								entity.teleportTo(pos.getX(), pos.getY(), pos.getZ() + 1);
+							Direction direction = state.getBedDirection(level, pos);
+							if(state.getValue(BedBlock.PART) == BedPart.FOOT) {
+								if(direction == Direction.NORTH) {
+									entity.teleportTo(pos.getX(), pos.getY(), pos.getZ() - 1);
+								}
+								if(direction == Direction.SOUTH) {
+									entity.teleportTo(pos.getX(), pos.getY(), pos.getZ() + 1);
+								}
+								if(direction == Direction.EAST) {
+									entity.teleportTo(pos.getX() + 1, pos.getY(), pos.getZ());
+								}
+								if(direction == Direction.WEST) {
+									entity.teleportTo(pos.getX() - 1, pos.getY(), pos.getZ());
+								}
+							} 
+							else {
+								entity.teleportTo(pos.getX(), pos.getY(), pos.getZ());
 							}
-							if(direction == Direction.EAST) {
-								entity.teleportTo(pos.getX() + 1, pos.getY(), pos.getZ());
-							}
-							if(direction == Direction.WEST) {
-								entity.teleportTo(pos.getX() - 1, pos.getY(), pos.getZ());
-							}
-						} 
-						else {
-							entity.teleportTo(pos.getX(), pos.getY(), pos.getZ());
 						}
 					}
 				}
 			}
 		}
 	}
-
+	
 }

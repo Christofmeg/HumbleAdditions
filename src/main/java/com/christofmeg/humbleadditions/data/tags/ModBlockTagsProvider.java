@@ -62,6 +62,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 		this.tag(TagRegistry.Blocks.STORAGE_BLOCKS_ENDORIUM).add(BlockRegistry.ENDORIUM_BLOCK.get());
 		this.tag(TagRegistry.Blocks.STORAGE_BLOCKS_ENDORITE).add(BlockRegistry.ENDORITE_BLOCK.get());
 		this.tag(TagRegistry.Blocks.STORAGE_BLOCKS_RAW_ROSE_GOLD).add(BlockRegistry.RAW_ROSE_GOLD_BLOCK.get());
+		this.tag(TagRegistry.Blocks.STORAGE_BLOCKS_BLAZE_ROD).add(BlockRegistry.BLAZE_ROD_BLOCK.get());
+		
 		this.tag(Tags.Blocks.STORAGE_BLOCKS).addTag(TagRegistry.Blocks.STORAGE_BLOCKS_CHARCOAL);
 		this.tag(Tags.Blocks.STORAGE_BLOCKS).addTag(TagRegistry.Blocks.STORAGE_BLOCKS_ROSE_GOLD);
 		this.tag(Tags.Blocks.STORAGE_BLOCKS).addTag(TagRegistry.Blocks.STORAGE_BLOCKS_RAW_ENDORIUM);
@@ -83,7 +85,8 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 			BlockRegistry.ENDORIUM_BLOCK.get(),
 			BlockRegistry.ENDORITE_BLOCK.get(),
 			BlockRegistry.RAW_ROSE_GOLD_BLOCK.get(),
-			BlockRegistry.SNOW_BRICKS.get()
+			BlockRegistry.SNOW_BRICKS.get(),
+			BlockRegistry.BLAZE_ROD_BLOCK.get()
 			);
 		
 		this.tag(Tags.Blocks.STONE).add(

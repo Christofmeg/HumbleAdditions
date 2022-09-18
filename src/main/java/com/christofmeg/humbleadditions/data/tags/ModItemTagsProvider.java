@@ -97,7 +97,7 @@ public class ModItemTagsProvider extends ItemTagsProvider {
 		
 		this.copy(Tags.Blocks.STONE, Tags.Items.STONE);
 		
-		
+		this.tag(Tags.Items.RODS_BLAZE).add(net.minecraft.world.item.Items.BLAZE_ROD);
 		
 	}
 	

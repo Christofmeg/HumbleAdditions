@@ -1,4 +1,4 @@
-// 1.19.2	2022-09-11T17:13:22.2871801	Humble Additions - Item Tags
+// 1.19.2	2022-09-18T22:16:02.1336455	Humble Additions - Item Tags
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/glass.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/glass/black.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/glass/blue.json
@@ -27,6 +27,7 @@ c659533f2a821c8d680c4aa39cf204f9cd82aba9 data/forge/tags/items/ingots/endorium.j
 dad9cac0346b688539c1251f1c9e872dd50633c9 data/forge/tags/items/raw_materials.json
 7d9120fa011a9c330f8c840e72c20a0a21b71138 data/forge/tags/items/raw_materials/endorium.json
 c7b2ea5e617d227daf0e37d8f943604409fb682a data/forge/tags/items/raw_materials/rose_gold.json
+d1cec38b1d173c06bbbfd0f5289c0235de5db1d9 data/forge/tags/items/rods/blaze.json
 6962c4f1126281a9e7ac7a756f656a9e269376d9 data/forge/tags/items/shears.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/stained_glass.json
 35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/forge/tags/items/stained_glass_panes.json

@@ -33,6 +33,7 @@ public class ModLanguageProvider extends LanguageProvider {
 		String locale = this.getName().replace("Languages: ", "");
 		switch(locale) {
 		case "en_us":			
+			addBlock(BlockRegistry.BLAZE_ROD_BLOCK, "Block of Blaze Rods");
 			addBlock(BlockRegistry.CHARCOAL_BLOCK, "Charcoal Block");
 			addBlock(BlockRegistry.ROSE_GOLD_BLOCK, "Rose Gold Block");
 			addBlock(BlockRegistry.RAW_ROSE_GOLD_BLOCK, "Raw Rose Gold Block");

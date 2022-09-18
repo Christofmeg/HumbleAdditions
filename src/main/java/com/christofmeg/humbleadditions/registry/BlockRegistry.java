@@ -45,6 +45,15 @@ public class BlockRegistry {
 			.requiresCorrectToolForDrops()
 			), props());
 	
+	public static final RegistryObject<Block> BLAZE_ROD_BLOCK = registerBlock("block_of_blaze_rods", 
+			() -> new Block(BlockBehaviour.Properties.of(Material.DECORATION, MaterialColor.COLOR_ORANGE)
+				.strength(5.0F, 6.0F)
+				.emissiveRendering((state, world, pos) -> true)
+				.lightLevel((b) -> 7)
+	            .isValidSpawn(BlockRegistry::always)
+				.requiresCorrectToolForDrops()
+				), props());
+	
 	public static final RegistryObject<Block> ROSE_GOLD_BLOCK = registerBlock("rose_gold_block", 
 		() -> new Block(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.COLOR_PINK)
 			.sound(SoundType.COPPER).strength(5.0F, 6.0F).requiresCorrectToolForDrops()), props());

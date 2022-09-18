@@ -382,6 +382,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		
 		String folder = "shaped/";
 	
+		//Blaze Rod Block
+			ShapedRecipeBuilder.shaped(BlockRegistry.BLAZE_ROD_BLOCK.get())
+			.define('C', Tags.Items.RODS_BLAZE)
+			.pattern("CCC")
+			.pattern("CCC")
+			.pattern("CCC")
+			.unlockedBy("has_blaze_rod", has(Tags.Items.RODS_BLAZE))
+			.save(consumer, modLoc(folder + "blaze_rod_block"));
+		
 		//PACKED SNOW
 			ShapedRecipeBuilder.shaped(BlockRegistry.PACKED_SNOW.get())
 			.define('C', Items.SNOW_BLOCK)
@@ -692,6 +701,22 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		
 		String folder = "shapeless/";
 		
+		//Blaze Rod Block
+			ShapelessRecipeBuilder.shapeless(Items.BLAZE_ROD, 9)
+			.requires(BlockRegistry.BLAZE_ROD_BLOCK.get())
+			.unlockedBy("has_blaze_rod", has(Tags.Items.RODS_BLAZE))
+			.save(consumer, modLoc(folder + "blaze_rod"));
+		//NETHER WART
+			ShapelessRecipeBuilder.shapeless(Items.NETHER_WART, 9)
+			.requires(Items.NETHER_WART_BLOCK)
+			.unlockedBy("has_nether_wart", has(Items.NETHER_WART))
+			.save(consumer, modLoc(folder + "nether_wart"));
+		//CRYING OBSIDIAN
+			ShapelessRecipeBuilder.shapeless(Items.CRYING_OBSIDIAN)
+			.requires(Tags.Items.OBSIDIAN)
+			.requires(Items.GHAST_TEAR)
+			.unlockedBy("has_obsidian", has(Tags.Items.OBSIDIAN))
+			.save(consumer, modLoc(folder + "crying_obsidian"));
 		//CHARCOAL FROM BLOCK
 			ShapelessRecipeBuilder.shapeless(Items.CHARCOAL, 9)
 			.requires(BlockRegistry.CHARCOAL_BLOCK.get())

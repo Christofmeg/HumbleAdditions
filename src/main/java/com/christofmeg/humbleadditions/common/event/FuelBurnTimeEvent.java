@@ -15,6 +15,7 @@ public class FuelBurnTimeEvent {
 	@SubscribeEvent
     public static void fuelBurnTimeEvent(FurnaceFuelBurnTimeEvent event) {
 
+        burnTime(event, BlockRegistry.BLAZE_ROD_BLOCK, 24000);
         burnTime(event, BlockRegistry.CHARCOAL_BLOCK, 16000);
 
 	}

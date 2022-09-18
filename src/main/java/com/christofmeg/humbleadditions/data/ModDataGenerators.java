@@ -52,6 +52,9 @@ public class ModDataGenerators {
 			gen.addProvider(true, new ModBiomeTagsProvider(gen, existingFileHelper));
 			gen.addProvider(true, new ModPaintingVariantTagsProvider(gen, existingFileHelper));
 			gen.addProvider(true, new ModEntityTypeTagsProvider(gen, existingFileHelper));
+//			gen.addProvider(true, new IntegrationRecipeProvider(gen));
+//			gen.addProvider(true, new IntegrationItemTagsProvider(gen, blockTags, existingFileHelper));
+			
         }
 		for(String locale : LOCALE_CODES) {
 			gen.addProvider(true, new ModLanguageProvider(gen, locale));

@@ -42,6 +42,7 @@ public class ModBlockStateProvider<T> extends BlockStateProvider {
 	protected void registerStatesAndModels() {
 		
 		simpleBlock(BlockRegistry.CHARCOAL_BLOCK.get(), models().cubeAll("charcoal_block", modLoc("blocks/charcoal_block")));
+		simpleBlock(BlockRegistry.BLAZE_ROD_BLOCK.get(), models().cubeAll("block_of_blaze_rods", modLoc("blocks/block_of_blaze_rods")));
 		simpleBlock(BlockRegistry.SMOOTH_ICE.get(), models().cubeAll("smooth_ice", modLoc("blocks/smooth_ice")));
 		horizontalBlock(BlockRegistry.JACK_O_SOUL_LANTERN.get(), mcLoc("block/pumpkin_side"), modLoc("blocks/jack_o_soul_lantern"), mcLoc("block/pumpkin_top"));
 		simpleBlock(BlockRegistry.QUICK_SAND.get(), models().singleTexture("quick_sand", modLoc("block/abstract_quick_sand"), modLoc("blocks/quick_sand")));

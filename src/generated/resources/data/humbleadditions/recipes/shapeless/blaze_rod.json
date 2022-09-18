@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "humbleadditions:block_of_blaze_rods"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "item": "minecraft:blaze_rod"
+  }
+}

@@ -1,6 +1,7 @@
-// 1.19.2	2022-09-11T18:59:06.4747414	Humble Additions - LootTables
+// 1.19.2	2022-09-18T22:06:06.5228742	Humble Additions - LootTables
 82080a5cd4946ce0808cea82ebff84fb96759874 data/humbleadditions/loot_tables/blocks/black_stained_glowing_glass.json
 58c6d1c876ffaae1086f0e29901e655b68e09c5c data/humbleadditions/loot_tables/blocks/black_stained_glowing_glass_pane.json
+ed68ca2c3d3e75e1ce837d368745ee08f971b754 data/humbleadditions/loot_tables/blocks/block_of_blaze_rods.json
 f785f3f2a0cd0d1bf47a0eed5c2e0a8b752b6e06 data/humbleadditions/loot_tables/blocks/blue_stained_glowing_glass.json
 350f390eb09e5d0f4edbc87ec643537be85beb50 data/humbleadditions/loot_tables/blocks/blue_stained_glowing_glass_pane.json
 7d0a6befff56fb0863bf922772ddc5714fe10f34 data/humbleadditions/loot_tables/blocks/brown_stained_glowing_glass.json

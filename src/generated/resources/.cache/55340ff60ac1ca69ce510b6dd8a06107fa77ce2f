@@ -1,4 +1,4 @@
-// 1.19.2	2022-09-11T20:15:44.6684565	Humble Additions - Block Tags
+// 1.19.2	2022-09-18T22:16:02.1356471	Humble Additions - Block Tags
 08f8227dac1a298bffae9ce94eeb111d90a98647 data/forge/tags/blocks/glass.json
 6910383c33b1cbd3f50c4008f5fe27603e247cdb data/forge/tags/blocks/glass/black.json
 61ba7606013817693d33e113eb0100d33f61fa00 data/forge/tags/blocks/glass/blue.json
@@ -45,6 +45,7 @@ f6bb2e63d12ee994e2f1bf1eef63bc4767ba66bb data/forge/tags/blocks/needs_endorium_t
 0f4c6be60ac983dca11eb5359c819cd5f95a7c77 data/forge/tags/blocks/stained_glass_panes.json
 b504ea6e0f4db48a3e65662f555df69be858f4c9 data/forge/tags/blocks/stone.json
 d1963667da7d05d7799e6b8521aecc0dbcb88a74 data/forge/tags/blocks/storage_blocks.json
+3b365929f25b66a8d88a39c761e95def090ae4cc data/forge/tags/blocks/storage_blocks/blaze_rod.json
 748fb8e619d047998125e1ef1ad8254c3922ce67 data/forge/tags/blocks/storage_blocks/charcoal.json
 8d4ff0762f7966ee47d4c792cc4d45bba1c85343 data/forge/tags/blocks/storage_blocks/endorite.json
 e464cd183b1eea01ded5dcef8b6cf13fe319465a data/forge/tags/blocks/storage_blocks/endorium.json
@@ -62,7 +63,7 @@ dcdaaacae87f88a10272ec651d9291fab149beeb data/minecraft/tags/blocks/lush_ground_
 90d93b65b5d39f281656c80dec557d68c3be2174 data/minecraft/tags/blocks/mangrove_logs_can_grow_through.json
 90d93b65b5d39f281656c80dec557d68c3be2174 data/minecraft/tags/blocks/mangrove_roots_can_grow_through.json
 90d93b65b5d39f281656c80dec557d68c3be2174 data/minecraft/tags/blocks/mineable/hoe.json
-df2ae30621c9572050dfeb2cfc103f8e1c19fad6 data/minecraft/tags/blocks/mineable/pickaxe.json
+94e7342f04cb9bac458c3e8244332a9fa7aabbb0 data/minecraft/tags/blocks/mineable/pickaxe.json
 27f65f444ee36f3fc8cd7abf3d800e4c072b1548 data/minecraft/tags/blocks/mineable/shovel.json
 e9f2d0e6fdc8936b8aff288ceb5935dde96216e1 data/minecraft/tags/blocks/moss_replaceable.json
 d060abfec86b1f2fa425c4c70f38455705c3c860 data/minecraft/tags/blocks/needs_iron_tool.json
