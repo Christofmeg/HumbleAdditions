@@ -857,6 +857,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.requires(Tags.Items.INGOTS_NETHERITE)
 			.unlockedBy("has_endorium", has(ItemRegistry.RAW_ENDORIUM.get()))
 			.save(consumer, modLoc(folder + "endorite_ingot"));
+			
+			ShapelessRecipeBuilder.shapeless(ItemRegistry.ENDORITE_INGOT.get(), 9)
+			.requires(BlockRegistry.ENDORITE_BLOCK.get())
+			.unlockedBy("has_endorium", has(ItemRegistry.RAW_ENDORIUM.get()))
+			.save(consumer, modLoc(folder + "endorite_ingot_from_block"));
 
 	}
 	

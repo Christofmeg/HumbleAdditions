@@ -2,6 +2,7 @@ package com.christofmeg.humbleadditions.integration.recipes;
 
 import java.util.function.Consumer;
 
+import com.christofmeg.humbleadditions.integration.IronChestIntegration;
 import com.christofmeg.humbleadditions.setup.ModConstants;
 
 import net.minecraft.data.DataGenerator;
@@ -12,6 +13,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
