@@ -74,10 +74,10 @@ public class HumbleAdditions {
 			 * Custom snow men ENTITY heads with jack o lanterns
 			 * Frogs that grow in size when eating things
 			 * ZOMBIES THAT GROWS ON EACH HIT
+			 * REPAIRABLE ANVILS
 			 */
 			
-			//TODO ZOMBIE FLESH BLOCK
-			
+			//TODO ADD SMELTING TO SHEARS
 			
 		});
     }

@@ -379,8 +379,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 	}
 	
 	private void addShapedRecipes(Consumer<FinishedRecipe> consumer) {
-		
 		String folder = "shaped/";
+		
+		ShapedRecipeBuilder.shaped(Blocks.IRON_TRAPDOOR, 2).define('#', Items.IRON_INGOT).pattern("##").pattern("##").unlockedBy("has_iron_ingot", has(Items.IRON_INGOT)).save(consumer);
+	      
+		
 	
 		//Blaze Rod Block
 			ShapedRecipeBuilder.shaped(BlockRegistry.BLAZE_ROD_BLOCK.get())
@@ -698,9 +701,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 	}
 	
 	private void addShapelessRecipes(Consumer<FinishedRecipe> consumer) {
-		
 		String folder = "shapeless/";
-		
+
 		//Blaze Rod Block
 			ShapelessRecipeBuilder.shapeless(Items.BLAZE_ROD, 9)
 			.requires(BlockRegistry.BLAZE_ROD_BLOCK.get())
@@ -826,11 +828,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 			.requires(BlockRegistry.RAW_ROSE_GOLD_BLOCK.get())
 			.unlockedBy("has_endorium", has(ItemRegistry.RAW_ENDORIUM.get()))
 			.save(consumer, modLoc(folder + "raw_rose_gold_from_block"));
-		//ENDORITE INGOT
-			ShapelessRecipeBuilder.shapeless(ItemRegistry.ENDORITE_BLOCK.get(), 9)
-			.requires(BlockRegistry.ENDORITE_BLOCK.get())
-			.unlockedBy("has_endorium", has(ItemRegistry.RAW_ENDORIUM.get()))
-			.save(consumer, modLoc(folder + "endorite_ingot_from_block"));
 		//ROSE GOLD INGOT
 			ShapelessRecipeBuilder.shapeless(ItemRegistry.RAW_ROSE_GOLD.get(), 4)
 			.requires(Tags.Items.RAW_MATERIALS_GOLD)
@@ -1488,7 +1485,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 	      ShapedRecipeBuilder.shaped(item).define('I', itemFromTag).define('S', Tags.Items.RODS_WOODEN).pattern("II").pattern(" S").pattern(" S").unlockedBy("has_item", has(itemFromTag)).save(consumer, modLoc(resourceLocation));
 	      ShapedRecipeBuilder.shaped(item).define('I', itemFromTag).define('S', Tags.Items.RODS_WOODEN).pattern("II").pattern("S ").pattern("S ").unlockedBy("has_item", has(itemFromTag)).save(consumer, modLoc(resourceLocation + "_alt"));
 	}
-		
+	
 	private static void createGlowingBlocks(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, TagKey<Item> glassFromTag, @NotNull Block block) {
 	      ShapedRecipeBuilder.shaped(block, 8)
 			.define('G', glassFromTag)
@@ -1514,9 +1511,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		return ShapedRecipeBuilder.shaped(p_176711_, 6).define('#', p_176712_).pattern("#  ").pattern("## ").pattern("###");
 	}
 	
+	protected static RecipeBuilder trapdoorBuilder(ItemLike pTrapdoor, Ingredient pMaterial) {
+	      return ShapedRecipeBuilder.shaped(pTrapdoor, 6).define('#', pMaterial).pattern("###").pattern("###");
+	}
+	
 	private static final Map<BlockFamily.Variant, BiFunction<ItemLike, ItemLike, RecipeBuilder>> shapeBuilders = ImmutableMap.<BlockFamily.Variant, BiFunction<ItemLike, ItemLike, RecipeBuilder>>builder()
-			.put(BlockFamily.Variant.STAIRS, (block, stairs) -> {
-				return stairBuilder(block, Ingredient.of(stairs));
+		.put(BlockFamily.Variant.STAIRS, (block, stairs) -> {
+			return stairBuilder(block, Ingredient.of(stairs));
+		}).build();
+	
+	private static final Map<BlockFamily.Variant, BiFunction<ItemLike, ItemLike, RecipeBuilder>> trapDoorBuilders = ImmutableMap.<BlockFamily.Variant, BiFunction<ItemLike, ItemLike, RecipeBuilder>>builder()
+			.put(BlockFamily.Variant.TRAPDOOR, (block, stairs) -> {
+				return trapdoorBuilder(block, Ingredient.of(stairs));
 			}).build();
 	
 	private static final Map<BlockFamily.Variant, BiFunction<ItemLike, ItemLike, RecipeBuilder>> slabBuilders = ImmutableMap.<BlockFamily.Variant, BiFunction<ItemLike, ItemLike, RecipeBuilder>>builder()
@@ -1534,10 +1540,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
 	protected static void generateRecipes(Consumer<FinishedRecipe> consumer, BlockFamily pFamily) {
 		pFamily.getVariants().forEach((block, p_176530_) -> {
-	         BiFunction<ItemLike, ItemLike, RecipeBuilder> bifunction = shapeBuilders.get(block);
-	         ItemLike itemlike = getBaseBlock(pFamily, block);
-	         if (bifunction != null) {
-	            RecipeBuilder recipebuilder = bifunction.apply(p_176530_, itemlike);
+			BiFunction<ItemLike, ItemLike, RecipeBuilder> bifunction = shapeBuilders.get(block);
+			ItemLike itemlike = getBaseBlock(pFamily, block);
+			if (bifunction != null) {
+				RecipeBuilder recipebuilder = bifunction.apply(p_176530_, itemlike);
 	            pFamily.getRecipeGroupPrefix().ifPresent((p_176601_) -> {
 	               recipebuilder.group(p_176601_ + (block == BlockFamily.Variant.CUT ? "" : "_" + block.getName()));
 	            });
@@ -1545,37 +1551,48 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 	               return getHasName(itemlike);
 	            }), has(itemlike));
 	            recipebuilder.save(consumer);
-	         }
-	         if (block == BlockFamily.Variant.CRACKED) {
-	            smeltingResultFromBase(consumer, p_176530_, itemlike);
-	         }
-	      });
+			}
+			if (block == BlockFamily.Variant.CRACKED) {
+				smeltingResultFromBase(consumer, p_176530_, itemlike);
+			}
+		});
+		pFamily.getVariants().forEach((block, p_176530_) -> {
+			BiFunction<ItemLike, ItemLike, RecipeBuilder> bifunction = trapDoorBuilders.get(block);
+			ItemLike itemlike = getBaseBlock(pFamily, block);
+			if (bifunction != null) {
+				RecipeBuilder recipebuilder = bifunction.apply(p_176530_, itemlike);
+				recipebuilder.unlockedBy(pFamily.getRecipeUnlockedBy().orElseGet(() -> {
+					return getHasName(itemlike);
+				}), has(itemlike));
+				recipebuilder.save(consumer);
+			}
+		});
 		pFamily.getVariants()
-	      .forEach((block, result) -> {
-		         BiFunction<ItemLike, ItemLike, RecipeBuilder> bifunction = slabBuilders.get(block);
-		         ItemLike itemlike = getBaseBlock(pFamily, block);
-		         if (bifunction != null) {
-	        		 RecipeBuilder recipebuilder = bifunction.apply(itemlike, result);
-	        		 if(itemlike == Blocks.NETHER_BRICKS || itemlike == Blocks.COBBLED_DEEPSLATE || itemlike == Blocks.POLISHED_BLACKSTONE) {
-		        		 return;
-		        	 }
-	        		 else {
-			            pFamily.getRecipeGroupPrefix().ifPresent((p_176601_) -> {
-			               recipebuilder.group(p_176601_ + (block == BlockFamily.Variant.CUT ? "" : "_" + block.getName()));
-			            });
-			            recipebuilder.unlockedBy(pFamily.getRecipeUnlockedBy().orElseGet(() -> {
-			               return getHasName(itemlike);
-			            }), has(itemlike));
-			            recipebuilder.save(consumer, modLoc("shaped/full_blocks/" + StringUtils.toLowerCase(result.getDescriptionId().replace(result.getName() + ":", "").replace("block.minecraft.", ""))));
-		        	 }
-		         }
-	    });
-		
+			.forEach((block, result) -> {
+				BiFunction<ItemLike, ItemLike, RecipeBuilder> bifunction = slabBuilders.get(block);
+				ItemLike itemlike = getBaseBlock(pFamily, block);
+				if (bifunction != null) {
+					RecipeBuilder recipebuilder = bifunction.apply(itemlike, result);
+					if(itemlike == Blocks.NETHER_BRICKS || itemlike == Blocks.COBBLED_DEEPSLATE || itemlike == Blocks.POLISHED_BLACKSTONE) {
+						return;
+					}
+					else {
+						pFamily.getRecipeGroupPrefix().ifPresent((p_176601_) -> {
+							recipebuilder.group(p_176601_ + (block == BlockFamily.Variant.CUT ? "" : "_" + block.getName()));
+						});
+						recipebuilder.unlockedBy(pFamily.getRecipeUnlockedBy().orElseGet(() -> {
+							return getHasName(itemlike);
+						}), has(itemlike));
+						recipebuilder.save(consumer, modLoc("shaped/full_blocks/" + StringUtils.toLowerCase(result.getDescriptionId().replace(result.getName() + ":", "").replace("block.minecraft.", ""))));
+					}
+				}
+			});
 	   }
 	
 	private static ResourceLocation modLoc(String id) {
 	    return new ResourceLocation(ModConstants.MOD_ID, id);
 	}
+	
 	private static ResourceLocation mcLoc(String id) {
 	    return new ResourceLocation("minecraft", id);
 	}

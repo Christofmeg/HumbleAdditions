@@ -1,0 +1,27 @@
+{
+	"type": "forge:conditional",
+	"recipes": [
+		{
+			"conditions": [
+				{
+					"modid": "ae2",
+					"type": "forge:mod_loaded"
+				}
+			],
+			"recipe": {
+				"type": "minecraft:crafting_shapeless",
+				"ingredients": [
+					{
+						"tag": "forge:dyes/orange"
+					},
+					{
+						"tag": "ae2:covered_cable"
+					}
+				],
+				"result": {
+					"item": "ae2:orange_covered_cable"
+				}
+			}
+		}
+	]
+}

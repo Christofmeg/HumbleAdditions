@@ -2,7 +2,6 @@ package com.christofmeg.humbleadditions.integration.recipes;
 
 import java.util.function.Consumer;
 
-import com.christofmeg.humbleadditions.integration.IronChestIntegration;
 import com.christofmeg.humbleadditions.setup.ModConstants;
 
 import net.minecraft.data.DataGenerator;
@@ -13,7 +12,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
-import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.ConditionalRecipe;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
@@ -31,7 +29,8 @@ public class IntegrationRecipeProvider extends RecipeProvider implements ICondit
 	@Override
 	protected void buildCraftingRecipes(Consumer<FinishedRecipe> consumer) {
 			
-		this.addIronChestRecipes(consumer);	
+		this.addIronChestRecipes(consumer);
+		this.addAE2Recipes(consumer);
 
 	}
 	
@@ -49,6 +48,7 @@ public class IntegrationRecipeProvider extends RecipeProvider implements ICondit
 			.build(consumer, modLoc(folder + "iron_chest"));
 */
 
+		/*
 			ShapelessRecipeBuilder.shapeless(IronChestIntegration.IronChestRestocked.IRON_CHEST)
 			.requires(IronChestIntegration.IronChest.IRON_CHEST.asItem())
 			.unlockedBy("has_iron_ingot", has(Tags.Items.INGOTS_IRON))
@@ -67,6 +67,13 @@ public class IntegrationRecipeProvider extends RecipeProvider implements ICondit
 		
 	}
 	
+	private void addAE2Recipes(Consumer<FinishedRecipe> consumer) {
+		
+		ShapelessRecipeBuilder.shapeless(IronChestIntegration.IronChestRestocked.IRON_CHEST)
+		.requires(IronChestIntegration.IronChest.IRON_CHEST.asItem())
+		.unlockedBy("has_iron_ingot", has(Tags.Items.INGOTS_IRON))
+		.save(consumer);
+	}
 	
 	@SuppressWarnings("unused")
 	private void modLoadedShapeless(String modId, Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, ItemLike output, TagKey<Item> input, String type, Item has) {

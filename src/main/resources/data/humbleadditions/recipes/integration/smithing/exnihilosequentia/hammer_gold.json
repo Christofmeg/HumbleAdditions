@@ -1,0 +1,25 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "modid": "exnihilosequentia",
+          "type": "forge:mod_loaded"
+        }
+      ],
+      "recipe": {
+		  "type": "minecraft:smithing",
+		  "base": {
+		    "item": "exnihilosequentia:hammer_stone"
+		  },
+		  "addition": {
+    	    "item": "minecraft:gold_block"
+  	      },
+		  "result": {
+		    "item": "exnihilosequentia:hammer_gold"
+		  }
+      }
+    }
+  ]
+}

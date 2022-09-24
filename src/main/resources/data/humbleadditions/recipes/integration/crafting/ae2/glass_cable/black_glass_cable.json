@@ -1,0 +1,27 @@
+{
+	"type": "forge:conditional",
+	"recipes": [
+		{
+			"conditions": [
+				{
+					"modid": "ae2",
+					"type": "forge:mod_loaded"
+				}
+			],
+			"recipe": {
+				"type": "minecraft:crafting_shapeless",
+				"ingredients": [
+					{
+						"tag": "forge:dyes/black"
+					},
+					{
+						"tag": "ae2:glass_cable"
+					}
+				],
+				"result": {
+					"item": "ae2:black_glass_cable"
+				}
+			}
+		}
+	]
+}

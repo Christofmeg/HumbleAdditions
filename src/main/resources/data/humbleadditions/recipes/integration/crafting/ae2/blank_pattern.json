@@ -1,0 +1,24 @@
+{
+	"type": "forge:conditional",
+	"recipes": [
+		{
+			"conditions": [
+				{
+					"modid": "ae2",
+					"type": "forge:mod_loaded"
+				}
+			],
+			"recipe": {
+				"type": "minecraft:crafting_shapeless",
+				"ingredients": [
+					{
+						"item": "ae2:crafting_pattern"
+					}
+				],
+				"result": {
+					"item": "ae2:blank_pattern"
+				}
+			}
+		}
+	]
+}
