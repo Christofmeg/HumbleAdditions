@@ -868,6 +868,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 	private void addBlastingRecipes(Consumer<FinishedRecipe> consumer) {
 		String folder = "blasting/";
 	
+	//SHEARS TO NUGGETS
+		SimpleCookingRecipeBuilder.blasting(
+			Ingredient.of(ItemRegistry.GOLDEN_SHEARS.get()), Items.GOLD_NUGGET, 0.1F, 100)
+			.group(ModConstants.MOD_ID)
+			.unlockedBy("has_gold_ingot", has(Items.GOLD_INGOT))
+			.save(consumer, modLoc(folder + "gold_nugget_from_shears"));
+		
 	//ENDORIUM INGOT FROM ORE
 		SimpleCookingRecipeBuilder.blasting(
 			Ingredient.of(BlockRegistry.ENDORIUM_ORE.get()), ItemRegistry.ENDORIUM_INGOT.get(), 2.0F, 900)
@@ -1050,6 +1057,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 	private void addSmeltingRecipes(Consumer<FinishedRecipe> consumer) {
 		String folder = "smelting/";
 	
+	//SHEARS TO NUGGETS
+		SimpleCookingRecipeBuilder.smelting(
+			Ingredient.of(ItemRegistry.GOLDEN_SHEARS.get()), Items.GOLD_NUGGET, 0.1F, 200)
+			.group(ModConstants.MOD_ID)
+			.unlockedBy("has_gold_ingot", has(Items.GOLD_INGOT))
+			.save(consumer, modLoc(folder + "gold_nugget_from_shears"));
+		
 	//ENDORIUM INGOT FROM ORE
 		SimpleCookingRecipeBuilder.smelting(
 			Ingredient.of(BlockRegistry.ENDORIUM_ORE.get()), ItemRegistry.ENDORIUM_INGOT.get(), 2.0F, 1800)

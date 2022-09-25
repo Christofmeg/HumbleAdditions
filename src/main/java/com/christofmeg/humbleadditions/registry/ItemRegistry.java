@@ -92,7 +92,6 @@ public class ItemRegistry {
     private static int rose_gold = 71;
     private static int stone = 131;
     private static int copper = 185;
-//	private static int iron = 250;
     private static int diamond = 1561;
     private static int netherite = 2031;
     private static int endorium = 2539;
@@ -121,7 +120,7 @@ public class ItemRegistry {
     
     public static class ToolTiers {
     															//harvest lvl, durability, mining speed, attack dmg, enchantability
-    	public static final ModTier ROSE_GOLD = new ModTier("ROSE_GOLD", 0, 71, 12.0F, 1.0F, 20, BlockTags.NEEDS_STONE_TOOL, () -> Ingredient.of(ItemRegistry.ROSE_GOLD_INGOT.get()));
+    	public static final ModTier ROSE_GOLD = new ModTier("GOLD", 0, 71, 12.0F, 1.0F, 20, BlockTags.NEEDS_STONE_TOOL, () -> Ingredient.of(ItemRegistry.ROSE_GOLD_INGOT.get()));
         public static final ModTier ENDORIUM = new ModTier("ENDORIUM", 5, 2539, 11.25F, 5.0F, 18, BlockTags.create(new ResourceLocation("forge", "needs_endorium_tool")), () -> Ingredient.of(ItemRegistry.ENDORIUM_INGOT.get()));
         public static final ModTier ENDORITE = new ModTier("ENDORITE", 6, 3385, 17.2F, 7.65F, 28, BlockTags.create(new ResourceLocation("forge", "needs_endorite_tool")), () -> Ingredient.of(ItemRegistry.ENDORITE_INGOT.get()));
         
@@ -130,28 +129,6 @@ public class ItemRegistry {
         	TierSortingRegistry.registerTier(ENDORIUM, new ResourceLocation(ModConstants.MOD_ID, "endorium"), List.of(TierSortingRegistry.getName(Tiers.NETHERITE)), List.of());
         	TierSortingRegistry.registerTier(ENDORITE, new ResourceLocation(ModConstants.MOD_ID, "enderite"), List.of(TierSortingRegistry.getName(ENDORIUM)), List.of()); 
         }
-        
-
-        
-/* WOOD(0, 59, 2.0F, 0.0F, 15, () -> {
-      return Ingredient.of(ItemTags.PLANKS);
-   }),
-   STONE(1, 131, 4.0F, 1.0F, 5, () -> {
-      return Ingredient.of(ItemTags.STONE_TOOL_MATERIALS);
-   }),
-   IRON(2, 250, 6.0F, 2.0F, 14, () -> {
-      return Ingredient.of(Items.IRON_INGOT);
-   }),
-   DIAMOND(3, 1561, 8.0F, 3.0F, 10, () -> {
-      return Ingredient.of(Items.DIAMOND);
-   }),
-   GOLD(0, 32, 12.0F, 0.0F, 22, () -> {
-      return Ingredient.of(Items.GOLD_INGOT);
-   }),
-   NETHERITE(4, 2031, 9.0F, 4.0F, 15, () -> {
-      return Ingredient.of(Items.NETHERITE_INGOT);
-   });
-         */
         
     }
 	

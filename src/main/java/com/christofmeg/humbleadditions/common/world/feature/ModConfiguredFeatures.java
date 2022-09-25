@@ -38,7 +38,6 @@ public class ModConfiguredFeatures {
 		OreConfiguration.target(new BlockMatchTest(Blocks.END_STONE), BlockRegistry.ENDORIUM_ORE.get().defaultBlockState())	
 		));																																																			//VEIN SIZE
 		public static final RegistryObject<ConfiguredFeature<?, ?>> END_BLOCK_FEATURE = CONFIGURED_FEATURES.register("end_blocks", () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(END_FEATURES.get(), 4)));
-	
-	
-			
+
+		
 }

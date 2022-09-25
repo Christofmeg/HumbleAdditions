@@ -1,10 +1,12 @@
 modLoader="javafml"
 loaderVersion="[43,)"
-license="All rights reserved"
+issueTrackerURL="https://github.com/Christofmeg/HumbleAdditions/issues" #optional
+license="MIT license"
 [[mods]]
 modId="humbleadditions"
 version="${file.jarVersion}"
 displayName="Humble Additions"
+displayURL="https://github.com/Christofmeg/HumbleAdditions" #optional
 logoFile="pack.png"
 #credits=""
 authors="Christofmeg"

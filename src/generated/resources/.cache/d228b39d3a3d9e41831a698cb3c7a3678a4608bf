@@ -1,4 +1,4 @@
-// 1.19.2	2022-09-24T09:41:14.7235566	Humble Additions - Recipes
+// 1.19.2	2022-09-24T21:14:57.1660083	Humble Additions - Recipes
 037ef466cba91f4cd64a4ac5b1248b67e0e1fcec data/humbleadditions/advancements/recipes/building_blocks/blasting/copper_block.json
 2c8e29e4773d565f71b187f563190e5d7a9a5070 data/humbleadditions/advancements/recipes/building_blocks/blasting/glass.json
 6d58d6209171d929cbee06f5beebaeb8099eb84a data/humbleadditions/advancements/recipes/building_blocks/blasting/iron_block.json
@@ -396,6 +396,7 @@ a7d7124cb85a346108057b89ec40a47085410353 data/humbleadditions/advancements/recip
 43ad41b32fb1c2c2d52155d11e531c8c96fc134b data/humbleadditions/advancements/recipes/humbleadditions/stonecutting/walls/stone.json
 a05ebacf02cacbd9e6d55a0e6ed28d670ff1b4f0 data/humbleadditions/advancements/recipes/misc/blasting/copper_ingot.json
 5dfb96a3be7c9a3acff0c3fb34d5a55a02cf8eb8 data/humbleadditions/advancements/recipes/misc/blasting/gold_ingot.json
+74f1a078cc5c0165b9114a426af9abc93174fb68 data/humbleadditions/advancements/recipes/misc/blasting/gold_nugget_from_shears.json
 62e89ef692b5ed1c6e07cf9e04df621a84e24c9b data/humbleadditions/advancements/recipes/misc/blasting/iron_ingot.json
 02e1e9c77e423ac78977f5a4d78a226741f12423 data/humbleadditions/advancements/recipes/misc/blasting/iron_nugget.json
 8d0e13651f9d55a1a9520cf587013e4cb62ddeed data/humbleadditions/advancements/recipes/misc/blasting/popped_chorus_fruit.json
@@ -405,6 +406,7 @@ c88b7f618d2168c9f152dc1dc2d2af5d2ca7f2d2 data/humbleadditions/advancements/recip
 c16391755a7e6880e5f558ebf6dff776ee41cae6 data/humbleadditions/advancements/recipes/misc/shapeless/nether_wart.json
 982fdaab8539db630c934e2f57e47c9f17ae7d91 data/humbleadditions/advancements/recipes/misc/smelting/copper_ingot.json
 8646eca556401e03c25d7517f7a4a0d4b23b0a02 data/humbleadditions/advancements/recipes/misc/smelting/gold_ingot.json
+03cbc19ddc7e854f8f577cc9bbb80b8d0f4dee1b data/humbleadditions/advancements/recipes/misc/smelting/gold_nugget_from_shears.json
 b23f2624adb3fb805cd2eba6fbcb9264c8a2c396 data/humbleadditions/advancements/recipes/misc/smelting/iron_ingot.json
 272c1f5fc481c36df87bdc195693b0e90f16f5f1 data/humbleadditions/advancements/recipes/misc/smelting/iron_nugget.json
 757614043b2c99725e44301d4c9ba3c1e248565b data/humbleadditions/advancements/recipes/misc/smithing/horse_armor/diamond/.json
@@ -436,6 +438,7 @@ ab4ca261d05c628ef85c40dae93a2c6b5b78e034 data/humbleadditions/recipes/blasting/c
 cf68451655d082803d3204604377a31c2d8806e3 data/humbleadditions/recipes/blasting/endorium_ingot_from_ore.json
 0a99458724754fcf921e2f4b261366ed77b83ceb data/humbleadditions/recipes/blasting/glass.json
 c6e08a6f0fef375f29b033f9ba1465d01cefac81 data/humbleadditions/recipes/blasting/gold_ingot.json
+6995add7ff5366b97e8b0d15626c1af34e51daaa data/humbleadditions/recipes/blasting/gold_nugget_from_shears.json
 eb207fe63f61a3869f4eea414b796f2bbcc4d7b7 data/humbleadditions/recipes/blasting/iron_block.json
 d91ad5a496aa81220a940e7ac031e6639dcc89aa data/humbleadditions/recipes/blasting/iron_ingot.json
 519a83ff67f6ea651c355fc80424d2a2f5bce0f4 data/humbleadditions/recipes/blasting/iron_nugget.json
@@ -676,6 +679,7 @@ cebe5504176ffd7dca08c3103e0789744eaeb12a data/humbleadditions/recipes/smelting/e
 cc122c155dbefc5121b55fda65fdb93e3c488990 data/humbleadditions/recipes/smelting/endorium_ingot_from_ore.json
 84c182f0976a211b4bdf1c31bcfdd3142afe225d data/humbleadditions/recipes/smelting/glass.json
 e328d7479d8615c099a455942327f500c79b826c data/humbleadditions/recipes/smelting/gold_ingot.json
+33281ff9b9d46f42c50f58a9bfa928a192e366c2 data/humbleadditions/recipes/smelting/gold_nugget_from_shears.json
 3ae0e07e64a00f5e9a2ed76b8dec853df833ee02 data/humbleadditions/recipes/smelting/iron_block.json
 055fd84da45580e987841f8f109d2d210f083281 data/humbleadditions/recipes/smelting/iron_ingot.json
 1dca9781ac7c66cd23297f3d82e845d4f1f92b30 data/humbleadditions/recipes/smelting/iron_nugget.json

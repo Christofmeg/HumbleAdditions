@@ -77,7 +77,7 @@ public class HumbleAdditions {
 			 * REPAIRABLE ANVILS
 			 */
 			
-			//TODO ADD SMELTING TO SHEARS
+			//TODO ADD SMELTING TO TOOLS
 			
 		});
     }

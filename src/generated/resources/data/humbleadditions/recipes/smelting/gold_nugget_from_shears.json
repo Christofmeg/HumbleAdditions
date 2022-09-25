@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "group": "humbleadditions",
+  "ingredient": {
+    "item": "humbleadditions:golden_shears"
+  },
+  "result": "minecraft:gold_nugget"
+}

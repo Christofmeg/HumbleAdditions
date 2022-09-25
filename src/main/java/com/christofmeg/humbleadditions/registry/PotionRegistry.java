@@ -70,47 +70,12 @@ public class PotionRegistry {
 		
 	}
 	
-	
-	
 	@EventBusSubscriber(modid = ModConstants.MOD_ID, bus = EventBusSubscriber.Bus.FORGE)
 	public static class ChorusEffect extends ModMobEffect {
 
 		public ChorusEffect(MobEffectCategory typeIn, int liquidColorIn) {
 			super(typeIn, liquidColorIn);
-			
 		}
-		
-		
-		/*
-		public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity pEntityLiving) {
-			if (!level.isClientSide) {
-				double d0 = pEntityLiving.getX();
-				double d1 = pEntityLiving.getY();
-				double d2 = pEntityLiving.getZ();
-				for(int i = 0; i < 16; ++i) {
-					double d3 = pEntityLiving.getX() + (pEntityLiving.getRandom().nextDouble() - 0.5D) * 16.0D;
-		            double d4 = Mth.clamp(pEntityLiving.getY() + (double)(pEntityLiving.getRandom().nextInt(16) - 8), (double)level.getMinBuildHeight(), (double)(level.getMinBuildHeight() + ((ServerLevel)level).getLogicalHeight() - 1));
-		            double d5 = pEntityLiving.getZ() + (pEntityLiving.getRandom().nextDouble() - 0.5D) * 16.0D;
-		            if (pEntityLiving.isPassenger()) {
-		               pEntityLiving.stopRiding();
-		            }
-		            Vec3 vec3 = pEntityLiving.position();
-		            level.gameEvent(GameEvent.TELEPORT, vec3, GameEvent.Context.of(pEntityLiving));
-		            net.minecraftforge.event.entity.EntityTeleportEvent.ChorusFruit event2 = net.minecraftforge.event.ForgeEventFactory.onChorusFruitTeleport(pEntityLiving, d3, d4, d5);
-		            if (event2.isCanceled()) return stack;
-		            if (pEntityLiving.randomTeleport(event2.getTargetX(), event2.getTargetY(), event2.getTargetZ(), true)) {
-		            	SoundEvent soundevent = pEntityLiving instanceof Fox ? SoundEvents.FOX_TELEPORT : SoundEvents.CHORUS_FRUIT_TELEPORT;
-		            	level.playSound((Player)null, d0, d1, d2, soundevent, SoundSource.PLAYERS, 1.0F, 1.0F);
-		            	pEntityLiving.playSound(soundevent, 1.0F, 1.0F);
-		            	break;
-		            }
-				}
-			}
-			return stack;
-		}
-		*/
-		
 	}
-
 	
 }
