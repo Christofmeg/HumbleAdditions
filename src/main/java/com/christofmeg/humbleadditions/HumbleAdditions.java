@@ -9,7 +9,7 @@ import com.christofmeg.humbleadditions.registry.ItemRegistry;
 import com.christofmeg.humbleadditions.registry.PaintingVariantRegistry;
 import com.christofmeg.humbleadditions.registry.PotionRegistry;
 import com.christofmeg.humbleadditions.registry.PotionRegistry.PotionEffectRegistry;
-import com.christofmeg.humbleadditions.registry.VanillaItemRegistry;
+import com.christofmeg.humbleadditions.registry.VanillaRegistry;
 import com.christofmeg.humbleadditions.setup.Config;
 import com.christofmeg.humbleadditions.setup.ModConstants;
 
@@ -23,7 +23,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(ModConstants.MODID)
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-public class HumbleAdditions {
+public class HumbleAdditions {	
     public static final String MODID = "tutorialmod";
 
     public HumbleAdditions() {
@@ -37,7 +37,11 @@ public class HumbleAdditions {
         ItemRegistry.ITEMS_AUTO_REGISTER.register(bus);
         ItemRegistry.BLOCK_ITEMS_AUTO_REGISTER.register(bus);
         EntityRegistry.ENTITY_TYPES.register(bus);
-        VanillaItemRegistry.ITEMS.register(bus);
+        
+        VanillaRegistry.ITEMS.register(bus);
+        VanillaRegistry.BLOCKS.register(bus);
+        ModConfiguredFeatures.VANILLA_CONFIGURED_FEATURES.register(bus);
+        
         ModConfiguredFeatures.CONFIGURED_FEATURES.register(bus);
         ModPlacedFeatures.PLACED_FEATURES.register(bus);
         PaintingVariantRegistry.PAINTING_VARIANTS.register(bus);

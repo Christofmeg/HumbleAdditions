@@ -91,6 +91,7 @@ public class TagRegistry {
 		}
 		
 //		public static final TagKey<Biome> RED_HUSK_BIOMES = modTag("red_husk_biomes");
+		public static final TagKey<Biome> IS_MANGROVE_SWAMP = forgeTag("is_mangrove_swamp");
 		
 		
 	}

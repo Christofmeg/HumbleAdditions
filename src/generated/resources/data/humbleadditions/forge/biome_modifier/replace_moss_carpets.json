@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#forge:is_mangrove_swamp",
+  "features": "humbleadditions:mangrove_placed",
+  "step": "top_layer_modification"
+}

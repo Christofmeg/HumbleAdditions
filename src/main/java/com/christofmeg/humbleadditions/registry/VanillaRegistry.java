@@ -7,13 +7,15 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.MinecartItem;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-public class VanillaItemRegistry extends Items{
+public class VanillaRegistry {
 	
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, "minecraft");
+	public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, "minecraft");
 	
 	public static final RegistryObject<BoatItem> OAK_CHEST_BOAT = ITEMS.register("oak_chest_boat", () -> new BoatItem(true, Boat.Type.OAK, (new Item.Properties()).stacksTo(1).tab(CreativeModeTab.TAB_TRANSPORTATION).craftRemainder(Items.OAK_BOAT)));
 	public static final RegistryObject<BoatItem> SPRUCE_CHEST_BOAT = ITEMS.register("spruce_chest_boat", () -> new BoatItem(true, Boat.Type.SPRUCE, (new Item.Properties()).stacksTo(1).tab(CreativeModeTab.TAB_TRANSPORTATION).craftRemainder(Items.SPRUCE_BOAT)));

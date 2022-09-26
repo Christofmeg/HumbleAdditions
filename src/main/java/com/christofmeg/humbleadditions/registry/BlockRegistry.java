@@ -224,8 +224,6 @@ public class BlockRegistry {
 	public static final RegistryObject<Block> PACKED_SNOW = registerBlock("packed_snow", () -> new Block(BlockBehaviour.Properties.copy(Blocks.SNOW_BLOCK)), props());
 	public static final RegistryObject<Block> SNOW_BRICKS = registerBlock("snow_bricks", () -> new Block(BlockBehaviour.Properties.copy(Blocks.SNOW_BLOCK)), props());
 	
-	
-	
 	public static final Material QUICK_SAND_MATERIAL = (new Material.Builder(MaterialColor.SAND)).build();
 	
 	private static StainedGlassBlock stainedGlass(DyeColor color) {
