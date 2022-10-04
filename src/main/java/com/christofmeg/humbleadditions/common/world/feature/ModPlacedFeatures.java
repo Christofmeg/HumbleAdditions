@@ -79,7 +79,7 @@ public class ModPlacedFeatures {
         	.add(BiomeFilter.biome())
         	.add(BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.MANGROVE_PROPAGULE.defaultBlockState(), BlockPos.ZERO)))
         	.build()
-	))));
+	));
 	
 	private static final ResourceLocation REPLACE_MOSS_CARPETS = new ResourceLocation(ModConstants.MOD_ID, "replace_moss_carpets");
 	private static final ResourceLocation ADD_END_BLOCKS = new ResourceLocation(ModConstants.MOD_ID, "add_end_blocks");

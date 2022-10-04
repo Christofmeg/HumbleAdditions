@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "O": {
+      "tag": "forge:obsidian"
+    }
+  },
+  "pattern": [
+    "OO"
+  ],
+  "result": {
+    "item": "humbleadditions:player_pressure_plate"
+  }
+}

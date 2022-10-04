@@ -5,6 +5,7 @@ import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 import com.christofmeg.humbleadditions.common.blocks.AbstractLayerBlock;
+import com.christofmeg.humbleadditions.common.blocks.PlayerPressurePlate;
 import com.christofmeg.humbleadditions.registry.BlockRegistry;
 import com.christofmeg.humbleadditions.setup.ModConstants;
 import com.google.gson.JsonElement;
@@ -18,6 +19,7 @@ import net.minecraft.world.level.block.IronBarsBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -84,6 +86,8 @@ public class ModBlockStateProvider<T> extends BlockStateProvider {
 		slabBlock(BlockRegistry.POLISHED_LIMESTONE_SLAB.get(), modLoc("block/polished_limestone"), modLoc("blocks/polished_limestone"));
 		slabBlock(BlockRegistry.POLISHED_LIMESTONE_BRICKS_SLAB.get(), modLoc("block/polished_limestone_bricks"), modLoc("blocks/polished_limestone_bricks"));
 		
+		pressurePlateBlock(BlockRegistry.PLAYER_PRESSURE_PLATE.get(), mcLoc("block/obsidian"));
+		
 		BlockRegistry.VANILLA_TEXTURED_BLOCKS.getEntries().stream().map(RegistryObject::get)
 		.filter(block -> (block instanceof WallBlock))
 		.filter(block -> (!(block == BlockRegistry.QUARTZ_WALL.get() || block == BlockRegistry.SMOOTH_QUARTZ_WALL.get() ||
@@ -123,6 +127,14 @@ public class ModBlockStateProvider<T> extends BlockStateProvider {
 		*/
 		
 	}
+	
+	public void pressurePlateBlock(PlayerPressurePlate block, ResourceLocation texture) {
+        ModelFile pressurePlate = models().pressurePlate(block.getDescriptionId().replace("block." + ModConstants.MOD_ID + ".", ""), texture);
+        ModelFile pressurePlateDown = models().pressurePlateDown(block.getDescriptionId().replace("block." + ModConstants.MOD_ID + ".", "") + "_down", texture);
+        getVariantBuilder(block).partialState().with(PlayerPressurePlate.POWERED, true)
+        	.addModels(new ConfiguredModel(pressurePlateDown)).partialState().with(PlayerPressurePlate.POWERED, false)
+        	.addModels(new ConfiguredModel(pressurePlate));
+    }
 	
 	public void layerBlocks(Block block, ResourceLocation textureFromBlock) {
 		

@@ -58,6 +58,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 		withExistingParent("endorite_block", modLoc("block/endorite_block"));
 		withExistingParent("raw_rose_gold_block", modLoc("block/raw_rose_gold_block"));
 		
+		withExistingParent("player_pressure_plate", modLoc("block/player_pressure_plate"));
+		
 		BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)
 		.filter(block -> (block instanceof StairBlock || block instanceof SlabBlock))
 		.forEach(block -> {

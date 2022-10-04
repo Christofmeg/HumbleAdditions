@@ -86,8 +86,12 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 			BlockRegistry.ENDORITE_BLOCK.get(),
 			BlockRegistry.RAW_ROSE_GOLD_BLOCK.get(),
 			BlockRegistry.SNOW_BRICKS.get(),
-			BlockRegistry.BLAZE_ROD_BLOCK.get()
+			BlockRegistry.BLAZE_ROD_BLOCK.get(),
+			BlockRegistry.PLAYER_PRESSURE_PLATE.get()
 			);
+		
+		this.tag(BlockTags.WALL_POST_OVERRIDE).add(BlockRegistry.PLAYER_PRESSURE_PLATE.get());
+		this.tag(BlockTags.PRESSURE_PLATES).add(BlockRegistry.PLAYER_PRESSURE_PLATE.get());
 		
 		this.tag(Tags.Blocks.STONE).add(
 			BlockRegistry.LIMESTONE.get(),
@@ -174,11 +178,12 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 		this.tag(Tags.Blocks.GLASS_WHITE).add(BlockRegistry.WHITE_STAINED_GLOWING_GLASS.get());
 		this.tag(Tags.Blocks.GLASS_YELLOW).add(BlockRegistry.YELLOW_STAINED_GLOWING_GLASS.get());
 		
+		this.tag(Tags.Blocks.GLASS_PANES_COLORLESS).add(BlockRegistry.GLOWING_GLASS_PANE.get());
+		
 		BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)
 		.filter(block -> (block instanceof IronBarsBlock))
 		.forEach(block -> {
 			this.tag(Tags.Blocks.GLASS_PANES).add(block);
-			this.tag(Tags.Blocks.GLASS_PANES_COLORLESS).add(block);
 		});
 		
 		BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)

@@ -381,9 +381,21 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 	private void addShapedRecipes(Consumer<FinishedRecipe> consumer) {
 		String folder = "shaped/";
 		
-		ShapedRecipeBuilder.shaped(Blocks.IRON_TRAPDOOR, 2).define('#', Items.IRON_INGOT).pattern("##").pattern("##").unlockedBy("has_iron_ingot", has(Items.IRON_INGOT)).save(consumer);
-	      
+		//Player Pressure Plate
+		ShapedRecipeBuilder.shaped(BlockRegistry.PLAYER_PRESSURE_PLATE.get())
+		.define('O', Tags.Items.OBSIDIAN)
+		.pattern("OO")
+		.unlockedBy("has_obsidian", has(Tags.Items.OBSIDIAN))
+		.save(consumer, modLoc(folder + "player_pressure_plate"));
 		
+		//Balanced trapdoor
+		ShapedRecipeBuilder
+		.shaped(Blocks.IRON_TRAPDOOR, 2)
+		.define('#', Items.IRON_INGOT)
+		.pattern("##")
+		.pattern("##")
+		.unlockedBy("has_iron_ingot", has(Items.IRON_INGOT))
+		.save(consumer);
 	
 		//Blaze Rod Block
 			ShapedRecipeBuilder.shaped(BlockRegistry.BLAZE_ROD_BLOCK.get())
@@ -703,6 +715,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 	private void addShapelessRecipes(Consumer<FinishedRecipe> consumer) {
 		String folder = "shapeless/";
 
+		//Clean maps
+		ShapelessRecipeBuilder.shapeless(Items.MAP)
+		.requires(Items.FILLED_MAP)
+		.requires(Items.WATER_BUCKET)
+		.unlockedBy("has_paper", has(Items.PAPER))
+		.save(consumer, modLoc(folder + "map"));
+		
 		//Blaze Rod Block
 			ShapelessRecipeBuilder.shapeless(Items.BLAZE_ROD, 9)
 			.requires(BlockRegistry.BLAZE_ROD_BLOCK.get())

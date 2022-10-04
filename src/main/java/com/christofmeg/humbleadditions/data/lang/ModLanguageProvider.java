@@ -47,7 +47,9 @@ public class ModLanguageProvider extends LanguageProvider {
 			addBlock(BlockRegistry.CHISELED_LIMESTONE, "Chiseled Limestone");
 			addBlock(BlockRegistry.POLISHED_LIMESTONE, "Polished Limestone");
 			addBlock(BlockRegistry.LIMESTONE_BRICKS, "Limestone Bricks");
-
+			
+			addBlock(BlockRegistry.PLAYER_PRESSURE_PLATE, "Player Pressure Plate");
+			
 			BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)
 			.filter(block -> (block instanceof WallBlock || block instanceof StairBlock || block instanceof SlabBlock))
 			.forEach(block -> {

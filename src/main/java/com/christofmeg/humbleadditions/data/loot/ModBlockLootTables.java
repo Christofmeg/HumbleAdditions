@@ -15,6 +15,7 @@ import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.AbstractGlassBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.StainedGlassPaneBlock;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.AlternativesEntry;
@@ -35,7 +36,7 @@ public class ModBlockLootTables extends net.minecraft.data.loot.BlockLoot {
     @Override
     protected void addTables() {
     	BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)
-    	.filter(block -> (!(block instanceof AbstractLayerBlock || block instanceof AbstractGlassBlock || block instanceof QuickSandBlock)))
+    	.filter(block -> (!(block instanceof AbstractLayerBlock || block instanceof AbstractGlassBlock || block instanceof StainedGlassPaneBlock || block instanceof QuickSandBlock)))
     	.forEach(block -> {
     		dropSelf(block);
     	});
@@ -43,7 +44,7 @@ public class ModBlockLootTables extends net.minecraft.data.loot.BlockLoot {
     	this.add(BlockRegistry.QUICK_SAND.get(), noDrop());
     	
     	BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)
-    	.filter(block -> (block instanceof AbstractGlassBlock))
+    	.filter(block -> (block instanceof AbstractGlassBlock || block instanceof StainedGlassPaneBlock))
     	.forEach(block -> {
     		dropWhenSilkTouch(block);
     	});

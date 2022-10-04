@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "humbleadditions:block/player_pressure_plate"
+    },
+    "powered=true": {
+      "model": "humbleadditions:block/player_pressure_plate_down"
+    }
+  }
+}
