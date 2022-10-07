@@ -19,14 +19,13 @@ public class RedHuskRenderer extends ZombieRenderer {
 		super(p_174180_, ModelLayers.HUSK, ModelLayers.HUSK_INNER_ARMOR, ModelLayers.HUSK_OUTER_ARMOR);
 	}
 
+	@Override
 	protected void scale(Zombie pLivingEntity, PoseStack pMatrixStack, float pPartialTickTime) {
 		pMatrixStack.scale(1.0625F, 1.0625F, 1.0625F);
 		super.scale(pLivingEntity, pMatrixStack, pPartialTickTime);
 	}
 
-   /**
-    * Returns the location of an entity's texture.
-    */
+	@Override
 	public ResourceLocation getTextureLocation(Zombie pEntity) {
 		return TEXTURE_LOCATION;
 	}

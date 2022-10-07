@@ -1,6 +1,7 @@
 package com.christofmeg.humbleadditions.client;
 
 import com.christofmeg.humbleadditions.client.entity.renderer.RedHuskRenderer;
+import com.christofmeg.humbleadditions.client.entity.renderer.SnowGolemEntityRenderer;
 import com.christofmeg.humbleadditions.registry.EntityRegistry;
 import com.christofmeg.humbleadditions.setup.ModConstants;
 
@@ -13,10 +14,11 @@ import net.minecraftforge.fml.common.Mod;
 public class ClientSetup {
 
 	@SubscribeEvent
-    public static void registerEntityRenders(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerEntityRenderer(EntityRegistry.RED_HUSK.get(), RedHuskRenderer::new);
-    }
+	public static void registerEntityRenders(EntityRenderersEvent.RegisterRenderers event) {
+		event.registerEntityRenderer(EntityRegistry.RED_HUSK.get(), RedHuskRenderer::new);
+		event.registerEntityRenderer(EntityRegistry.SNOW_GOLEM.get(), SnowGolemEntityRenderer::new);
+	}
 
 
-	
+
 }

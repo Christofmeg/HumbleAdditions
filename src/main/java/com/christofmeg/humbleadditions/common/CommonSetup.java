@@ -1,6 +1,7 @@
 package com.christofmeg.humbleadditions.common;
 
 import com.christofmeg.humbleadditions.common.entities.RedHuskEntity;
+import com.christofmeg.humbleadditions.common.entities.SnowGolemEntity;
 import com.christofmeg.humbleadditions.registry.EntityRegistry;
 import com.christofmeg.humbleadditions.setup.ModConstants;
 
@@ -20,12 +21,13 @@ public class CommonSetup {
 				Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, RedHuskEntity::checkRedHuskSpawnRules);
 
 	}
-	
+
 	@SubscribeEvent
 	public static void entityAttributes(EntityAttributeCreationEvent event) {
 		event.put(EntityRegistry.RED_HUSK.get(), RedHuskEntity.createAttributes().build());
+		event.put(EntityRegistry.SNOW_GOLEM.get(), SnowGolemEntity.createAttributes().build());
 
 	}
-	
-	
+
+
 }

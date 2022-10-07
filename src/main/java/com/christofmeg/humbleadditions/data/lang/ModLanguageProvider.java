@@ -32,7 +32,7 @@ public class ModLanguageProvider extends LanguageProvider {
 	protected void addTranslations() {
 		String locale = this.getName().replace("Languages: ", "");
 		switch(locale) {
-		case "en_us":			
+		case "en_us":
 			addBlock(BlockRegistry.BLAZE_ROD_BLOCK, "Block of Blaze Rods");
 			addBlock(BlockRegistry.CHARCOAL_BLOCK, "Charcoal Block");
 			addBlock(BlockRegistry.ROSE_GOLD_BLOCK, "Rose Gold Block");
@@ -41,97 +41,98 @@ public class ModLanguageProvider extends LanguageProvider {
 			addBlock(BlockRegistry.JACK_O_SOUL_LANTERN, "Jack o'Soul Lantern");
 			addBlock(BlockRegistry.PACKED_SNOW, "Packed Snow");
 			addBlock(BlockRegistry.SNOW_BRICKS, "Snow Bricks");
-			
+
 			addBlock(BlockRegistry.LIMESTONE, "Limestone");
 			addBlock(BlockRegistry.POLISHED_LIMESTONE_BRICKS, "Polished Limestone Bricks");
 			addBlock(BlockRegistry.CHISELED_LIMESTONE, "Chiseled Limestone");
 			addBlock(BlockRegistry.POLISHED_LIMESTONE, "Polished Limestone");
 			addBlock(BlockRegistry.LIMESTONE_BRICKS, "Limestone Bricks");
-			
+
 			addBlock(BlockRegistry.PLAYER_PRESSURE_PLATE, "Player Pressure Plate");
-			
+
 			BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)
 			.filter(block -> (block instanceof WallBlock || block instanceof StairBlock || block instanceof SlabBlock))
 			.forEach(block -> {
-				addBlock( () -> block, 
-					StringUtils.capitaliseAllWords(block.defaultBlockState().getBlock().toString()
-						.replace("Block{humbleadditions:", "")
-						.replace("}", "")
-						.replace("_", " ")
-						));
-			});
-				
-				BlockRegistry.VANILLA_TEXTURED_BLOCKS.getEntries().stream().map(RegistryObject::get)
-				.filter(block -> (block instanceof WallBlock || block instanceof StairBlock || block instanceof SlabBlock))
-				.forEach(block -> {
-					addBlock( () -> block, 
+				addBlock( () -> block,
 						StringUtils.capitaliseAllWords(block.defaultBlockState().getBlock().toString()
-							.replace("Block{humbleadditions:", "").replace("}", "").replace("_", " ")));
-				});
-			
+								.replace("Block{humbleadditions:", "")
+								.replace("}", "")
+								.replace("_", " ")
+								));
+			});
+
+			BlockRegistry.VANILLA_TEXTURED_BLOCKS.getEntries().stream().map(RegistryObject::get)
+			.filter(block -> (block instanceof WallBlock || block instanceof StairBlock || block instanceof SlabBlock))
+			.forEach(block -> {
+				addBlock( () -> block,
+						StringUtils.capitaliseAllWords(block.defaultBlockState().getBlock().toString()
+								.replace("Block{humbleadditions:", "").replace("}", "").replace("_", " ")));
+			});
+
 			BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)
 			.filter(block -> (block instanceof AbstractGlassBlock || block instanceof IronBarsBlock))
 			.forEach(block -> {
-				addBlock( () -> block, 
-					StringUtils.capitaliseAllWords(block.defaultBlockState().getBlock().toString()
-						.replace("Block{humbleadditions:", "")
-						.replace("}", "")
-						.replace("_", " ")
-						));
+				addBlock( () -> block,
+						StringUtils.capitaliseAllWords(block.defaultBlockState().getBlock().toString()
+								.replace("Block{humbleadditions:", "")
+								.replace("}", "")
+								.replace("_", " ")
+								));
 			});
-			
+
 			BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)
 			.filter(block -> (block instanceof AbstractLayerBlock))
 			.forEach(block -> {
-				addBlock( () -> block, 
-					StringUtils.capitaliseAllWords(block.defaultBlockState().getBlock().toString()
-						.replace("Block{humbleadditions:", "")
-						.replace("_layer_block", "")
+				addBlock( () -> block,
+						StringUtils.capitaliseAllWords(block.defaultBlockState().getBlock().toString()
+								.replace("Block{humbleadditions:", "")
+								.replace("_layer_block", "")
+								.replace("}", "")
+								.replace("_", " ")
+								));
+			});
+
+			add("itemGroup." + ModConstants.MOD_ID, ModConstants.MOD_NAME);
+
+
+
+			addEntityType(EntityRegistry.RED_HUSK, "Red Husk");
+			addEntityType(EntityRegistry.SNOW_GOLEM, "Snow Golem");
+
+
+			ItemRegistry.ITEMS_AUTO_REGISTER.getEntries().stream().map(RegistryObject::get)
+			.forEach(item -> {
+				addItem( () -> item, StringUtils.capitaliseAllWords(item.getDefaultInstance().getItem().toString()
+						.replace("Item{humbleadditions:", "")
+						.replace("}", "")
+						.replace("milk_bottle","Bottle o' Milk")
+						.replace("_", " ")
+						));
+			});
+
+			ItemRegistry.BLOCK_ITEMS_AUTO_REGISTER.getEntries().stream().map(RegistryObject::get)
+			.forEach(item -> {
+				addItem( () -> item, StringUtils.capitaliseAllWords(item.getDefaultInstance().getItem().toString()
+						.replace("Item{humbleadditions:", "")
 						.replace("}", "")
 						.replace("_", " ")
 						));
 			});
-			
-			add("itemGroup." + ModConstants.MOD_ID, ModConstants.MOD_NAME);
-			
-			
-			
-			addEntityType(EntityRegistry.RED_HUSK, "Red Husk");
-			
-			
-			ItemRegistry.ITEMS_AUTO_REGISTER.getEntries().stream().map(RegistryObject::get)
-			.forEach(item -> {
-				addItem( () -> item, StringUtils.capitaliseAllWords(item.getDefaultInstance().getItem().toString()
-					.replace("Item{humbleadditions:", "")
-					.replace("}", "")
-					.replace("milk_bottle","Bottle o' Milk")
-					.replace("_", " ")
-					));
-			});
-			
-			ItemRegistry.BLOCK_ITEMS_AUTO_REGISTER.getEntries().stream().map(RegistryObject::get)
-			.forEach(item -> {
-				addItem( () -> item, StringUtils.capitaliseAllWords(item.getDefaultInstance().getItem().toString()
-					.replace("Item{humbleadditions:", "")
-					.replace("}", "")
-					.replace("_", " ")
-					));
-			});
-			
+
 			add("item.minecraft.potion.effect." + PotionRegistry.CHORUS.getId().toString().replace(":", "_"), "Potion of Chorus Teleport");
 			add("item.minecraft.lingering_potion.effect." + PotionRegistry.CHORUS.getId().toString().replace(":", "_"), "Lingering Potion of Chorus Teleport");
 			add("item.minecraft.splash_potion.effect." + PotionRegistry.CHORUS.getId().toString().replace(":", "_"), "Splash Potion of Chorus Teleport");
 			add("item.minecraft.tipped_arrow.effect." + ModConstants.MOD_ID + "_" + "chorus", "Arrow of Chorus Teleport");
 			addEffect(()-> PotionEffectRegistry.CHORUS.get(), "Chorus Teleport");
-			
+
 			break;
 		default:
 			break;
 		}
 	}
-	
+
 	public void addBlockByRegistry(Supplier<? extends Block> key, String name) {
-        add(key.get(), name);
-    }	
-	
+		add(key.get(), name);
+	}
+
 }

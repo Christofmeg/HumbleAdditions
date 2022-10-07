@@ -1,4 +1,4 @@
-// 1.19.2	2022-10-04T20:59:34.7592381	Humble Additions - LootTables
+// 1.19.2	2022-10-07T19:24:37.6072349	Humble Additions - LootTables
 82080a5cd4946ce0808cea82ebff84fb96759874 data/humbleadditions/loot_tables/blocks/black_stained_glowing_glass.json
 9b97990690f6b48fba7bb3faabba3e1208f8df27 data/humbleadditions/loot_tables/blocks/black_stained_glowing_glass_pane.json
 ed68ca2c3d3e75e1ce837d368745ee08f971b754 data/humbleadditions/loot_tables/blocks/block_of_blaze_rods.json
@@ -87,6 +87,7 @@ c508906b1992c53d541317caa0a258d656711ccc data/humbleadditions/loot_tables/blocks
 41f6421aaadbe52147d8e3e86b84bffcceafc8fe data/humbleadditions/loot_tables/blocks/yellow_stained_glowing_glass.json
 d16695dfab0147a988ebbd662d4eca60b43715c1 data/humbleadditions/loot_tables/blocks/yellow_stained_glowing_glass_pane.json
 a0fdcd18f6f07946890e01f881ee04e44a33494f data/humbleadditions/loot_tables/entities/red_husk.json
+5b88028010db550a70167e6b03d9f7502bb6902f data/humbleadditions/loot_tables/entities/snow_golem.json
 6c2124257916e8f7a170c2a798a1b7e8b6a9f245 data/minecraft/loot_tables/entities/ender_dragon.json
 1b23c950a7d93b06f6f76ed00825463be54a3a11 data/minecraft/loot_tables/entities/husk.json
 068dcd481ff4dd067ac0827aaf92d7588d714f83 data/minecraft/loot_tables/entities/stray.json

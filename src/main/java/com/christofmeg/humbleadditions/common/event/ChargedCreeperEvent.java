@@ -4,6 +4,9 @@ package com.christofmeg.humbleadditions.common.event;
 import java.util.Random;
 import java.util.UUID;
 
+import com.christofmeg.humbleadditions.common.entities.SnowGolemEntity;
+import com.christofmeg.humbleadditions.registry.BlockRegistry;
+import com.christofmeg.humbleadditions.registry.EntityRegistry;
 import com.christofmeg.humbleadditions.setup.Config;
 import com.christofmeg.humbleadditions.setup.ModConstants;
 
@@ -27,7 +30,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
 @EventBusSubscriber(modid = ModConstants.MOD_ID, bus = EventBusSubscriber.Bus.FORGE)
 public class ChargedCreeperEvent {
-	
+
 	@SubscribeEvent
 	public static void chargedCreeperSpawnEvent(EntityJoinLevelEvent event) {
 		Entity entity = event.getEntity();
@@ -42,9 +45,9 @@ public class ChargedCreeperEvent {
 				}
 			}
 		}
-    }
-    
-    public static void chargeEntity(Entity entity) {
+	}
+
+	public static void chargeEntity(Entity entity) {
 		Level world = entity.getCommandSenderWorld();
 		Vec3 vec3 = entity.position();
 		LightningBolt lightning = new LightningBolt(EntityType.LIGHTNING_BOLT, world);
@@ -53,23 +56,39 @@ public class ChargedCreeperEvent {
 		entity.thunderHit((ServerLevel)world, lightning);
 		entity.clearFire();
 	}
-    
-    @SubscribeEvent
+
+	@SubscribeEvent
 	public static void golemKilledByChargedCreepetEvent(LivingDeathEvent event) {
-    	Entity entity = event.getEntity();
-    	BlockPos pos = entity.getOnPos();
-    	Level level = entity.getLevel();
-    	Entity sourceEntity = event.getSource().getEntity();
-    	if(!level.isClientSide){
-    		if(entity instanceof IronGolem || entity instanceof SnowGolem) {
-    			if(sourceEntity instanceof Creeper) {
-    				if(((Creeper) sourceEntity).isPowered()) {
-    					level.addFreshEntity(new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(Items.CARVED_PUMPKIN)));
-    				}
-    			}
-    		}
-    	}
-    }
+		Entity entity = event.getEntity();
+		BlockPos pos = entity.getOnPos();
+		Level level = entity.getLevel();
+		Entity sourceEntity = event.getSource().getEntity();
+		if(!level.isClientSide){
+			if(sourceEntity instanceof Creeper) {
+				if(((Creeper) sourceEntity).isPowered()) {
+					if(entity instanceof IronGolem) {
+						level.addFreshEntity(new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(Items.CARVED_PUMPKIN)));
+					}
+					if(entity instanceof SnowGolem) {
+						if(entity.getType() == EntityType.SNOW_GOLEM) {
+							level.addFreshEntity(new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(Items.CARVED_PUMPKIN)));
+						}
+						if(entity.getType() == EntityRegistry.SNOW_GOLEM.get()) {
+							if(((SnowGolemEntity)entity).hasCarvedPumpkin()) {
+								level.addFreshEntity(new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(Items.CARVED_PUMPKIN)));
+							}
+							if(((SnowGolemEntity)entity).hasJackOPumpkin()) {
+								level.addFreshEntity(new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(Items.JACK_O_LANTERN)));
+							}
+							if(((SnowGolemEntity)entity).hasJackOSoulPumpkin()) {
+								level.addFreshEntity(new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(BlockRegistry.JACK_O_SOUL_LANTERN.get().asItem())));
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 
 }
 
