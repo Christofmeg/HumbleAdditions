@@ -1,6 +1,6 @@
 package com.christofmeg.humbleadditions.data;
 
-import com.christofmeg.humbleadditions.common.world.feature.ModPlacedFeatures;
+import com.christofmeg.humbleadditions.common.world.ModPlacedFeatures;
 import com.christofmeg.humbleadditions.data.client.ModBlockStateProvider;
 import com.christofmeg.humbleadditions.data.client.ModItemModelProvider;
 import com.christofmeg.humbleadditions.data.lang.ModLanguageProvider;

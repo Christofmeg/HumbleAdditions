@@ -18,7 +18,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
 @EventBusSubscriber(modid = ModConstants.MOD_ID, bus = EventBusSubscriber.Bus.FORGE)
 public class BedBlockEvent {
-	
+
 	@SubscribeEvent
 	public static void bedIsTooFarAwayEvent(final PlayerInteractEvent.RightClickBlock event) {
 		LevelAccessor levelAccess = event.getLevel();
@@ -49,9 +49,9 @@ public class BedBlockEvent {
 								if(direction == Direction.WEST) {
 									entity.teleportTo(pos.getX() - 1, pos.getY(), pos.getZ());
 								}
-							} 
+							}
 							else {
-								entity.teleportTo(pos.getX(), pos.getY(), pos.getZ());
+								entity.teleportTo(pos.getX(), pos.getY() - 0.5, pos.getZ());
 							}
 						}
 					}
@@ -59,5 +59,5 @@ public class BedBlockEvent {
 			}
 		}
 	}
-	
+
 }

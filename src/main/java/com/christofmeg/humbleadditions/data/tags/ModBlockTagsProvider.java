@@ -20,7 +20,7 @@ import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModBlockTagsProvider extends BlockTagsProvider {
-	
+
 	public ModBlockTagsProvider(DataGenerator pGenerator, ExistingFileHelper existingFileHelper) {
 		super(pGenerator, ModConstants.MOD_ID, existingFileHelper);
 	}
@@ -29,10 +29,10 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 	public String getName() {
 		return ModConstants.MOD_NAME + " - Block Tags";
 	}
-	
+
 	@Override
 	protected void addTags() {
-		
+
 		this.tag(BlockTags.AZALEA_ROOT_REPLACEABLE).add(
 				BlockRegistry.MOSS_LAYER_BLOCK.get(),
 				BlockRegistry.SAND_LAYER_BLOCK.get(),
@@ -41,21 +41,24 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 				BlockRegistry.LIMESTONE.get(),
 				BlockRegistry.STONE_WALL.get()
 				);
-	
-		this.tag(BlockTags.SNAPS_GOAT_HORN).add(BlockRegistry.STONE_WALL.get());
+
+		this.tag(BlockTags.SNAPS_GOAT_HORN).add(
+				BlockRegistry.STONE_WALL.get(),
+				BlockRegistry.SMOOTH_ICE.get());
+
 		this.tag(BlockTags.BASE_STONE_OVERWORLD).add(BlockRegistry.LIMESTONE.get());
 		this.tag(BlockTags.NETHER_CARVER_REPLACEABLES).add(BlockRegistry.LIMESTONE.get(), BlockRegistry.STONE_WALL.get());
 		this.tag(BlockTags.SCULK_REPLACEABLE_WORLD_GEN).add(BlockRegistry.LIMESTONE.get(), BlockRegistry.STONE_WALL.get());
 		this.tag(BlockTags.OVERWORLD_CARVER_REPLACEABLES).add(BlockRegistry.LIMESTONE.get(), BlockRegistry.STONE_WALL.get());
 		this.tag(BlockTags.STONE_ORE_REPLACEABLES).add(BlockRegistry.LIMESTONE.get(),
-			BlockRegistry.STONE_WALL.get());
+				BlockRegistry.STONE_WALL.get());
 		this.tag(BlockTags.DRIPSTONE_REPLACEABLE).add(
-			BlockRegistry.LIMESTONE.get(),
-			BlockRegistry.STONE_WALL.get());
-		
+				BlockRegistry.LIMESTONE.get(),
+				BlockRegistry.STONE_WALL.get());
+
 		this.tag(TagRegistry.Blocks.ORES_ENDORIUM).add(BlockRegistry.ENDORIUM_ORE.get());
 		this.tag(Tags.Blocks.ORES).add(BlockRegistry.ENDORIUM_ORE.get());
-		
+
 		this.tag(TagRegistry.Blocks.STORAGE_BLOCKS_CHARCOAL).add(BlockRegistry.CHARCOAL_BLOCK.get());
 		this.tag(TagRegistry.Blocks.STORAGE_BLOCKS_ROSE_GOLD).add(BlockRegistry.ROSE_GOLD_BLOCK.get());
 		this.tag(TagRegistry.Blocks.STORAGE_BLOCKS_RAW_ENDORIUM).add(BlockRegistry.RAW_ENDORIUM_BLOCK.get());
@@ -63,67 +66,72 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 		this.tag(TagRegistry.Blocks.STORAGE_BLOCKS_ENDORITE).add(BlockRegistry.ENDORITE_BLOCK.get());
 		this.tag(TagRegistry.Blocks.STORAGE_BLOCKS_RAW_ROSE_GOLD).add(BlockRegistry.RAW_ROSE_GOLD_BLOCK.get());
 		this.tag(TagRegistry.Blocks.STORAGE_BLOCKS_BLAZE_ROD).add(BlockRegistry.BLAZE_ROD_BLOCK.get());
-		
+
 		this.tag(Tags.Blocks.STORAGE_BLOCKS).addTag(TagRegistry.Blocks.STORAGE_BLOCKS_CHARCOAL);
 		this.tag(Tags.Blocks.STORAGE_BLOCKS).addTag(TagRegistry.Blocks.STORAGE_BLOCKS_ROSE_GOLD);
 		this.tag(Tags.Blocks.STORAGE_BLOCKS).addTag(TagRegistry.Blocks.STORAGE_BLOCKS_RAW_ENDORIUM);
 		this.tag(Tags.Blocks.STORAGE_BLOCKS).addTag(TagRegistry.Blocks.STORAGE_BLOCKS_ENDORIUM);
 		this.tag(Tags.Blocks.STORAGE_BLOCKS).addTag(TagRegistry.Blocks.STORAGE_BLOCKS_ENDORITE);
 		this.tag(Tags.Blocks.STORAGE_BLOCKS).addTag(TagRegistry.Blocks.STORAGE_BLOCKS_RAW_ROSE_GOLD);
-		
+
+		this.tag(BlockTags.GEODE_INVALID_BLOCKS).add(BlockRegistry.SMOOTH_ICE.get());
+		this.tag(BlockTags.POLAR_BEARS_SPAWNABLE_ON_ALTERNATE).add(BlockRegistry.SMOOTH_ICE.get());
+		this.tag(BlockTags.ICE).add(BlockRegistry.SMOOTH_ICE.get());
+
+
 		this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(
-			BlockRegistry.CHARCOAL_BLOCK.get(), 
-			BlockRegistry.SMOOTH_ICE.get(),
-			BlockRegistry.LIMESTONE.get(),
-			BlockRegistry.POLISHED_LIMESTONE_BRICKS.get(),
-			BlockRegistry.CHISELED_LIMESTONE.get(),
-			BlockRegistry.POLISHED_LIMESTONE.get(),
-			BlockRegistry.LIMESTONE_BRICKS.get(),
-			BlockRegistry.ENDORIUM_ORE.get(),
-			BlockRegistry.ROSE_GOLD_BLOCK.get(),
-			BlockRegistry.RAW_ENDORIUM_BLOCK.get(),
-			BlockRegistry.ENDORIUM_BLOCK.get(),
-			BlockRegistry.ENDORITE_BLOCK.get(),
-			BlockRegistry.RAW_ROSE_GOLD_BLOCK.get(),
-			BlockRegistry.SNOW_BRICKS.get(),
-			BlockRegistry.BLAZE_ROD_BLOCK.get(),
-			BlockRegistry.PLAYER_PRESSURE_PLATE.get()
-			);
-		
+				BlockRegistry.CHARCOAL_BLOCK.get(),
+				BlockRegistry.SMOOTH_ICE.get(),
+				BlockRegistry.LIMESTONE.get(),
+				BlockRegistry.POLISHED_LIMESTONE_BRICKS.get(),
+				BlockRegistry.CHISELED_LIMESTONE.get(),
+				BlockRegistry.POLISHED_LIMESTONE.get(),
+				BlockRegistry.LIMESTONE_BRICKS.get(),
+				BlockRegistry.ENDORIUM_ORE.get(),
+				BlockRegistry.ROSE_GOLD_BLOCK.get(),
+				BlockRegistry.RAW_ENDORIUM_BLOCK.get(),
+				BlockRegistry.ENDORIUM_BLOCK.get(),
+				BlockRegistry.ENDORITE_BLOCK.get(),
+				BlockRegistry.RAW_ROSE_GOLD_BLOCK.get(),
+				BlockRegistry.SNOW_BRICKS.get(),
+				BlockRegistry.BLAZE_ROD_BLOCK.get(),
+				BlockRegistry.PLAYER_PRESSURE_PLATE.get()
+				);
+
 		this.tag(BlockTags.WALL_POST_OVERRIDE).add(BlockRegistry.PLAYER_PRESSURE_PLATE.get());
 		this.tag(BlockTags.PRESSURE_PLATES).add(BlockRegistry.PLAYER_PRESSURE_PLATE.get());
-		
+
 		this.tag(Tags.Blocks.STONE).add(
-			BlockRegistry.LIMESTONE.get(),
-			BlockRegistry.POLISHED_LIMESTONE_BRICKS.get(),
-			BlockRegistry.CHISELED_LIMESTONE.get(),
-			BlockRegistry.POLISHED_LIMESTONE.get(),
-			BlockRegistry.LIMESTONE_BRICKS.get()
-			);
-		
+				BlockRegistry.LIMESTONE.get(),
+				BlockRegistry.POLISHED_LIMESTONE_BRICKS.get(),
+				BlockRegistry.CHISELED_LIMESTONE.get(),
+				BlockRegistry.POLISHED_LIMESTONE.get(),
+				BlockRegistry.LIMESTONE_BRICKS.get()
+				);
+
 		this.tag(BlockTags.MINEABLE_WITH_SHOVEL).add(
-			BlockRegistry.SAND_LAYER_BLOCK.get(), 
-			BlockRegistry.RED_SAND_LAYER_BLOCK.get(),
-			BlockRegistry.GRAVEL_LAYER_BLOCK.get(),
-			BlockRegistry.QUICK_SAND.get(),
-			BlockRegistry.PACKED_SNOW.get()
-			);
-		
+				BlockRegistry.SAND_LAYER_BLOCK.get(),
+				BlockRegistry.RED_SAND_LAYER_BLOCK.get(),
+				BlockRegistry.GRAVEL_LAYER_BLOCK.get(),
+				BlockRegistry.QUICK_SAND.get(),
+				BlockRegistry.PACKED_SNOW.get()
+				);
+
 		this.tag(BlockTags.MANGROVE_LOGS_CAN_GROW_THROUGH).add(BlockRegistry.MOSS_LAYER_BLOCK.get());
 		this.tag(BlockTags.MANGROVE_ROOTS_CAN_GROW_THROUGH).add(BlockRegistry.MOSS_LAYER_BLOCK.get());
-		
+
 		this.tag(BlockTags.AZALEA_GROWS_ON).add(
 				BlockRegistry.MOSS_LAYER_BLOCK.get(),
 				BlockRegistry.SAND_LAYER_BLOCK.get(),
 				BlockRegistry.RED_SAND_LAYER_BLOCK.get()
 				);
-		
+
 		this.tag(BlockTags.MOSS_REPLACEABLE).add(
 				BlockRegistry.MOSS_LAYER_BLOCK.get(),
 				BlockRegistry.LIMESTONE.get(),
 				BlockRegistry.STONE_WALL.get()
 				);
-		
+
 		this.tag(BlockTags.SCULK_REPLACEABLE).add(
 				BlockRegistry.MOSS_LAYER_BLOCK.get(),
 				BlockRegistry.SAND_LAYER_BLOCK.get(),
@@ -132,18 +140,18 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 				BlockRegistry.LIMESTONE.get(),
 				BlockRegistry.STONE_WALL.get()
 				);
-		
+
 		this.tag(BlockTags.MINEABLE_WITH_HOE).add(BlockRegistry.MOSS_LAYER_BLOCK.get());
 		this.tag(BlockTags.DRIPSTONE_REPLACEABLE).add(BlockRegistry.MOSS_LAYER_BLOCK.get());
 		this.tag(BlockTags.BIG_DRIPLEAF_PLACEABLE).add(BlockRegistry.MOSS_LAYER_BLOCK.get());
-		
+
 		this.tag(BlockTags.LUSH_GROUND_REPLACEABLE).add(
 				BlockRegistry.SAND_LAYER_BLOCK.get(),
 				BlockRegistry.GRAVEL_LAYER_BLOCK.get(),
 				BlockRegistry.LIMESTONE.get(),
 				BlockRegistry.STONE_WALL.get()
 				);
-		
+
 		BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)
 		.filter(block -> (block instanceof GlassBlock))
 		.forEach(block -> {
@@ -152,7 +160,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 			this.tag(Tags.Blocks.GLASS).add(block);
 			this.tag(Tags.Blocks.GLASS_COLORLESS).add(block);
 		});
-		
+
 		BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)
 		.filter(block -> (block instanceof StainedGlassBlock))
 		.forEach(block -> {
@@ -160,7 +168,7 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 			this.tag(Tags.Blocks.GLASS_SILICA).add(block);
 			this.tag(Tags.Blocks.STAINED_GLASS).add(block);
 		});
-		
+
 		this.tag(Tags.Blocks.GLASS_BLACK).add(BlockRegistry.BLACK_STAINED_GLOWING_GLASS.get());
 		this.tag(Tags.Blocks.GLASS_BLUE).add(BlockRegistry.BLUE_STAINED_GLOWING_GLASS.get());
 		this.tag(Tags.Blocks.GLASS_BROWN).add(BlockRegistry.BROWN_STAINED_GLOWING_GLASS.get());
@@ -177,22 +185,22 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 		this.tag(Tags.Blocks.GLASS_RED).add(BlockRegistry.RED_STAINED_GLOWING_GLASS.get());
 		this.tag(Tags.Blocks.GLASS_WHITE).add(BlockRegistry.WHITE_STAINED_GLOWING_GLASS.get());
 		this.tag(Tags.Blocks.GLASS_YELLOW).add(BlockRegistry.YELLOW_STAINED_GLOWING_GLASS.get());
-		
+
 		this.tag(Tags.Blocks.GLASS_PANES_COLORLESS).add(BlockRegistry.GLOWING_GLASS_PANE.get());
-		
+
 		BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)
 		.filter(block -> (block instanceof IronBarsBlock))
 		.forEach(block -> {
 			this.tag(Tags.Blocks.GLASS_PANES).add(block);
 		});
-		
+
 		BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)
 		.filter(block -> (block instanceof StainedGlassPaneBlock))
 		.forEach(block -> {
 			this.tag(Tags.Blocks.GLASS_PANES).add(block);
 			this.tag(Tags.Blocks.STAINED_GLASS_PANES).add(block);
 		});
-		
+
 		this.tag(Tags.Blocks.GLASS_PANES_BLACK).add(BlockRegistry.BLACK_STAINED_GLOWING_GLASS_PANE.get());
 		this.tag(Tags.Blocks.GLASS_PANES_BLUE).add(BlockRegistry.BLUE_STAINED_GLOWING_GLASS_PANE.get());
 		this.tag(Tags.Blocks.GLASS_PANES_BROWN).add(BlockRegistry.BROWN_STAINED_GLOWING_GLASS_PANE.get());
@@ -209,13 +217,13 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 		this.tag(Tags.Blocks.GLASS_PANES_RED).add(BlockRegistry.RED_STAINED_GLOWING_GLASS_PANE.get());
 		this.tag(Tags.Blocks.GLASS_PANES_WHITE).add(BlockRegistry.WHITE_STAINED_GLOWING_GLASS_PANE.get());
 		this.tag(Tags.Blocks.GLASS_PANES_YELLOW).add(BlockRegistry.YELLOW_STAINED_GLOWING_GLASS_PANE.get());
-		
+
 		this.tag(BlockTags.BEACON_BASE_BLOCKS).add(
-			BlockRegistry.ENDORIUM_BLOCK.get(),
-			BlockRegistry.ROSE_GOLD_BLOCK.get(),
-			BlockRegistry.ENDORITE_BLOCK.get()
-			);
-		
+				BlockRegistry.ENDORIUM_BLOCK.get(),
+				BlockRegistry.ROSE_GOLD_BLOCK.get(),
+				BlockRegistry.ENDORITE_BLOCK.get()
+				);
+
 		this.tag(ItemRegistry.ToolTiers.ENDORIUM.getTag()).add(
 				BlockRegistry.RAW_ENDORIUM_BLOCK.get(),
 				BlockRegistry.ENDORIUM_BLOCK.get()
@@ -223,49 +231,49 @@ public class ModBlockTagsProvider extends BlockTagsProvider {
 		this.tag(ItemRegistry.ToolTiers.ENDORITE.getTag()).add(
 				BlockRegistry.ENDORITE_BLOCK.get()
 				);
-		
+
 		this.tag(Tags.Blocks.NEEDS_NETHERITE_TOOL).add(BlockRegistry.ENDORIUM_ORE.get());
 		this.tag(BlockTags.NEEDS_IRON_TOOL).add(
 				BlockRegistry.ROSE_GOLD_BLOCK.get(),
 				BlockRegistry.RAW_ROSE_GOLD_BLOCK.get()
 				);
-		
+
 		BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)
 		.filter(block -> (block instanceof WallBlock))
 		.forEach(block -> {
 			this.tag(BlockTags.WALLS).add(block);
 		});
-		
-			BlockRegistry.VANILLA_TEXTURED_BLOCKS.getEntries().stream().map(RegistryObject::get)
-			.filter(block -> (block instanceof WallBlock))
-			.forEach(block -> {
-				this.tag(BlockTags.WALLS).add(block);
-			});
-		
+
+		BlockRegistry.VANILLA_TEXTURED_BLOCKS.getEntries().stream().map(RegistryObject::get)
+		.filter(block -> (block instanceof WallBlock))
+		.forEach(block -> {
+			this.tag(BlockTags.WALLS).add(block);
+		});
+
 		BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)
 		.filter(block -> (block instanceof StairBlock))
 		.forEach(block -> {
 			this.tag(BlockTags.STAIRS).add(block);
 		});
-		
+
 		BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)
 		.filter(block -> (block instanceof SlabBlock))
 		.forEach(block -> {
 			this.tag(BlockTags.SLABS).add(block);
 		});
-		
+
 		BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)
 		.filter(block -> (block instanceof WallBlock || block instanceof StairBlock || block instanceof SlabBlock))
 		.forEach(block -> {
 			this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
 		});
-		
-			BlockRegistry.VANILLA_TEXTURED_BLOCKS.getEntries().stream().map(RegistryObject::get)
-			.filter(block -> (block instanceof WallBlock || block instanceof StairBlock || block instanceof SlabBlock))
-			.forEach(block -> {
-				this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
-			});
-		
+
+		BlockRegistry.VANILLA_TEXTURED_BLOCKS.getEntries().stream().map(RegistryObject::get)
+		.filter(block -> (block instanceof WallBlock || block instanceof StairBlock || block instanceof SlabBlock))
+		.forEach(block -> {
+			this.tag(BlockTags.MINEABLE_WITH_PICKAXE).add(block);
+		});
+
 	}
 
 

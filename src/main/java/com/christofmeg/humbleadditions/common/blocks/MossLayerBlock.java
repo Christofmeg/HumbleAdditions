@@ -1,6 +1,6 @@
 package com.christofmeg.humbleadditions.common.blocks;
 
-import com.christofmeg.humbleadditions.common.world.feature.ModConfiguredFeatures;
+import com.christofmeg.humbleadditions.common.world.ModConfiguredFeatures;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;

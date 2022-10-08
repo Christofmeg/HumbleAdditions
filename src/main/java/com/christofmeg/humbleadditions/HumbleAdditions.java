@@ -1,8 +1,9 @@
 package com.christofmeg.humbleadditions;
 
 import com.christofmeg.humbleadditions.common.ModDispenseItemBehavior;
-import com.christofmeg.humbleadditions.common.world.feature.ModConfiguredFeatures;
-import com.christofmeg.humbleadditions.common.world.feature.ModPlacedFeatures;
+import com.christofmeg.humbleadditions.common.world.ModConfiguredFeatures;
+import com.christofmeg.humbleadditions.common.world.ModFeatures;
+import com.christofmeg.humbleadditions.common.world.ModPlacedFeatures;
 import com.christofmeg.humbleadditions.registry.BlockRegistry;
 import com.christofmeg.humbleadditions.registry.EntityRegistry;
 import com.christofmeg.humbleadditions.registry.ItemRegistry;
@@ -23,56 +24,57 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(ModConstants.MODID)
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
-public class HumbleAdditions {	
-    public static final String MODID = "tutorialmod";
+public class HumbleAdditions {
+	public static final String MODID = "tutorialmod";
 
-    public HumbleAdditions() {
-        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+	public HumbleAdditions() {
+		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        Config.init();
-        
-        BlockRegistry.BLOCKS.register(bus);
-        BlockRegistry.VANILLA_TEXTURED_BLOCKS.register(bus);
-        ItemRegistry.ITEMS.register(bus);
-        ItemRegistry.ITEMS_AUTO_REGISTER.register(bus);
-        ItemRegistry.BLOCK_ITEMS_AUTO_REGISTER.register(bus);
-        EntityRegistry.ENTITY_TYPES.register(bus);
-        
-        VanillaRegistry.ITEMS.register(bus);
-        VanillaRegistry.BLOCKS.register(bus);
-        ModConfiguredFeatures.VANILLA_CONFIGURED_FEATURES.register(bus);
-        
-        ModConfiguredFeatures.CONFIGURED_FEATURES.register(bus);
-        ModPlacedFeatures.PLACED_FEATURES.register(bus);
-        PaintingVariantRegistry.PAINTING_VARIANTS.register(bus);
-        PotionRegistry.POTIONS.register(bus); 
-        PotionEffectRegistry.MOB_EFFECTS.register(bus);
- 
-    }
+		Config.init();
 
-    @SubscribeEvent
-    public static void commonSetup(FMLCommonSetupEvent event) {
-    	event.enqueueWork(() -> {
+		BlockRegistry.BLOCKS.register(bus);
+		BlockRegistry.VANILLA_TEXTURED_BLOCKS.register(bus);
+		ItemRegistry.ITEMS.register(bus);
+		ItemRegistry.ITEMS_AUTO_REGISTER.register(bus);
+		ItemRegistry.BLOCK_ITEMS_AUTO_REGISTER.register(bus);
+		EntityRegistry.ENTITY_TYPES.register(bus);
+
+		VanillaRegistry.ITEMS.register(bus);
+		VanillaRegistry.BLOCKS.register(bus);
+		ModConfiguredFeatures.VANILLA_CONFIGURED_FEATURES.register(bus);
+		ModFeatures.FEATURES.register(bus);
+
+		ModConfiguredFeatures.CONFIGURED_FEATURES.register(bus);
+		ModPlacedFeatures.PLACED_FEATURES.register(bus);
+		PaintingVariantRegistry.PAINTING_VARIANTS.register(bus);
+		PotionRegistry.POTIONS.register(bus);
+		PotionEffectRegistry.MOB_EFFECTS.register(bus);
+
+	}
+
+	@SubscribeEvent
+	public static void commonSetup(FMLCommonSetupEvent event) {
+		event.enqueueWork(() -> {
 			ComposterBlock.COMPOSTABLES.put(Items.ROTTEN_FLESH, 0.05F);
 			ComposterBlock.COMPOSTABLES.put(Items.BAMBOO, 0.2F);
 			ComposterBlock.COMPOSTABLES.put(Items.POISONOUS_POTATO, 0.65F);
 			ComposterBlock.COMPOSTABLES.put(BlockRegistry.MOSS_LAYER_BLOCK.get().asItem(), 0.08125F);
-			
+
 			ModDispenseItemBehavior.init();
 			PotionRegistry.setup();
-			
+
 			// FIX FALLING FULL BLOCKS STACKING
-			
+
 			// FALLING LAYERS item drops correct amount when broken by falling on other blocks
-			
+
 			// FALLING LAYERS remove itemdrops when block fell on self FallableLayerBlock$onBrokenAfterFall
-			
+
 			// fix falling layers not stacking when gamerule doEntityDrops is set to false
-			
+
 			// Layerblocks waterloggable
-			
+
 			// Look at shovel right click and falling or breaking when layer on layer OR merging
-			
+
 
 			/* IDEAS
 			 * Custom snow men ENTITY heads with jack o lanterns
@@ -80,13 +82,13 @@ public class HumbleAdditions {
 			 * ZOMBIES THAT GROWS ON EACH HIT
 			 * REPAIRABLE ANVILS
 			 */
-			
+
 			//TODO ADD SMELTING TO TOOLS
-			
+
 		});
-    }
-    
-    
-    
-    
+	}
+
+
+
+
 }

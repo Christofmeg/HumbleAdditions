@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#forge:is_frozen_ocean",
+  "features": "humbleadditions:iceberg_smooth",
+  "step": "lakes"
+}
