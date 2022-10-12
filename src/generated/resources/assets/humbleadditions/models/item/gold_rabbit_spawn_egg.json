@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "humbleadditions:items/gold_rabbit_spawn_egg"
+  }
+}

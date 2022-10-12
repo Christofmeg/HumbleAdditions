@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "humbleadditions:items/snow_fox_spawn_egg"
+  }
+}

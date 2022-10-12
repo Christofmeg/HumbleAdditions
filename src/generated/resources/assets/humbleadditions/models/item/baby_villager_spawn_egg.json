@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "humbleadditions:items/baby_villager_spawn_egg"
+  }
+}

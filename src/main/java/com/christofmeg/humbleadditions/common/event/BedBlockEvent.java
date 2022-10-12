@@ -13,13 +13,12 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BedPart;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
 @EventBusSubscriber(modid = ModConstants.MOD_ID, bus = EventBusSubscriber.Bus.FORGE)
 public class BedBlockEvent {
 
-	@SubscribeEvent
+	//	@SubscribeEvent
 	public static void bedIsTooFarAwayEvent(final PlayerInteractEvent.RightClickBlock event) {
 		LevelAccessor levelAccess = event.getLevel();
 		BlockPos pos = event.getPos();

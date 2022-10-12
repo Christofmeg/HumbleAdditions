@@ -17,6 +17,7 @@ import net.minecraft.client.renderer.entity.RenderLayerParent;
 import net.minecraft.client.renderer.entity.layers.RenderLayer;
 import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.client.resources.model.BakedModel;
+import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.animal.SnowGolem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -34,6 +35,12 @@ public class SnowGolemEntityHeadLayer extends RenderLayer<SnowGolem, SnowGolemMo
 		super(p_234871_);
 		this.blockRenderer = p_234872_;
 		this.itemRenderer = p_234873_;
+	}
+
+	protected int getBlockLightLevel(SnowGolem p_174146_, BlockPos p_174147_) {
+		//		int i = (int)Mth.clampedLerp(0.0F, 15.0F, 1.0F - p_174146_.getDarkTicksRemaining() / 10.0F);
+		//	return i == 15 ? 15 : Math.max(i, super.getBlockLightLevel(p_174146_, p_174147_));
+		return 15;
 	}
 
 	@Override

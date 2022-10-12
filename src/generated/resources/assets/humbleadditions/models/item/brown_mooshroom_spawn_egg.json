@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "humbleadditions:items/brown_mooshroom_spawn_egg"
+  }
+}

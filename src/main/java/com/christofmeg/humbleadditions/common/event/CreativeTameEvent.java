@@ -14,7 +14,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 
 @EventBusSubscriber(modid = ModConstants.MOD_ID, bus = EventBusSubscriber.Bus.FORGE)
 public class CreativeTameEvent {
-	
+
 	@SuppressWarnings("unused")
 	@SubscribeEvent
 	public static void creativeInstaTameEvent(final PlayerInteractEvent.EntityInteract event) {
@@ -30,13 +30,16 @@ public class CreativeTameEvent {
 						((AbstractHorse) entity).tameWithName(player);
 					}
 				}
-				
-				//TODO insta tame Cats, Parrots and Wolves
-/*				
-				if(entity instanceof Cat) {
-					if(item == Items.COD || item == Items.SALMON) {
 
+				//TODO insta tame Cats, Parrots and Wolves
+				/*
+				if(entity instanceof Cat) {
+					if(!((Cat) entity).isTame()) {
+						if(item == Items.COD || item == Items.SALMON) {
+							((Cat) entity).tame(player);
+						}
 					}
+
 				}
 				if(entity instanceof Parrot) {
 					if(item == Items.BEETROOT_SEEDS || item == Items.MELON_SEEDS || item == Items.PUMPKIN_SEEDS || item == Items.WHEAT_SEEDS) {
@@ -48,9 +51,10 @@ public class CreativeTameEvent {
 
 					}
 				}
-*/			}
+				 */
+			}
 		}
-    }
+	}
 
 }
 

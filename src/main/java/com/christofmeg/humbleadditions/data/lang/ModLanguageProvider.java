@@ -95,9 +95,18 @@ public class ModLanguageProvider extends LanguageProvider {
 			add("itemGroup." + ModConstants.MOD_ID, ModConstants.MOD_NAME);
 
 
-
 			addEntityType(EntityRegistry.RED_HUSK, "Red Husk");
 			addEntityType(EntityRegistry.SNOW_GOLEM, "Snow Golem");
+
+			addItem(ItemRegistry.AGGRESSIVE_PANDA_SPAWN_EGG, "Agressive Panda Spawn Egg");
+			addItem(ItemRegistry.KILLER_BUNNY_SPAWN_EGG, "Killer Bunny Spawn Egg");
+			addItem(ItemRegistry.LAZY_PANDA_SPAWN_EGG, "Lazy Panda Spawn Egg");
+			addItem(ItemRegistry.PLAYFUL_PANDA_SPAWN_EGG, "Playful Panda Spawn Egg");
+			addItem(ItemRegistry.WEAK_PANDA_SPAWN_EGG, "Weak Panda Spawn Egg");
+			addItem(ItemRegistry.WORRIED_PANDA_SPAWN_EGG, "Worried Panda Spawn Egg");
+			addItem(ItemRegistry.BABY_VILLAGER_SPAWN_EGG, "Baby Villager Spawn Egg");
+			addItem(ItemRegistry.CHARGED_CREEPER_SPAWN_EGG, "Charged Creeper Spawn Egg");
+			addItem(ItemRegistry.SHEARED_SHEEP_SPAWN_EGG, "Sheared Sheep Spawn Egg");
 
 
 			ItemRegistry.ITEMS_AUTO_REGISTER.getEntries().stream().map(RegistryObject::get)

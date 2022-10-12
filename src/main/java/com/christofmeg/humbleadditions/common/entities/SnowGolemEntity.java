@@ -67,9 +67,9 @@ public class SnowGolemEntity extends SnowGolem {
 	@Override
 	protected void defineSynchedData() {
 		super.defineSynchedData();
-		this.entityData.define(CARVED_DATA_PUMPKIN_ID, (byte)-17);
+		this.entityData.define(CARVED_DATA_PUMPKIN_ID, (byte)16);
 		this.entityData.define(JACK_O_DATA_PUMPKIN_ID, (byte)-17);
-		this.entityData.define(JACK_O_SOUL_DATA_PUMPKIN_ID, (byte)16);
+		this.entityData.define(JACK_O_SOUL_DATA_PUMPKIN_ID, (byte)-17);
 	}
 
 	public boolean hasCarvedPumpkin() {
