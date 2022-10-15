@@ -1,7 +1,6 @@
 package com.christofmeg.humbleadditions.common.event;
 
 import com.christofmeg.humbleadditions.registry.BlockRegistry;
-import com.christofmeg.humbleadditions.registry.ItemRegistry;
 import com.christofmeg.humbleadditions.setup.ModConstants;
 
 import net.minecraft.world.item.Item;
@@ -14,11 +13,10 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 public class FuelBurnTimeEvent {
 
 	@SubscribeEvent
-    public static void fuelBurnTimeEvent(FurnaceFuelBurnTimeEvent event) {
+	public static void fuelBurnTimeEvent(FurnaceFuelBurnTimeEvent event) {
 
 		burnTime(event, BlockRegistry.BLAZE_ROD_BLOCK.get(), 24000);
 		burnTime(event, BlockRegistry.CHARCOAL_BLOCK.get(), 16000);
-		burnTime(event, ItemRegistry.WOODEN_SHEARS.get(), 400);
 
 	}
 
@@ -27,13 +25,14 @@ public class FuelBurnTimeEvent {
 			event.setBurnTime(burnTime);
 		}
 	}
-	
+
+	@SuppressWarnings("unused")
 	private static void burnTime(FurnaceFuelBurnTimeEvent event, Item item, int burnTime) {
 		if(event.getItemStack().getItem() == item) {
 			event.setBurnTime(burnTime);
 		}
 	}
-	
+
 }
 
 

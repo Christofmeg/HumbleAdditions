@@ -2,7 +2,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "I": {
-      "tag": "forge:storage_blocks/netherite"
+      "tag": "forge:ingots/netherite"
     }
   },
   "pattern": [

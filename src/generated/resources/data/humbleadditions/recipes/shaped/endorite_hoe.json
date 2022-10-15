@@ -2,18 +2,18 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "I": {
-      "tag": "forge:ingots/rose_gold"
+      "tag": "forge:ingots/endorite"
     },
     "S": {
-      "tag": "forge:rods/wooden"
+      "item": "minecraft:echo_shard"
     }
   },
   "pattern": [
     "II",
-    "S ",
-    "S "
+    " S",
+    " S"
   ],
   "result": {
-    "item": "humbleadditions:rose_gold_hoe"
+    "item": "humbleadditions:endorite_hoe"
   }
 }

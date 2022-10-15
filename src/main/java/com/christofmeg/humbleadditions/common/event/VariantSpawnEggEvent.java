@@ -1,5 +1,7 @@
 package com.christofmeg.humbleadditions.common.event;
 
+import com.christofmeg.humbleadditions.common.entities.SnowGolemEntity;
+import com.christofmeg.humbleadditions.registry.EntityRegistry;
 import com.christofmeg.humbleadditions.registry.ItemRegistry;
 import com.christofmeg.humbleadditions.setup.ModConstants;
 
@@ -12,6 +14,7 @@ import net.minecraft.world.entity.animal.Panda;
 import net.minecraft.world.entity.animal.Panda.Gene;
 import net.minecraft.world.entity.animal.Rabbit;
 import net.minecraft.world.entity.animal.Sheep;
+import net.minecraft.world.entity.animal.goat.Goat;
 import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.player.Player;
@@ -170,6 +173,24 @@ public class VariantSpawnEggEvent {
 				level.addFreshEntity(sheep);
 				sheep.setSheared(true);
 				sheep.setPos(x, y, z);
+			}
+			if(item == ItemRegistry.SCREAMING_GOAT_SPAWN_EGG.get()) {
+				Goat goat = new Goat(EntityType.GOAT, level);
+				level.addFreshEntity(goat);
+				goat.setScreamingGoat(true);
+				goat.setPos(x, y, z);
+			}
+			if(item == ItemRegistry.SNOW_GOLEM_SPAWN_EGG.get()) {
+				SnowGolemEntity snowGolem = new SnowGolemEntity(EntityRegistry.SNOW_GOLEM.get(), level);
+				level.addFreshEntity(snowGolem);
+				snowGolem.setCarvedPumpkin(true);
+				snowGolem.setPos(x, y, z);
+			}
+			if(item == ItemRegistry.JACK_O_SNOW_GOLEM_SPAWN_EGG.get()) {
+				SnowGolemEntity snowGolem = new SnowGolemEntity(EntityRegistry.SNOW_GOLEM.get(), level);
+				level.addFreshEntity(snowGolem);
+				snowGolem.setJackOPumpkin(true);
+				snowGolem.setPos(x, y, z);
 			}
 		}
 	}

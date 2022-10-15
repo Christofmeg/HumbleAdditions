@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "tag": "forge:cobblestone"
+            "tag": "forge:ingots/endorite"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "humbleadditions:shaped/stone_shears"
+        "recipe": "humbleadditions:shaped/endorite_axe"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "humbleadditions:shaped/stone_shears"
+      "humbleadditions:shaped/endorite_axe"
     ]
   }
 }

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_copper": {
+    "has_raw_endorium": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:copper_ingot"
+              "humbleadditions:raw_endorium"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "humbleadditions:smithing/copper/shears"
+        "recipe": "humbleadditions:smithing/endorite/shovel_from_netherite"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_copper",
+      "has_raw_endorium",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "humbleadditions:smithing/copper/shears"
+      "humbleadditions:smithing/endorite/shovel_from_netherite"
     ]
   }
 }

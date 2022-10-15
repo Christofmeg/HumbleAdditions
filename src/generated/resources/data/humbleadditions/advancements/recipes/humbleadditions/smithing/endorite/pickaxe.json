@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_gold_ingot": {
+    "has_raw_endorium": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:gold_ingot"
+              "humbleadditions:raw_endorium"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "humbleadditions:smithing/golden/shears"
+        "recipe": "humbleadditions:smithing/endorite/pickaxe"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_gold_ingot",
+      "has_raw_endorium",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "humbleadditions:smithing/golden/shears"
+      "humbleadditions:smithing/endorite/pickaxe"
     ]
   }
 }

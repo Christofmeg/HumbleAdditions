@@ -108,10 +108,10 @@ public class ModItemModelProvider extends ItemModelProvider {
 		});
 
 		withExistingParent("red_husk_spawn_egg", mcLoc("item/template_spawn_egg"));
+		withExistingParent("jack_o_soul_snow_golem_spawn_egg", mcLoc("item/template_spawn_egg"));
 
 		withExistingParent("illusioner_spawn_egg", mcLoc("item/template_spawn_egg"));
 		withExistingParent("iron_golem_spawn_egg", mcLoc("item/template_spawn_egg"));
-		withExistingParent("snow_golem_spawn_egg", mcLoc("item/template_spawn_egg"));
 		withExistingParent("wither_spawn_egg", mcLoc("item/template_spawn_egg"));
 		withExistingParent("ender_dragon_spawn_egg", mcLoc("item/template_spawn_egg"));
 		withExistingParent("giant_spawn_egg", mcLoc("item/template_spawn_egg"));
@@ -125,6 +125,9 @@ public class ModItemModelProvider extends ItemModelProvider {
 		simpleItemWithOtherTexture(ItemRegistry.BABY_VILLAGER_SPAWN_EGG, modLoc("items/baby_villager_spawn_egg"));
 		simpleItemWithOtherTexture(ItemRegistry.CHARGED_CREEPER_SPAWN_EGG, modLoc("items/charged_creeper_spawn_egg"));
 		simpleItemWithOtherTexture(ItemRegistry.SHEARED_SHEEP_SPAWN_EGG, modLoc("items/sheared_sheep_spawn_egg"));
+		simpleItemWithOtherTexture(ItemRegistry.SCREAMING_GOAT_SPAWN_EGG, modLoc("items/screaming_goat_spawn_egg"));
+		simpleItemWithOtherTexture(ItemRegistry.SNOW_GOLEM_SPAWN_EGG, modLoc("items/snow_golem_spawn_egg"));
+		simpleItemWithOtherTexture(ItemRegistry.JACK_O_SNOW_GOLEM_SPAWN_EGG, modLoc("items/snow_golem_spawn_egg"));
 
 		ItemRegistry.ITEMS_AUTO_REGISTER.getEntries().stream().map(RegistryObject::get)
 		.filter(item -> (!(item instanceof ForgeSpawnEggItem || item.toString().contains("sword") || item.toString().contains("axe") || item.toString().contains("hoe") || item.toString().contains("shovel"))))

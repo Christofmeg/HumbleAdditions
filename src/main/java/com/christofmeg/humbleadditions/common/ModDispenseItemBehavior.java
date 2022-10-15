@@ -40,52 +40,54 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.fluids.FluidType;
 
 public class ModDispenseItemBehavior {
-	
+
 	public static void init() {
-		
+
 		//Horse armor dispense
 		DefaultDispenseItemBehavior defaultdispenseitembehavior1 = new OptionalDispenseItemBehavior() {
+			@Override
 			@SuppressWarnings("resource")
 			protected ItemStack execute(BlockSource p_123535_, ItemStack p_123536_) {
 				BlockPos blockpos = p_123535_.getPos().relative(p_123535_.getBlockState().getValue(DispenserBlock.FACING));
-	            for(AbstractHorse abstracthorse : p_123535_.getLevel().getEntitiesOfClass(AbstractHorse.class, new AABB(blockpos), (p_123533_) -> {
-	            	return p_123533_.isAlive() && p_123533_.canWearArmor();
-	            })) {
-	            	if (abstracthorse.isArmor(p_123536_) && !abstracthorse.isWearingArmor() && abstracthorse.isTamed()) {
-	            		abstracthorse.getSlot(401).set(p_123536_.split(1));
-	            		this.setSuccess(true);
-	            		return p_123536_;
-	            	}
-	            }
-	            return super.execute(p_123535_, p_123536_);
+				for(AbstractHorse abstracthorse : p_123535_.getLevel().getEntitiesOfClass(AbstractHorse.class, new AABB(blockpos), (p_123533_) -> {
+					return p_123533_.isAlive() && p_123533_.canWearArmor();
+				})) {
+					if (abstracthorse.isArmor(p_123536_) && !abstracthorse.isWearingArmor() && abstracthorse.isTamed()) {
+						abstracthorse.getSlot(401).set(p_123536_.split(1));
+						this.setSuccess(true);
+						return p_123536_;
+					}
+				}
+				return super.execute(p_123535_, p_123536_);
 			}
 		};
-		
-			DispenserBlock.registerBehavior(ItemRegistry.NETHERITE_HORSE_ARMOR.get(), defaultdispenseitembehavior1);
-			DispenserBlock.registerBehavior(ItemRegistry.ENDORIUM_HORSE_ARMOR.get(), defaultdispenseitembehavior1);
-			DispenserBlock.registerBehavior(ItemRegistry.ENDORITE_HORSE_ARMOR.get(), defaultdispenseitembehavior1);
-		
-		
+
+		DispenserBlock.registerBehavior(ItemRegistry.NETHERITE_HORSE_ARMOR.get(), defaultdispenseitembehavior1);
+		DispenserBlock.registerBehavior(ItemRegistry.ENDORIUM_HORSE_ARMOR.get(), defaultdispenseitembehavior1);
+		DispenserBlock.registerBehavior(ItemRegistry.ENDORITE_HORSE_ARMOR.get(), defaultdispenseitembehavior1);
+
+
 		//Goat horn sound
 		DefaultDispenseItemBehavior goatHornPlaySoundBehavoir = new OptionalDispenseItemBehavior() {
+			@Override
 			protected ItemStack execute(BlockSource blockSource, ItemStack stack) {
 				Level level = blockSource.getLevel();
 				Optional<Holder<Instrument>> optional = this.getInstrument(stack);
 				if (!level.isClientSide()) {
 					BlockPos pos = blockSource.getPos().relative(blockSource.getBlockState().getValue(DispenserBlock.FACING));
 					if (optional.isPresent()) {
-				         Instrument instrument = optional.get().value();
-				         play(level, pos, instrument);
+						Instrument instrument = optional.get().value();
+						play(level, pos, instrument);
 					}
 				}
-				
+
 				//Item plays sound and gets ejected
-//				return super.execute(blockSource, stack);
-				
+				//				return super.execute(blockSource, stack);
+
 				//Item plays sound and stays in dispenser
 				return stack;
 			}
-			
+
 			private static void play(Level level, BlockPos pos, Instrument instrument) {
 				SoundEvent soundevent = instrument.soundEvent();
 				float f = instrument.range() / 16.0F;
@@ -93,26 +95,27 @@ public class ModDispenseItemBehavior {
 			}
 
 			private TagKey<Instrument> instruments;
-			
+
 			private Optional<Holder<Instrument>> getInstrument(ItemStack p_220135_) {
-			      CompoundTag compoundtag = p_220135_.getTag();
-			      if (compoundtag != null) {
-			         ResourceLocation resourcelocation = ResourceLocation.tryParse(compoundtag.getString("instrument"));
-			         if (resourcelocation != null) {
-			            return Registry.INSTRUMENT.getHolder(ResourceKey.create(Registry.INSTRUMENT_REGISTRY, resourcelocation));
-			         }
-			      }
-			      Iterator<Holder<Instrument>> iterator = Registry.INSTRUMENT.getTagOrEmpty(this.instruments).iterator();
-			      return iterator.hasNext() ? Optional.of(iterator.next()) : Optional.empty();
-			   }
+				CompoundTag compoundtag = p_220135_.getTag();
+				if (compoundtag != null) {
+					ResourceLocation resourcelocation = ResourceLocation.tryParse(compoundtag.getString("instrument"));
+					if (resourcelocation != null) {
+						return Registry.INSTRUMENT.getHolder(ResourceKey.create(Registry.INSTRUMENT_REGISTRY, resourcelocation));
+					}
+				}
+				Iterator<Holder<Instrument>> iterator = Registry.INSTRUMENT.getTagOrEmpty(this.instruments).iterator();
+				return iterator.hasNext() ? Optional.of(iterator.next()) : Optional.empty();
+			}
 		};
-		
-			DispenserBlock.registerBehavior(Items.GOAT_HORN, goatHornPlaySoundBehavoir);
-		
-		
+
+		DispenserBlock.registerBehavior(Items.GOAT_HORN, goatHornPlaySoundBehavoir);
+
+
 		//Fill buckets
 		DefaultDispenseItemBehavior fillBucketBehavior = new OptionalDispenseItemBehavior() {
 			private final DefaultDispenseItemBehavior defaultDispenseItemBehavior = new DefaultDispenseItemBehavior();
+			@Override
 			protected ItemStack execute(BlockSource blockSource, ItemStack stack) {
 				Level level = blockSource.getLevel();
 				if (!level.isClientSide()) {
@@ -128,7 +131,7 @@ public class ModDispenseItemBehavior {
 						}
 						else {
 							return new ItemStack(Items.LAVA_BUCKET);
-						}	
+						}
 					}
 					else if(blockInFrontOfDispenser == Blocks.POWDER_SNOW_CAULDRON && itemInDispenser == Items.BUCKET) {
 						if(((LayeredCauldronBlock) blockInFrontOfDispenser).isFull(stateInFrontOfDispenser)) {
@@ -159,7 +162,7 @@ public class ModDispenseItemBehavior {
 						Item item = itemstack.getItem();
 						if(itemstack.isEmpty()) {
 							return super.execute(blockSource, stack);
-						} 
+						}
 						else {
 							level.gameEvent((Entity)null, GameEvent.FLUID_PICKUP, blockPosInFrontOfDispenser);
 							stack.shrink(1);
@@ -181,14 +184,13 @@ public class ModDispenseItemBehavior {
 				return stack;
 			}
 		};
-		
-			DispenserBlock.registerBehavior(Items.BUCKET, fillBucketBehavior);
-		
-		
-		//TODO PRIORITIZE EMPTY BUCKETS IF CAULDRON IS FULL
+
+		DispenserBlock.registerBehavior(Items.BUCKET, fillBucketBehavior);
+
 		//Empty buckets
 		DefaultDispenseItemBehavior emptyBucketBehavior = new OptionalDispenseItemBehavior() {
 			private final DefaultDispenseItemBehavior defaultDispenseItemBehavior = new DefaultDispenseItemBehavior();
+			@Override
 			protected ItemStack execute(BlockSource blockSource, ItemStack stack) {
 				Level level = blockSource.getLevel();
 				if (!level.isClientSide()) {
@@ -218,7 +220,7 @@ public class ModDispenseItemBehavior {
 					else if(item == Items.WATER_BUCKET && fluidType == Fluids.WATER.getFluidType()) {
 						return stack;
 					}
-					else if((item == Items.POWDER_SNOW_BUCKET && blockInFrontOfDispenser == Blocks.POWDER_SNOW) || 
+					else if((item == Items.POWDER_SNOW_BUCKET && blockInFrontOfDispenser == Blocks.POWDER_SNOW) ||
 							item == Items.POWDER_SNOW_BUCKET && fluidType == Fluids.LAVA.getFluidType()) {
 						return stack;
 					}
@@ -233,12 +235,12 @@ public class ModDispenseItemBehavior {
 				return stack;
 			}
 		};
-		
-			DispenserBlock.registerBehavior(Items.LAVA_BUCKET, emptyBucketBehavior);
-			DispenserBlock.registerBehavior(Items.POWDER_SNOW_BUCKET, emptyBucketBehavior);
-			DispenserBlock.registerBehavior(Items.WATER_BUCKET, emptyBucketBehavior);
-		
-		
+
+		DispenserBlock.registerBehavior(Items.LAVA_BUCKET, emptyBucketBehavior);
+		DispenserBlock.registerBehavior(Items.POWDER_SNOW_BUCKET, emptyBucketBehavior);
+		DispenserBlock.registerBehavior(Items.WATER_BUCKET, emptyBucketBehavior);
+
+
 	}
 
 }

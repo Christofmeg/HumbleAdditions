@@ -1,11 +1,13 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_item": {
+    "has_raw_endorium": {
       "conditions": {
         "items": [
           {
-            "tag": "forge:ingots/endorium"
+            "items": [
+              "humbleadditions:raw_endorium"
+            ]
           }
         ]
       },
@@ -13,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "humbleadditions:shaped/endorium_shears"
+        "recipe": "humbleadditions:smithing/endorite/sword"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_item",
+      "has_raw_endorium",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "humbleadditions:shaped/endorium_shears"
+      "humbleadditions:smithing/endorite/sword"
     ]
   }
 }

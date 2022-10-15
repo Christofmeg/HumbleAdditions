@@ -74,7 +74,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
 		String golden = "golden/";
 		String rose_gold = "rose_gold/";
-		String copper = "copper/";
 		String stone = "stone/";
 		String iron = "iron/";
 		String diamond = "diamond/";
@@ -143,10 +142,19 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		endoriumSmithing(consumer, modLoc(folder + endorium + "shovel"), Items.DIAMOND_SHOVEL, ItemRegistry.ENDORIUM_SHOVEL.get());
 		endoriumSmithing(consumer, modLoc(folder + endorium + "sword"), Items.DIAMOND_SWORD, ItemRegistry.ENDORIUM_SWORD.get());
 
-		goldenSmithing(consumer, modLoc(folder + golden + "shears"), ItemRegistry.WOODEN_SHEARS.get(), ItemRegistry.GOLDEN_SHEARS.get());
+		endoriteSmithing(consumer, modLoc(folder + endorite + "axe" + "_from_netherite"), Items.NETHERITE_AXE, ItemRegistry.ENDORITE_AXE.get());
+		endoriteSmithing(consumer, modLoc(folder + endorite + "hoe" + "_from_netherite"), Items.NETHERITE_HOE, ItemRegistry.ENDORITE_HOE.get());
+		endoriteSmithing(consumer, modLoc(folder + endorite + "pickaxe" + "_from_netherite"), Items.NETHERITE_PICKAXE, ItemRegistry.ENDORITE_PICKAXE.get());
+		endoriteSmithing(consumer, modLoc(folder + endorite + "shovel" + "_from_netherite"), Items.NETHERITE_SHOVEL, ItemRegistry.ENDORITE_SHOVEL.get());
+		endoriteSmithing(consumer, modLoc(folder + endorite + "sword" + "_from_netherite"), Items.NETHERITE_SWORD, ItemRegistry.ENDORITE_SWORD.get());
+
+		endoriteSmithing(consumer, modLoc(folder + endorite + "axe"), ItemRegistry.ENDORIUM_AXE.get(), ItemRegistry.ENDORITE_AXE.get());
+		endoriteSmithing(consumer, modLoc(folder + endorite + "hoe"), ItemRegistry.ENDORIUM_HOE.get(), ItemRegistry.ENDORITE_HOE.get());
+		endoriteSmithing(consumer, modLoc(folder + endorite + "pickaxe"), ItemRegistry.ENDORIUM_PICKAXE.get(), ItemRegistry.ENDORITE_PICKAXE.get());
+		endoriteSmithing(consumer, modLoc(folder + endorite + "shovel"), ItemRegistry.ENDORIUM_SHOVEL.get(), ItemRegistry.ENDORITE_SHOVEL.get());
+		endoriteSmithing(consumer, modLoc(folder + endorite + "sword"), ItemRegistry.ENDORIUM_SWORD.get(), ItemRegistry.ENDORITE_SWORD.get());
+
 		roseGoldSmithing(consumer, modLoc(folder + rose_gold + "shears"), ItemRegistry.GOLDEN_SHEARS.get(), ItemRegistry.ROSE_GOLD_SHEARS.get());
-		stoneSmithing(consumer, modLoc(folder + stone + "shears"), ItemRegistry.ROSE_GOLD_SHEARS.get(), ItemRegistry.STONE_SHEARS.get());
-		copperSmithing(consumer, modLoc(folder + copper + "shears"), ItemRegistry.STONE_SHEARS.get(), ItemRegistry.COPPER_SHEARS.get());
 		ironSmithing(consumer, modLoc(folder + iron + "shears"), ItemRegistry.COPPER_SHEARS.get(), Items.SHEARS);
 		diamondSmithing(consumer, modLoc(folder + diamond + "shears"), Items.SHEARS, ItemRegistry.DIAMOND_SHEARS.get());
 		netheriteSmithing(consumer, modLoc(folder + netherite + "shears"), ItemRegistry.DIAMOND_SHEARS.get(), ItemRegistry.NETHERITE_SHEARS.get());
@@ -695,21 +703,25 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		.save(consumer, modLoc(folder + "raw_rose_gold_block"));
 
 		//SHEARS
-		shearsRecipe(consumer, modLoc(folder + "wooden" + "_shears"), ItemTags.PLANKS, ItemRegistry.WOODEN_SHEARS.get());
-		shearsRecipe(consumer, modLoc(folder + "stone" + "_shears"), Tags.Items.COBBLESTONE, ItemRegistry.STONE_SHEARS.get());
 		shearsRecipe(consumer, modLoc(folder + "golden" + "_shears"), Tags.Items.INGOTS_GOLD, ItemRegistry.GOLDEN_SHEARS.get());
 		shearsRecipe(consumer, modLoc(folder + "copper" + "_shears"), Tags.Items.INGOTS_COPPER, ItemRegistry.COPPER_SHEARS.get());
 		shearsRecipe(consumer, modLoc(folder + "rose_gold" + "_shears"), TagRegistry.Items.ROSE_GOLD_INGOT, ItemRegistry.ROSE_GOLD_SHEARS.get());
-		shearsRecipe(consumer, modLoc(folder + "diamond" + "_shears"), Tags.Items.STORAGE_BLOCKS_DIAMOND, ItemRegistry.DIAMOND_SHEARS.get());
-		shearsRecipe(consumer, modLoc(folder + "netherite" + "_shears"), Tags.Items.STORAGE_BLOCKS_NETHERITE, ItemRegistry.NETHERITE_SHEARS.get());
-		shearsRecipe(consumer, modLoc(folder + "endorium" + "_shears"), TagRegistry.Items.STORAGE_BLOCKS_ENDORIUM, ItemRegistry.ENDORIUM_SHEARS.get());
-		shearsRecipe(consumer, modLoc(folder + "endorite" + "_shears"), TagRegistry.Items.STORAGE_BLOCKS_ENDORITE, ItemRegistry.ENDORITE_SHEARS.get());
+		shearsRecipe(consumer, modLoc(folder + "diamond" + "_shears"), Tags.Items.GEMS_DIAMOND, ItemRegistry.DIAMOND_SHEARS.get());
+		shearsRecipe(consumer, modLoc(folder + "netherite" + "_shears"), Tags.Items.INGOTS_NETHERITE, ItemRegistry.NETHERITE_SHEARS.get());
+		shearsRecipe(consumer, modLoc(folder + "endorium" + "_shears"), TagRegistry.Items.ENDORIUM_INGOT, ItemRegistry.ENDORIUM_SHEARS.get());
+		shearsRecipe(consumer, modLoc(folder + "endorite" + "_shears"), TagRegistry.Items.ENDORITE_INGOT, ItemRegistry.ENDORITE_SHEARS.get());
 
-		swordRecipe(consumer, modLoc(folder + "rose_gold" + "_" + "sword"), TagRegistry.Items.ROSE_GOLD_INGOT, ItemRegistry.ROSE_GOLD_SWORD.get());
-		axeRecipe(consumer, folder + "rose_gold" + "_" + "axe", TagRegistry.Items.ROSE_GOLD_INGOT, ItemRegistry.ROSE_GOLD_AXE.get());
-		pickaxeRecipe(consumer, modLoc(folder + "rose_gold" + "_" + "pickaxe"), TagRegistry.Items.ROSE_GOLD_INGOT, ItemRegistry.ROSE_GOLD_PICKAXE.get());
-		shovelRecipe(consumer, modLoc(folder + "rose_gold" + "_" + "shovel"), TagRegistry.Items.ROSE_GOLD_INGOT, ItemRegistry.ROSE_GOLD_SHOVEL.get());
-		hoeRecipe(consumer, folder + "rose_gold" + "_" + "hoe", TagRegistry.Items.ROSE_GOLD_INGOT, ItemRegistry.ROSE_GOLD_HOE.get());
+		swordRecipe(consumer, modLoc(folder + "rose_gold" + "_" + "sword"), TagRegistry.Items.ROSE_GOLD_INGOT, ItemRegistry.ROSE_GOLD_SWORD.get(), Tags.Items.RODS_WOODEN);
+		axeRecipe(consumer, folder + "rose_gold" + "_" + "axe", TagRegistry.Items.ROSE_GOLD_INGOT, ItemRegistry.ROSE_GOLD_AXE.get(), Tags.Items.RODS_WOODEN);
+		pickaxeRecipe(consumer, modLoc(folder + "rose_gold" + "_" + "pickaxe"), TagRegistry.Items.ROSE_GOLD_INGOT, ItemRegistry.ROSE_GOLD_PICKAXE.get(), Tags.Items.RODS_WOODEN);
+		shovelRecipe(consumer, modLoc(folder + "rose_gold" + "_" + "shovel"), TagRegistry.Items.ROSE_GOLD_INGOT, ItemRegistry.ROSE_GOLD_SHOVEL.get(), Tags.Items.RODS_WOODEN);
+		hoeRecipe(consumer, folder + "rose_gold" + "_" + "hoe", TagRegistry.Items.ROSE_GOLD_INGOT, ItemRegistry.ROSE_GOLD_HOE.get(), Tags.Items.RODS_WOODEN);
+
+		swordRecipe(consumer, modLoc(folder + "endorite" + "_" + "sword"), TagRegistry.Items.ENDORITE_INGOT, ItemRegistry.ENDORITE_SWORD.get(), Items.ECHO_SHARD);
+		axeRecipe(consumer, folder + "endorite" + "_" + "axe", TagRegistry.Items.ENDORITE_INGOT, ItemRegistry.ENDORITE_AXE.get(), Items.ECHO_SHARD);
+		pickaxeRecipe(consumer, modLoc(folder + "endorite" + "_" + "pickaxe"), TagRegistry.Items.ENDORITE_INGOT, ItemRegistry.ENDORITE_PICKAXE.get(), Items.ECHO_SHARD);
+		shovelRecipe(consumer, modLoc(folder + "endorite" + "_" + "shovel"), TagRegistry.Items.ENDORITE_INGOT, ItemRegistry.ENDORITE_SHOVEL.get(), Items.ECHO_SHARD);
+		hoeRecipe(consumer, folder + "endorite" + "_" + "hoe", TagRegistry.Items.ENDORITE_INGOT, ItemRegistry.ENDORITE_HOE.get(), Items.ECHO_SHARD);
 	}
 
 	private void addShapelessRecipes(Consumer<FinishedRecipe> consumer) {
@@ -1490,9 +1502,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		UpgradeRecipeBuilder.smithing(Ingredient.of(pIngredientItem), Ingredient.of(ItemTags.STONE_TOOL_MATERIALS), pResultItem).unlocks("has_cobblestone", has(ItemTags.STONE_TOOL_MATERIALS)).save(consumer, resourceLocation);
 	}
 
-	private static void copperSmithing(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, Item pIngredientItem, Item pResultItem) {
-		UpgradeRecipeBuilder.smithing(Ingredient.of(pIngredientItem), Ingredient.of(Items.COPPER_INGOT), pResultItem).unlocks("has_copper", has(Items.COPPER_INGOT)).save(consumer, resourceLocation);	}
-
 	private static void roseGoldSmithing(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, Item pIngredientItem, Item pResultItem) {
 		UpgradeRecipeBuilder.smithing(Ingredient.of(pIngredientItem), Ingredient.of(ItemRegistry.ROSE_GOLD_INGOT.get()), pResultItem).unlocks("has_rose_gold", has(BlockRegistry.ROSE_GOLD_BLOCK.get())).save(consumer, resourceLocation);
 	}
@@ -1520,22 +1529,36 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 	private static void shearsRecipe(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, TagKey<Item> itemFromTag, @NotNull Item item) {
 		ShapedRecipeBuilder.shaped(item).define('I', itemFromTag).pattern(" I").pattern("I ").unlockedBy("has_item", has(itemFromTag)).save(consumer, resourceLocation);
 	}
-	private static void swordRecipe(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, TagKey<Item> itemFromTag, @NotNull Item item) {
-		ShapedRecipeBuilder.shaped(item).define('I', itemFromTag).define('S', Tags.Items.RODS_WOODEN).pattern("I").pattern("I").pattern("S").unlockedBy("has_item", has(itemFromTag)).save(consumer, resourceLocation);
+	private static void swordRecipe(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, TagKey<Item> itemFromTag, @NotNull Item item, @NotNull TagKey<Item> handle) {
+		ShapedRecipeBuilder.shaped(item).define('I', itemFromTag).define('S', handle).pattern("I").pattern("I").pattern("S").unlockedBy("has_item", has(itemFromTag)).save(consumer, resourceLocation);
 	}
-	private static void axeRecipe(Consumer<FinishedRecipe> consumer, String resourceLocation, TagKey<Item> itemFromTag, @NotNull Item item) {
-		ShapedRecipeBuilder.shaped(item).define('I', itemFromTag).define('S', Tags.Items.RODS_WOODEN).pattern("II").pattern("IS").pattern(" S").unlockedBy("has_item", has(itemFromTag)).save(consumer, modLoc(resourceLocation));
-		ShapedRecipeBuilder.shaped(item).define('I', itemFromTag).define('S', Tags.Items.RODS_WOODEN).pattern("II").pattern("SI").pattern("S ").unlockedBy("has_item", has(itemFromTag)).save(consumer, modLoc(resourceLocation + "_alt"));
+	private static void axeRecipe(Consumer<FinishedRecipe> consumer, String resourceLocation, TagKey<Item> itemFromTag, @NotNull Item item, @NotNull TagKey<Item> handle) {
+		ShapedRecipeBuilder.shaped(item).define('I', itemFromTag).define('S', handle).pattern("II").pattern("IS").pattern(" S").unlockedBy("has_item", has(itemFromTag)).save(consumer, modLoc(resourceLocation));
 	}
-	private static void pickaxeRecipe(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, TagKey<Item> itemFromTag, @NotNull Item item) {
-		ShapedRecipeBuilder.shaped(item).define('I', itemFromTag).define('S', Tags.Items.RODS_WOODEN).pattern("III").pattern(" S ").pattern(" S ").unlockedBy("has_item", has(itemFromTag)).save(consumer, resourceLocation);
+	private static void pickaxeRecipe(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, TagKey<Item> itemFromTag, @NotNull Item item, @NotNull TagKey<Item> handle) {
+		ShapedRecipeBuilder.shaped(item).define('I', itemFromTag).define('S', handle).pattern("III").pattern(" S ").pattern(" S ").unlockedBy("has_item", has(itemFromTag)).save(consumer, resourceLocation);
 	}
-	private static void shovelRecipe(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, TagKey<Item> itemFromTag, @NotNull Item item) {
-		ShapedRecipeBuilder.shaped(item).define('I', itemFromTag).define('S', Tags.Items.RODS_WOODEN).pattern("I").pattern("S").pattern("S").unlockedBy("has_item", has(itemFromTag)).save(consumer, resourceLocation);
+	private static void shovelRecipe(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, TagKey<Item> itemFromTag, @NotNull Item item, @NotNull TagKey<Item> handle) {
+		ShapedRecipeBuilder.shaped(item).define('I', itemFromTag).define('S', handle).pattern("I").pattern("S").pattern("S").unlockedBy("has_item", has(itemFromTag)).save(consumer, resourceLocation);
 	}
-	private static void hoeRecipe(Consumer<FinishedRecipe> consumer, String resourceLocation, TagKey<Item> itemFromTag, @NotNull Item item) {
-		ShapedRecipeBuilder.shaped(item).define('I', itemFromTag).define('S', Tags.Items.RODS_WOODEN).pattern("II").pattern(" S").pattern(" S").unlockedBy("has_item", has(itemFromTag)).save(consumer, modLoc(resourceLocation));
-		ShapedRecipeBuilder.shaped(item).define('I', itemFromTag).define('S', Tags.Items.RODS_WOODEN).pattern("II").pattern("S ").pattern("S ").unlockedBy("has_item", has(itemFromTag)).save(consumer, modLoc(resourceLocation + "_alt"));
+	private static void hoeRecipe(Consumer<FinishedRecipe> consumer, String resourceLocation, TagKey<Item> itemFromTag, @NotNull Item item, @NotNull TagKey<Item> handle) {
+		ShapedRecipeBuilder.shaped(item).define('I', itemFromTag).define('S', handle).pattern("II").pattern(" S").pattern(" S").unlockedBy("has_item", has(itemFromTag)).save(consumer, modLoc(resourceLocation));
+	}
+
+	private static void swordRecipe(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, TagKey<Item> itemFromTag, @NotNull Item item, @NotNull Item handle) {
+		ShapedRecipeBuilder.shaped(item).define('I', itemFromTag).define('S', handle).pattern("I").pattern("I").pattern("S").unlockedBy("has_item", has(itemFromTag)).save(consumer, resourceLocation);
+	}
+	private static void axeRecipe(Consumer<FinishedRecipe> consumer, String resourceLocation, TagKey<Item> itemFromTag, @NotNull Item item, @NotNull Item handle) {
+		ShapedRecipeBuilder.shaped(item).define('I', itemFromTag).define('S', handle).pattern("II").pattern("IS").pattern(" S").unlockedBy("has_item", has(itemFromTag)).save(consumer, modLoc(resourceLocation));
+	}
+	private static void pickaxeRecipe(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, TagKey<Item> itemFromTag, @NotNull Item item, @NotNull Item handle) {
+		ShapedRecipeBuilder.shaped(item).define('I', itemFromTag).define('S', handle).pattern("III").pattern(" S ").pattern(" S ").unlockedBy("has_item", has(itemFromTag)).save(consumer, resourceLocation);
+	}
+	private static void shovelRecipe(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, TagKey<Item> itemFromTag, @NotNull Item item, @NotNull Item handle) {
+		ShapedRecipeBuilder.shaped(item).define('I', itemFromTag).define('S', handle).pattern("I").pattern("S").pattern("S").unlockedBy("has_item", has(itemFromTag)).save(consumer, resourceLocation);
+	}
+	private static void hoeRecipe(Consumer<FinishedRecipe> consumer, String resourceLocation, TagKey<Item> itemFromTag, @NotNull Item item, @NotNull Item handle) {
+		ShapedRecipeBuilder.shaped(item).define('I', itemFromTag).define('S', handle).pattern("II").pattern(" S").pattern(" S").unlockedBy("has_item", has(itemFromTag)).save(consumer, modLoc(resourceLocation));
 	}
 
 	private static void createGlowingBlocks(Consumer<FinishedRecipe> consumer, ResourceLocation resourceLocation, TagKey<Item> glassFromTag, @NotNull Block block) {
@@ -1557,7 +1580,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		.unlockedBy("has_glass_pane", has(Items.GLASS_PANE))
 		.save(consumer, resourceLocation);
 	}
-
 
 	protected static RecipeBuilder stairBuilder(ItemLike p_176711_, Ingredient p_176712_) {
 		return ShapedRecipeBuilder.shaped(p_176711_, 6).define('#', p_176712_).pattern("#  ").pattern("## ").pattern("###");

@@ -32,89 +32,89 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModBlockLootTables extends net.minecraft.data.loot.BlockLoot {
 	private static final LootItemCondition.Builder HAS_SILK_TOUCH = MatchTool.toolMatches(ItemPredicate.Builder.item().hasEnchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.Ints.atLeast(1))));
 	public static final LootItemCondition.Builder HAS_NO_SILK_TOUCH = HAS_SILK_TOUCH.invert();
-	  
-    @Override
-    protected void addTables() {
-    	BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)
-    	.filter(block -> (!(block instanceof AbstractLayerBlock || block instanceof AbstractGlassBlock || block instanceof StainedGlassPaneBlock || block instanceof QuickSandBlock)))
-    	.forEach(block -> {
-    		dropSelf(block);
-    	});
-    	
-    	this.add(BlockRegistry.QUICK_SAND.get(), noDrop());
-    	
-    	BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)
-    	.filter(block -> (block instanceof AbstractGlassBlock || block instanceof StainedGlassPaneBlock))
-    	.forEach(block -> {
-    		dropWhenSilkTouch(block);
-    	});
-    	
-    	this.add(BlockRegistry.MOSS_LAYER_BLOCK.get(), (block) -> {
-    		return LootTable.lootTable().withPool(LootPool.lootPool()
-    			.when(ExplosionCondition.survivesExplosion())
-	    			.add(AlternativesEntry.alternatives(AbstractLayerBlock.LAYERS
-	    				.getPossibleValues(), (value) -> {
-							return (LootPoolEntryContainer.Builder<?>)(value == 8 ? LootItem.lootTableItem(Blocks.MOSS_BLOCK) : LootItem.lootTableItem(BlockRegistry.MOSS_LAYER_BLOCK.get())
-	    						.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-	    							.setProperties(StatePropertiesPredicate.Builder.properties()
-	    								.hasProperty(AbstractLayerBlock.LAYERS, value)))
-	    						.apply(SetItemCountFunction.setCount(ConstantValue.exactly((float) value.intValue()))));
-	            		}) 
-	    			));    		
-    	});
-    	
-    	this.add(BlockRegistry.SAND_LAYER_BLOCK.get(), (block) -> {
-    		return LootTable.lootTable().withPool(LootPool.lootPool()
-    			.when(ExplosionCondition.survivesExplosion())
-    			.add(AlternativesEntry.alternatives(AbstractLayerBlock.LAYERS
-    				.getPossibleValues(), (value) -> {
-						return (LootPoolEntryContainer.Builder<?>)(value == 8 ? LootItem.lootTableItem(Blocks.SAND) : LootItem.lootTableItem(BlockRegistry.SAND_LAYER_BLOCK.get())
-    						.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-    							.setProperties(StatePropertiesPredicate.Builder.properties()
-    								.hasProperty(AbstractLayerBlock.LAYERS, value)))
-    						.apply(SetItemCountFunction.setCount(ConstantValue.exactly((float) value.intValue()))));
-            		}) 
-    			));
-    	});
-    	
-    	this.add(BlockRegistry.RED_SAND_LAYER_BLOCK.get(), (block) -> {
-    		return LootTable.lootTable().withPool(LootPool.lootPool()
-    			.when(ExplosionCondition.survivesExplosion())
-    			.add(AlternativesEntry.alternatives(AbstractLayerBlock.LAYERS
-    				.getPossibleValues(), (value) -> {
-						return (LootPoolEntryContainer.Builder<?>)(value == 8 ? LootItem.lootTableItem(Blocks.RED_SAND) : LootItem.lootTableItem(BlockRegistry.RED_SAND_LAYER_BLOCK.get())
-    						.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-    							.setProperties(StatePropertiesPredicate.Builder.properties()
-    								.hasProperty(AbstractLayerBlock.LAYERS, value)))
-    						.apply(SetItemCountFunction.setCount(ConstantValue.exactly((float) value.intValue()))));
-            		}) 
-    			));
-    	});
-    	
-    	this.add(BlockRegistry.GRAVEL_LAYER_BLOCK.get(), (block) -> {
-    		return LootTable.lootTable().withPool(LootPool.lootPool()
-    			.when(ExplosionCondition.survivesExplosion())
-    			.add(AlternativesEntry.alternatives(AbstractLayerBlock.LAYERS
-    				.getPossibleValues(), (value) -> {
-						return (LootPoolEntryContainer.Builder<?>)(value == 8 ? LootItem.lootTableItem(Blocks.GRAVEL) : LootItem.lootTableItem(BlockRegistry.GRAVEL_LAYER_BLOCK.get())
-    						.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
-    							.setProperties(StatePropertiesPredicate.Builder.properties()
-    								.hasProperty(AbstractLayerBlock.LAYERS, value)))
-    						.apply(SetItemCountFunction.setCount(ConstantValue.exactly((float) value.intValue()))));
-            		}) 
-    			));
-    	});
-    	
-    	this.add(BlockRegistry.ENDORIUM_ORE.get(), (p_124327_) -> {
-            return createOreDrop(p_124327_, ItemRegistry.RAW_ENDORIUM.get());
-         });
-    	
-    }
 
-    @Override
-    protected Iterable<Block> getKnownBlocks() {
-        return BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)
-        	.collect(Collectors.toList());
-    }
-    
+	@Override
+	protected void addTables() {
+		BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)
+		.filter(block -> (!(block instanceof AbstractLayerBlock || block instanceof AbstractGlassBlock || block instanceof StainedGlassPaneBlock || block instanceof QuickSandBlock)))
+		.forEach(block -> {
+			dropSelf(block);
+		});
+
+		this.add(BlockRegistry.QUICK_SAND.get(), noDrop());
+
+		BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)
+		.filter(block -> (block instanceof AbstractGlassBlock || block instanceof StainedGlassPaneBlock))
+		.forEach(block -> {
+			dropWhenSilkTouch(block);
+		});
+
+		this.add(BlockRegistry.MOSS_LAYER_BLOCK.get(), (block) -> {
+			return LootTable.lootTable().withPool(LootPool.lootPool()
+					.when(ExplosionCondition.survivesExplosion())
+					.add(AlternativesEntry.alternatives(AbstractLayerBlock.LAYERS
+							.getPossibleValues(), (value) -> {
+								return (LootPoolEntryContainer.Builder<?>)(value == 8 ? LootItem.lootTableItem(Blocks.MOSS_BLOCK) : LootItem.lootTableItem(BlockRegistry.MOSS_LAYER_BLOCK.get())
+										.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+												.setProperties(StatePropertiesPredicate.Builder.properties()
+														.hasProperty(AbstractLayerBlock.LAYERS, value)))
+										.apply(SetItemCountFunction.setCount(ConstantValue.exactly(value.intValue()))));
+							})
+							));
+		});
+
+		this.add(BlockRegistry.SAND_LAYER_BLOCK.get(), (block) -> {
+			return LootTable.lootTable().withPool(LootPool.lootPool()
+					.when(ExplosionCondition.survivesExplosion())
+					.add(AlternativesEntry.alternatives(AbstractLayerBlock.LAYERS
+							.getPossibleValues(), (value) -> {
+								return (LootPoolEntryContainer.Builder<?>)(value == 8 ? LootItem.lootTableItem(Blocks.SAND) : LootItem.lootTableItem(BlockRegistry.SAND_LAYER_BLOCK.get())
+										.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+												.setProperties(StatePropertiesPredicate.Builder.properties()
+														.hasProperty(AbstractLayerBlock.LAYERS, value)))
+										.apply(SetItemCountFunction.setCount(ConstantValue.exactly(value.intValue()))));
+							})
+							));
+		});
+
+		this.add(BlockRegistry.RED_SAND_LAYER_BLOCK.get(), (block) -> {
+			return LootTable.lootTable().withPool(LootPool.lootPool()
+					.when(ExplosionCondition.survivesExplosion())
+					.add(AlternativesEntry.alternatives(AbstractLayerBlock.LAYERS
+							.getPossibleValues(), (value) -> {
+								return (LootPoolEntryContainer.Builder<?>)(value == 8 ? LootItem.lootTableItem(Blocks.RED_SAND) : LootItem.lootTableItem(BlockRegistry.RED_SAND_LAYER_BLOCK.get())
+										.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+												.setProperties(StatePropertiesPredicate.Builder.properties()
+														.hasProperty(AbstractLayerBlock.LAYERS, value)))
+										.apply(SetItemCountFunction.setCount(ConstantValue.exactly(value.intValue()))));
+							})
+							));
+		});
+
+		this.add(BlockRegistry.GRAVEL_LAYER_BLOCK.get(), (block) -> {
+			return LootTable.lootTable().withPool(LootPool.lootPool()
+					.when(ExplosionCondition.survivesExplosion())
+					.add(AlternativesEntry.alternatives(AbstractLayerBlock.LAYERS
+							.getPossibleValues(), (value) -> {
+								return (LootPoolEntryContainer.Builder<?>)(value == 8 ? LootItem.lootTableItem(Blocks.GRAVEL) : LootItem.lootTableItem(BlockRegistry.GRAVEL_LAYER_BLOCK.get())
+										.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+												.setProperties(StatePropertiesPredicate.Builder.properties()
+														.hasProperty(AbstractLayerBlock.LAYERS, value)))
+										.apply(SetItemCountFunction.setCount(ConstantValue.exactly(value.intValue()))));
+							})
+							));
+		});
+
+		this.add(BlockRegistry.ENDORIUM_ORE.get(), (p_124327_) -> {
+			return createSingleItemTable(ItemRegistry.RAW_ENDORIUM.get());
+		});
+
+	}
+
+	@Override
+	protected Iterable<Block> getKnownBlocks() {
+		return BlockRegistry.BLOCKS.getEntries().stream().map(RegistryObject::get)
+				.collect(Collectors.toList());
+	}
+
 }

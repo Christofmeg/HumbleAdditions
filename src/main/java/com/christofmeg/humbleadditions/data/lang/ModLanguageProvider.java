@@ -107,6 +107,10 @@ public class ModLanguageProvider extends LanguageProvider {
 			addItem(ItemRegistry.BABY_VILLAGER_SPAWN_EGG, "Baby Villager Spawn Egg");
 			addItem(ItemRegistry.CHARGED_CREEPER_SPAWN_EGG, "Charged Creeper Spawn Egg");
 			addItem(ItemRegistry.SHEARED_SHEEP_SPAWN_EGG, "Sheared Sheep Spawn Egg");
+			addItem(ItemRegistry.SCREAMING_GOAT_SPAWN_EGG, "Screaming Goat Spawn Egg");
+			addItem(ItemRegistry.JACK_O_SOUL_SNOW_GOLEM_SPAWN_EGG, "Jack o'Soul Snow Golem Spawn Egg");
+			addItem(ItemRegistry.JACK_O_SNOW_GOLEM_SPAWN_EGG, "Jack o'Snow Golem Spawn Egg");
+			addItem(ItemRegistry.SNOW_GOLEM_SPAWN_EGG, "Snow Golem Spawn Egg");
 
 
 			ItemRegistry.ITEMS_AUTO_REGISTER.getEntries().stream().map(RegistryObject::get)

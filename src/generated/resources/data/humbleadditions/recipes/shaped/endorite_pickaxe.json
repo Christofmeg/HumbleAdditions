@@ -3,13 +3,17 @@
   "key": {
     "I": {
       "tag": "forge:ingots/endorite"
+    },
+    "S": {
+      "item": "minecraft:echo_shard"
     }
   },
   "pattern": [
-    " I",
-    "I "
+    "III",
+    " S ",
+    " S "
   ],
   "result": {
-    "item": "humbleadditions:endorite_shears"
+    "item": "humbleadditions:endorite_pickaxe"
   }
 }

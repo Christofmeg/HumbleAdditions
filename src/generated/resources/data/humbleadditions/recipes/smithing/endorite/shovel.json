@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "addition": {
+    "item": "humbleadditions:endorite_block"
+  },
+  "base": {
+    "item": "humbleadditions:endorium_shovel"
+  },
+  "result": {
+    "item": "humbleadditions:endorite_shovel"
+  }
+}

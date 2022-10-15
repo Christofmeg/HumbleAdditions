@@ -1,11 +1,13 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cobblestone": {
+    "has_raw_endorium": {
       "conditions": {
         "items": [
           {
-            "tag": "minecraft:stone_tool_materials"
+            "items": [
+              "humbleadditions:raw_endorium"
+            ]
           }
         ]
       },
@@ -13,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "humbleadditions:smithing/stone/shears"
+        "recipe": "humbleadditions:smithing/endorite/shovel"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_cobblestone",
+      "has_raw_endorium",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "humbleadditions:smithing/stone/shears"
+      "humbleadditions:smithing/endorite/shovel"
     ]
   }
 }
