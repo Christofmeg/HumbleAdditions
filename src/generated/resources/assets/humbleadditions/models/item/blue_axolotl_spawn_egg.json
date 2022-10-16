@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "humbleadditions:items/blue_axolotl_spawn_egg"
+  }
+}

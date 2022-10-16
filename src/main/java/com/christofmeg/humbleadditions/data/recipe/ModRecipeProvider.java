@@ -389,6 +389,14 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 	private void addShapedRecipes(Consumer<FinishedRecipe> consumer) {
 		String folder = "shaped/";
 
+		//Normal Crafting Table if other mods decide to remove it
+		ShapedRecipeBuilder.shaped(Items.CRAFTING_TABLE)
+		.define('P', ItemTags.PLANKS)
+		.pattern("PP")
+		.pattern("PP")
+		.unlockedBy("has_planks", has(ItemTags.PLANKS))
+		.save(consumer, modLoc(folder + "crafting_table_from_tag_planks"));
+
 		//Player Pressure Plate
 		ShapedRecipeBuilder.shaped(BlockRegistry.PLAYER_PRESSURE_PLATE.get())
 		.define('O', Tags.Items.OBSIDIAN)

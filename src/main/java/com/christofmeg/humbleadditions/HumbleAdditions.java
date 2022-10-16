@@ -25,7 +25,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 @Mod(ModConstants.MODID)
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class HumbleAdditions {
-	public static final String MODID = "tutorialmod";
 
 	public HumbleAdditions() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
@@ -77,7 +76,6 @@ public class HumbleAdditions {
 
 
 			/* IDEAS
-			 * Custom snow men ENTITY heads with jack o lanterns
 			 * Frogs that grow in size when eating things
 			 * ZOMBIES THAT GROWS ON EACH HIT
 			 * REPAIRABLE ANVILS

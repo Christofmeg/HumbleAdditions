@@ -69,13 +69,7 @@ public class ItemRegistry {
 	public static final RegistryObject<ForgeSpawnEggItem> ENDER_DRAGON_SPAWN_EGG = ITEMS_AUTO_REGISTER.register("ender_dragon_spawn_egg", () -> new ForgeSpawnEggItem( () -> EntityType.ENDER_DRAGON, 1842204, 10242479, props()));
 	public static final RegistryObject<ForgeSpawnEggItem> GIANT_SPAWN_EGG = ITEMS_AUTO_REGISTER.register("giant_spawn_egg", () -> new ForgeSpawnEggItem( () -> EntityType.GIANT, 44975, 4090157, props()));
 
-	/*
-	 * Axolotls			setVariantg
-	 * Armor Stand with Arms	minecraft:armor_stand	{ShowArms:1}
-	 * Frog variants	setVariant
-	 */
-
-
+	public static final RegistryObject<Item> ARMOR_STAND_WITH_ARMS = ITEMS_AUTO_REGISTER.register("armor_stand_with_arms", () -> new Item(props()));
 	public static final RegistryObject<Item> BABY_VILLAGER_SPAWN_EGG = ITEMS.register("baby_villager_spawn_egg", () -> new Item(props()));
 	public static final RegistryObject<Item> CHARGED_CREEPER_SPAWN_EGG = ITEMS.register("charged_creeper_spawn_egg", () -> new Item(props()));
 	public static final RegistryObject<Item> SHEARED_SHEEP_SPAWN_EGG = ITEMS.register("sheared_sheep_spawn_egg", () -> new Item(props()));
@@ -83,6 +77,15 @@ public class ItemRegistry {
 	public static final RegistryObject<Item> SNOW_GOLEM_SPAWN_EGG = ITEMS.register("snow_golem_spawn_egg", () -> new Item(props()));
 	public static final RegistryObject<Item> JACK_O_SNOW_GOLEM_SPAWN_EGG = ITEMS.register("jack_o_snow_golem_spawn_egg", () -> new Item(props()));
 
+	public static final RegistryObject<Item> BLUE_AXOLOTL_SPAWN_EGG = ITEMS_AUTO_REGISTER.register("blue_axolotl_spawn_egg", () -> new Item(props()));
+	public static final RegistryObject<Item> CYAN_AXOLOTL_SPAWN_EGG = ITEMS_AUTO_REGISTER.register("cyan_axolotl_spawn_egg", () -> new Item(props()));
+	public static final RegistryObject<Item> GOLD_AXOLOTL_SPAWN_EGG = ITEMS_AUTO_REGISTER.register("gold_axolotl_spawn_egg", () -> new Item(props()));
+	public static final RegistryObject<Item> LUCY_AXOLOTL_SPAWN_EGG = ITEMS_AUTO_REGISTER.register("lucy_axolotl_spawn_egg", () -> new Item(props()));
+	public static final RegistryObject<Item> WILD_AXOLOTL_SPAWN_EGG = ITEMS_AUTO_REGISTER.register("wild_axolotl_spawn_egg", () -> new Item(props()));
+
+	public static final RegistryObject<Item> COLD_FROG_SPAWN_EGG = ITEMS_AUTO_REGISTER.register("cold_frog_spawn_egg", () -> new Item(props()));
+	public static final RegistryObject<Item> TEMPERATE_FROG_SPAWN_EGG = ITEMS_AUTO_REGISTER.register("temperate_frog_spawn_egg", () -> new Item(props()));
+	public static final RegistryObject<Item> WARM_FROG_SPAWN_EGG = ITEMS_AUTO_REGISTER.register("warm_frog_spawn_egg", () -> new Item(props()));
 
 	public static final RegistryObject<Item> AGGRESSIVE_PANDA_SPAWN_EGG = ITEMS.register("agressive_panda_spawn_egg", () -> new Item(props()));
 	public static final RegistryObject<Item> BLACK_RABBIT_SPAWN_EGG = ITEMS_AUTO_REGISTER.register("black_rabbit_spawn_egg", () -> new Item(props()));
@@ -108,7 +111,7 @@ public class ItemRegistry {
 	public static final RegistryObject<FloatingBlockItem> RAW_ENDORIUM_BLOCK = BLOCK_ITEMS_AUTO_REGISTER.register("raw_endorium_block", () -> new FloatingBlockItem(BlockRegistry.RAW_ENDORIUM_BLOCK.get(), props()));
 	public static final RegistryObject<FloatingItem> ENDORIUM_INGOT = ITEMS_AUTO_REGISTER.register("endorium_ingot", () -> new FloatingItem(props()));
 	public static final RegistryObject<FloatingBlockItem> ENDORIUM_BLOCK = BLOCK_ITEMS_AUTO_REGISTER.register("endorium_block", () -> new FloatingBlockItem(BlockRegistry.ENDORIUM_BLOCK.get(), props()));
-	//SwordItem(ToolTier, dmg, speed, props())
+	//																														SwordItem(ToolTier, dmg, speed, props())
 	public static final RegistryObject<SwordItem> ENDORIUM_SWORD = ITEMS_AUTO_REGISTER.register("endorium_sword", () -> new SwordItem(ToolTiers.ENDORIUM, 4, -2.4F, props().fireResistant()));
 	public static final RegistryObject<PickaxeItem> ENDORIUM_PICKAXE = ITEMS_AUTO_REGISTER.register("endorium_pickaxe", () -> new PickaxeItem(ToolTiers.ENDORIUM, 2, -2.8F, props().fireResistant()));
 	public static final RegistryObject<ShovelItem> ENDORIUM_SHOVEL = ITEMS_AUTO_REGISTER.register("endorium_shovel", () -> new ShovelItem(ToolTiers.ENDORIUM, 2.5F, -3.0F, props().fireResistant()));

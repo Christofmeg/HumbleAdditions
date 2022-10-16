@@ -129,6 +129,16 @@ public class ModItemModelProvider extends ItemModelProvider {
 		simpleItemWithOtherTexture(ItemRegistry.SNOW_GOLEM_SPAWN_EGG, modLoc("items/snow_golem_spawn_egg"));
 		simpleItemWithOtherTexture(ItemRegistry.JACK_O_SNOW_GOLEM_SPAWN_EGG, modLoc("items/snow_golem_spawn_egg"));
 
+		simpleItemWithOtherTexture(ItemRegistry.BLUE_AXOLOTL_SPAWN_EGG, modLoc("items/blue_axolotl_spawn_egg"));
+		simpleItemWithOtherTexture(ItemRegistry.CYAN_AXOLOTL_SPAWN_EGG, modLoc("items/cyan_axolotl_spawn_egg"));
+		simpleItemWithOtherTexture(ItemRegistry.GOLD_AXOLOTL_SPAWN_EGG, modLoc("items/gold_axolotl_spawn_egg"));
+		simpleItemWithOtherTexture(ItemRegistry.LUCY_AXOLOTL_SPAWN_EGG, modLoc("items/lucy_axolotl_spawn_egg"));
+		simpleItemWithOtherTexture(ItemRegistry.WILD_AXOLOTL_SPAWN_EGG, modLoc("items/wild_axolotl_spawn_egg"));
+
+		simpleItemWithOtherTexture(ItemRegistry.COLD_FROG_SPAWN_EGG, modLoc("items/cold_frog_spawn_egg"));
+		simpleItemWithOtherTexture(ItemRegistry.TEMPERATE_FROG_SPAWN_EGG, modLoc("items/temperate_frog_spawn_egg"));
+		simpleItemWithOtherTexture(ItemRegistry.WARM_FROG_SPAWN_EGG, modLoc("items/warm_frog_spawn_egg"));
+
 		ItemRegistry.ITEMS_AUTO_REGISTER.getEntries().stream().map(RegistryObject::get)
 		.filter(item -> (!(item instanceof ForgeSpawnEggItem || item.toString().contains("sword") || item.toString().contains("axe") || item.toString().contains("hoe") || item.toString().contains("shovel"))))
 		.forEach(item -> {

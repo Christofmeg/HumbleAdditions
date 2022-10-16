@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "humbleadditions:items/armor_stand_with_arms"
+  }
+}

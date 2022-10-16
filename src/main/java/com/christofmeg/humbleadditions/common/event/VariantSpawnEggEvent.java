@@ -10,10 +10,12 @@ import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.animal.FrogVariant;
 import net.minecraft.world.entity.animal.Panda;
 import net.minecraft.world.entity.animal.Panda.Gene;
 import net.minecraft.world.entity.animal.Rabbit;
 import net.minecraft.world.entity.animal.Sheep;
+import net.minecraft.world.entity.animal.frog.Frog;
 import net.minecraft.world.entity.animal.goat.Goat;
 import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.npc.Villager;
@@ -192,6 +194,43 @@ public class VariantSpawnEggEvent {
 				snowGolem.setJackOPumpkin(true);
 				snowGolem.setPos(x, y, z);
 			}
+			if(item == ItemRegistry.BLUE_AXOLOTL_SPAWN_EGG.get()) { //@private void setVariant(Axolotl.Variant pVariant) {...
+				source.getCommands().performPrefixedCommand(source.createCommandSourceStack(), "summon minecraft:axolotl " + x + " " + y + " " + z + " {Variant:4}");
+			}
+			if(item == ItemRegistry.CYAN_AXOLOTL_SPAWN_EGG.get()) { //@private void setVariant(Axolotl.Variant pVariant) {...
+				source.getCommands().performPrefixedCommand(source.createCommandSourceStack(), "summon minecraft:axolotl " + x + " " + y + " " + z + " {Variant:3}");
+			}
+			if(item == ItemRegistry.GOLD_AXOLOTL_SPAWN_EGG.get()) { //@private void setVariant(Axolotl.Variant pVariant) {...
+				source.getCommands().performPrefixedCommand(source.createCommandSourceStack(), "summon minecraft:axolotl " + x + " " + y + " " + z + " {Variant:2}");
+			}
+			if(item == ItemRegistry.LUCY_AXOLOTL_SPAWN_EGG.get()) { //@private void setVariant(Axolotl.Variant pVariant) {...
+				source.getCommands().performPrefixedCommand(source.createCommandSourceStack(), "summon minecraft:axolotl " + x + " " + y + " " + z + " {Variant:0}");
+			}
+			if(item == ItemRegistry.WILD_AXOLOTL_SPAWN_EGG.get()) { //@private void setVariant(Axolotl.Variant pVariant) {...
+				source.getCommands().performPrefixedCommand(source.createCommandSourceStack(), "summon minecraft:axolotl " + x + " " + y + " " + z + " {Variant:1}");
+			}
+			if(item == ItemRegistry.COLD_FROG_SPAWN_EGG.get()) {
+				Frog frog = new Frog(EntityType.FROG, level);
+				level.addFreshEntity(frog);
+				frog.setVariant(FrogVariant.COLD);
+				frog.setPos(x, y, z);
+			}
+			if(item == ItemRegistry.TEMPERATE_FROG_SPAWN_EGG.get()) {
+				Frog frog = new Frog(EntityType.FROG, level);
+				level.addFreshEntity(frog);
+				frog.setVariant(FrogVariant.TEMPERATE);
+				frog.setPos(x, y, z);
+			}
+			if(item == ItemRegistry.WARM_FROG_SPAWN_EGG.get()) {
+				Frog frog = new Frog(EntityType.FROG, level);
+				level.addFreshEntity(frog);
+				frog.setVariant(FrogVariant.WARM);
+				frog.setPos(x, y, z);
+			}
+			if(item == ItemRegistry.ARMOR_STAND_WITH_ARMS.get()) { //@private void setShowArms(boolean pShowArms) {...
+				source.getCommands().performPrefixedCommand(source.createCommandSourceStack(), "summon minecraft:armor_stand " + x + " " + y + " " + z + " {ShowArms:1}");
+			}
+
 		}
 	}
 

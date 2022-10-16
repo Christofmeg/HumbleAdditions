@@ -1,4 +1,4 @@
-// 1.19.2	2022-10-15T16:51:22.4348337	Humble Additions - Recipes
+// 1.19.2	2022-10-16T01:44:10.74915	Humble Additions - Recipes
 037ef466cba91f4cd64a4ac5b1248b67e0e1fcec data/humbleadditions/advancements/recipes/building_blocks/blasting/copper_block.json
 2c8e29e4773d565f71b187f563190e5d7a9a5070 data/humbleadditions/advancements/recipes/building_blocks/blasting/glass.json
 6d58d6209171d929cbee06f5beebaeb8099eb84a data/humbleadditions/advancements/recipes/building_blocks/blasting/iron_block.json
@@ -182,6 +182,7 @@ daa32901602e720f61751138f3b98ddcd03c7613 data/humbleadditions/advancements/recip
 39fa5d694866f6129892cdcea442bfbaaab50409 data/humbleadditions/advancements/recipes/combat/smithing/iron/leggings.json
 13a6c6fc911a1d1f96784d4ceee3af6a32594c81 data/humbleadditions/advancements/recipes/combat/smithing/iron/sword.json
 9ebd0e7e2d11bf43a4293c6111ab0ae77b03a905 data/humbleadditions/advancements/recipes/combat/smithing/stone/sword.json
+f7362c4de8462089fce4c8eef8273c5d0e6bf462 data/humbleadditions/advancements/recipes/decorations/shaped/crafting_table_from_tag_planks.json
 759329df5b400c5dd51daf61d9025482f3d82842 data/humbleadditions/advancements/recipes/decorations/shaped/lantern.json
 7a451f217626f190bdc22f6ab9146f1a9e4779b5 data/humbleadditions/advancements/recipes/decorations/shaped/moss_block.json
 dcf1c893d698d0e15309fa713c36e96d1fc3f9fa data/humbleadditions/advancements/recipes/decorations/shapeless/acacia_chest_boat.json
@@ -481,6 +482,7 @@ b7922787be2c8b395ea4929fa4e3e101344bb283 data/humbleadditions/recipes/shaped/cha
 70526aa892ea723dc897f0b37065182bb1c5f134 data/humbleadditions/recipes/shaped/chiseled_limestone.json
 979d5248368591bd96da7344bfc5adc0a4f048b0 data/humbleadditions/recipes/shaped/chiseled_limestone_bricks.json
 bf5cf8a20143cacf597bc6f0a60d4dd943a652e0 data/humbleadditions/recipes/shaped/copper_shears.json
+165ee5f91be14fa1cb78e0d3de29de027e435003 data/humbleadditions/recipes/shaped/crafting_table_from_tag_planks.json
 fa5a4a464e020c4086a8f24684c8622cd1dd1622 data/humbleadditions/recipes/shaped/crimson/stairs.json
 7c1e056398f7e1092d4fd61f2e6afa0daba7ad49 data/humbleadditions/recipes/shaped/cyan_stained_glowing_glass.json
 9b8bd1561a082215d255e25ea7d21e77b261b348 data/humbleadditions/recipes/shaped/cyan_stained_glowing_glass_pane.json
