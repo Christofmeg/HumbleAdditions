@@ -67,8 +67,8 @@ public class ModConfiguredFeatures {
 
 	public static final Supplier<List<OreConfiguration.TargetBlockState>> END_FEATURES = Suppliers.memoize(() -> List.of(
 			OreConfiguration.target(new BlockMatchTest(Blocks.END_STONE), BlockRegistry.ENDORIUM_ORE.get().defaultBlockState())
-			));																																																			//VEIN SIZE
-	public static final RegistryObject<ConfiguredFeature<?, ?>> END_BLOCK_FEATURE = CONFIGURED_FEATURES.register("end_blocks", () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(END_FEATURES.get(), 4)));
+			));																																																	//VEIN SIZE
+	public static final RegistryObject<ConfiguredFeature<?, ?>> END_BLOCK_FEATURE = CONFIGURED_FEATURES.register("end_blocks", () -> new ConfiguredFeature<>(Feature.ORE, new OreConfiguration(END_FEATURES.get(), 1)));
 
 	private static final BeehiveDecorator BEEHIVE_001 = new BeehiveDecorator(0.01F);
 	@SuppressWarnings("deprecation")

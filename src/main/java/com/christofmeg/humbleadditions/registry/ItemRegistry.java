@@ -41,7 +41,6 @@ public class ItemRegistry {
 	public static final DeferredRegister<Item> ITEMS_AUTO_REGISTER = DeferredRegister.create(ForgeRegistries.ITEMS, ModConstants.MODID);
 	public static final DeferredRegister<Item> BLOCK_ITEMS_AUTO_REGISTER = DeferredRegister.create(ForgeRegistries.ITEMS, ModConstants.MODID);
 
-
 	public static final RegistryObject<Item> MILK_BOTTLE = ITEMS_AUTO_REGISTER.register("milk_bottle", () -> new MilkBottleItem(props().stacksTo(16).craftRemainder(Items.GLASS_BOTTLE)));
 
 	public static final RegistryObject<Item> NETHERITE_HORSE_ARMOR = ITEMS_AUTO_REGISTER.register("netherite_horse_armor",
@@ -110,6 +109,7 @@ public class ItemRegistry {
 	public static final RegistryObject<FloatingItem> RAW_ENDORIUM = ITEMS_AUTO_REGISTER.register("raw_endorium", () -> new FloatingItem(props()));
 	public static final RegistryObject<FloatingBlockItem> RAW_ENDORIUM_BLOCK = BLOCK_ITEMS_AUTO_REGISTER.register("raw_endorium_block", () -> new FloatingBlockItem(BlockRegistry.RAW_ENDORIUM_BLOCK.get(), props()));
 	public static final RegistryObject<FloatingItem> ENDORIUM_INGOT = ITEMS_AUTO_REGISTER.register("endorium_ingot", () -> new FloatingItem(props()));
+	public static final RegistryObject<FloatingItem> ENDORIUM_NUGGET = ITEMS_AUTO_REGISTER.register("endorium_nugget", () -> new FloatingItem(props()));
 	public static final RegistryObject<FloatingBlockItem> ENDORIUM_BLOCK = BLOCK_ITEMS_AUTO_REGISTER.register("endorium_block", () -> new FloatingBlockItem(BlockRegistry.ENDORIUM_BLOCK.get(), props()));
 	//																														SwordItem(ToolTier, dmg, speed, props())
 	public static final RegistryObject<SwordItem> ENDORIUM_SWORD = ITEMS_AUTO_REGISTER.register("endorium_sword", () -> new SwordItem(ToolTiers.ENDORIUM, 4, -2.4F, props().fireResistant()));
@@ -169,7 +169,7 @@ public class ItemRegistry {
 		public static final ModTier ENDORIUM = new ModTier("ENDORIUM", 5, 2539, 11.25F, 5.0F, 18, BlockTags.create(new ResourceLocation("forge", "needs_endorium_tool")), () -> Ingredient.of(ItemRegistry.ENDORIUM_INGOT.get()));
 		public static final ModTier ENDORITE = new ModTier("ENDORITE", 6, 3385, 17.2F, 8.0F, 28, BlockTags.create(new ResourceLocation("forge", "needs_endorite_tool")), () -> Ingredient.of(ItemRegistry.ENDORITE_INGOT.get()));
 
-		static {																										//after, before
+		static {																										//after tier, before tier
 			TierSortingRegistry.registerTier(ROSE_GOLD, new ResourceLocation(ModConstants.MOD_ID, "rose_gold"), List.of(TierSortingRegistry.getName(Tiers.GOLD)), List.of(TierSortingRegistry.getName(Tiers.STONE)));
 			TierSortingRegistry.registerTier(ENDORIUM, new ResourceLocation(ModConstants.MOD_ID, "endorium"), List.of(TierSortingRegistry.getName(Tiers.NETHERITE)), List.of());
 			TierSortingRegistry.registerTier(ENDORITE, new ResourceLocation(ModConstants.MOD_ID, "enderite"), List.of(TierSortingRegistry.getName(ENDORIUM)), List.of());

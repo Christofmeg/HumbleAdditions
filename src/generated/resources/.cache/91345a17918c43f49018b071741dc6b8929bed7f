@@ -1,4 +1,4 @@
-// 1.19.2	2022-10-16T08:01:29.0337611	humbleadditions - ItemModel
+// 1.19.2	2022-10-16T08:20:15.0985181	humbleadditions - ItemModel
 28f7c866c490742aa14b7133c7854319c140d69a assets/humbleadditions/models/item/agressive_panda_spawn_egg.json
 20053aa72b20123d85b0d5fbf18dfa8bab5e6441 assets/humbleadditions/models/item/armor_stand_with_arms.json
 ad5399e4da4e36e02f8616083d7dcd3c7f983707 assets/humbleadditions/models/item/baby_villager_spawn_egg.json
@@ -44,6 +44,7 @@ f606d5c49638c506bf4b8db680dc628fa972683a assets/humbleadditions/models/item/endo
 71dee52e84f3c7afbf458eb9192d423d8fa9a30b assets/humbleadditions/models/item/endorium_hoe.json
 70f58b65766acf86eeb921cfed58154b0ad1fd89 assets/humbleadditions/models/item/endorium_horse_armor.json
 70028e304ecca0015cebdb568637485717d3c89b assets/humbleadditions/models/item/endorium_ingot.json
+ef5588c2acef75953139d9550cac834b76682715 assets/humbleadditions/models/item/endorium_nugget.json
 7cfcdbf2f7f55d58e5812006801bcdb5735c9300 assets/humbleadditions/models/item/endorium_ore.json
 4779cc0d5326fab9a1507ec9182b274895e1f140 assets/humbleadditions/models/item/endorium_pickaxe.json
 8c1e0b4ba40770563a7df0e8482fa2afdfb07668 assets/humbleadditions/models/item/endorium_shears.json

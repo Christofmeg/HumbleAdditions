@@ -1,4 +1,4 @@
-// 1.19.2	2022-10-15T16:45:38.2332842	Humble Additions - LootTables
+// 1.19.2	2022-10-17T13:55:27.246603	Humble Additions - LootTables
 82080a5cd4946ce0808cea82ebff84fb96759874 data/humbleadditions/loot_tables/blocks/black_stained_glowing_glass.json
 9b97990690f6b48fba7bb3faabba3e1208f8df27 data/humbleadditions/loot_tables/blocks/black_stained_glowing_glass_pane.json
 ed68ca2c3d3e75e1ce837d368745ee08f971b754 data/humbleadditions/loot_tables/blocks/block_of_blaze_rods.json
@@ -17,7 +17,7 @@ d72935e1b3a0155f14f3c88632edaef6b6b44e4f data/humbleadditions/loot_tables/blocks
 53b32321082c6a2a1fc59ac04a0fdef4a8316bfc data/humbleadditions/loot_tables/blocks/dark_prismarine_wall.json
 eddb8277921522cb7658ae42587e04aa429abb38 data/humbleadditions/loot_tables/blocks/endorite_block.json
 188c89d202530b8b66e5a1f0f3819716c9abb9bd data/humbleadditions/loot_tables/blocks/endorium_block.json
-9b772b22fb52e2146cc7a38b134698d726ce6ba6 data/humbleadditions/loot_tables/blocks/endorium_ore.json
+d7b230cbd5864632f8f2067494a3e92e3aa0b165 data/humbleadditions/loot_tables/blocks/endorium_ore.json
 3698963b363d71f6db8a25165412db7c4d3d893b data/humbleadditions/loot_tables/blocks/glowing_glass.json
 0a07fb6136ab25586d9a43ebdc73c97f1c3db5c5 data/humbleadditions/loot_tables/blocks/glowing_glass_pane.json
 c8239d8b3c2e3029cc0e46a4ac251482ef45706d data/humbleadditions/loot_tables/blocks/gravel_layer_block.json

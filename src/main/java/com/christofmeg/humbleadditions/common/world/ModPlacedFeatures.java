@@ -57,7 +57,7 @@ public class ModPlacedFeatures {
 
 	public static final RegistryObject<PlacedFeature> END_BLOCK_PLACED = PLACED_FEATURES.register("end_blocks_placed",
 			() -> new PlacedFeature(ModConfiguredFeatures.END_BLOCK_FEATURE.getHolder().get(),
-					rareOrePlacement(1, // VeinsPerChunk
+					rareOrePlacement(4, // VeinsPerChunk (onAverageOnceEvery)
 							HeightRangePlacement.triangle(VerticalAnchor.absolute(0), VerticalAnchor.absolute(128)))));
 
 	public static final RegistryObject<PlacedFeature> MANGROVE_CHECKED = PLACED_FEATURES.register("mangrove_checked",

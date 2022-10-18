@@ -4,6 +4,7 @@ import com.christofmeg.humbleadditions.common.ModDispenseItemBehavior;
 import com.christofmeg.humbleadditions.common.world.ModConfiguredFeatures;
 import com.christofmeg.humbleadditions.common.world.ModFeatures;
 import com.christofmeg.humbleadditions.common.world.ModPlacedFeatures;
+import com.christofmeg.humbleadditions.integration.jeri.ModWorldGen.CompatibilityHandler;
 import com.christofmeg.humbleadditions.registry.BlockRegistry;
 import com.christofmeg.humbleadditions.registry.EntityRegistry;
 import com.christofmeg.humbleadditions.registry.ItemRegistry;
@@ -18,6 +19,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -61,6 +63,10 @@ public class HumbleAdditions {
 
 			ModDispenseItemBehavior.init();
 			PotionRegistry.setup();
+
+			if(ModList.get().isLoaded("jeresources")) {
+				CompatibilityHandler.init();
+			}
 
 			// FIX FALLING FULL BLOCKS STACKING
 

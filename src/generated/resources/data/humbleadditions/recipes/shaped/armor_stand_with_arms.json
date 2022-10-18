@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "item": "minecraft:armor_stand"
+    },
+    "S": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "pattern": [
+    "SAS"
+  ],
+  "result": {
+    "item": "humbleadditions:armor_stand_with_arms"
+  }
+}

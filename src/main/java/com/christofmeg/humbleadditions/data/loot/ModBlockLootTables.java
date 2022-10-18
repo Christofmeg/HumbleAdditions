@@ -106,7 +106,7 @@ public class ModBlockLootTables extends net.minecraft.data.loot.BlockLoot {
 		});
 
 		this.add(BlockRegistry.ENDORIUM_ORE.get(), (p_124327_) -> {
-			return createSingleItemTable(ItemRegistry.RAW_ENDORIUM.get());
+			return createOreDrop(p_124327_, ItemRegistry.RAW_ENDORIUM.get());
 		});
 
 	}

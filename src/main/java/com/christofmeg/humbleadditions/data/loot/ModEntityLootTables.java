@@ -188,7 +188,6 @@ public class ModEntityLootTables extends net.minecraft.data.loot.EntityLoot {
 				);
 
 
-
 	}
 
 	private LootItemCondition.Builder killedByWolf() {
@@ -199,5 +198,6 @@ public class ModEntityLootTables extends net.minecraft.data.loot.EntityLoot {
 	protected boolean isNonLiving(EntityType<?> entitytype) {
 		return !SPECIAL_LOOT_TABLE_TYPES.contains(entitytype) && entitytype.getCategory() == MobCategory.MISC;
 	}
+
 
 }

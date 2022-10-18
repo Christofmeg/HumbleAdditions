@@ -389,6 +389,23 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 	private void addShapedRecipes(Consumer<FinishedRecipe> consumer) {
 		String folder = "shaped/";
 
+		//ARMOR STAND WITH ARMS
+		ShapedRecipeBuilder.shaped(ItemRegistry.ARMOR_STAND_WITH_ARMS.get())
+		.define('S', Tags.Items.RODS_WOODEN)
+		.define('A', Items.ARMOR_STAND)
+		.pattern("SAS")
+		.unlockedBy("has_stick", has(Tags.Items.RODS_WOODEN))
+		.save(consumer, modLoc(folder + "armor_stand_with_arms"));
+
+		//ENDORIUM INGOT
+		ShapedRecipeBuilder.shaped(ItemRegistry.ENDORIUM_INGOT.get())
+		.define('N', ItemRegistry.ENDORIUM_NUGGET.get())
+		.pattern("NNN")
+		.pattern("NNN")
+		.pattern("NNN")
+		.unlockedBy("has_raw_endorium", has(ItemRegistry.RAW_ENDORIUM.get()))
+		.save(consumer, modLoc(folder + "endorium_ingot_from_nugget"));
+
 		//Normal Crafting Table if other mods decide to remove it
 		ShapedRecipeBuilder.shaped(Items.CRAFTING_TABLE)
 		.define('P', ItemTags.PLANKS)
@@ -734,6 +751,12 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
 	private void addShapelessRecipes(Consumer<FinishedRecipe> consumer) {
 		String folder = "shapeless/";
+
+		//ENDORIUM INGOT TO NUGGET
+		ShapelessRecipeBuilder.shapeless(ItemRegistry.ENDORIUM_NUGGET.get(), 9)
+		.requires(ItemRegistry.ENDORIUM_INGOT.get())
+		.unlockedBy("has_paper", has(ItemRegistry.ENDORIUM_INGOT.get()))
+		.save(consumer, modLoc(folder + "endorium_nugget"));
 
 		//Clean maps
 		ShapelessRecipeBuilder.shapeless(Items.MAP)
