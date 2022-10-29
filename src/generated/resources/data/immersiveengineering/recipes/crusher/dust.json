@@ -1,0 +1,24 @@
+{
+  "type": "forge:conditional",
+  "recipes": [
+    {
+      "conditions": [
+        {
+          "type": "forge:mod_loaded",
+          "modid": "exnihilosequentia"
+        }
+      ],
+      "recipe": {
+        "type": "immersiveengineering:crusher",
+        "energy": 1600,
+        "input": {
+          "tag": "forge:sand"
+        },
+        "result": {
+          "item": "exnihilosequentia:dust"
+        },
+        "secondaries": []
+      }
+    }
+  ]
+}

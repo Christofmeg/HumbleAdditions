@@ -7,6 +7,7 @@ import com.christofmeg.humbleadditions.setup.ModConstants;
 import com.simibubi.create.content.contraptions.components.crusher.CrushingRecipe;
 import com.simibubi.create.content.contraptions.processing.ProcessingRecipeBuilder;
 
+import blusunrize.immersiveengineering.api.crafting.builders.CrusherRecipeBuilder;
 import mekanism.api.datagen.recipe.builder.ItemStackToItemStackRecipeBuilder;
 import mekanism.api.recipes.ingredients.creator.IngredientCreatorAccess;
 import mekanism.common.Mekanism;
@@ -44,6 +45,7 @@ public class IntegrationRecipeProvider extends RecipeProvider implements ICondit
 		this.addAE2Recipes(consumer);
 		this.addMekanismRecipes(consumer);
 		this.addCreateRecipes(consumer);
+		this.addImmersiveEngineeringRecipes(consumer);
 
 	}
 
@@ -66,6 +68,7 @@ public class IntegrationRecipeProvider extends RecipeProvider implements ICondit
 		.build(consumer, Mekanism.rl(enriching + "dust_to_sand"));
 	}
 
+
 	private void addCreateRecipes(Consumer<FinishedRecipe> consumer) {
 		crushingCreate(ExNihilioSequentiaIntegration.DUST.get(), Items.SAND, 150, consumer, "dust", "exnihilosequentia");
 	}
@@ -82,6 +85,20 @@ public class IntegrationRecipeProvider extends RecipeProvider implements ICondit
 				.duration(time)::build
 				)
 		.build(consumer, otherModLoc("create", "crushing/" + recipeName));
+	}
+
+
+	private void addImmersiveEngineeringRecipes(Consumer<FinishedRecipe> consumer) {
+		ConditionalRecipe.builder()
+		.addCondition(new ModLoadedCondition("exnihilosequentia"))
+		.addRecipe(
+				CrusherRecipeBuilder.builder(ExNihilioSequentiaIntegration.DUST.get())
+				.addInput(Tags.Items.SAND)
+				.setEnergy(1600)
+				//	.build(consumer, otherModLoc("immersiveengineering", "crusher/" + "dust"));
+				)
+		.build(consumer, otherModLoc("immersiveengineering", "crusher/" + "dust"));
+
 	}
 
 

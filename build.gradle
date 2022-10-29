@@ -116,6 +116,10 @@ repositories {
 	maven {
         url "https://maven.tterrag.com/"
     }
+	maven {
+        name = "BlameJared"
+        url = "https://maven.blamejared.com/"
+    }
 	
 }
 
@@ -155,11 +159,17 @@ dependencies {
 	
 	implementation fg.deobf('curse.maven:jer-integration-506948:4014255') // JERI (4.3.1)
 	
-	runtimeOnly fg.deobf("curse.maven:mekanism-268560:3922056") //MEKANISM
+	//MEKANISM
+	runtimeOnly fg.deobf("curse.maven:mekanism-268560:3922056") 
 
+	//CREATE
 	implementation fg.deobf("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false }
     implementation fg.deobf("com.jozufozu.flywheel:flywheel-forge-${flywheel_minecraft_version}:${flywheel_version}")
 	implementation fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
+	
+	//IMMERSIVE ENGINEERING
+	runtimeOnly fg.deobf("blusunrize.immersiveengineering:ImmersiveEngineering:${ie_version}")
+    compileOnly fg.deobf("blusunrize.immersiveengineering:ImmersiveEngineering:${ie_version}:api")
 
 	
 }
