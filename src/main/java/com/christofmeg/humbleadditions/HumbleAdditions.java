@@ -4,10 +4,13 @@ import com.christofmeg.humbleadditions.common.ModDispenseItemBehavior;
 import com.christofmeg.humbleadditions.common.world.ModConfiguredFeatures;
 import com.christofmeg.humbleadditions.common.world.ModFeatures;
 import com.christofmeg.humbleadditions.common.world.ModPlacedFeatures;
+import com.christofmeg.humbleadditions.integration.ExNihilioSequentiaIntegration;
 import com.christofmeg.humbleadditions.integration.jeri.ModWorldGen.CompatibilityHandler;
+import com.christofmeg.humbleadditions.registry.BlockEntityRegistry;
 import com.christofmeg.humbleadditions.registry.BlockRegistry;
 import com.christofmeg.humbleadditions.registry.EntityRegistry;
 import com.christofmeg.humbleadditions.registry.ItemRegistry;
+import com.christofmeg.humbleadditions.registry.MenuTypesRegistry;
 import com.christofmeg.humbleadditions.registry.PaintingVariantRegistry;
 import com.christofmeg.humbleadditions.registry.PotionRegistry;
 import com.christofmeg.humbleadditions.registry.PotionRegistry.PotionEffectRegistry;
@@ -50,6 +53,13 @@ public class HumbleAdditions {
 		PaintingVariantRegistry.PAINTING_VARIANTS.register(bus);
 		PotionRegistry.POTIONS.register(bus);
 		PotionEffectRegistry.MOB_EFFECTS.register(bus);
+		BlockEntityRegistry.BLOCK_ENTITY_TYPES.register(bus);
+		MenuTypesRegistry.MENUS.register(bus);
+
+
+		//		IronChestIntegration.IronChest.BLOCKS.register(bus);
+		//		IronChestIntegration.IronChestRestocked.BLOCKS.register(bus);
+		ExNihilioSequentiaIntegration.ITEMS.register(bus);
 
 	}
 

@@ -1,0 +1,4 @@
+// 1.19.2	2022-10-29T19:05:38.930427	Humble Additions - Integration Recipes
+1c3df27dc0cfb9f4237046c549a11c3a7fc9929a data/create/recipes/crushing/dust.json
+da74f189b5c322b7b71e349e570d2225adb5e960 data/mekanism/recipes/crushing/sand_to_dust.json
+56c6c65417d53d63ddf1f157869341427ea6ecb6 data/mekanism/recipes/enriching/dust_to_sand.json

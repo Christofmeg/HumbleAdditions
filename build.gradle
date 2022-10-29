@@ -26,6 +26,9 @@ minecraft {
 			property 'forge.logging.console.level', 'debug'
 			property 'forge.enabledGameTestNamespaces', 'humbleadditions'
 
+			property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+
             mods {
                 humbleadditions {
                     source sourceSets.main
@@ -46,25 +49,16 @@ minecraft {
             }
         }
 
-        gameTestServer {
-            workingDirectory project.file('run')
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
-            property 'forge.enabledGameTestNamespaces', 'humbleadditions'
-
-            mods {
-                humbleadditions {
-                    source sourceSets.main
-                }
-            }
-        }
-
         data {
             workingDirectory project.file('run')
+			property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+			
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
 
-            
+			
+
             args '--mod', 'humbleadditions', '--all', 
 					'--existing', file('src/main/resources').toString(),
                     '--existing', file('src/generated/resources').toString(),
@@ -108,6 +102,20 @@ repositories {
             includeGroup "curse.maven"
         }
     }
+	maven {
+        url "https://repo.jacob-williams.me/repository/maven-releases/"
+        content {
+            includeGroup "novamachina.exnihilosequentia"
+        }
+    }
+	maven {
+        // Mixed mappings, Registrate, Flywheel
+        name 'tterrag maven'
+        url 'https://maven.tterrag.com'
+    }
+	maven {
+        url "https://maven.tterrag.com/"
+    }
 	
 }
 
@@ -131,7 +139,6 @@ dependencies {
 	}
 	// AE2
 	if (project.hasProperty('ae2_version')) {
-//		implementation fg.deobf("appeng:appliedenergistics2:${ae2_version}")
 		compileOnly fg.deobf("appeng:appliedenergistics2:${ae2_version}:api")
 		runtimeOnly fg.deobf("appeng:appliedenergistics2:${ae2_version}")
 	}
@@ -148,10 +155,12 @@ dependencies {
 	
 	implementation fg.deobf('curse.maven:jer-integration-506948:4014255') // JERI (4.3.1)
 	
-	
-	
-	
-//	implementation fg.deobf("curse.maven:mmmmmmmmmmmm-225738:3913301")
+	runtimeOnly fg.deobf("curse.maven:mekanism-268560:3922056") //MEKANISM
+
+	implementation fg.deobf("com.simibubi.create:create-${minecraft_version}:${create_version}:slim") { transitive = false }
+    implementation fg.deobf("com.jozufozu.flywheel:flywheel-forge-${flywheel_minecraft_version}:${flywheel_version}")
+	implementation fg.deobf("com.tterrag.registrate:Registrate:${registrate_version}")
+
 	
 }
 

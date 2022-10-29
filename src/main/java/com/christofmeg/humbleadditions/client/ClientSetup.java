@@ -17,6 +17,9 @@ public class ClientSetup {
 	public static void registerEntityRenders(EntityRenderersEvent.RegisterRenderers event) {
 		event.registerEntityRenderer(EntityRegistry.RED_HUSK.get(), RedHuskRenderer::new);
 		event.registerEntityRenderer(EntityRegistry.SNOW_GOLEM.get(), SnowGolemEntityRenderer::new);
+
+		//		MenuScreens.register(MenuTypesRegistry.AUTO_SMITHING_TABLE_MENU.get(), AutoSmithingTableScreen::new);
+
 	}
 
 

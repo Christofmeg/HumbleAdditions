@@ -632,34 +632,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 		.unlockedBy("has_limestone", has(BlockRegistry.LIMESTONE.get()))
 		.save(consumer, modLoc(folder + "chiseled_limestone"));
 
-		//LIMESTONE WALLS
-		ShapedRecipeBuilder.shaped(BlockRegistry.LIMESTONE_WALL.get(), 6)
-		.define('C', BlockRegistry.LIMESTONE.get())
-		.pattern("CCC")
-		.pattern("CCC")
-		.unlockedBy("has_limestone", has(BlockRegistry.LIMESTONE.get()))
-		.save(consumer, modLoc(folder + "limestone_wall"));
-
-		ShapedRecipeBuilder.shaped(BlockRegistry.LIMESTONE_BRICK_WALL.get(), 6)
-		.define('C', BlockRegistry.LIMESTONE_BRICKS.get())
-		.pattern("CCC")
-		.pattern("CCC")
-		.unlockedBy("has_limestone", has(BlockRegistry.LIMESTONE.get()))
-		.save(consumer, modLoc(folder + "limestone_bricks_wall"));
-
-		ShapedRecipeBuilder.shaped(BlockRegistry.POLISHED_LIMESTONE_WALL.get(), 6)
-		.define('C', BlockRegistry.POLISHED_LIMESTONE.get())
-		.pattern("CCC")
-		.pattern("CCC")
-		.unlockedBy("has_limestone", has(BlockRegistry.LIMESTONE.get()))
-		.save(consumer, modLoc(folder + "polished_limestone_wall"));
-
-		ShapedRecipeBuilder.shaped(BlockRegistry.POLISHED_LIMESTONE_BRICK_WALL.get(), 6)
-		.define('C', BlockRegistry.POLISHED_LIMESTONE_BRICKS.get())
-		.pattern("CCC")
-		.pattern("CCC")
-		.unlockedBy("has_limestone", has(BlockRegistry.LIMESTONE.get()))
-		.save(consumer, modLoc(folder + "polished_limestone_bricks_wall"));
 		//LANTERN RECIPES
 		ShapedRecipeBuilder.shaped(Items.LANTERN)
 		.define('I', Tags.Items.NUGGETS_IRON)

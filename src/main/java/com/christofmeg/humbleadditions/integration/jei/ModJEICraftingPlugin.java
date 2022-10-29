@@ -1,10 +1,14 @@
 package com.christofmeg.humbleadditions.integration.jei;
 
+import com.christofmeg.humbleadditions.registry.BlockRegistry;
 import com.christofmeg.humbleadditions.setup.ModConstants;
 
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
+import mezz.jei.api.constants.RecipeTypes;
+import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ItemStack;
 
 @JeiPlugin
 public class ModJEICraftingPlugin implements IModPlugin {
@@ -40,10 +44,13 @@ public class ModJEICraftingPlugin implements IModPlugin {
 
 
 
-	/*
+
 	//Use to show what blocks crafting could be done in
 	@Override
 	public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
+		registration.addRecipeCatalyst(new ItemStack(BlockRegistry.AUTO_SMITHING_TABLE_BLOCK.get()), RecipeTypes.SMITHING);
+	}
+	/*
 		//		registration.addRecipeCatalyst(new ItemStack(BlockRegistry.SPRUCE_CRAFTING_TABLE.get()), RecipeTypes.CRAFTING);
 		//TODO		registration.addRecipeCatalyst(new ItemStack(ItemRegistry.RED_HUSK_SPAWN_EGG.get()), JEIConfig.MOB_TYPE);
 
@@ -53,9 +60,8 @@ public class ModJEICraftingPlugin implements IModPlugin {
 		ItemRegistry.ITEMS_AUTO_REGISTER.getEntries().stream().map(RegistryObject::get).filter(egg -> (egg instanceof SpawnEggItem)).forEach(egg -> {
 			registration.addRecipeCatalyst(new ItemStack(egg), JEIConfig.MOB_TYPE);
 		});
-
-	}
 	 */
+
 	//	@Override
 	//	public void registerRecipes(IRecipeRegistration registration) {
 	//registration.addRecipes(JEIConfig.MOB_TYPE, asRecipes(MobRegistry.getInstance().getMobs(), MobWrapper::new));

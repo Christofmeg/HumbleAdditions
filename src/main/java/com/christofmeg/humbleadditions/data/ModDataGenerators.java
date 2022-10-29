@@ -13,6 +13,8 @@ import com.christofmeg.humbleadditions.data.tags.ModEntityTypeTagsProvider;
 import com.christofmeg.humbleadditions.data.tags.ModItemTagsProvider;
 import com.christofmeg.humbleadditions.data.tags.ModPaintingVariantTagsProvider;
 import com.christofmeg.humbleadditions.data.world.ModBiomeModifierProvider;
+import com.christofmeg.humbleadditions.integration.recipes.IntegrationRecipeProvider;
+import com.christofmeg.humbleadditions.integration.tags.IntegrationTagsProvider;
 import com.christofmeg.humbleadditions.setup.ModConstants;
 import com.google.gson.JsonElement;
 import com.mojang.serialization.JsonOps;
@@ -30,13 +32,13 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 public class ModDataGenerators {
 	private ModDataGenerators() {}
 	private static final String[] LOCALE_CODES = new String[] {"en_us",};
-	
+
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@SubscribeEvent
-    public static void gatherData(GatherDataEvent event) {
-    	ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
-    	DataGenerator gen = event.getGenerator();
-    	
+	public static void gatherData(GatherDataEvent event) {
+		ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
+		DataGenerator gen = event.getGenerator();
+
 		if (event.includeClient())
 		{
 			gen.addProvider(true, new ModBlockStateProvider(gen, existingFileHelper, null, null));
@@ -52,19 +54,21 @@ public class ModDataGenerators {
 			gen.addProvider(true, new ModBiomeTagsProvider(gen, existingFileHelper));
 			gen.addProvider(true, new ModPaintingVariantTagsProvider(gen, existingFileHelper));
 			gen.addProvider(true, new ModEntityTypeTagsProvider(gen, existingFileHelper));
-//			gen.addProvider(true, new IntegrationRecipeProvider(gen));
-//			gen.addProvider(true, new IntegrationItemTagsProvider(gen, blockTags, existingFileHelper));
-			
-        }
+
+			gen.addProvider(true, new IntegrationRecipeProvider(gen));
+			gen.addProvider(true, new IntegrationTagsProvider(gen, blockTags, existingFileHelper));
+			//		gen.addProvider(true, new IntegrationTagsProvider.IntegrationBlockTagsProvider(gen, existingFileHelper));
+
+		}
 		for(String locale : LOCALE_CODES) {
 			gen.addProvider(true, new ModLanguageProvider(gen, locale));
 			gen.addProvider(true, new VanillaLanguageProvider(gen, locale));
 		}
-		
+
 		RegistryAccess registryAccess = RegistryAccess.builtinCopy();
-    	RegistryOps<JsonElement> registryOps = RegistryOps.create(JsonOps.INSTANCE, registryAccess);
-    	ModPlacedFeatures.biome_modifierDatagen(event, gen, existingFileHelper, registryOps);
-	    
-    }
+		RegistryOps<JsonElement> registryOps = RegistryOps.create(JsonOps.INSTANCE, registryAccess);
+		ModPlacedFeatures.biome_modifierDatagen(event, gen, existingFileHelper, registryOps);
+
+	}
 
 }
